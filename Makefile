@@ -14,6 +14,7 @@ SRCS = \
 	$(APP_DIR)/mode_runner.c \
 	$(APP_DIR)/function_dispatch.c \
 	$(APP_DIR)/utils.c \
+	$(APP_DIR)/typing_modes.c \
 	$(DATA_DIR)/string.c \
 	$(DATA_DIR)/memory.c \
 	$(DATA_DIR)/char.c \

@@ -12,6 +12,12 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+typedef enum e_mode {
+    COPY_MODE = 1,
+    RECALL_MODE = 2
+} Mode;
+
+
 typedef struct s_libfunc
 {
 	const char	*name;
