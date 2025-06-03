@@ -3,12 +3,12 @@
 #include <time.h>
 #include "libft_master.h"
 
-void print_mode_menu(void)
+void print_category_menu(void)
 {
-	printf("Choose a mode:\n");
-	printf("1. Copy Mode   (see function code and type it)\n");
-	printf("2. Recall Mode (type function from memory)\n");
-	printf("Your choice: ");
+	printf("Select category:\n");
+	printf("1. String functions\n");
+	printf("2. Memory functions\n");
+	printf("Enter choice: ");
 }
 
 int main(void)
