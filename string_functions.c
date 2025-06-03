@@ -2,7 +2,7 @@
 #include <stdio.h>  // for fprintf, stderr
 #include <stdlib.h> // for exit
 
-static LibFunc string_functions[] = {
+LibFunc string_functions[] = {
 	{
 		"ft_strlen",
 		"Calculates the length of a string.",
