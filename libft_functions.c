@@ -6,36 +6,6 @@
 LibFunc get_function_by_index(int index) {
 	static LibFunc functions[] = {
 		{
-			"ft_strlen",
-			"Returns the number of characters in the string.",
-			"size_t\tft_strlen(const char *s)\n"
-				"{\n"
-				"\tsize_t\ti;\n"
-				"\n"
-				"\ti = 0;\n"
-				"\twhile (s[i])\n"
-				"\t\ti++;\n"
-				"\treturn (i);\n"
-				"}"
-		},
-		{
-			"ft_strcpy",
-			"Copies string src to dst (including null terminator).",
-			"char\t*ft_strcpy(char *dst, const char *src)\n"
-				"{\n"
-				"\tsize_t\ti;\n"
-				"\n"
-				"\ti = 0;\n"
-				"\twhile (src[i])\n"
-				"\t{\n"
-				"\t\tdst[i] = src[i];\n"
-				"\t\ti++;\n"
-				"\t}\n"
-				"\tdst[i] = '\\0';\n"
-				"\treturn (dst);\n"
-				"}"
-		},
-		{
 			"ft_memset",
 			"Fills memory with constant byte.",
 			"void\t*ft_memset(void *b, int c, size_t len)\n"
@@ -51,6 +21,94 @@ LibFunc get_function_by_index(int index) {
 				"\t\ti++;\n"
 				"\t}\n"
 				"\treturn (b);\n"
+				"}"
+		},
+		{
+			"ft_memcpy",
+			"Copies n bytes from memory area src to memory area dst.",
+			"void\t*ft_memcpy(void *dst, const void *src, size_t n)\n"
+				"{\n"
+				"\tsize_t\ti;\n"
+				"\tunsigned char\t*d;\n"
+				"\tconst unsigned char\t*s;\n"
+				"\n"
+				"\td = (unsigned char *)dst;\n"
+				"\ts = (const unsigned char *)src;\n"
+				"\ti = 0;\n"
+				"\twhile (i < n)\n"
+				"\t{\n"
+				"\t\td[i] = s[i];\n"
+				"\t\ti++;\n"
+				"\t}\n"
+				"\treturn (dst);\n"
+				"}"
+		},
+		{
+			"ft_memmove",
+			"Copies n bytes from src to dst, handling overlapping memory.",
+			"void\t*ft_memmove(void *dst, const void *src, size_t len)\n"
+				"{\n"
+				"\tunsigned char\t*d;\n"
+				"\tconst unsigned char\t*s;\n"
+				"\n"
+				"\td = (unsigned char *)dst;\n"
+				"\ts = (const unsigned char *)src;\n"
+				"\tif (d < s)\n"
+				"\t{\n"
+				"\t\tsize_t i = 0;\n"
+				"\t\twhile (i < len)\n"
+				"\t\t{\n"
+				"\t\t\td[i] = s[i];\n"
+				"\t\t\ti++;\n"
+				"\t\t}\n"
+				"\t}\n"
+				"\telse if (d > s)\n"
+				"\t{\n"
+				"\t\tsize_t i = len;\n"
+				"\t\twhile (i-- > 0)\n"
+				"\t\t\td[i] = s[i];\n"
+				"\t}\n"
+				"\treturn (dst);\n"
+				"}"
+		},
+		{
+			"ft_memcmp",
+			"Compares the first n bytes of two memory areas.",
+			"int\tft_memcmp(const void *s1, const void *s2, size_t n)\n"
+				"{\n"
+				"\tsize_t\ti;\n"
+				"\tconst unsigned char\t*u1;\n"
+				"\tconst unsigned char\t*u2;\n"
+				"\n"
+				"\tu1 = (const unsigned char *)s1;\n"
+				"\tu2 = (const unsigned char *)s2;\n"
+				"\ti = 0;\n"
+				"\twhile (i < n)\n"
+				"\t{\n"
+				"\t\tif (u1[i] != u2[i])\n"
+				"\t\t\treturn (u1[i] - u2[i]);\n"
+				"\t\ti++;\n"
+				"\t}\n"
+				"\treturn (0);\n"
+				"}"
+		},
+		{
+			"ft_memchr",
+			"Scans memory for character c in the first n bytes.",
+			"void\t*ft_memchr(const void *s, int c, size_t n)\n"
+				"{\n"
+				"\tsize_t\ti;\n"
+				"\tconst unsigned char\t*str;\n"
+				"\n"
+				"\tstr = (const unsigned char *)s;\n"
+				"\ti = 0;\n"
+				"\twhile (i < n)\n"
+				"\t{\n"
+				"\t\tif (str[i] == (unsigned char)c)\n"
+				"\t\t\treturn ((void *)(str + i));\n"
+				"\t\ti++;\n"
+				"\t}\n"
+				"\treturn (NULL);\n"
 				"}"
 		}
 	};
