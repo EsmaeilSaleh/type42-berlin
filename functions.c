@@ -39,6 +39,28 @@ static LibFunc libft_functions[] = {
 			"}"
 	},
 	{
+		"#include <stddef.h>\n"
+			"\n"
+			"void	*ft_memcpy(void *dest, const void *src, size_t n)\n"
+			"{\n"
+			"	size_t				i;\n"
+			"	unsigned char		*d;\n"
+			"	const unsigned char	*s;\n"
+			"\n"
+			"	if (!dest && !src)\n"
+			"		return (NULL);\n"
+			"	d = (unsigned char *)dest;\n"
+			"	s = (const unsigned char *)src;\n"
+			"	i = 0;\n"
+			"	while (i < n)\n"
+			"	{\n"
+			"		d[i] = s[i];\n"
+			"		i++;\n"
+			"	}\n"
+			"	return (dest);\n"
+			"}\n"
+	},
+	{
 		"ft_memmove",
 		"Moves memory area safely.",
 		"void\t*ft_memmove(void *dst, const void *src, size_t len)\n"
