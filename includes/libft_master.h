@@ -24,4 +24,10 @@ extern const int BONUS_FUNC_COUNT;
 LibFunc get_bonus_function_by_index(int index);
 int get_bonus_function_count(void);
 
+LibFunc get_char_function_by_index(int index);
+int get_char_function_count(void);
+
+LibFunc get_string_function_by_index(int index);
+int get_string_function_count(void);
+
 #endif

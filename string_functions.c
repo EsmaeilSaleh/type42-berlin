@@ -1,5 +1,7 @@
 #include "libft_master.h"
 #include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 // String-related functions
 
@@ -86,4 +88,21 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		i++;
 	}
 	return (NULL);
+}
+
+const int STRING_FUNC_COUNT = sizeof(string_functions) / sizeof(LibFunc);
+
+LibFunc get_string_function_by_index(int index)
+{
+	if (index < 0 || index >= STRING_FUNC_COUNT)
+	{
+		fprintf(stderr, "Invalid string function index.\n");
+		exit(1);
+	}
+	return (string_functions[index]);
+}
+
+int get_string_function_count(void)
+{
+	return STRING_FUNC_COUNT;
 }
