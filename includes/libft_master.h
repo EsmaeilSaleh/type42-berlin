@@ -34,6 +34,7 @@ int get_char_function_count(void);
 
 LibFunc get_string_function_by_index(int index);
 int get_string_function_count(void);
+int get_memory_function_count(void);
 
 LibFunc get_conv_function_by_index(int index);
 int get_conv_function_count(void);
