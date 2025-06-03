@@ -1,95 +1,90 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "../includes/libft_master.h"
+#include "libft_master.h"
 
-// Define the array of functions
-static LibFunc libft_functions[] = {
+// --- Memory Functions ---
+static LibFunc memory_funcs[] = {
 	{
 		"ft_memset",
 		"Fills memory with a constant byte.",
 		"void\t*ft_memset(void *b, int c, size_t len)\n"
 			"{\n"
-			"\tsize_t\t\t\t i;\n"
-			"\tunsigned char\t*ptr;\n\n"
-			"\tptr = (unsigned char *)b;\n"
-			"\ti = 0;\n"
-			"\twhile (i < len)\n"
-			"\t{\n"
-			"\t\tptr[i] = (unsigned char)c;\n"
-			"\t\ti++;\n"
-			"\t}\n"
-			"\treturn (b);\n"
+			"    size_t\t\t  i;\n"
+			"    unsigned char\t*ptr;\n"
+			"\n"
+			"    ptr = (unsigned char *)b;\n"
+			"    i = 0;\n"
+			"    while (i < len)\n"
+			"    {\n"
+			"        ptr[i] = (unsigned char)c;\n"
+			"        i++;\n"
+			"    }\n"
+			"    return (b);\n"
 			"}"
 	},
 	{
-		"ft_memmove",
-		"Moves memory area safely.",
-		"void\t*ft_memmove(void *dst, const void *src, size_t len)\n"
+		"ft_bzero",
+		"Zeroes out a block of memory.",
+		"void\tft_bzero(void *s, size_t n)\n"
 			"{\n"
-			"\tsize_t i;\n\n"
-			"\tif (!dst && !src)\n"
-			"\t\treturn (NULL);\n"
-			"\tif (dst < src)\n"
-			"\t{\n"
-			"\t\ti = 0;\n"
-			"\t\twhile (i < len)\n"
-			"\t\t{\n"
-			"\t\t\t((unsigned char *)dst)[i] = ((unsigned char *)src)[i];\n"
-			"\t\t\ti++;\n"
-			"\t\t}\n"
-			"\t}\n"
-			"\telse\n"
-			"\t{\n"
-			"\t\twhile (len-- > 0)\n"
-			"\t\t\t((unsigned char *)dst)[len] = ((unsigned char *)src)[len];\n"
-			"\t}\n"
-			"\treturn (dst);\n"
+			"    size_t\t  i;\n"
+			"    char\t  *ptr;\n"
+			"\n"
+			"    ptr = (char *)s;\n"
+			"    i = 0;\n"
+			"    while (i < n)\n"
+			"    {\n"
+			"        ptr[i] = 0;\n"
+			"        i++;\n"
+			"    }\n"
 			"}"
 	},
-	{
-		"ft_memcmp",
-		"Compares memory areas.",
-		"int\tft_memcmp(const void *s1, const void *s2, size_t n)\n"
-			"{\n"
-			"\tsize_t i;\n\n"
-			"\ti = 0;\n"
-			"\twhile (i < n)\n"
-			"\t{\n"
-			"\t\tif (((unsigned char *)s1)[i] != ((unsigned char *)s2)[i])\n"
-			"\t\t\treturn (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);\n"
-			"\t\ti++;\n"
-			"\t}\n"
-			"\treturn (0);\n"
-			"}"
-	},
-	{
-		"ft_memchr",
-		"Scans memory for a character.",
-		"void\t*ft_memchr(const void *s, int c, size_t n)\n"
-			"{\n"
-			"\tsize_t i;\n\n"
-			"\ti = 0;\n"
-			"\twhile (i < n)\n"
-			"\t{\n"
-			"\t\tif (((unsigned char *)s)[i] == (unsigned char)c)\n"
-			"\t\t\treturn ((void *)((unsigned char *)s + i));\n"
-			"\t\ti++;\n"
-			"\t}\n"
-			"\treturn (NULL);\n"
-			"}"
-	}
+	// Add more memory functions here
 };
 
-// Returns the number of functions
+// --- String Functions ---
+static LibFunc string_funcs[] = {
+	{
+		"ft_strlen",
+		"Returns the number of characters in a string.",
+		"size_t\tft_strlen(const char *s)\n"
+			"{\n"
+			"    size_t\ti;\n"
+			"\n"
+			"    i = 0;\n"
+			"    while (s[i])\n"
+			"        i++;\n"
+			"    return (i);\n"
+			"}"
+	},
+	// Add more string functions here
+};
+
+// Combine all categories into one list for lookup
+static LibFunc *categories[] = {
+	memory_funcs,
+	string_funcs,
+};
+
+static int category_sizes[] = {
+	sizeof(memory_funcs) / sizeof(LibFunc),
+	sizeof(string_funcs) / sizeof(LibFunc),
+};
+
+// Total count of all functions
 int get_function_count(void) {
-	return sizeof(libft_functions) / sizeof(LibFunc);
+	int total = 0;
+	for (size_t i = 0; i < sizeof(category_sizes) / sizeof(int); i++)
+		total += category_sizes[i];
+	return total;
 }
 
-// Returns a function by index
+// Flat access by index
 LibFunc get_function_by_index(int index) {
-	if (index < 0 || index >= get_function_count()) {
-		fprintf(stderr, "Invalid function index.\n");
-		exit(1);
+	int offset = 0;
+	for (size_t i = 0; i < sizeof(category_sizes) / sizeof(int); i++) {
+		if (index < offset + category_sizes[i])
+			return categories[i][index - offset];
+		offset += category_sizes[i];
 	}
-	return libft_functions[index];
+	fprintf(stderr, "Invalid function index.\n");
+	exit(1);
 }
