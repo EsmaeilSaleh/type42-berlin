@@ -1,0 +1,19 @@
+#include "../../includes/libft_master.h"
+#include <stdio.h>
+
+void run_mode(Mode mode, LibFunc *func) {
+	if (!func)
+		return;
+
+	switch (mode) {
+		case COPY_MODE:
+			printf("Copy Mode:\n\n%s\n", func->code);
+			break;
+		case RECALL_MODE:
+			printf("Recall Mode:\n\nFunction: %s\nDescription: %s\n", func->name, func->description);
+			break;
+		default:
+			fprintf(stderr, "Unknown mode.\n");
+			break;
+	}
+}
