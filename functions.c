@@ -98,7 +98,7 @@ LibFunc get_function_by_index(int index) {
 	};
 	int get_function_count(void) {
 		return sizeof(libft_functions) / sizeof(LibFunc);
-	}
+	};
 
 	LibFunc get_function_by_index(int index) {
 		int total = get_function_count();
@@ -107,5 +107,5 @@ LibFunc get_function_by_index(int index) {
 			exit(1);
 		}
 		return libft_functions[index];
-	}
+	};
 }
