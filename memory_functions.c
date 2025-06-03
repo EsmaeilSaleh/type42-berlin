@@ -1,58 +1,52 @@
-// memory_functions.c
-
 #include "libft_master.h"
 
-LibFunc memory_functions[] = {
+static LibFunc memory_functions[] = {
 	{
 		"ft_memset",
-		"Fills memory with a constant byte.",
-		"void    *ft_memset(void *b, int c, size_t len)\n"
+		"Fills the first n bytes of the memory area pointed to by s with the constant byte c.",
+		"void\t*ft_memset(void *s, int c, size_t n)\n"
 			"{\n"
-			"    size_t          i;\n"
-			"    unsigned char   *ptr;\n"
-			"\n"
-			"    ptr = (unsigned char *)b;\n"
-			"    i = 0;\n"
-			"    while (i < len)\n"
-			"    {\n"
-			"        ptr[i] = (unsigned char)c;\n"
-			"        i++;\n"
-			"    }\n"
-			"    return (b);\n"
+			"\tunsigned char *p = (unsigned char *)s;\n"
+			"\tsize_t i = 0;\n"
+			"\twhile (i < n)\n"
+			"\t\tp[i++] = (unsigned char)c;\n"
+			"\treturn (s);\n"
 			"}"
 	},
 	{
 		"ft_bzero",
-		"Erases the data in the n bytes of the memory starting at the location pointed to by s.",
-		"void    ft_bzero(void *s, size_t n)\n"
+		"Erases the data in the n bytes of the memory starting at the location pointed to by s, by writing zeros to that area.",
+		"void\tft_bzero(void *s, size_t n)\n"
 			"{\n"
-			"    ft_memset(s, 0, n);\n"
+			"\tft_memset(s, 0, n);\n"
 			"}"
 	},
 	{
 		"ft_memcpy",
-		"Copies n bytes from memory area src to memory area dst.",
-		"void    *ft_memcpy(void *dst, const void *src, size_t n)\n"
+		"Copies n bytes from memory area src to memory area dest.",
+		"void\t*ft_memcpy(void *dest, const void *src, size_t n)\n"
 			"{\n"
-			"    size_t  i;\n"
-			"    char    *d;\n"
-			"    char    *s;\n"
+			"\tsize_t\t\ti;\n"
+			"\tunsigned char\t\t*d;\n"
+			"\tconst unsigned char\t*s;\n"
 			"\n"
-			"    d = (char *)dst;\n"
-			"    s = (char *)src;\n"
-			"    i = 0;\n"
-			"    while (i < n)\n"
-			"    {\n"
-			"        d[i] = s[i];\n"
-			"        i++;\n"
-			"    }\n"
-			"    return (dst);\n"
+			"\tif (!dest && !src)\n"
+			"\t\treturn (NULL);\n"
+			"\td = (unsigned char *)dest;\n"
+			"\ts = (const unsigned char *)src;\n"
+			"\ti = 0;\n"
+			"\twhile (i < n)\n"
+			"\t{\n"
+			"\t\td[i] = s[i];\n"
+			"\t\ti++;\n"
+			"\t}\n"
+			"\treturn (dest);\n"
 			"}"
 	}
 };
 
 int get_memory_function_count(void) {
-	return sizeof(memory_functions) / sizeof(memory_functions[0]);
+	return sizeof(memory_functions) / sizeof(LibFunc);
 }
 
 LibFunc get_memory_function_by_index(int index) {
