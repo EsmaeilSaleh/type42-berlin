@@ -10,24 +10,35 @@ void print_mode_menu(void)
 	printf("2. Recall Mode (type function from memory)\n");
 	printf("Your choice: ");
 }
-
 int main(void)
 {
 	int mode;
-	int func_index;
+	int category;
 
-	srand(time(NULL)); // Seed RNG for random function selection
+	srand(time(NULL)); // Seed RNG
+
 	print_mode_menu();
 	if (scanf("%d", &mode) != 1 || (mode != 1 && mode != 2))
 	{
 		fprintf(stderr, "Invalid mode selected.\n");
 		return 1;
 	}
+
+	print_category_menu(); // <- You need to implement this if you haven't
+	if (scanf("%d", &category) != 1 || (category < 1 || category > 2))
+	{
+		fprintf(stderr, "Invalid category selected.\n");
+		return 1;
+	}
+
 	getchar(); // Consume leftover newline from scanf
 
-	func_index = rand() % get_function_count();
-	LibFunc func = get_function_by_index(func_index);
+	if (category == 1)
+		run_typing_session(mode, get_string_function_by_index, get_string_function_count);
+	else if (category == 2)
+		run_typing_session(mode, get_memory_function_by_index, get_memory_function_count);
+	else
+		fprintf(stderr, "Unsupported category.\n");
 
-	run_typing_session(&func, mode == 1);
 	return 0;
 }

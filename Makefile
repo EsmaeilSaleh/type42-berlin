@@ -10,7 +10,7 @@ DATA_DIR = $(SRC_DIR)/data
 
 # Source Files
 SRCS = \
-	main.c \
+	$(APP_DIR)/main.c \
 	$(APP_DIR)/mode_runner.c \
 	$(APP_DIR)/function_dispatch.c \
 	$(APP_DIR)/utils.c \
