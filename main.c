@@ -1,21 +1,34 @@
+// main.c
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "libft_master.h"
 
-int main() {
-	int choice = 0;
-	print_mode_menu();
-	scanf("%d", &choice);
-	getchar(); // consume newline
+void print_mode_menu(void)
+{
+	printf("Choose a mode:\n");
+	printf("1. Copy Mode   (see function code and type it)\n");
+	printf("2. Recall Mode (type function from memory)\n");
+	printf("Your choice: ");
+}
 
-	if (choice != 1 && choice != 2) {
-		printf("Invalid choice.\n");
+int main(void)
+{
+	int mode;
+	int func_index;
+
+	srand(time(NULL)); // Seed RNG for random function selection
+	print_mode_menu();
+	if (scanf("%d", &mode) != 1 || (mode != 1 && mode != 2))
+	{
+		fprintf(stderr, "Invalid mode selected.\n");
 		return 1;
 	}
+	getchar(); // Consume leftover newline from scanf
 
-	int is_copy_mode = (choice == 1);
-	LibFunc func = get_function_by_index(0);  // Replace with random/indexed later
-	run_typing_session(&func, is_copy_mode);
+	func_index = rand() % FUNC_COUNT;
+	LibFunc func = get_function_by_index(func_index);
 
+	run_typing_session(&func, mode == 1);
 	return 0;
 }
