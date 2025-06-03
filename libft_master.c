@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <ctype.h>
 
 #define MAX_INPUT 2048
 
@@ -10,9 +11,6 @@ typedef struct {
 	const char* description;  // For Recall Mode
 	const char* code;         // Full Implementation
 } LibftFunc;
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
 
 #define RED     "\x1b[31m"
 #define GREEN   "\x1b[32m"
