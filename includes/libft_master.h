@@ -1,6 +1,8 @@
 #ifndef LIBFT_MASTER_H
 #define LIBFT_MASTER_H
 
+#define MAX_INPUT 8192
+
 #include <stddef.h>
 
 typedef struct {
