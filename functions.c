@@ -1,90 +1,60 @@
 #include "libft_master.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-// --- Memory Functions ---
-static LibFunc memory_funcs[] = {
-	{
-		"ft_memset",
-		"Fills memory with a constant byte.",
-		"void\t*ft_memset(void *b, int c, size_t len)\n"
-			"{\n"
-			"    size_t\t\t  i;\n"
-			"    unsigned char\t*ptr;\n"
-			"\n"
-			"    ptr = (unsigned char *)b;\n"
-			"    i = 0;\n"
-			"    while (i < len)\n"
-			"    {\n"
-			"        ptr[i] = (unsigned char)c;\n"
-			"        i++;\n"
-			"    }\n"
-			"    return (b);\n"
-			"}"
-	},
-	{
-		"ft_bzero",
-		"Zeroes out a block of memory.",
-		"void\tft_bzero(void *s, size_t n)\n"
-			"{\n"
-			"    size_t\t  i;\n"
-			"    char\t  *ptr;\n"
-			"\n"
-			"    ptr = (char *)s;\n"
-			"    i = 0;\n"
-			"    while (i < n)\n"
-			"    {\n"
-			"        ptr[i] = 0;\n"
-			"        i++;\n"
-			"    }\n"
-			"}"
-	},
-	// Add more memory functions here
-};
+// Declare all external category arrays and counts
+extern LibFunc memory_functions[];
+extern int get_memory_function_count(void);
 
-// --- String Functions ---
-static LibFunc string_funcs[] = {
-	{
-		"ft_strlen",
-		"Returns the number of characters in a string.",
-		"size_t\tft_strlen(const char *s)\n"
-			"{\n"
-			"    size_t\ti;\n"
-			"\n"
-			"    i = 0;\n"
-			"    while (s[i])\n"
-			"        i++;\n"
-			"    return (i);\n"
-			"}"
-	},
-	// Add more string functions here
-};
+extern LibFunc string_functions[];
+extern int get_string_function_count(void);
 
-// Combine all categories into one list for lookup
-static LibFunc *categories[] = {
-	memory_funcs,
-	string_funcs,
-};
+extern LibFunc char_functions[];
+extern int get_char_function_count(void);
 
-static int category_sizes[] = {
-	sizeof(memory_funcs) / sizeof(LibFunc),
-	sizeof(string_funcs) / sizeof(LibFunc),
-};
+extern LibFunc conv_functions[];
+extern int get_conv_function_count(void);
 
-// Total count of all functions
-int get_function_count(void) {
-	int total = 0;
-	for (size_t i = 0; i < sizeof(category_sizes) / sizeof(int); i++)
-		total += category_sizes[i];
-	return total;
-}
+extern LibFunc bonus_functions[];
+extern int get_bonus_function_count(void);
 
-// Flat access by index
-LibFunc get_function_by_index(int index) {
+LibFunc get_function_by_index(int index)
+{
 	int offset = 0;
-	for (size_t i = 0; i < sizeof(category_sizes) / sizeof(int); i++) {
-		if (index < offset + category_sizes[i])
-			return categories[i][index - offset];
-		offset += category_sizes[i];
-	}
+
+	int mem_count = get_memory_function_count();
+	if (index < mem_count)
+		return memory_functions[index];
+	index -= mem_count;
+
+	int str_count = get_string_function_count();
+	if (index < str_count)
+		return string_functions[index];
+	index -= str_count;
+
+	int char_count = get_char_function_count();
+	if (index < char_count)
+		return char_functions[index];
+	index -= char_count;
+
+	int conv_count = get_conv_function_count();
+	if (index < conv_count)
+		return conv_functions[index];
+	index -= conv_count;
+
+	int bonus_count = get_bonus_function_count();
+	if (index < bonus_count)
+		return bonus_functions[index];
+
 	fprintf(stderr, "Invalid function index.\n");
 	exit(1);
+}
+
+int get_function_count(void)
+{
+	return get_memory_function_count()
+		+ get_string_function_count()
+		+ get_char_function_count()
+		+ get_conv_function_count()
+		+ get_bonus_function_count();
 }
