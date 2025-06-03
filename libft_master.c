@@ -61,7 +61,7 @@ LibFunc get_function_by_index(int index) {
 				"	return (b);\n"
 				"}"
 		}
-	}
+	};
 };
 
 int total = sizeof(functions) / sizeof(functions[0]);
