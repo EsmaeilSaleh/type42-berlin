@@ -21,7 +21,6 @@ typedef struct s_libfunc
 extern LibFunc bonus_functions[];
 extern LibFunc memory_functions[];
 extern LibFunc char_functions[];
-extern LibFunc string_functions[]; // ← add this
 extern LibFunc conv_functions[];
 extern LibFunc bonus_functions[];
 extern const int BONUS_FUNC_COUNT;

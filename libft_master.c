@@ -4,6 +4,8 @@
 #include <time.h>
 #include "libft_master.h"
 
+#define FUNC_COUNT (get_string_function_count() + get_memory_function_count() + /* add other counts here */)
+
 void print_mode_menu(void) {
 	printf("Choose a mode:\n");
 	printf("1. Copy Mode   (see function code and type it)\n");
