@@ -56,11 +56,12 @@ int main() {
 		{
 			"ft_strlen",
 			"Returns the number of characters in the string.",
-			"size_t ft_strlen(const char *s) {\n"
-				"    size_t i = 0;\n"
-				"    while (s[i])\n"
-				"        i++;\n"
-				"    return i;\n"
+			"size_t ft_strlen(const char *s)"
+				"{\n"
+				"	size_t i = 0;\n"
+				"	while (s[i])\n"
+				"		i++;\n"
+				"	return i;\n"
 				"}"
 		}
 	};
