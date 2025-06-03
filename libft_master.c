@@ -22,17 +22,52 @@ LibFunc get_function_by_index(int index) {
 				"        i++;\n"
 				"    return i;\n"
 				"}"
+		},
+		{
+			"ft_strcpy",
+			"Copies string src to dst (including null terminator).",
+			"char	*ft_strcpy(char *dst, const char *src)\n"
+				"{\n"
+				"	size_t	i;\n"
+				"\n"
+				"	i = 0;\n"
+				"	while (src[i])\n"
+				"	{\n"
+				"		dst[i] = src[i];\n"
+				"		i++;\n"
+				"	}\n"
+				"	dst[i] = '\\0';\n"
+				"	return (dst);\n"
+				"}"
+		},
+		{
+			"ft_memset",
+			"Fills memory with constant byte.",
+			"void	*ft_memset(void *b, int c, size_t len)\n"
+				"{\n"
+				"	size_t			i;\n"
+				"	unsigned char	*ptr;\n"
+				"\n"
+				"	ptr = (unsigned char *)b;\n"
+				"	i = 0;\n"
+				"	while (i < len)\n"
+				"	{\n"
+				"		ptr[i] = (unsigned char)c;\n"
+				"		i++;\n"
+				"	}\n"
+				"	return (b);\n"
+				"}"
 		}
-		// Add more functions here
 	};
+};
 
-	int total = sizeof(functions) / sizeof(functions[0]);
-	if (index < 0 || index >= total) {
-		fprintf(stderr, "Invalid function index.\n");
-		exit(1);
-	}
+int total = sizeof(functions) / sizeof(functions[0]);
+if (index < 0 || index >= total) {
+	fprintf(stderr, "Invalid function index.\n");
+	exit(1);
+}
 
-	return functions[index];
+return functions[index];
 }
 
 void get_user_input(char *buffer, size_t size) {
