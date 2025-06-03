@@ -14,6 +14,13 @@ void get_user_input(char *buffer, size_t size) {
 	}
 }
 
+void print_function_list(LibFunc (*get_func_by_index)(int), int count) {
+	for (int i = 0; i < count; i++) {
+		LibFunc f = get_func_by_index(i);
+		printf("%d. %s\n", i + 1, f.name);
+	}
+}
+
 /*
    void run_typing_session(const LibFunc *func, int is_copy_mode) {
    printf("\nFunction: %s\n", func->name);

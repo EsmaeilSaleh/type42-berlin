@@ -22,13 +22,8 @@ typedef struct s_libfunc
 {
 	const char	*name;
 	const char	*description;
-	const char	*impl;
+	const char	*code;
 }	LibFunc;
-
-typedef enum {
-    MODE_COPY,
-    MODE_RECALL
-} Mode;
 
 extern const int BONUS_FUNC_COUNT;
 // Declare all external category arrays and counts
