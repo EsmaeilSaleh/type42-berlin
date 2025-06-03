@@ -1,36 +1,23 @@
-# === Compiler and flags ===
-CC      = gcc
-CFLAGS  = -Wall -Wextra -Werror -Iincludes
-NAME    = libft_master
+NAME = libft_master
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -Iincludes
 
-# === Source files ===
-SRCS    = main.c functions.c session.c utils.c
-OBJS    = $(SRCS:.c=.o)
+SRC = main.c functions.c utils.c
+OBJ = $(SRC:.c=.o)
 
-# === Default target ===
-all: $(NAME)
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
 
-# === Link the binary ===
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^
-
-# === Compile .c to .o ===
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# === Clean object files ===
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJ)
 
-# === Clean everything ===
 fclean: clean
 	rm -f $(NAME)
 
-# === Full rebuild ===
-re: fclean all
+re: fclean $(NAME)
 
-# === Run the program ===
-run: all
+run: $(NAME)
 	./$(NAME)
-
-.PHONY: all clean fclean re run
