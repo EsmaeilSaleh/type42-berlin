@@ -19,12 +19,6 @@ typedef struct s_libfunc
 	const char	*impl;
 }	LibFunc;
 
-// Declare bonus functions array and count
-extern LibFunc bonus_functions[];
-extern LibFunc memory_functions[];
-extern LibFunc char_functions[];
-extern LibFunc conv_functions[];
-extern LibFunc bonus_functions[];
 extern const int BONUS_FUNC_COUNT;
 // Declare all external category arrays and counts
 extern LibFunc memory_functions[];

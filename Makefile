@@ -1,33 +1,42 @@
-# Compiler and flags
+NAME = libft_master
+
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -Iincludes
 
-# Executable name
-TARGET = libft_master
+# Directories
+SRC_DIR = src
+APP_DIR = $(SRC_DIR)/app
+DATA_DIR = $(SRC_DIR)/data
 
-# Source files
-SRCS = main.c utils.c functions.c memory_functions.c string_functions.c \
-       char_functions.c conv_functions.c bonus_functions.c
+# Source Files
+SRCS = \
+	main.c \
+	$(APP_DIR)/mode_runner.c \
+	$(APP_DIR)/function_dispatch.c \
+	$(APP_DIR)/utils.c \
+	$(DATA_DIR)/string.c \
+	$(DATA_DIR)/memory.c \
+	$(DATA_DIR)/char.c \
+	$(DATA_DIR)/conv.c \
+	$(DATA_DIR)/bonus.c
 
-# Object files
 OBJS = $(SRCS:.c=.o)
 
-# Default target
-all: $(TARGET)
+# Default Target
+all: $(NAME)
 
-# Link object files into executable
-$(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $(OBJS)
 
-# Compile .c files into .o files
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Clean object files and executable
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(OBJS)
 
-# Rebuild everything
-re: clean all
+fclean: clean
+	rm -f $(NAME)
 
-.PHONY: all clean re
+re: fclean all
+
+.PHONY: all clean fclean re
