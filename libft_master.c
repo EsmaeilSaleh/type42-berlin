@@ -139,7 +139,10 @@ int main() {
 
 		if (mode == 1) {
 			// Copy Mode
-			printf("📄 Type the following exactly:\n\n%s\n\n", func->code);
+			//		printf("📄 Type the following exactly:\n\n%s\n\n", func->code);
+			printf("📄 Type the following exactly:\n\n");
+			print_highlighted(func->code);
+			printf("\n\n");
 		} else {
 			// Recall Mode
 			printf("📜 Description: %s\n\n", func->description);
