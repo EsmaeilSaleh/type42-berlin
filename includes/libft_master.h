@@ -3,6 +3,8 @@
 
 #include <stddef.h> // for size_t
 #define MAX_INPUT 1024
+#define FUNC_COUNT (get_string_function_count() + get_memory_function_count())
+
 
 typedef struct s_list
 {

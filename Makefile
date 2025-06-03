@@ -7,7 +7,7 @@ TARGET = libft_master
 
 # Source files
 SRCS = main.c utils.c functions.c memory_functions.c string_functions.c \
-       char_functions.c conv_functions.c bonus_functions.c libft_master.c
+       char_functions.c conv_functions.c bonus_functions.c
 
 # Object files
 OBJS = $(SRCS:.c=.o)
