@@ -62,6 +62,15 @@ LibFunc get_function_by_index(int index) {
 				"}"
 		}
 	};
+	LibFunc get_function_by_index(int index)
+	{
+		if (index < 0 || index >= FUNC_COUNT)
+		{
+			fprintf(stderr, "Invalid function index.\n");
+			exit(1);
+		}
+		return functions[index];
+	}
 };
 
 int total = sizeof(functions) / sizeof(functions[0]);
