@@ -20,7 +20,7 @@ extern int get_bonus_function_count(void);
 
 LibFunc get_function_by_index(int index)
 {
-	int offset = 0;
+	//int offset = 0;
 
 	int mem_count = get_memory_function_count();
 	if (index < mem_count)

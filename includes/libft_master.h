@@ -2,6 +2,7 @@
 #define LIBFT_MASTER_H
 
 #include <stddef.h> // for size_t
+#define MAX_INPUT 1024
 
 typedef struct s_list
 {
@@ -37,6 +38,6 @@ LibFunc get_function_by_index(int index);
 int get_function_count(void);
 
 // For the typing session runner
-void run_typing_session(LibFunc *func, int is_recall_mode);
+void run_typing_session(const LibFunc *func, int is_recall_mode);
 
 #endif
