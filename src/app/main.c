@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "includes/libft_master.h"
+#include "libft_master.h"
 
 void print_mode_menu(void)
 {
