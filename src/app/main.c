@@ -10,6 +10,7 @@ void print_mode_menu(void)
 	printf("2. Recall Mode (type function from memory)\n");
 	printf("Your choice: ");
 }
+
 int main(void)
 {
 	int mode;
