@@ -1,5 +1,7 @@
 // conv_functions.c
 #include "libft_master.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 LibFunc conv_functions[] = {
 	{
@@ -65,3 +67,20 @@ LibFunc conv_functions[] = {
 			"}"
 	}
 };
+
+const int CONV_FUNC_COUNT = sizeof(conv_functions) / sizeof(LibFunc);
+
+LibFunc get_conv_function_by_index(int index)
+{
+	if (index < 0 || index >= CONV_FUNC_COUNT)
+	{
+		fprintf(stderr, "Invalid conversion function index.\n");
+		exit(1);
+	}
+	return (conv_functions[index]);
+}
+
+int get_conv_function_count(void)
+{
+	return CONV_FUNC_COUNT;
+}
