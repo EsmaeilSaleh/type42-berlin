@@ -2,21 +2,37 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include "libft_master.h"
 
-#define MAX_INPUT 8192
-#define FUNC_COUNT 1
-
-typedef struct {
-	const char *name;
-	const char *description;
-	const char *impl;
-} LibFunc;
-
-void print_mode_menu() {
+void print_mode_menu(void) {
 	printf("Choose a mode:\n");
 	printf("1. Copy Mode   (see function code and type it)\n");
 	printf("2. Recall Mode (type function from memory)\n");
 	printf("Your choice: ");
+}
+
+LibFunc get_function_by_index(int index) {
+	static LibFunc functions[] = {
+		{
+			"ft_strlen",
+			"Returns the number of characters in the string.",
+			"size_t ft_strlen(const char *s) {\n"
+				"    size_t i = 0;\n"
+				"    while (s[i])\n"
+				"        i++;\n"
+				"    return i;\n"
+				"}"
+		}
+		// Add more functions here
+	};
+
+	int total = sizeof(functions) / sizeof(functions[0]);
+	if (index < 0 || index >= total) {
+		fprintf(stderr, "Invalid function index.\n");
+		exit(1);
+	}
+
+	return functions[index];
 }
 
 void get_user_input(char *buffer, size_t size) {
@@ -47,37 +63,4 @@ void run_typing_session(const LibFunc *func, int is_copy_mode) {
 
 	printf("\n--- Your Input ---\n%s", user_input);
 	printf("\n--- Typing Time: %ld seconds ---\n", end - start);
-
-	// TODO: Add comparison logic later
-}
-
-int main() {
-	LibFunc functions[FUNC_COUNT] = {
-		{
-			"ft_strlen",
-			"Returns the number of characters in the string.",
-			"size_t ft_strlen(const char *s)"
-				"{\n"
-				"	size_t i = 0;\n"
-				"	while (s[i])\n"
-				"		i++;\n"
-				"	return i;\n"
-				"}"
-		}
-	};
-
-	int choice = 0;
-	print_mode_menu();
-	scanf("%d", &choice);
-	getchar(); // consume newline
-
-	if (choice != 1 && choice != 2) {
-		printf("Invalid choice.\n");
-		return 1;
-	}
-
-	int is_copy_mode = (choice == 1);
-	run_typing_session(&functions[0], is_copy_mode);
-
-	return 0;
 }
