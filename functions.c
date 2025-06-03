@@ -96,10 +96,15 @@ LibFunc get_function_by_index(int index) {
 				"}"
 		}
 	};
-
-	if (index < 0 || index >= FUNC_COUNT) {
-		fprintf(stderr, "Invalid function index.\n");
-		exit(EXIT_FAILURE);
+	int get_function_count(void) {
+		return sizeof(libft_functions) / sizeof(LibFunc);
 	}
-	return functions[index];
-}
+
+	LibFunc get_function_by_index(int index) {
+		int total = get_function_count();
+		if (index < 0 || index >= total) {
+			fprintf(stderr, "Invalid function index.\n");
+			exit(1);
+		}
+		return libft_functions[index];
+	}
