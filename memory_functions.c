@@ -2,7 +2,7 @@
 #include <stdio.h>  // for fprintf, stderr
 #include <stdlib.h> // for exit
 
-static LibFunc memory_functions[] = {
+LibFunc memory_functions[] = {
 	{
 		"ft_memset",
 		"Fills the first n bytes of the memory area pointed to by s with the constant byte c.",
