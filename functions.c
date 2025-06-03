@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "libft_master.h"
+#include "../includes/libft_master.h"
 
 LibFunc get_function_by_index(int index) {
 	static LibFunc functions[] = {
