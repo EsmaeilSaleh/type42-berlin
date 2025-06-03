@@ -10,6 +10,68 @@ typedef struct {
 	const char* description;  // For Recall Mode
 	const char* code;         // Full Implementation
 } LibftFunc;
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+#define RED     "\x1b[31m"
+#define GREEN   "\x1b[32m"
+#define YELLOW  "\x1b[33m"
+#define BLUE    "\x1b[34m"
+#define MAGENTA "\x1b[35m"
+#define CYAN    "\x1b[36m"
+#define RESET   "\x1b[0m"
+
+const char* keywords[] = {
+	"int", "char", "void", "size_t", "const",
+	"while", "if", "return", "for", "else", NULL
+};
+
+int is_keyword(const char* word) {
+	for (int i = 0; keywords[i]; i++) {
+		if (strcmp(word, keywords[i]) == 0)
+			return 1;
+	}
+	return 0;
+}
+
+void print_highlighted(const char* code) {
+	char word[64];
+	int i = 0;
+
+	while (*code) {
+		if (isalpha(*code) || *code == '_') {
+			int j = 0;
+			while (isalnum(*code) || *code == '_') {
+				word[j++] = *code++;
+			}
+			word[j] = '\0';
+
+			if (is_keyword(word)) {
+				printf(BLUE "%s" RESET, word);
+			} else {
+				printf("%s", word);
+			}
+		}
+		else if (*code == '"') {
+			putchar(*code++);
+			while (*code && *code != '"') {
+				printf(GREEN "%c" RESET, *code++);
+			}
+			if (*code == '"') putchar(*code++);
+		}
+		else if (*code == '/' && *(code + 1) == '/') {
+			printf(MAGENTA);
+			while (*code && *code != '\n') {
+				putchar(*code++);
+			}
+			printf(RESET);
+		}
+		else {
+			putchar(*code++);
+		}
+	}
+}
 
 // Sample functions
 const LibftFunc libft_funcs[] = {
