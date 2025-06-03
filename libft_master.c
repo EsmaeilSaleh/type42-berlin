@@ -62,6 +62,7 @@ LibFunc get_function_by_index(int index) {
 				"}"
 		}
 	};
+	int total = sizeof(functions) / sizeof(functions[0]);
 	if (index < 0 || index >= FUNC_COUNT)
 	{
 		fprintf(stderr, "Invalid function index.\n");
@@ -69,15 +70,6 @@ LibFunc get_function_by_index(int index) {
 	}
 	return functions[index];
 };
-
-int total = sizeof(functions) / sizeof(functions[0]);
-if (index < 0 || index >= total) {
-	fprintf(stderr, "Invalid function index.\n");
-	exit(1);
-}
-
-return functions[index];
-}
 
 void get_user_input(char *buffer, size_t size) {
 	printf("\nStart typing below. End with a single line containing only 'END'\n\n");
