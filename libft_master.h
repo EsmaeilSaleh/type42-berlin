@@ -2,6 +2,7 @@
 #define LIBFT_MASTER_H
 
 #define MAX_INPUT 8192
+#define FUNC_COUNT 3
 
 typedef struct {
     const char *name;
