@@ -26,7 +26,7 @@ int main(void)
 	}
 	getchar(); // Consume leftover newline from scanf
 
-	func_index = rand() % FUNC_COUNT;
+	func_index = rand() % get_function_count();
 	LibFunc func = get_function_by_index(func_index);
 
 	run_typing_session(&func, mode == 1);
