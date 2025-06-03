@@ -2,22 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Declare all external category arrays and counts
-extern LibFunc memory_functions[];
-extern int get_memory_function_count(void);
-
-extern LibFunc string_functions[];
-extern int get_string_function_count(void);
-
-extern LibFunc char_functions[];
-extern int get_char_function_count(void);
-
-extern LibFunc conv_functions[];
-extern int get_conv_function_count(void);
-
-extern LibFunc bonus_functions[];
-extern int get_bonus_function_count(void);
-
 LibFunc get_function_by_index(int index)
 {
 	//int offset = 0;
