@@ -1,23 +1,33 @@
-NAME = libft_master
+# Compiler and flags
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -Iincludes
 
-SRC = main.c functions.c utils.c
-OBJ = $(SRC:.c=.o)
+# Executable name
+TARGET = libft_master
 
-$(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+# Source files
+SRCS = main.c utils.c functions.c memory_functions.c string_functions.c \
+       char_functions.c conv_functions.c bonus_functions.c libft_master.c
 
+# Object files
+OBJS = $(SRCS:.c=.o)
+
+# Default target
+all: $(TARGET)
+
+# Link object files into executable
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+# Compile .c files into .o files
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+# Clean object files and executable
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJS) $(TARGET)
 
-fclean: clean
-	rm -f $(NAME)
+# Rebuild everything
+re: clean all
 
-re: fclean $(NAME)
-
-run: $(NAME)
-	./$(NAME)
+.PHONY: all clean re

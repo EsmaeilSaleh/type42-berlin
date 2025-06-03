@@ -63,3 +63,22 @@ LibFunc char_functions[] = {
 			"}"
 	}
 };
+#include <stdio.h>
+#include <stdlib.h>
+
+const int CHAR_FUNC_COUNT = sizeof(char_functions) / sizeof(LibFunc);
+
+LibFunc get_char_function_by_index(int index)
+{
+	if (index < 0 || index >= CHAR_FUNC_COUNT)
+	{
+		fprintf(stderr, "Invalid char function index.\n");
+		exit(1);
+	}
+	return (char_functions[index]);
+}
+
+int get_char_function_count(void)
+{
+	return CHAR_FUNC_COUNT;
+}
