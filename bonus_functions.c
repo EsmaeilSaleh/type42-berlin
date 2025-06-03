@@ -143,3 +143,20 @@ LibFunc bonus_functions[] = {
 			"}"
 	}
 };
+
+const int BONUS_FUNC_COUNT = sizeof(bonus_functions) / sizeof(LibFunc);
+
+LibFunc get_bonus_function_by_index(int index)
+{
+	if (index < 0 || index >= BONUS_FUNC_COUNT)
+	{
+		fprintf(stderr, "Invalid bonus function index.\n");
+		exit(1);
+	}
+	return (bonus_functions[index]);
+}
+
+int get_bonus_function_count(void)
+{
+	return BONUS_FUNC_COUNT;
+}

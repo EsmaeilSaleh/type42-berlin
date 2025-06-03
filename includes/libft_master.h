@@ -1,19 +1,27 @@
 #ifndef LIBFT_MASTER_H
 #define LIBFT_MASTER_H
 
-#define MAX_INPUT 8192
+#include <stddef.h> // for size_t
 
-#include <stddef.h>
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
-typedef struct {
-    const char *name;
-    const char *description;
-    const char *impl;
-} LibFunc;
+typedef struct s_libfunc
+{
+	const char	*name;
+	const char	*description;
+	const char	*impl;
+}	LibFunc;
 
-LibFunc get_function_by_index(int index);
-int get_function_count(void);
-void run_typing_session(const LibFunc *func, int is_copy_mode);
-void print_mode_menu(void);
+// Declare bonus functions array and count
+extern LibFunc bonus_functions[];
+extern const int BONUS_FUNC_COUNT;
+
+// Function declarations for bonus category
+LibFunc get_bonus_function_by_index(int index);
+int get_bonus_function_count(void);
 
 #endif
