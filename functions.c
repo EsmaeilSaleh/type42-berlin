@@ -108,3 +108,4 @@ LibFunc get_function_by_index(int index) {
 		}
 		return libft_functions[index];
 	}
+}
