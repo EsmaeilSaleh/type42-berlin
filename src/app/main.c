@@ -2,9 +2,19 @@
 #include <stdlib.h>
 #include <time.h>
 #include <setjmp.h>
-#include "libft_master.h"
+#include "core.h"
 
 jmp_buf mode_menu_jump;
+
+void print_banner(void)
+{
+	printf("\n"
+			"   ____ ___  ____  ______\n"
+			"  / __ `__ \\/ __ \\/ ___(_)\n"
+			" / / / / / / /_/ (__  )  \n"
+			"/_/ /_/ /_/\\____/____(_)  \n"
+			"        C O R E\n\n");
+}
 
 void print_mode_menu(void)
 {
@@ -105,6 +115,7 @@ int run_category_loop(int mode, int category)
 int main(void)
 {
 	system("clear");
+	print_banner();
 	printf("=== Core: C Typing Trainer ===\n\n");
 	if (setjmp(mode_menu_jump) != 0)
 		printf("\nReturning to mode selection...\n");

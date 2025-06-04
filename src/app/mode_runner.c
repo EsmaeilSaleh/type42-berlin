@@ -1,6 +1,6 @@
 // src/app/mode_runner.c
 #include <stdio.h>
-#include "libft_master.h"
+#include "core.h"
 
 void run_typing_session(Mode mode,
 		LibFunc (*get_func_by_index)(int),

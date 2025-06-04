@@ -1,4 +1,4 @@
-#include "../../includes/libft_master.h"
+#include "../../includes/core.h"
 #include <stdio.h>
 #include <stdlib.h>
 

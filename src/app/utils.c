@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
-#include "libft_master.h"
+#include "core.h"
 
 #define MAX_INPUT_SIZE 8192
 

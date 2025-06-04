@@ -1,5 +1,5 @@
 // char_functions.c
-#include "libft_master.h"
+#include "core.h"
 
 LibFunc char_functions[] = {
 	{

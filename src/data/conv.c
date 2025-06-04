@@ -1,5 +1,5 @@
 // conv_functions.c
-#include "libft_master.h"
+#include "core.h"
 #include <stdio.h>
 #include <stdlib.h>
 
