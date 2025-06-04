@@ -7,7 +7,11 @@ void run_mode(Mode mode, LibFunc *func) {
 
 	if (!func)
 		return;
+#ifdef _WIN32
+	system("cls");
+#else
 	system("clear");
+#endif
 
 
 	switch (mode) {
