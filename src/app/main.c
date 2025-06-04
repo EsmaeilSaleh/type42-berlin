@@ -104,7 +104,7 @@ int run_category_loop(int mode, int category)
 
 int main(void)
 {
-	system(clear);
+	system("clear");
 	if (setjmp(mode_menu_jump) != 0)
 		printf("\nReturning to mode selection...\n");
 

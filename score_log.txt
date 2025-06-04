@@ -5,3 +5,6 @@
 [2025-06-04 17:52:03] Mode: Recall | Function: ft_memset | Score: 0%
 [2025-06-04 17:54:22] Mode: Copy | Function: ft_memset | Score: 98%
 [2025-06-04 17:55:24] Mode: Copy | Function: ft_bzero | Score: 100%
+[2025-06-04 18:47:17] Mode: Copy | Function: ft_memcpy | Score: 88%
+[2025-06-04 18:50:56] Mode: Copy | Function: ft_memcpy | Score: 33%
+[2025-06-04 18:54:57] Mode: Copy | Function: ft_memcpy | Score: 96%
