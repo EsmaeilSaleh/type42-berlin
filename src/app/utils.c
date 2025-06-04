@@ -20,24 +20,3 @@ void print_function_list(LibFunc (*get_func_by_index)(int), int count) {
 		printf("%d. %s\n", i + 1, f.name);
 	}
 }
-
-/*
-   void run_typing_session(const LibFunc *func, int is_copy_mode) {
-   printf("\nFunction: %s\n", func->name);
-   printf("Description: %s\n\n", func->description);
-
-   if (is_copy_mode) {
-   printf("--- Copy the code below ---\n\n%s\n", func->impl);
-   } else {
-   printf("--- Type the function from memory ---\n");
-   }
-
-   char user_input[MAX_INPUT];
-   time_t start = time(NULL);
-   get_user_input(user_input, sizeof(user_input));
-   time_t end = time(NULL);
-
-   printf("\n--- Your Input ---\n%s", user_input);
-   printf("\n--- Typing Time: %ld seconds ---\n", end - start);
-   }
-   */
