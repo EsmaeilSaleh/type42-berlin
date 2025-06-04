@@ -72,15 +72,6 @@ int main(void)
 				else if (next_action == 3)
 					longjmp(mode_menu_jump, 1)
 
-						int next_action;
-				if (scanf("%d", &next_action) != 1 || (next_action != 1 && next_action != 2)) {
-					fprintf(stderr, "Invalid input. Returning to main menu.\n");
-					break;
-				}
-				getchar(); // consume newline
-
-				if (next_action == 2)
-					break; // exit to main menu
 			}
 
 		}
