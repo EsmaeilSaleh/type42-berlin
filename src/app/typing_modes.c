@@ -31,4 +31,5 @@ void run_mode(Mode mode, LibFunc *func) {
 		printf("⚠️ Getting there, review carefully.\n");
 	else
 		printf("❌ Needs work. Try again.\n");
+	save_score_log(func->name, score, mode == COPY_MODE ? "Copy" : "Recall");
 }
