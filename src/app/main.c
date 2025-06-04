@@ -75,7 +75,7 @@ int main(void)
 				else if (next_action == 2)
 					return; // go back to category
 				else if (next_action == 3)
-					longjmp(mode_menu_jump, 1)
+					longjmp(mode_menu_jump, 1);
 
 			}
 
