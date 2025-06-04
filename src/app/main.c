@@ -52,12 +52,20 @@ int main(void)
 				else
 					fprintf(stderr, "Unsupported category.\n");
 
-				printf("\nTry another function in this category? (y/n): ");
-				char again;
-				scanf(" %c", &again);
-				getchar();
-				if (again != 'y' && again != 'Y')
+				printf("\nWhat would you like to do next?\n");
+				printf("1. Try another function in this category\n");
+				printf("2. Return to main menu\n");
+				printf("Enter your choice: ");
+
+				int next_action;
+				if (scanf("%d", &next_action) != 1 || (next_action != 1 && next_action != 2)) {
+					fprintf(stderr, "Invalid input. Returning to main menu.\n");
 					break;
+				}
+				getchar(); // consume newline
+
+				if (next_action == 2)
+					break; // exit to main menu
 			}
 
 			printf("\nReturn to main menu? (y/n): ");
