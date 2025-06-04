@@ -44,6 +44,18 @@ int main(void)
 				if (scanf("%d", &func_index) != 1)
 					break;
 				getchar();
+				if (category == 1)
+					run_typing_session(mode, get_string_function_by_index, get_string_function_count);
+				else if (category == 2)
+					run_typing_session(mode, get_memory_function_by_index, get_memory_function_count);
+				else if (category == 3)
+					run_typing_session(mode, get_char_function_by_index, get_char_function_count);
+				else if (category == 4)
+					run_typing_session(mode, get_conv_function_by_index, get_conv_function_count);
+				else if (category == 5)
+					run_typing_session(mode, get_bonus_function_by_index, get_bonus_function_count);
+				else
+					fprintf(stderr, "Unsupported category.\n");
 
 				LibFunc func = get_function_by_index_for_category(category, func_index - 1);
 				run_mode(mode, &func);
@@ -64,26 +76,6 @@ int main(void)
 				break;
 		}
 	}
-	int mode;
-	int category;
-
-	srand(time(NULL)); // Seed RNG
-
-	print_mode_menu();
-	if (scanf("%d", &mode) != 1 || (mode != 1 && mode != 2))
-	{
-		fprintf(stderr, "Invalid mode selected.\n");
-		return 1;
-	}
-
-	print_category_menu(); // <- You need to implement this if you haven't
-	if (scanf("%d", &category) != 1 || (category < 1 || category > 5))
-	{
-		fprintf(stderr, "Invalid category selected.\n");
-		return 1;
-	}
-
-	getchar(); // Consume leftover newline from scanf
 
 	if (category == 1)
 		run_typing_session(mode, get_string_function_by_index, get_string_function_count);
