@@ -64,7 +64,7 @@ void run_typing_session(Mode mode, LibFunc (*get_func_by_index)(int), int (*get_
 void run_mode(Mode mode, LibFunc *func);
 void print_function_list(LibFunc (*get_func_by_index)(int), int count);
 void get_user_input(char *buffer, size_t size);
-int loose_compare(const char *input, const char *expected);
 void save_score_log(const char *func_name, int score, const char *mode);
+int compute_similarity_score(const char *input, const char *expected);
 
 #endif

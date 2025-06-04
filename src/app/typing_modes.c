@@ -20,7 +20,7 @@ void run_mode(Mode mode, LibFunc *func) {
 	}
 	get_user_input(user_input, MAX_INPUT_SIZE);
 	printf("\n--- Your Input ---\n%s", user_input);
-	if (loose_compare(user_input, func->code))
+	if (compute_similarity_score(user_input, func->code))
 		printf("\n✅ Looks good! Function is correct.\n");
 	else
 		printf("\n❌ Something seems off. Check your formatting or logic.\n");
