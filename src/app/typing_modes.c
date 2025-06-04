@@ -19,4 +19,5 @@ void run_mode(Mode mode, LibFunc *func) {
 			break;
 	}
 	get_user_input(user_input, MAX_INPUT_SIZE);
+	printf("\n--- Your Input ---\n%s", user_input);
 }
