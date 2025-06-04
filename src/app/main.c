@@ -29,20 +29,21 @@ int main(void)
 {
 	if (setjmp(mode_menu_jump) != 0)
 		printf("\nReturning to mode selection...\n");
+	// OUTER LOOP: mode
 	while (1) {
 		print_mode_menu();
 		int mode;
 		if (scanf("%d", &mode) != 1 || (mode != 1 && mode != 2))
 			break;
 		getchar();
-
+		// MIDDLE LOOP: category
 		while (1) {
 			print_category_menu();
 			int category;
 			if (scanf("%d", &category) != 1 || category == 0)
 				break;
 			getchar();
-
+			// INNER LOOP: function practice
 			while (1) {
 				if (category == 1)
 					run_typing_session(mode, get_string_function_by_index, get_string_function_count);
