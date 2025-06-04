@@ -38,8 +38,9 @@ void print_category_menu(void)
 	printf("3. Char functions\n");
 	printf("4. Conv functions\n");
 	printf("5. Bonus functions\n");
+	printf("6. IO functions\n");
 	printf("------------------\n");
-	printf("6. Get Next Line functions\n");
+	printf("7. Get Next Line functions\n");
 	printf("Enter choice: ");
 }
 
@@ -59,7 +60,7 @@ int select_category(void)
 {
 	int category;
 	print_category_menu();
-	if (scanf("%d", &category) != 1 || category < 1 || category > 6)
+	if (scanf("%d", &category) != 1 || category < 1 || category > 7)
 		return 0;
 	getchar();
 	return category;
@@ -92,6 +93,10 @@ int run_category_loop(int mode, int category)
 			get_func_count = get_bonus_function_count;
 			break;
 		case 6:
+			get_func_by_index = get_io_function_by_index;
+			get_func_count = get_io_function_count;
+			break;
+		case 7:
 			get_func_by_index = get_get_next_line_function_by_index;
 			get_func_count = get_get_next_line_function_count;
 			break;
