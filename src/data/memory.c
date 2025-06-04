@@ -44,6 +44,49 @@ LibFunc memory_functions[] = {
 			"\t}\n"
 			"\treturn (dest);\n"
 			"}"
+	},
+	{
+		"ft_memmove",
+		"Copies n bytes from memory area src to memory area dest. Handles overlapping memory areas safely.",
+		"void\t*ft_memmove(void *dest, const void *src, size_t n)\n"
+			"{\n"
+			"\tunsigned char *d = (unsigned char *)dest;\n"
+			"\tconst unsigned char *s = (const unsigned char *)src;\n"
+			"\tif (d == s || n == 0)\n"
+			"\t\treturn (dest);\n"
+			"\tif (d < s)\n"
+			"\t\tfor (size_t i = 0; i < n; i++)\n"
+			"\t\t\td[i] = s[i];\n"
+			"\telse\n"
+			"\t\tfor (size_t i = n; i > 0; i--)\n"
+			"\t\t\td[i - 1] = s[i - 1];\n"
+			"\treturn (dest);\n"
+			"}"
+	},
+	{
+		"ft_memchr",
+		"Scans the first n bytes of the memory area pointed to by s for the character c.",
+		"void\t*ft_memchr(const void *s, int c, size_t n)\n"
+			"{\n"
+			"\tconst unsigned char *p = (const unsigned char *)s;\n"
+			"\tfor (size_t i = 0; i < n; i++)\n"
+			"\t\tif (p[i] == (unsigned char)c)\n"
+			"\t\t\treturn ((void *)(p + i));\n"
+			"\treturn (NULL);\n"
+			"}"
+	},
+	{
+		"ft_memcmp",
+		"Compares the first n bytes of the memory areas s1 and s2.",
+		"int\tft_memcmp(const void *s1, const void *s2, size_t n)\n"
+			"{\n"
+			"\tconst unsigned char *p1 = (const unsigned char *)s1;\n"
+			"\tconst unsigned char *p2 = (const unsigned char *)s2;\n"
+			"\tfor (size_t i = 0; i < n; i++)\n"
+			"\t\tif (p1[i] != p2[i])\n"
+			"\t\t\treturn (p1[i] - p2[i]);\n"
+			"\treturn (0);\n"
+			"}"
 	}
 };
 
