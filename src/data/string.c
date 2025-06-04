@@ -186,10 +186,121 @@ LibFunc string_functions[] = {
 			"\treturn (trimmed);\n"
 			"}"
 	},
+	/*
+	   {
+	   "ft_split",
+	   "Splits string s by delimiter c into a NULL-terminated array of strings.",
+	   "static size_t\tcount_words(char const *s, char c)\n"
+	   "{\n"
+	   "\tsize_t count = 0;\n"
+	   "\tint in_word = 0;\n"
+	   "\n"
+	   "\twhile (*s)\n"
+	   "\t{\n"
+	   "\t\tif (*s != c && !in_word)\n"
+	   "\t\t{\n"
+	   "\t\t\tin_word = 1;\n"
+	   "\t\t\tcount++;\n"
+	   "\t\t}\n"
+	   "\t\telse if (*s == c)\n"
+	   "\t\t\tin_word = 0;\n"
+	   "\t\ts++;\n"
+	   "\t}\n"
+	   "\treturn (count);\n"
+	   "}\n"
+	   "\n"
+	   "static char\t*word_dup(char const *start, size_t len)\n"
+	   "{\n"
+	   "\tchar *word = malloc(len + 1);\n"
+	   "\tsize_t i;\n"
+	   "\n"
+	   "\tif (!word)\n"
+	   "\t\treturn (NULL);\n"
+	   "\ti = 0;\n"
+	   "\twhile (i < len)\n"
+	   "\t{\n"
+	   "\t\tword[i] = start[i];\n"
+	   "\t\ti++;\n"
+	   "\t}\n"
+	   "\tword[i] = '\\0';\n"
+	   "\treturn (word);\n"
+	   "}\n"
+	   "\n"
+	   "char\t*ft_split(char const *s, char c)\n"
+	   "{\n"
+	   "\tsize_t i = 0;\n"
+	   "\tsize_t j = 0;\n"
+	   "\tsize_t start = 0;\n"
+	   "\tsize_t word_count;\n"
+	   "\tchar **split;\n"
+	   "\n"
+	   "\tif (!s)\n"
+	   "\t\treturn (NULL);\n"
+	   "\tword_count = count_words(s, c);\n"
+	   "\tsplit = malloc(sizeof(char *) * (word_count + 1));\n"
+	   "\tif (!split)\n"
+	   "\t\treturn (NULL);\n"
+	   "\ti = 0;\n"
+	   "\tj = 0;\n"
+	   "\twhile (s[i])\n"
+	   "\t{\n"
+	   "\t\tif (s[i] != c && (i == 0 || s[i - 1] == c))\n"
+	   "\t\t\tstart = i;\n"
+	   "\t\tif (s[i] != c && (s[i + 1] == c || s[i + 1] == '\\0'))\n"
+	   "\t\t{\n"
+	   "\t\t\tsplit[j] = word_dup(s + start, i - start + 1);\n"
+	   "\t\t\tj++;\n"
+	   "\t\t}\n"
+	   "\t\ti++;\n"
+	   "\t}\n"
+	   "\tsplit[j] = NULL;\n"
+	   "\treturn (split);\n"
+	   "}"
+	   },
+	*/
 	{
-		"ft_split",
-		"Splits string s by delimiter c into a NULL-terminated array of strings.",
-		"static size_t\tcount_words(char const *s, char c)\n"
+		"ft_strmapi",
+			"Applies function f to each char of s, passing index, returning new string.",
+			"char\t*ft_strmapi(char const *s, char (*f)(unsigned int, char))\n"
+				"{\n"
+				"\tchar *result;\n"
+				"\tsize_t i;\n"
+				"\n"
+				"\tif (!s || !f)\n"
+				"\t\treturn (NULL);\n"
+				"\tresult = malloc(ft_strlen(s) + 1);\n"
+				"\tif (!result)\n"
+				"\t\treturn (NULL);\n"
+				"\ti = 0;\n"
+				"\twhile (s[i])\n"
+				"\t{\n"
+				"\t\tresult[i] = f(i, s[i]);\n"
+				"\t\ti++;\n"
+				"\t}\n"
+				"\tresult[i] = '\\0';\n"
+				"\treturn (result);\n"
+				"}"
+	},
+	{
+		"ft_striteri",
+		"Applies function f to each char of s, passing index, modifying in-place.",
+		"void\tft_striteri(char *s, void (*f)(unsigned int, char *))\n"
+			"{\n"
+			"\tsize_t i = 0;\n"
+			"\n"
+			"\tif (!s || !f)\n"
+			"\t\treturn;\n"
+			"\twhile (s[i])\n"
+			"\t{\n"
+			"\t\tf(i, &s[i]);\n"
+			"\t\ti++;\n"
+			"\t}\n"
+			"}"
+	},
+	{
+		"count_words",
+		"Counts the number of words in s separated by delimiter c.",
+		"size_t\tcount_words(const char *s, char c)\n"
 			"{\n"
 			"\tsize_t count = 0;\n"
 			"\tint in_word = 0;\n"
@@ -206,16 +317,18 @@ LibFunc string_functions[] = {
 			"\t\ts++;\n"
 			"\t}\n"
 			"\treturn (count);\n"
-			"}\n"
-			"\n"
-			"static char\t*word_dup(char const *start, size_t len)\n"
+			"}"
+	},
+	{
+		"word_dup",
+		"Duplicates a substring of length len starting at start.",
+		"char\t*word_dup(const char *start, size_t len)\n"
 			"{\n"
 			"\tchar *word = malloc(len + 1);\n"
-			"\tsize_t i;\n"
+			"\tsize_t i = 0;\n"
 			"\n"
 			"\tif (!word)\n"
 			"\t\treturn (NULL);\n"
-			"\ti = 0;\n"
 			"\twhile (i < len)\n"
 			"\t{\n"
 			"\t\tword[i] = start[i];\n"
@@ -223,9 +336,12 @@ LibFunc string_functions[] = {
 			"\t}\n"
 			"\tword[i] = '\\0';\n"
 			"\treturn (word);\n"
-			"}\n"
-			"\n"
-			"char\t*ft_split(char const *s, char c)\n"
+			"}"
+	},
+	{
+		"ft_split",
+		"Splits string s by delimiter c into a NULL-terminated array of strings.",
+		"char\t**ft_split(const char *s, char c)\n"
 			"{\n"
 			"\tsize_t i = 0;\n"
 			"\tsize_t j = 0;\n"
@@ -247,8 +363,7 @@ LibFunc string_functions[] = {
 			"\t\t\tstart = i;\n"
 			"\t\tif (s[i] != c && (s[i + 1] == c || s[i + 1] == '\\0'))\n"
 			"\t\t{\n"
-			"\t\t\tsplit[j] = word_dup(s + start, i - start + 1);\n"
-			"\t\t\tj++;\n"
+			"\t\t\tsplit[j++] = word_dup(s + start, i - start + 1);\n"
 			"\t\t}\n"
 			"\t\ti++;\n"
 			"\t}\n"
@@ -256,45 +371,6 @@ LibFunc string_functions[] = {
 			"\treturn (split);\n"
 			"}"
 	},
-	{
-		"ft_strmapi",
-		"Applies function f to each char of s, passing index, returning new string.",
-		"char\t*ft_strmapi(char const *s, char (*f)(unsigned int, char))\n"
-			"{\n"
-			"\tchar *result;\n"
-			"\tsize_t i;\n"
-			"\n"
-			"\tif (!s || !f)\n"
-			"\t\treturn (NULL);\n"
-			"\tresult = malloc(ft_strlen(s) + 1);\n"
-			"\tif (!result)\n"
-			"\t\treturn (NULL);\n"
-			"\ti = 0;\n"
-			"\twhile (s[i])\n"
-			"\t{\n"
-			"\t\tresult[i] = f(i, s[i]);\n"
-			"\t\ti++;\n"
-			"\t}\n"
-			"\tresult[i] = '\\0';\n"
-			"\treturn (result);\n"
-			"}"
-	},
-	{
-		"ft_striteri",
-		"Applies function f to each char of s, passing index, modifying in-place.",
-		"void\tft_striteri(char *s, void (*f)(unsigned int, char *))\n"
-			"{\n"
-			"\tsize_t i = 0;\n"
-			"\n"
-			"\tif (!s || !f)\n"
-			"\t\treturn;\n"
-			"\twhile (s[i])\n"
-			"\t{\n"
-			"\t\tf(i, &s[i]);\n"
-			"\t\ti++;\n"
-			"\t}\n"
-			"}"
-	}
 };
 
 int get_string_function_count(void) {
