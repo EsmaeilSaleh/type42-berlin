@@ -24,6 +24,46 @@ void print_category_menu(void)
 
 int main(void)
 {
+	while (1) {
+		print_mode_menu();
+		int mode;
+		if (scanf("%d", &mode) != 1 || (mode != 1 && mode != 2))
+			break;
+		getchar();
+
+		while (1) {
+			print_category_menu();
+			int category;
+			if (scanf("%d", &category) != 1 || category == 0)
+				break;
+			getchar();
+
+			while (1) {
+				print_function_list_for_category(category);
+				int func_index;
+				if (scanf("%d", &func_index) != 1)
+					break;
+				getchar();
+
+				LibFunc func = get_function_by_index_for_category(category, func_index - 1);
+				run_mode(mode, &func);
+
+				printf("\nTry another function in this category? (y/n): ");
+				char again;
+				scanf(" %c", &again);
+				getchar();
+				if (again != 'y' && again != 'Y')
+					break;
+			}
+
+			printf("\nReturn to main menu? (y/n): ");
+			char main_again;
+			scanf(" %c", &main_again);
+			getchar();
+			if (main_again != 'y' && main_again != 'Y')
+				break;
+		}
+	}
 	int mode;
 	int category;
 
