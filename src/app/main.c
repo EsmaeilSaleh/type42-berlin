@@ -39,11 +39,6 @@ int main(void)
 			getchar();
 
 			while (1) {
-				print_function_list_for_category(category);
-				int func_index;
-				if (scanf("%d", &func_index) != 1)
-					break;
-				getchar();
 				if (category == 1)
 					run_typing_session(mode, get_string_function_by_index, get_string_function_count);
 				else if (category == 2)
@@ -56,9 +51,6 @@ int main(void)
 					run_typing_session(mode, get_bonus_function_by_index, get_bonus_function_count);
 				else
 					fprintf(stderr, "Unsupported category.\n");
-
-				LibFunc func = get_function_by_index_for_category(category, func_index - 1);
-				run_mode(mode, &func);
 
 				printf("\nTry another function in this category? (y/n): ");
 				char again;
@@ -76,19 +68,6 @@ int main(void)
 				break;
 		}
 	}
-
-	if (category == 1)
-		run_typing_session(mode, get_string_function_by_index, get_string_function_count);
-	else if (category == 2)
-		run_typing_session(mode, get_memory_function_by_index, get_memory_function_count);
-	else if (category == 3)
-		run_typing_session(mode, get_char_function_by_index, get_char_function_count);
-	else if (category == 4)
-		run_typing_session(mode, get_conv_function_by_index, get_conv_function_count);
-	else if (category == 5)
-		run_typing_session(mode, get_bonus_function_by_index, get_bonus_function_count);
-	else
-		fprintf(stderr, "Unsupported category.\n");
 
 	return 0;
 }
