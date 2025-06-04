@@ -59,7 +59,7 @@ int select_category(void)
 {
 	int category;
 	print_category_menu();
-	if (scanf("%d", &category) != 1 || category < 1 || category > 5)
+	if (scanf("%d", &category) != 1 || category < 1 || category > 6)
 		return 0;
 	getchar();
 	return category;
