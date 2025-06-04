@@ -2,6 +2,8 @@
 #define LIBFT_MASTER_H
 
 #include <stddef.h> // for size_t
+#include <ctype.h>
+#include <string.h>
 #define MAX_INPUT 1024
 #define MAX_INPUT_SIZE 8192
 #define FUNC_COUNT (get_string_function_count() + get_memory_function_count())
@@ -62,5 +64,6 @@ void run_typing_session(Mode mode, LibFunc (*get_func_by_index)(int), int (*get_
 void run_mode(Mode mode, LibFunc *func);
 void print_function_list(LibFunc (*get_func_by_index)(int), int count);
 void get_user_input(char *buffer, size_t size);
+int loose_compare(const char *input, const char *expected);
 
 #endif
