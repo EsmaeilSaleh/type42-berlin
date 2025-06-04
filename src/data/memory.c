@@ -87,6 +87,31 @@ LibFunc memory_functions[] = {
 			"\t\t\treturn (p1[i] - p2[i]);\n"
 			"\treturn (0);\n"
 			"}"
+	},
+	{
+		"ft_calloc",
+		"Allocates memory for an array of nmemb elements of size bytes each and returns a pointer to the allocated memory, set to zero.",
+		"void\t*ft_calloc(size_t nmemb, size_t size)\n"
+			"{\n"
+			"\tvoid *ptr = malloc(nmemb * size);\n"
+			"\tif (!ptr)\n"
+			"\t\treturn (NULL);\n"
+			"\tft_bzero(ptr, nmemb * size);\n"
+			"\treturn (ptr);\n"
+			"}"
+	},
+	{
+		"ft_strdup",
+		"Returns a pointer to a new string which is a duplicate of the string s.",
+		"char\t*ft_strdup(const char *s)\n"
+			"{\n"
+			"\tsize_t len = ft_strlen(s);\n"
+			"\tchar *dup = (char *)malloc(len + 1);\n"
+			"\tif (!dup)\n"
+			"\t\treturn (NULL);\n"
+			"\tft_strcpy(dup, s);\n"
+			"\treturn (dup);\n"
+			"}"
 	}
 };
 
