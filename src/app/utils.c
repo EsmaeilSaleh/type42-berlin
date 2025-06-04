@@ -66,3 +66,22 @@ int loose_compare(const char *input, const char *expected)
 	double similarity = (total > 0) ? ((double)matches / total) : 0;
 	return (similarity >= 0.85);  // 85%+ match is good enough
 }
+
+void save_score_log(const char *func_name, int score, const char *mode)
+{
+	FILE *log = fopen("score_log.txt", "a");
+	if (!log) {
+		perror("Failed to open score_log.txt");
+		return;
+	}
+
+	time_t now = time(NULL);
+	struct tm *t = localtime(&now);
+
+	fprintf(log, "[%04d-%02d-%02d %02d:%02d:%02d] Mode: %s | Function: %s | Score: %d%%\n",
+			t->tm_year + 1900, t->tm_mon + 1, t->tm_mday,
+			t->tm_hour, t->tm_min, t->tm_sec,
+			mode, func_name, score);
+
+	fclose(log);
+}

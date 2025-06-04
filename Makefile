@@ -12,7 +12,6 @@ DATA_DIR = $(SRC_DIR)/data
 SRCS = \
 	$(APP_DIR)/main.c \
 	$(APP_DIR)/mode_runner.c \
-	$(APP_DIR)/function_dispatch.c \
 	$(APP_DIR)/utils.c \
 	$(APP_DIR)/typing_modes.c \
 	$(DATA_DIR)/string.c \
