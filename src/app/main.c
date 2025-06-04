@@ -38,6 +38,8 @@ void print_category_menu(void)
 	printf("3. Char functions\n");
 	printf("4. Conv functions\n");
 	printf("5. Bonus functions\n");
+	printf("------------------\n");
+	printf("6. Get Next Line functions\n");
 	printf("Enter choice: ");
 }
 
@@ -88,6 +90,10 @@ int run_category_loop(int mode, int category)
 		case 5:
 			get_func_by_index = get_bonus_function_by_index;
 			get_func_count = get_bonus_function_count;
+			break;
+		case 6:
+			get_func_by_index = get_get_next_line_function_by_index;
+			get_func_count = get_get_next_line_function_count;
 			break;
 		default:
 			fprintf(stderr, "Invalid category.\n");

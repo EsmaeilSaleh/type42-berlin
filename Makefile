@@ -18,7 +18,8 @@ SRCS = \
 	$(DATA_DIR)/memory.c \
 	$(DATA_DIR)/char.c \
 	$(DATA_DIR)/conv.c \
-	$(DATA_DIR)/bonus.c
+	$(DATA_DIR)/bonus.c \
+	$(DATA_DIR)/gnl.c
 
 OBJS = $(SRCS:.c=.o)
 

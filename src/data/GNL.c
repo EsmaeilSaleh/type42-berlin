@@ -1,3 +1,5 @@
+#include "core.h"
+
 LibFunc get_next_line_functions[] = {
 	{
 		"get_next_line",

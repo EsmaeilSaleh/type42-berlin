@@ -67,4 +67,7 @@ void get_user_input(char *buffer, size_t size);
 void save_score_log(const char *func_name, int score, const char *mode);
 int compute_similarity_score(const char *input, const char *expected);
 
+LibFunc get_get_next_line_function_by_index(int index);
+int get_get_next_line_function_count(void);
+
 #endif
