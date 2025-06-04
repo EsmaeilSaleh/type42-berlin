@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include "libft_master.h"
+#include <setjmp.h>
+
+jmp_buf mode_menu_jump;
 
 void print_mode_menu(void)
 {
@@ -24,6 +27,8 @@ void print_category_menu(void)
 
 int main(void)
 {
+	if (setjmp(mode_menu_jump) != 0)
+		printf("\nReturning to mode selection...");
 	while (1) {
 		print_mode_menu();
 		int mode;
