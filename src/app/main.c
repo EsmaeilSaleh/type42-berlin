@@ -17,7 +17,8 @@ void print_category_menu(void)
 	printf("1. String functions\n");
 	printf("2. Memory functions\n");
 	printf("3. Char functions\n");
-	printf("4. conv functions\n");
+	printf("4. Conv functions\n");
+	printf("5. Bonus functions\n");
 	printf("Enter choice: ");
 }
 
@@ -36,7 +37,7 @@ int main(void)
 	}
 
 	print_category_menu(); // <- You need to implement this if you haven't
-	if (scanf("%d", &category) != 1 || (category < 1 || category > 4))
+	if (scanf("%d", &category) != 1 || (category < 1 || category > 5))
 	{
 		fprintf(stderr, "Invalid category selected.\n");
 		return 1;
@@ -52,6 +53,8 @@ int main(void)
 		run_typing_session(mode, get_char_function_by_index, get_char_function_count);
 	else if (category == 4)
 		run_typing_session(mode, get_conv_function_by_index, get_conv_function_count);
+	else if (category == 5)
+		run_typing_session(mode, get_bonus_function_by_index, get_bonus_function_count);
 	else
 		fprintf(stderr, "Unsupported category.\n");
 
