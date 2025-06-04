@@ -32,3 +32,35 @@ void get_user_input(char *buffer, size_t size)
 		strncat(buffer, line, size - strlen(buffer) - 1);
 	}
 }
+
+int loose_compare(const char *input, const char *expected)
+{
+	// Quick shortcut: both are NULL
+	if (!input || !expected) return 0;
+
+	int matches = 0;
+	int total = 0;
+
+	const char *p1 = input;
+	const char *p2 = expected;
+
+	while (*p1 && *p2)
+	{
+		// Skip whitespace
+		while (isspace(*p1)) p1++;
+		while (isspace(*p2)) p2++;
+
+		if (!*p1 || !*p2) break;
+
+		if (*p1 == *p2)
+			matches++;
+
+		p1++;
+		p2++;
+		total++;
+	}
+
+	// Allow a small mismatch margin
+	double similarity = (total > 0) ? ((double)matches / total) : 0;
+	return (similarity >= 0.85);  // 85%+ match is good enough
+}
