@@ -3,6 +3,8 @@
 #include <time.h>
 #include "libft_master.h"
 
+#define MAX_INPUT_SIZE 8192
+
 void get_user_input(char *buffer, size_t size) {
 	printf("\nStart typing below. End with a single line containing only 'END'\n\n");
 	buffer[0] = '\0';
