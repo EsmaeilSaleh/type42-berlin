@@ -6,10 +6,12 @@
 #define MAX_INPUT_SIZE 8192
 
 void print_function_list(LibFunc (*get_func_by_index)(int), int count) {
+	printf("\nAvailable functions:\n");
 	for (int i = 0; i < count; i++) {
 		LibFunc f = get_func_by_index(i);
 		printf("%d. %s\n", i + 1, f.name);
 	}
+	printf("0. Return to category menu\n");
 }
 void get_user_input(char *buffer, size_t size)
 {
