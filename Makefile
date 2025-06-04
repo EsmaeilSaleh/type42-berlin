@@ -1,4 +1,4 @@
-NAME = libft_master
+NAME = core
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -Iincludes
