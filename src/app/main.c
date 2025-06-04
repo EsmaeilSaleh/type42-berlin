@@ -16,6 +16,7 @@ void print_category_menu(void)
 	printf("Select category:\n");
 	printf("1. String functions\n");
 	printf("2. Memory functions\n");
+	printf("3. Memory functions\n");
 	printf("Enter choice: ");
 }
 
