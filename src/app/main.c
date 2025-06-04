@@ -16,7 +16,7 @@ void print_category_menu(void)
 	printf("Select category:\n");
 	printf("1. String functions\n");
 	printf("2. Memory functions\n");
-	printf("3. Memory functions\n");
+	printf("3. Char functions\n");
 	printf("Enter choice: ");
 }
 
@@ -47,6 +47,8 @@ int main(void)
 		run_typing_session(mode, get_string_function_by_index, get_string_function_count);
 	else if (category == 2)
 		run_typing_session(mode, get_memory_function_by_index, get_memory_function_count);
+	else if (category == 3)
+		run_typing_session(mode, get_char_function_by_index, get_char_function_count);
 	else
 		fprintf(stderr, "Unsupported category.\n");
 
