@@ -1,4 +1,7 @@
 #include "core.h"
+#include <stdio.h>
+#include <stdlib.h>
+
 
 LibFunc io_functions[] = {
 	{
