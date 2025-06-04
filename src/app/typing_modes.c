@@ -16,7 +16,7 @@ void run_mode(Mode mode, LibFunc *func) {
 
 	switch (mode) {
 		case COPY_MODE:
-			printf("Copy Mode:\n\n%s\n", func->code);
+			printf("Copy Mode:\n\nFunction: %s\nDescription: %s\n Type the function below: \n\n%s\n", func->name, func->description, func->code);
 			break;
 		case RECALL_MODE:
 			printf("Recall Mode:\n\nFunction: %s\nDescription: %s\n", func->name, func->description);
