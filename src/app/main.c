@@ -66,14 +66,14 @@ int main(void)
 				int next_action;
 				if (scanf("%d", &next_action) != 1 || next_action < 1 || next_action > 3) {
 					fprintf(stderr, "Invalid input. Returning to main menu.\n");
-					return (1);
+					break;
 				}
 				getchar();
 
 				if (next_action == 1)
 					continue; // restart function list
 				else if (next_action == 2)
-					return (1);
+					break;
 				else if (next_action == 3)
 					longjmp(mode_menu_jump, 1);
 
