@@ -33,12 +33,13 @@ return bonus_functions[index];
 fprintf(stderr, "Invalid function index.\n");
 exit(1);
 }
-*/
 int get_function_count(void)
 {
-	return get_memory_function_count()
-		+ get_string_function_count()
-		+ get_char_function_count()
-		+ get_conv_function_count()
-		+ get_bonus_function_count();
+return get_memory_function_count()
++ get_string_function_count()
++ get_char_function_count()
++ get_conv_function_count()
++ get_bonus_function_count();
 }
+
+*/
