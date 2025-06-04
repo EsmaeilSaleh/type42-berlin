@@ -8,8 +8,11 @@ LibFunc memory_functions[] = {
 		"Fills the first n bytes of the memory area pointed to by s with the constant byte c.",
 		"void\t*ft_memset(void *s, int c, size_t n)\n"
 			"{\n"
-			"\tunsigned char *p = (unsigned char *)s;\n"
-			"\tsize_t i = 0;\n"
+			"\tunsigned char\t*p;\n"
+			"\tsize_t\t\ti;\n"
+			"\n"
+			"\tp = (unsigned char *)s;\n"
+			"\ti = 0;\n"
 			"\twhile (i < n)\n"
 			"\t\tp[i++] = (unsigned char)c;\n"
 			"\treturn (s);\n"

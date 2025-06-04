@@ -6,6 +6,8 @@ void run_mode(Mode mode, LibFunc *func) {
 
 	if (!func)
 		return;
+	system("clear");
+
 
 	switch (mode) {
 		case COPY_MODE:
