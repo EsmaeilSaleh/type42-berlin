@@ -9,3 +9,5 @@
 [2025-06-04 18:50:56] Mode: Copy | Function: ft_memcpy | Score: 33%
 [2025-06-04 18:54:57] Mode: Copy | Function: ft_memcpy | Score: 96%
 [2025-06-04 19:42:47] Mode: Copy | Function: ft_memmove | Score: 97%
+[2025-06-04 20:03:51] Mode: Copy | Function: get_next_line | Score: 100%
+[2025-06-04 20:07:46] Mode: Copy | Function: ft_memchr | Score: 100%
