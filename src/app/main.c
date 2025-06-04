@@ -55,9 +55,24 @@ int main(void)
 				printf("\nWhat would you like to do next?\n");
 				printf("1. Try another function in this category\n");
 				printf("2. Return to main menu\n");
+				printf("3. Return to mode selection\n");
 				printf("Enter your choice: ");
 
 				int next_action;
+				if (scanf("%d", &next_action) != 1 || next_action < 1 || next_action > 3) {
+					fprintf(stderr, "Invalid input. Returning to main menu.\n");
+					return;
+				}
+				getchar();
+
+				if (next_action == 1)
+					continue; // restart function list
+				else if (next_action == 2)
+					return; // go back to category
+				else if (next_action == 3)
+					longjmp(mode_menu_jump, 1)
+
+						int next_action;
 				if (scanf("%d", &next_action) != 1 || (next_action != 1 && next_action != 2)) {
 					fprintf(stderr, "Invalid input. Returning to main menu.\n");
 					break;
