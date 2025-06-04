@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "libft_master.h"
 #include <setjmp.h>
+#include "libft_master.h"
 
 jmp_buf mode_menu_jump;
 
@@ -25,61 +25,99 @@ void print_category_menu(void)
 	printf("Enter choice: ");
 }
 
+int select_mode(void)
+{
+	int mode;
+	print_mode_menu();
+	if (scanf("%d", &mode) != 1 || (mode != 1 && mode != 2)) {
+		fprintf(stderr, "Exiting.\n");
+		return 0;
+	}
+	getchar();
+	return mode;
+}
+
+int select_category(void)
+{
+	int category;
+	print_category_menu();
+	if (scanf("%d", &category) != 1 || category < 1 || category > 5)
+		return 0;
+	getchar();
+	return category;
+}
+
+int run_category_loop(int mode, int category)
+{
+	LibFunc (*get_func_by_index)(int) = NULL;
+	int (*get_func_count)(void) = NULL;
+
+	switch (category) {
+		case 1:
+			get_func_by_index = get_string_function_by_index;
+			get_func_count = get_string_function_count;
+			break;
+		case 2:
+			get_func_by_index = get_memory_function_by_index;
+			get_func_count = get_memory_function_count;
+			break;
+		case 3:
+			get_func_by_index = get_char_function_by_index;
+			get_func_count = get_char_function_count;
+			break;
+		case 4:
+			get_func_by_index = get_conv_function_by_index;
+			get_func_count = get_conv_function_count;
+			break;
+		case 5:
+			get_func_by_index = get_bonus_function_by_index;
+			get_func_count = get_bonus_function_count;
+			break;
+		default:
+			fprintf(stderr, "Invalid category.\n");
+			return 1;
+	}
+
+	while (1) {
+		run_typing_session(mode, get_func_by_index, get_func_count);
+
+		printf("\nWhat would you like to do next?\n");
+		printf("1. Try another function in this category\n");
+		printf("2. Return to category menu\n");
+		printf("3. Return to mode selection\n");
+		printf("Enter your choice: ");
+
+		int choice;
+		if (scanf("%d", &choice) != 1 || choice < 1 || choice > 3)
+			break;
+		getchar();
+
+		if (choice == 1)
+			continue;
+		else if (choice == 2)
+			break;
+		else if (choice == 3)
+			longjmp(mode_menu_jump, 1);
+	}
+	return 0;
+}
+
 int main(void)
 {
 	if (setjmp(mode_menu_jump) != 0)
 		printf("\nReturning to mode selection...\n");
-	// OUTER LOOP: mode
+
 	while (1) {
-		print_mode_menu();
-		int mode;
-		if (scanf("%d", &mode) != 1 || (mode != 1 && mode != 2))
+		int mode = select_mode();
+		if (mode == 0)
 			break;
-		getchar();
-		// MIDDLE LOOP: category
+
 		while (1) {
-			print_category_menu();
-			int category;
-			if (scanf("%d", &category) != 1 || category == 0)
+			int category = select_category();
+			if (category == 0)
 				break;
-			getchar();
-			// INNER LOOP: function practice
-			while (1) {
-				if (category == 1)
-					run_typing_session(mode, get_string_function_by_index, get_string_function_count);
-				else if (category == 2)
-					run_typing_session(mode, get_memory_function_by_index, get_memory_function_count);
-				else if (category == 3)
-					run_typing_session(mode, get_char_function_by_index, get_char_function_count);
-				else if (category == 4)
-					run_typing_session(mode, get_conv_function_by_index, get_conv_function_count);
-				else if (category == 5)
-					run_typing_session(mode, get_bonus_function_by_index, get_bonus_function_count);
-				else
-					fprintf(stderr, "Unsupported category.\n");
 
-				printf("\nWhat would you like to do next?\n");
-				printf("1. Try another function in this category\n");
-				printf("2. Return to main menu\n");
-				printf("3. Return to mode selection\n");
-				printf("Enter your choice: ");
-
-				int next_action;
-				if (scanf("%d", &next_action) != 1 || next_action < 1 || next_action > 3) {
-					fprintf(stderr, "Invalid input. Returning to main menu.\n");
-					break;
-				}
-				getchar();
-
-				if (next_action == 1)
-					continue; // restart function list
-				else if (next_action == 2)
-					break;
-				else if (next_action == 3)
-					longjmp(mode_menu_jump, 1);
-
-			}
-
+			run_category_loop(mode, category);
 		}
 	}
 
