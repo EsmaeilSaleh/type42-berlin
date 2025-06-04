@@ -5,7 +5,6 @@
 #define MAX_INPUT 1024
 #define FUNC_COUNT (get_string_function_count() + get_memory_function_count())
 
-
 typedef struct s_list
 {
 	void			*content;
@@ -16,7 +15,6 @@ typedef enum e_mode {
     COPY_MODE = 1,
     RECALL_MODE = 2
 } Mode;
-
 
 typedef struct s_libfunc
 {
@@ -42,7 +40,6 @@ extern int get_conv_function_count(void);
 extern LibFunc bonus_functions[];
 extern int get_bonus_function_count(void);
 
-
 // Function declarations for bonus category
 LibFunc get_bonus_function_by_index(int index);
 int get_bonus_function_count(void);
@@ -57,12 +54,9 @@ int get_memory_function_count(void);
 
 LibFunc get_conv_function_by_index(int index);
 int get_conv_function_count(void);
-// For main function to get function count and function by index
 LibFunc get_function_by_index(int index);
 int get_function_count(void);
 
-// For the typing session runner
-//void run_typing_session(const LibFunc *func, int is_recall_mode);
 void run_typing_session(Mode mode, LibFunc (*get_func_by_index)(int), int (*get_func_count)(void));
 void run_mode(Mode mode, LibFunc *func);
 void print_function_list(LibFunc (*get_func_by_index)(int), int count);

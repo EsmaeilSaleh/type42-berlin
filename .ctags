@@ -1,0 +1,4 @@
+--languages=C
+--kinds-C=+p+t+g
+--fields=+iaS
+--extras=+q

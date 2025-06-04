@@ -35,7 +35,7 @@ int main(void)
 	}
 
 	print_category_menu(); // <- You need to implement this if you haven't
-	if (scanf("%d", &category) != 1 || (category < 1 || category > 2))
+	if (scanf("%d", &category) != 1 || (category < 1 || category > 3))
 	{
 		fprintf(stderr, "Invalid category selected.\n");
 		return 1;
