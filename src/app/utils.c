@@ -35,7 +35,7 @@ void get_user_input(char *buffer, size_t size)
 	}
 }
 
-int loose_compare(const char *input, const char *expected)
+int compute_similarity_score(const char *input, const char *expected)
 {
 	// Quick shortcut: both are NULL
 	if (!input || !expected) return 0;
@@ -63,8 +63,7 @@ int loose_compare(const char *input, const char *expected)
 	}
 
 	// Allow a small mismatch margin
-	double similarity = (total > 0) ? ((double)matches / total) : 0;
-	return (similarity >= 0.85);  // 85%+ match is good enough
+	return total ? (matches * 100 / total) : 0;
 }
 
 void save_score_log(const char *func_name, int score, const char *mode)
