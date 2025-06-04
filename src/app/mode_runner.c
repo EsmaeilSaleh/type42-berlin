@@ -18,6 +18,8 @@ void run_typing_session(Mode mode,
 	}
 	getchar(); // consume newline
 
+	if (func_choice == 0)
+		return ;
 	LibFunc func = get_func_by_index(func_choice - 1);
 	run_mode(mode, &func);
 }
