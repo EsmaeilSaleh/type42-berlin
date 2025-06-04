@@ -68,12 +68,6 @@ int main(void)
 					break; // exit to main menu
 			}
 
-			printf("\nReturn to main menu? (y/n): ");
-			char main_again;
-			scanf(" %c", &main_again);
-			getchar();
-			if (main_again != 'y' && main_again != 'Y')
-				break;
 		}
 	}
 
