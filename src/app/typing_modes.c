@@ -20,8 +20,15 @@ void run_mode(Mode mode, LibFunc *func) {
 	}
 	get_user_input(user_input, MAX_INPUT_SIZE);
 	printf("\n--- Your Input ---\n%s", user_input);
-	if (compute_similarity_score(user_input, func->code))
-		printf("\n✅ Looks good! Function is correct.\n");
+	int score = compute_similarity_score(user_input, func->code);
+	printf("\nScore: %d%%\n", score);
+
+	if (score == 100)
+		printf("✅ Perfect!\n");
+	else if (score >= 80)
+		printf("👍 Good job, just a few issues.\n");
+	else if (score >= 50)
+		printf("⚠️ Getting there, review carefully.\n");
 	else
-		printf("\n❌ Something seems off. Check your formatting or logic.\n");
+		printf("❌ Needs work. Try again.\n");
 }
