@@ -1,3 +1,5 @@
+#include "core.h"
+
 LibFunc io_functions[] = {
 	{
 		"ft_putchar_fd",

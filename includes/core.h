@@ -70,4 +70,7 @@ int compute_similarity_score(const char *input, const char *expected);
 LibFunc get_get_next_line_function_by_index(int index);
 int get_get_next_line_function_count(void);
 
+int get_io_function_count(void);
+LibFunc get_io_function_by_index(int index);
+
 #endif

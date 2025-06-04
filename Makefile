@@ -18,6 +18,7 @@ SRCS = \
 	$(DATA_DIR)/memory.c \
 	$(DATA_DIR)/char.c \
 	$(DATA_DIR)/conv.c \
+	$(DATA_DIR)/io.c \
 	$(DATA_DIR)/bonus.c \
 	$(DATA_DIR)/gnl.c
 
