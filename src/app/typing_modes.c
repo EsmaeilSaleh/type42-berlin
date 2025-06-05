@@ -3,7 +3,6 @@
 #include <stdlib.h>
 
 void run_mode(Mode mode, LibFunc *func) {
-	char user_input[MAX_INPUT_SIZE];
 
 	if (!func)
 		return;
