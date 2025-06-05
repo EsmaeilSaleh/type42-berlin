@@ -6,6 +6,7 @@ LibFunc string_functions[] = {
 	{
 		"ft_strlen",
 		"Calculates the length of a string.",
+		"Returns the number of characters in the string, excluding the null terminator.",
 		"size_t\tft_strlen(const char *s)\n"
 			"{\n"
 			"\tsize_t i = 0;\n"
@@ -17,6 +18,7 @@ LibFunc string_functions[] = {
 	{
 		"ft_strcpy",
 		"Copies a string from src to dst.",
+		"Copies the string src to dst including the null terminator. Returns dst.",
 		"char\t*ft_strcpy(char *dst, const char *src)\n"
 			"{\n"
 			"\tsize_t i = 0;\n"
@@ -32,6 +34,7 @@ LibFunc string_functions[] = {
 	{
 		"ft_strdup",
 		"Returns a pointer to a new string which is a duplicate of the string s1.",
+		"Returns a newly allocated duplicate of the string s. Returns NULL if allocation fails.",
 		"char\t*ft_strdup(const char *s1)\n"
 			"{\n"
 			"\tsize_t len = ft_strlen(s1);\n"
@@ -44,6 +47,7 @@ LibFunc string_functions[] = {
 	{
 		"ft_strchr",
 		"Locates the first occurrence of c in the string s.",
+		"Returns a pointer to the first occurrence of character c in string s, or NULL if not found.",
 		"char\t*ft_strchr(const char *s, int c)\n"
 			"{\n"
 			"\twhile (*s)\n"
@@ -60,6 +64,7 @@ LibFunc string_functions[] = {
 	{
 		"ft_strrchr",
 		"Locates the last occurrence of c in the string s.",
+		"Returns a pointer to the last occurrence of character c in string s, or NULL if not found.",
 		"char\t*ft_strrchr(const char *s, int c)\n"
 			"{\n"
 			"\tconst char *last = NULL;\n"
@@ -77,6 +82,7 @@ LibFunc string_functions[] = {
 	{
 		"ft_strncmp",
 		"Compares up to n characters of the strings s1 and s2.",
+		"Returns 0 if equal, or the difference between the first differing characters.",
 		"int\tft_strncmp(const char *s1, const char *s2, size_t n)\n"
 			"{\n"
 			"\tsize_t i = 0;\n"
@@ -92,6 +98,7 @@ LibFunc string_functions[] = {
 	{
 		"ft_strnstr",
 		"Locates the first occurrence of the null-terminated string needle in haystack, searching not more than len characters.",
+		"Returns a pointer to the first match or NULL if not found.",
 		"char\t*ft_strnstr(const char *haystack, const char *needle, size_t len)\n"
 			"{\n"
 			"\tsize_t i;\n"
@@ -111,6 +118,7 @@ LibFunc string_functions[] = {
 	{
 		"ft_strlcpy",
 		"Copies up to dstsize - 1 characters from src to dst, NUL-terminating the result.",
+		"Returns the total length of src.",
 		"size_t\tft_strlcpy(char *dst, const char *src, size_t dstsize)\n"
 			"{\n"
 			"\tsize_t i;\n"
@@ -134,6 +142,7 @@ LibFunc string_functions[] = {
 	{
 		"ft_strlcat",
 		"Appends src to string dst of size dstsize, NUL-terminating the result.",
+		"Returns the length it tried to create (dst_len + src_len).",
 		"size_t\tft_strlcat(char *dst, const char *src, size_t dstsize)\n"
 			"{\n"
 			"\tsize_t dst_len;\n"
@@ -161,6 +170,7 @@ LibFunc string_functions[] = {
 	{
 		"ft_strtrim",
 		"Returns a copy of s1 with characters in set trimmed from the start and end.",
+		"Returns newly allocated trimmed string, or NULL if allocation fails.",
 		"char\t*ft_strtrim(char const *s1, char const *set)\n"
 			"{\n"
 			"\tsize_t start;\n"
@@ -261,6 +271,7 @@ LibFunc string_functions[] = {
 	{
 		"ft_strmapi",
 			"Applies function f to each char of s, passing index, returning new string.",
+			"Returns a newly allocated string or NULL.",
 			"char\t*ft_strmapi(char const *s, char (*f)(unsigned int, char))\n"
 				"{\n"
 				"\tchar *result;\n"
@@ -284,6 +295,7 @@ LibFunc string_functions[] = {
 	{
 		"ft_striteri",
 		"Applies function f to each char of s, passing index, modifying in-place.",
+		"Returns nothing (void).",
 		"void\tft_striteri(char *s, void (*f)(unsigned int, char *))\n"
 			"{\n"
 			"\tsize_t i = 0;\n"
@@ -300,6 +312,7 @@ LibFunc string_functions[] = {
 	{
 		"count_words",
 		"Counts the number of words in s separated by delimiter c.",
+		"Returns the number of words as size_t.",
 		"size_t\tcount_words(const char *s, char c)\n"
 			"{\n"
 			"\tsize_t count = 0;\n"
@@ -322,6 +335,7 @@ LibFunc string_functions[] = {
 	{
 		"word_dup",
 		"Duplicates a substring of length len starting at start.",
+		"Returns a new string or NULL if allocation fails.",
 		"char\t*word_dup(const char *start, size_t len)\n"
 			"{\n"
 			"\tchar *word = malloc(len + 1);\n"
@@ -341,6 +355,7 @@ LibFunc string_functions[] = {
 	{
 		"ft_split",
 		"Splits string s by delimiter c into a NULL-terminated array of strings.",
+		"Returns a NULL-terminated array or NULL on failure.",
 		"char\t**ft_split(const char *s, char c)\n"
 			"{\n"
 			"\tsize_t i = 0;\n"

@@ -23,6 +23,7 @@ typedef struct s_libfunc
 {
 	const char	*name;
 	const char	*description;
+	const char *return_value;
 	const char	*code;
 }	LibFunc;
 

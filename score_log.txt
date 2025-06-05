@@ -17,3 +17,13 @@
 [2025-06-04 20:42:58] Mode: Copy | Function: ft_memcmp | Score: 99%
 [2025-06-04 20:45:07] Mode: Copy | Function: ft_calloc | Score: 100%
 [2025-06-04 20:47:51] Mode: Copy | Function: ft_strdup | Score: 100%
+[2025-06-04 20:57:50] Mode: Copy | Function: ft_putchar_fd | Score: 100%
+[2025-06-04 21:07:10] Mode: Copy | Function: ft_substr | Score: 0%
+[2025-06-04 21:09:32] Mode: Copy | Function: ft_strcpy | Score: 0%
+[2025-06-04 21:22:29] Mode: Copy | Function: ft_split | Score: 0%
+[2025-06-04 21:58:20] Mode: Copy | Function: ft_strtrim | Score: 0%
+[2025-06-04 22:01:48] Mode: Copy | Function: ft_strlen | Score: 100%
+[2025-06-04 22:04:09] Mode: Copy | Function: ft_strcpy | Score: 42%
+[2025-06-04 22:06:12] Mode: Copy | Function: ft_strdup | Score: 100%
+[2025-06-04 22:08:27] Mode: Copy | Function: ft_strchr | Score: 100%
+[2025-06-04 22:13:53] Mode: Copy | Function: ft_strrchr | Score: 100%
