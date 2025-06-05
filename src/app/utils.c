@@ -13,6 +13,7 @@ void print_function_list(LibFunc (*get_func_by_index)(int), int count) {
 	}
 	printf("0. Return to category menu\n");
 }
+
 void get_user_input(char *buffer, size_t size)
 {
 	char line[1024];
