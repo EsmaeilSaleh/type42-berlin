@@ -1,4 +1,3 @@
-// src/app/mode_runner.c
 #include <stdio.h>
 #include "core.h"
 
