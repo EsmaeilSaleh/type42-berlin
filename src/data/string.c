@@ -2,11 +2,42 @@
 #include <stdio.h>  // for fprintf, stderr
 #include <stdlib.h> // for exit
 
+static const Variant strcpy_variants[] = {
+	{
+		"index-based",
+		"char\t*ft_strcpy(char *dst, const char *src)\n"
+			"{\n"
+			"\tsize_t\ti = 0;\n"
+			"\twhile (src[i])\n"
+			"\t{\n"
+			"\t\tdst[i] = src[i];\n"
+			"\t\ti++;\n"
+			"\t}\n"
+			"\tdst[i] = '\\0';\n"
+			"\treturn (dst);\n"
+			"}"
+	},
+	{
+		"pointer-based",
+		"char\t*ft_strcpy(char *dst, const char *src)\n"
+			"{\n"
+			"\tchar\t*ret = dst;\n"
+			"\twhile (*src)\n"
+			"\t\t*dst++ = *src++;\n"
+			"\t*dst = '\\0';\n"
+			"\treturn (ret);\n"
+			"}"
+	}
+};
+
+
 LibFunc string_functions[] = {
 	{
 		"ft_strlen",
 		"Calculates the length of a string.",
 		"Returns the number of characters in the string, excluding the null terminator.",
+		NULL,
+		0,
 		"size_t\tft_strlen(const char *s)\n"
 			"{\n"
 			"\tsize_t\ti;\n"
@@ -21,19 +52,9 @@ LibFunc string_functions[] = {
 		"ft_strcpy",
 		"Copies the string src to dst including the null terminator.",
 		"Returns dst.",
-		"char\t*ft_strcpy(char *dst, const char *src)\n"
-			"{\n"
-			"\tsize_t\ti;\n"
-			"\n"
-			"\ti = 0;\n"
-			"\twhile (src[i])\n"
-			"\t{\n"
-			"\t\tdst[i] = src[i];\n"
-			"\t\ti++;\n"
-			"\t}\n"
-			"\tdst[i] = '\\0';\n"
-			"\treturn (dst);\n"
-			"}"
+		strcpy_variants,
+		2,
+		NULL
 	},
 	{
 		"ft_strdup",

@@ -19,11 +19,23 @@ typedef enum e_mode {
     RECALL_MODE = 2
 } Mode;
 
+typedef struct s_variant
+{
+	const char *style;
+	const char *code;
+} Variant;
+
 typedef struct s_libfunc
 {
 	const char	*name;
 	const char	*description;
-	const char *return_value;
+	const char	*return_value;
+
+	// Optional variants
+	const Variant	*variants;
+	int	variant_count;
+
+	// Fallback/default code (used if no variants or in Copy Mode)
 	const char	*code;
 }	LibFunc;
 
