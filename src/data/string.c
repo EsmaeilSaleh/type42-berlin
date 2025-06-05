@@ -23,7 +23,9 @@ static const Variant strcpy_variants[] = {
 		"pointer-based",
 		"char\t*ft_strcpy(char *dst, const char *src)\n"
 			"{\n"
-			"\tchar\t*ret = dst;\n"
+			"\tchar\t*ret;\n"
+			"\n"
+			"\tret = dst"
 			"\twhile (*src)\n"
 			"\t\t*dst++ = *src++;\n"
 			"\t*dst = '\\0';\n"
