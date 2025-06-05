@@ -9,7 +9,9 @@ LibFunc string_functions[] = {
 		"Returns the number of characters in the string, excluding the null terminator.",
 		"size_t\tft_strlen(const char *s)\n"
 			"{\n"
-			"\tsize_t i = 0;\n"
+			"\tsize_t\ti;\n"
+			"\t\n"
+			"\ti = 0;\n"
 			"\twhile (s[i])\n"
 			"\t\ti++;\n"
 			"\treturn (i);\n"
