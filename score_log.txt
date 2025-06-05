@@ -32,3 +32,5 @@
 [2025-06-05 07:06:35] Mode: Copy | Function: ft_strcpy | Score: 42%
 [2025-06-05 07:28:07] Mode: Copy | Function: ft_strcpy | Score: 100%
 [2025-06-05 08:10:39] Mode: Copy | Function: ft_strcpy | Score: 99%
+[2025-06-05 08:14:43] Mode: Copy | Function: ft_strcpy | Score: 94%
+[2025-06-05 08:23:46] Mode: Recall | Function: ft_strcpy | Score: 55%

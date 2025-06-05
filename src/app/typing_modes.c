@@ -51,6 +51,8 @@ void run_mode(Mode mode, LibFunc *func) {
 	printf("\n--- Your Input ---\n%s", user_input);
 	int score = compute_similarity_score(user_input, code_to_practice);
 	printf("\nScore: %d%%\n", score);
+	if (mode == RECALL_MODE)
+		printf("\n--- Correct Implementation ---\n%s\n", code_to_practice);
 	if (score == 100)
 		printf("✅ Perfect!\n");
 	else if (score >= 80)
