@@ -45,8 +45,6 @@ void run_mode(Mode mode, LibFunc *func) {
 		printf("--- Recall Mode ---\nType the function from memory.\n");
 	}
 
-	printf("\nStart typing below. Type 'END' on a line to finish.\n\n");
-
 	char user_input[MAX_INPUT] = {0};
 	get_user_input(user_input, MAX_INPUT);
 
