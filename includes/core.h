@@ -86,4 +86,7 @@ int get_get_next_line_function_count(void);
 int get_io_function_count(void);
 LibFunc get_io_function_by_index(int index);
 
+int compare_code(const char *user_input, const char *correct_code);
+void log_score(const char *func_name, int mode, int score, int duration);
+
 #endif
