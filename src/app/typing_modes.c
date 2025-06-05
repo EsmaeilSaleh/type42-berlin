@@ -54,7 +54,7 @@ void run_mode(Mode mode, LibFunc *func) {
 	time_t end = time(NULL);
 
 	printf("\n--- Your Input ---\n%s", user_input);
-	int score = compare_code(user_input, code_to_practice);
+	int score = compute_similarity_score(user_input, code_to_practice);
 	printf("\nScore: %d%%\n", score);
 	if (score == 100)
 		printf("✅ Perfect!\n");
@@ -67,5 +67,5 @@ void run_mode(Mode mode, LibFunc *func) {
 	else
 		printf("❌ Needs improvement. Try again!\n");
 
-	log_score(func->name, mode, score, end - start);
+	save_score_log(func->name, score, mode == COPY_MODE ? "Copy" : "Recall");
 }
