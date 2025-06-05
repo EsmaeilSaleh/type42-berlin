@@ -10,7 +10,7 @@ LibFunc string_functions[] = {
 		"size_t\tft_strlen(const char *s)\n"
 			"{\n"
 			"\tsize_t\ti;\n"
-			"\t\n"
+			"\n"
 			"\ti = 0;\n"
 			"\twhile (s[i])\n"
 			"\t\ti++;\n"
@@ -19,11 +19,13 @@ LibFunc string_functions[] = {
 	},
 	{
 		"ft_strcpy",
-		"Copies a string from src to dst.",
-		"Copies the string src to dst including the null terminator. Returns dst.",
+		"Copies the string src to dst including the null terminator.",
+		"Returns dst.",
 		"char\t*ft_strcpy(char *dst, const char *src)\n"
 			"{\n"
-			"\tsize_t i = 0;\n"
+			"\tsize_t\ti;\n"
+			"\n"
+			"\ti = 0;\n"
 			"\twhile (src[i])\n"
 			"\t{\n"
 			"\t\tdst[i] = src[i];\n"
