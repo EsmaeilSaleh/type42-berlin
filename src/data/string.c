@@ -7,7 +7,9 @@ static const Variant strcpy_variants[] = {
 		"index-based",
 		"char\t*ft_strcpy(char *dst, const char *src)\n"
 			"{\n"
-			"\tsize_t\ti = 0;\n"
+			"\tsize_t\ti;\n"
+			"\n"
+			"\ti = 0;\n"
 			"\twhile (src[i])\n"
 			"\t{\n"
 			"\t\tdst[i] = src[i];\n"
