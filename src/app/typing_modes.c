@@ -1,7 +1,6 @@
 #include "../../includes/core.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
 void run_mode(Mode mode, LibFunc *func) {
 
@@ -49,9 +48,7 @@ void run_mode(Mode mode, LibFunc *func) {
 	printf("\nStart typing below. Type 'END' on a line to finish.\n\n");
 
 	char user_input[MAX_INPUT] = {0};
-	time_t start = time(NULL);
 	get_user_input(user_input, MAX_INPUT);
-	time_t end = time(NULL);
 
 	printf("\n--- Your Input ---\n%s", user_input);
 	int score = compute_similarity_score(user_input, code_to_practice);
