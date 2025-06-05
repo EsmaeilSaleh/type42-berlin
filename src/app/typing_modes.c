@@ -1,3 +1,4 @@
+#include "../../includes/core.h"
 #include <stdio.h>
 #include <stdlib.h>
 
