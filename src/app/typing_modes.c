@@ -9,31 +9,31 @@ void run_mode(Mode mode, LibFunc *func) {
 		return;
 	system("clear");
 
-	printf("Function: %s\n", func.name);
-	printf("Description: %s\n", func.description);
-	printf("Return: %s\n\n", func.return_value);
+	printf("Function: %s\n", func->name);
+	printf("Description: %s\n", func->description);
+	printf("Return: %s\n\n", func->return_value);
 
 	const char *code_to_practice = NULL;
 
-	if (func.variant_count > 0)
+	if (func->variant_count > 0)
 	{
 		printf("This function has multiple implementations:\n");
-		for (int i = 0; i < func.variant_count; i++)
-			printf("%d. %s\n", i + 1, func.variants[i].style);
+		for (int i = 0; i < func->variant_count; i++)
+			printf("%d. %s\n", i + 1, func->variants[i].style);
 
 		printf("Select variant: ");
 		int v = 0;
-		if (scanf("%d", &v) != 1 || v < 1 || v > func.variant_count)
+		if (scanf("%d", &v) != 1 || v < 1 || v > func->variant_count)
 		{
 			fprintf(stderr, "Invalid selection.\n");
 			return;
 		}
 		getchar(); // Consume leftover newline
-		code_to_practice = func.variants[v - 1].code;
+		code_to_practice = func->variants[v - 1].code;
 	}
 	else
 	{
-		code_to_practice = func.code;
+		code_to_practice = func->code;
 	}
 
 	// Show code in COPY mode
@@ -67,5 +67,5 @@ void run_mode(Mode mode, LibFunc *func) {
 	else
 		printf("❌ Needs improvement. Try again!\n");
 
-	log_score(func.name, mode, score, end - start);
+	log_score(func->name, mode, score, end - start);
 }
