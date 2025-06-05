@@ -58,19 +58,14 @@ void run_mode(Mode mode, LibFunc *func) {
 	printf("\nScore: %d%%\n", score);
 	if (score == 100)
 		printf("✅ Perfect!\n");
+	else if (score >= 80)
+		printf("👍 Good job, just a few issues.\n");
 	else if (score >= 70)
 		printf("👍 Not bad. Keep practicing!\n");
+	else if (score >= 50)
+		printf("⚠️ Getting there, review carefully.\n");
 	else
 		printf("❌ Needs improvement. Try again!\n");
 
 	log_score(func.name, mode, score, end - start);
-	if (score == 100)
-		printf("✅ Perfect!\n");
-	else if (score >= 80)
-		printf("👍 Good job, just a few issues.\n");
-	else if (score >= 50)
-		printf("⚠️ Getting there, review carefully.\n");
-	else
-		printf("❌ Needs work. Try again.\n");
-	save_score_log(func->name, score, mode == COPY_MODE ? "Copy" : "Recall");
 }
