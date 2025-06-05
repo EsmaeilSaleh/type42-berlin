@@ -9,23 +9,61 @@ void run_mode(Mode mode, LibFunc *func) {
 		return;
 	system("clear");
 
+	printf("Function: %s\n", func.name);
+	printf("Description: %s\n", func.description);
+	printf("Return: %s\n\n", func.return_value);
 
-	switch (mode) {
-		case COPY_MODE:
-			printf("Copy Mode:\nFunction: %s\nDescription: %s\nReturn Value: %s\n\nType the function below: \n\n%s\n", func->name, func->description, func->return_value, func->code);
-			break;
-		case RECALL_MODE:
-			printf("Recall Mode:\n\nFunction: %s\nDescription: %s\n", func->name, func->description);
-			break;
-		default:
-			fprintf(stderr, "Unknown mode.\n");
-			break;
+	const char *code_to_practice = NULL;
+
+	if (func.variant_count > 0)
+	{
+		printf("This function has multiple implementations:\n");
+		for (int i = 0; i < func.variant_count; i++)
+			printf("%d. %s\n", i + 1, func.variants[i].style);
+
+		printf("Select variant: ");
+		int v = 0;
+		if (scanf("%d", &v) != 1 || v < 1 || v > func.variant_count)
+		{
+			fprintf(stderr, "Invalid selection.\n");
+			return;
+		}
+		getchar(); // Consume leftover newline
+		code_to_practice = func.variants[v - 1].code;
 	}
-	get_user_input(user_input, MAX_INPUT_SIZE);
-	printf("\n--- Your Input ---\n%s", user_input);
-	int score = compute_similarity_score(user_input, func->code);
-	printf("\nScore: %d%%\n", score);
+	else
+	{
+		code_to_practice = func.code;
+	}
 
+	// Show code in COPY mode
+	if (mode == COPY_MODE && code_to_practice)
+	{
+		printf("--- Copy Mode ---\n\n%s\n", code_to_practice);
+	}
+	else if (mode == RECALL_MODE)
+	{
+		printf("--- Recall Mode ---\nType the function from memory.\n");
+	}
+
+	printf("\nStart typing below. Type 'END' on a line to finish.\n\n");
+
+	char user_input[MAX_INPUT] = {0};
+	time_t start = time(NULL);
+	get_user_input(user_input, MAX_INPUT);
+	time_t end = time(NULL);
+
+	printf("\n--- Your Input ---\n%s", user_input);
+	int score = compare_code(user_input, code_to_practice);
+	printf("\nScore: %d%%\n", score);
+	if (score == 100)
+		printf("✅ Perfect!\n");
+	else if (score >= 70)
+		printf("👍 Not bad. Keep practicing!\n");
+	else
+		printf("❌ Needs improvement. Try again!\n");
+
+	log_score(func.name, mode, score, end - start);
 	if (score == 100)
 		printf("✅ Perfect!\n");
 	else if (score >= 80)
