@@ -25,7 +25,7 @@ static const Variant strcpy_variants[] = {
 			"{\n"
 			"\tchar\t*ret;\n"
 			"\n"
-			"\tret = dst"
+			"\tret = dst\n"
 			"\twhile (*src)\n"
 			"\t\t*dst++ = *src++;\n"
 			"\t*dst = '\\0';\n"
