@@ -146,7 +146,6 @@ int main(void)
 			int category = select_category();
 			if (category == 0)
 				break;
-
 			run_category_loop(mode, category);
 		}
 	}
