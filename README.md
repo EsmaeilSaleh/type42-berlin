@@ -56,6 +56,14 @@ Got suggestions, bugs, or want to add new functions? Open an issue or submit a P
 
 MIT License © 2025 [Esmaeil Saleh](https://www.linkedin.com/in/esmaeil-saleh/)
 
+---
+
+## 🌍 Deutsch (German)
+
+_The following section is a German translation of the content above._
+
+---
+
 # Type42 Berlin
 
 **Type42 Berlin** ist eine terminalbasierte Anwendung, die Schülern und C-Enthusiasten hilft, `libft`-Funktionen zu üben. Das Tool richtet sich besonders an Teilnehmer der 42 School, die ihr Muskelgedächtnis und saubere C-Programmierung verbessern möchten.
