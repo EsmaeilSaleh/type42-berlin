@@ -1,4 +1,4 @@
-NAME = core
+NAME = type42
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -Iincludes
@@ -44,7 +44,7 @@ re: fclean all
 
 .PHONY: all clean fclean re
 
-INSTALL_DIR := $(HOME)/core/bin
+INSTALL_DIR := $(HOME)/type42/bin
 SHELL_PROFILE := $(shell \
 	if [ -n "$$ZSH_VERSION" ]; then echo "$(HOME)/.zshrc"; \
 	elif [ -n "$$BASH_VERSION" ]; then echo "$(HOME)/.bashrc"; \
@@ -53,12 +53,12 @@ SHELL_PROFILE := $(shell \
 
 install:
 	@mkdir -p $(INSTALL_DIR)
-	@cp core $(INSTALL_DIR)/
-	@echo "✅ Installed 'core' binary to $(INSTALL_DIR)"
+	@cp type42 $(INSTALL_DIR)/
+	@echo "✅ Installed 'type42' binary to $(INSTALL_DIR)"
 	@echo "Checking if $(INSTALL_DIR) is in PATH..."
 	@if ! echo $$PATH | grep -q "$(INSTALL_DIR)"; then \
 		echo "🔧 Adding $(INSTALL_DIR) to PATH in $(SHELL_PROFILE)"; \
-		echo "\n# Added by CORE installer" >> $(SHELL_PROFILE); \
+		echo "\n# Added by Type42 installer" >> $(SHELL_PROFILE); \
 		echo "export PATH=\"\$$PATH:$(INSTALL_DIR)\"" >> $(SHELL_PROFILE); \
 		echo "✅ Done. Please run: source $(SHELL_PROFILE)"; \
 	else \

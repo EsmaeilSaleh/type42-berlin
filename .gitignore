@@ -1,0 +1,27 @@
+# Binaries
+/core
+*.o
+*.out
+*.exe
+
+# Build files
+*.log
+score_log.txt
+
+# macOS system files
+.DS_Store
+
+# Tags and indexing
+tags
+src/app/tags
+
+# Vim/Emacs/IDE files
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Backup files
+*.bak
+*.tmp
