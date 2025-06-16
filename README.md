@@ -58,31 +58,31 @@ MIT License © 2025 [Esmaeil Saleh](https://www.linkedin.com/in/esmaeil-saleh/)
 
 # Type42 Berlin
 
-**Type42 Berlin** یک اپلیکیشن ترمینالی برای تمرین توابع `libft` به سبک مدرسه 42 است. این ابزار برای دانشجویان، علاقه‌مندان به زبان C، و کسانی که می‌خواهند تایپ ده‌انگشتی و مهارت نوشتن تابع‌های استاندارد را تقویت کنند، طراحی شده است.
+**Type42 Berlin** ist eine terminalbasierte Anwendung, die Schülern und C-Enthusiasten hilft, `libft`-Funktionen zu üben. Das Tool richtet sich besonders an Teilnehmer der 42 School, die ihr Muskelgedächtnis und saubere C-Programmierung verbessern möchten.
 
 ---
 
-## 🎯 ویژگی‌ها
+## 🎯 Funktionen
 
-- دو حالت تمرین:
-  - **Copy Mode**: کدی به شما نمایش داده می‌شود تا دقیقاً همان را تایپ کنید
-  - **Recall Mode**: فقط نام تابع و توضیح آن نمایش داده می‌شود — شما باید از حافظه بنویسید
-- رعایت کامل قوانین **Norminette**
-- نمایش **امتیاز و درصد دقت تایپ** در پایان تمرین
-- دسته‌بندی توابع بر اساس نوع (string، memory، list، I/O و...)
-- مناسب برای **تمرین‌های Libft** در مدرسه 42 و آزمون‌های فنی
-
----
-
-## 🧠 اهداف پروژه
-
-- تقویت حافظه‌ی عضلانی برای نوشتن توابع استاندارد C
-- تسلط بیشتر روی دستور زبان C و قوانین کدنویسی تمیز
-- آماده‌سازی برای مصاحبه‌های فنی یا پروژه‌های سخت‌تر مانند `get_next_line` و `ft_printf`
+- Zwei Übungsmodi:
+  - **Copy Mode**: Der Code wird angezeigt, und du musst ihn exakt abtippen
+  - **Recall Mode**: Nur Funktionsname und Beschreibung werden angezeigt — du musst den Code aus dem Gedächtnis schreiben
+- Vollständig kompatibel mit **Norminette**-Regeln
+- Anzeige von **Punktzahl und Tippgenauigkeit** nach jeder Sitzung
+- Funktionen nach Typ kategorisiert (string, memory, list, I/O usw.)
+- Ideal zum Üben von **Libft**, Vorbereitung auf **get_next_line**, **ft_printf** und technische Interviews
 
 ---
 
-## 🛠 نحوه اجرا
+## 🧠 Ziele
+
+- Muskelgedächtnis für Standardfunktionen in C aufbauen
+- Sicherheit im Schreiben von sauberem und normgerechtem Code gewinnen
+- Vorbereitung auf technische Interviews und größere C-Projekte
+
+---
+
+## 🛠 Nutzung
 
 ```bash
 git clone git@github.com:EsmaeilSaleh/type42-berlin.git
@@ -91,25 +91,25 @@ make
 ./core
 ```
 
-> اپلیکیشن به صورت ترمینالی اجرا می‌شود و از keylogger ساده برای مقایسه‌ی کد تایپ‌شده با نسخه اصلی استفاده می‌کند.
+> Die App läuft im Terminal und verwendet einen einfachen Keylogger, um den eingegebenen Code mit der erwarteten Version zu vergleichen.
 
 ---
 
-## 🔍 ساختار پروژه
+## 🔍 Projektstruktur
 
-- `src/` — فایل‌های اصلی برنامه و تعریف توابع
-- `includes/` — فایل‌های header و ساختار `LibFunc`
-- `score_log.txt` — ذخیره نتایج تمرین‌ها
-- `Makefile` — ساخت و اجرای سریع پروژه
-
----
-
-## ✨ مشارکت
-
-پیشنهاد، باگ، یا تابع جدیدی برای تمرین داری؟ PR بفرست یا issue باز کن.
+- `src/` — Hauptlogik und Funktionsdefinitionen
+- `includes/` — Header-Dateien und `LibFunc`-Struktur
+- `score_log.txt` — Trainingsprotokolle und Ergebnisse
+- `Makefile` — Zum einfachen Kompilieren und Starten
 
 ---
 
-## 🧾 مجوز
+## ✨ Beitrag
 
-MIT License © 2025 [Esmaeil Saleh](https://www.linkedin.com/in/esmaeil-saleh/)
+Hast du Vorschläge, Bugs oder neue Funktionen zum Üben? Eröffne ein Issue oder sende einen PR!
+
+---
+
+## 🧾 Lizenz
+
+MIT-Lizenz © 2025 [Esmaeil Saleh](https://www.linkedin.com/in/esmaeil-saleh/)
