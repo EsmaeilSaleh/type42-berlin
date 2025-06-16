@@ -44,12 +44,8 @@ re: fclean all
 
 .PHONY: all clean fclean re
 
-INSTALL_DIR := $(HOME)/type42/bin
-SHELL_PROFILE := $(shell \
-	if [ -n "$$ZSH_VERSION" ]; then echo "$(HOME)/.zshrc"; \
-	elif [ -n "$$BASH_VERSION" ]; then echo "$(HOME)/.bashrc"; \
-	else echo "$(HOME)/.profile"; fi \
-)
+INSTALL_DIR := $(HOME)/.local/bin
+SHELL_PROFILE := $(HOME)/.zshrc
 
 install:
 	@mkdir -p $(INSTALL_DIR)
@@ -59,7 +55,7 @@ install:
 	@if ! echo $$PATH | grep -q "$(INSTALL_DIR)"; then \
 		echo "🔧 Adding $(INSTALL_DIR) to PATH in $(SHELL_PROFILE)"; \
 		echo "\n# Added by Type42 installer" >> $(SHELL_PROFILE); \
-		echo "export PATH=\"\$$PATH:$(INSTALL_DIR)\"" >> $(SHELL_PROFILE); \
+		echo "export PATH=\"\$$PATH:$(HOME)/.local/bin/type42\"" >> $(SHELL_PROFILE); \
 		echo "✅ Done. Please run: source $(SHELL_PROFILE)"; \
 	else \
 		echo "✅ $(INSTALL_DIR) is already in PATH"; \

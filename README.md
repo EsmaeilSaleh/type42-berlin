@@ -30,7 +30,7 @@
 git clone git@github.com:EsmaeilSaleh/type42-berlin.git
 cd type42-berlin
 make
-./core
+./type42
 ```
 
 > The app runs in the terminal and uses a simple keylogger to compare your typed code with the expected version.
@@ -96,7 +96,7 @@ _The following section is a German translation of the content above._
 git clone git@github.com:EsmaeilSaleh/type42-berlin.git
 cd type42-berlin
 make
-./core
+./type42
 ```
 
 > Die App läuft im Terminal und verwendet einen einfachen Keylogger, um den eingegebenen Code mit der erwarteten Version zu vergleichen.
