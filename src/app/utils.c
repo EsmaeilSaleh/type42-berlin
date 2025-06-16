@@ -5,9 +5,11 @@
 
 #define MAX_INPUT_SIZE 8192
 
-void print_function_list(LibFunc (*get_func_by_index)(int), int count) {
+void print_function_list(LibFunc (*get_func_by_index)(int), int count)
+{
 	printf("\nAvailable functions:\n");
-	for (int i = 0; i < count; i++) {
+	for (int i = 0; i < count; i++)
+	{
 		LibFunc f = get_func_by_index(i);
 		printf("%d. %s\n", i + 1, f.name);
 	}
@@ -23,23 +25,28 @@ void get_user_input(char *buffer, size_t size)
 
 	while (fgets(line, sizeof(line), stdin))
 	{
-		if (strcmp(line, "END\n") == 0 || strcmp(line, "END\r\n") == 0)
+		// Remove newline from input
+		line[strcspn(line, "\r\n")] = '\0';
+
+		if (strcmp(line, "END") == 0)
 			break;
 
-		if (strlen(buffer) + strlen(line) + 1 >= size)
+		if (strlen(buffer) + strlen(line) + 2 >= size) // +1 for newline, +1 for '\0'
 		{
 			fprintf(stderr, "Input buffer full. Truncating input.\n");
 			break;
 		}
 
+		// Safe append line
 		strncat(buffer, line, size - strlen(buffer) - 1);
+		strncat(buffer, "\n", size - strlen(buffer) - 1);
 	}
 }
-
 int compute_similarity_score(const char *input, const char *expected)
 {
 	// Quick shortcut: both are NULL
-	if (!input || !expected) return 0;
+	if (!input || !expected)
+		return 0;
 
 	int matches = 0;
 	int total = 0;
@@ -50,10 +57,13 @@ int compute_similarity_score(const char *input, const char *expected)
 	while (*p1 && *p2)
 	{
 		// Skip whitespace
-		while (isspace(*p1)) p1++;
-		while (isspace(*p2)) p2++;
+		while (isspace(*p1))
+			p1++;
+		while (isspace(*p2))
+			p2++;
 
-		if (!*p1 || !*p2) break;
+		if (!*p1 || !*p2)
+			break;
 
 		if (*p1 == *p2)
 			matches++;
@@ -70,7 +80,8 @@ int compute_similarity_score(const char *input, const char *expected)
 void save_score_log(const char *func_name, int score, const char *mode)
 {
 	FILE *log = fopen("score_log.txt", "a");
-	if (!log) {
+	if (!log)
+	{
 		perror("Failed to open score_log.txt");
 		return;
 	}

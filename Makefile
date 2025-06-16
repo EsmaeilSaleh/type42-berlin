@@ -29,6 +29,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $(OBJS)
+	rm -f $(OBJS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
