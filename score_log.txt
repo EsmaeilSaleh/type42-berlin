@@ -25,3 +25,4 @@
 [2025-06-17 19:15:02] Mode: Copy | Function: ft_calloc | Score: 100%
 [2025-06-17 19:17:13] Mode: Copy | Function: ft_calloc | Score: 90%
 [2025-06-17 20:27:31] Mode: Copy | Function: ft_strdup | Score: 100%
+[2025-06-17 20:30:37] Mode: Copy | Function: ft_strdup | Score: 15%
