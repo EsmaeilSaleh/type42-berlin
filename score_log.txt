@@ -21,3 +21,4 @@
 [2025-06-17 18:26:05] Mode: Copy | Function: ft_memset | Score: 0%
 [2025-06-17 19:00:48] Mode: Copy | Function: ft_calloc | Score: 0%
 [2025-06-17 19:04:46] Mode: Copy | Function: ft_memcmp | Score: 0%
+[2025-06-17 19:05:10] Mode: Copy | Function: ft_strdup | Score: 0%
