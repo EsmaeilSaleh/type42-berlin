@@ -5,15 +5,17 @@ CFLAGS = -Wall -Wextra -Werror -Iincludes
 
 # Directories
 SRC_DIR = src
-APP_DIR = $(SRC_DIR)/app
+APP_DIR = $(SRC_DIR)
 DATA_DIR = $(SRC_DIR)/data
 
 # Source Files
 SRCS = \
-	$(APP_DIR)/main.c \
-	$(APP_DIR)/mode_runner.c \
-	$(APP_DIR)/utils.c \
-	$(APP_DIR)/typing_modes.c \
+	$(APP_DIR)/core/main.c \
+	$(APP_DIR)/core/mode_selector.c \
+	$(APP_DIR)/core/run_typing_session.c \
+	$(APP_DIR)/utils/scoring.c\
+	$(APP_DIR)/utils/files_io.c\
+	$(APP_DIR)/ui/terminal_display.c\
 	$(DATA_DIR)/string.c \
 	$(DATA_DIR)/memory.c \
 	$(DATA_DIR)/char.c \

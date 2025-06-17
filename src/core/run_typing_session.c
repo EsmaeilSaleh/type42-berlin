@@ -1,9 +1,9 @@
-#include <stdio.h>
 #include "core.h"
+#include "terminal_display.h"
 
 void run_typing_session(Mode mode,
-		LibFunc (*get_func_by_index)(int),
-		int (*get_func_count)(void))
+						LibFunc (*get_func_by_index)(int),
+						int (*get_func_count)(void))
 {
 	int count = get_func_count();
 	int func_choice;
@@ -11,14 +11,19 @@ void run_typing_session(Mode mode,
 	print_function_list(get_func_by_index, count);
 
 	printf("Select a function to practice: ");
-	if (scanf("%d", &func_choice) != 1 || func_choice < 0 || func_choice > count) {
+	if (scanf("%d", &func_choice) != 1 || func_choice < 0 || func_choice > count)
+	{
 		fprintf(stderr, "Invalid function choice.\n");
 		return;
 	}
 	getchar(); // consume newline
 
 	if (func_choice == 0)
-		return ;
+	{
+		system("clear");
+		print_banner();
+		return;
+	}
 	LibFunc func = get_func_by_index(func_choice - 1);
 	run_mode(mode, &func);
 }

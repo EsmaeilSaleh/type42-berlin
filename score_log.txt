@@ -15,3 +15,7 @@
 [2025-06-17 08:05:24] Mode: Copy | Function: ft_strlen | Score: 0%
 [2025-06-17 08:05:59] Mode: Copy | Function: ft_strlen | Score: 0%
 [2025-06-17 08:06:27] Mode: Copy | Function: ft_strlen | Score: 0%
+[2025-06-17 18:23:06] Mode: Copy | Function: ft_memcmp | Score: 0%
+[2025-06-17 18:24:16] Mode: Copy | Function: ft_strlen | Score: 0%
+[2025-06-17 18:25:12] Mode: Copy | Function: ft_strlen | Score: 0%
+[2025-06-17 18:26:05] Mode: Copy | Function: ft_memset | Score: 0%

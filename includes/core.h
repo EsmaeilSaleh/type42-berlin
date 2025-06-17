@@ -2,21 +2,28 @@
 #define LIBFT_MASTER_H
 
 #include <stddef.h> // for size_t
-#include <ctype.h>
 #include <string.h>
+#include <setjmp.h>
+#include <ctype.h>
+#include <stdio.h>
+#include <time.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include "core.h"
 #define MAX_INPUT 1024
 #define MAX_INPUT_SIZE 8192
 #define FUNC_COUNT (get_string_function_count() + get_memory_function_count())
 
 typedef struct s_list
 {
-	void			*content;
-	struct s_list	*next;
-}	t_list;
+	void *content;
+	struct s_list *next;
+} t_list;
 
-typedef enum e_mode {
-    COPY_MODE = 1,
-    RECALL_MODE = 2
+typedef enum e_mode
+{
+	COPY_MODE = 1,
+	RECALL_MODE = 2
 } Mode;
 
 typedef struct s_variant
@@ -27,17 +34,17 @@ typedef struct s_variant
 
 typedef struct s_libfunc
 {
-	const char	*name;
-	const char	*description;
-	const char	*return_value;
+	const char *name;
+	const char *description;
+	const char *return_value;
 
 	// Optional variants
-	const Variant	*variants;
-	int	variant_count;
+	const Variant *variants;
+	int variant_count;
 
 	// Fallback/default code (used if no variants or in Copy Mode)
-	const char	*code;
-}	LibFunc;
+	const char *code;
+} LibFunc;
 
 extern const int BONUS_FUNC_COUNT;
 // Declare all external category arrays and counts
@@ -70,23 +77,14 @@ int get_memory_function_count(void);
 
 LibFunc get_conv_function_by_index(int index);
 int get_conv_function_count(void);
-LibFunc get_function_by_index(int index);
-int get_function_count(void);
 
 void run_typing_session(Mode mode, LibFunc (*get_func_by_index)(int), int (*get_func_count)(void));
 void run_mode(Mode mode, LibFunc *func);
-void print_function_list(LibFunc (*get_func_by_index)(int), int count);
-void get_user_input(char *buffer, size_t size);
-void save_score_log(const char *func_name, int score, const char *mode);
-int compute_similarity_score(const char *input, const char *expected);
 
 LibFunc get_get_next_line_function_by_index(int index);
 int get_get_next_line_function_count(void);
 
 int get_io_function_count(void);
 LibFunc get_io_function_by_index(int index);
-
-int compare_code(const char *user_input, const char *correct_code);
-void log_score(const char *func_name, int mode, int score, int duration);
 
 #endif

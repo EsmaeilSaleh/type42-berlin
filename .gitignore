@@ -1,12 +1,11 @@
 # Binaries
-/core
+/type42
 *.o
 *.out
 *.exe
 
 # Build files
 *.log
-score_log.txt
 
 # macOS system files
 .DS_Store
@@ -14,6 +13,7 @@ score_log.txt
 # Tags and indexing
 tags
 src/app/tags
+.ctags
 
 # Vim/Emacs/IDE files
 *.swp
