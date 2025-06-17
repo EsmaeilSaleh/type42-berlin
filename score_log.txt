@@ -1,0 +1,16 @@
+[2025-06-16 13:46:56] Mode: Copy | Function: ft_strlen | Score: 0%
+[2025-06-16 13:48:04] Mode: Copy | Function: ft_strlen | Score: 0%
+[2025-06-16 13:49:47] Mode: Copy | Function: ft_memset | Score: 0%
+[2025-06-16 14:11:58] Mode: Copy | Function: ft_strlen | Score: 0%
+[2025-06-16 14:30:38] Mode: Copy | Function: ft_bzero | Score: 67%
+[2025-06-16 14:31:14] Mode: Copy | Function: ft_bzero | Score: 0%
+[2025-06-16 14:47:57] Mode: Copy | Function: ft_memset | Score: 52%
+[2025-06-16 15:27:40] Mode: Copy | Function: ft_memset | Score: 0%
+[2025-06-17 06:30:49] Mode: Copy | Function: ft_memset | Score: 60%
+[2025-06-17 06:32:10] Mode: Copy | Function: ft_bzero | Score: 100%
+[2025-06-17 06:37:32] Mode: Copy | Function: ft_memcpy | Score: 36%
+[2025-06-17 07:58:10] Mode: Copy | Function: ft_memchr | Score: 47%
+[2025-06-17 08:01:17] Mode: Copy | Function: ft_memcmp | Score: 0%
+[2025-06-17 08:03:57] Mode: Copy | Function: ft_strlen | Score: 100%
+[2025-06-17 08:05:24] Mode: Copy | Function: ft_strlen | Score: 0%
+[2025-06-17 08:05:59] Mode: Copy | Function: ft_strlen | Score: 0%
