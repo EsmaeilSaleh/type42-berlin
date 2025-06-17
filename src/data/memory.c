@@ -278,13 +278,13 @@ LibFunc memory_functions[] = {
 	 "Allocates memory for an array of nmemb elements of size bytes each and returns a pointer to the allocated memory, set to zero.",
 	 "Returns a pointer to the allocated memory, or NULL on failure.",
 	 calloc_variants,
-	 0,
+	 2,
 	 NULL},
 	{"ft_strdup",
 	 "Returns a pointer to a new string which is a duplicate of the string s.",
 	 "Returns a pointer to the duplicated string, or NULL if insufficient memory was available.",
 	 strdup_variants,
-	 0,
+	 2,
 	 NULL}};
 
 int get_memory_function_count(void)
