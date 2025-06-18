@@ -1,8 +1,19 @@
 #include "core.h"
 
+char g_base_path[PATH_MAX];
+
+void set_base_path(const char *argv0)
+{
+    char temp[PATH_MAX];
+    realpath(argv0, temp);              // تبدیل به مسیر absolute
+    strcpy(g_base_path, dirname(temp)); // استخراج مسیر پوشه اجرایی
+}
+
 void save_score_log(const char *func_name, int score, const char *mode)
 {
-    FILE *log = fopen("score_log.txt", "a");
+    char full_path[PATH_MAX];
+    snprintf(full_path, sizeof(full_path), "%s/score_log.txt", g_base_path);
+    FILE *log = fopen(full_path, "a");
     if (!log)
     {
         perror("Failed to open score_log.txt");

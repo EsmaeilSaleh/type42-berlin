@@ -9,6 +9,7 @@
 #include <time.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <libgen.h>
 #include "core.h"
 #define MAX_INPUT 1024
 #define MAX_INPUT_SIZE 8192
@@ -46,6 +47,7 @@ typedef struct s_libfunc
 	const char *code;
 } LibFunc;
 
+void set_base_path(const char *argv0);
 extern const int BONUS_FUNC_COUNT;
 // Declare all external category arrays and counts
 extern LibFunc memory_functions[];
