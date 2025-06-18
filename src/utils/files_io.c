@@ -28,7 +28,6 @@ void save_score_log(const char *func_name, int score, const char *mode)
     fclose(log);
     printf("\033[32mFunction\033[0m: %s", func_name);
     char git_cmd[PATH_MAX + 128];
-    snprintf(git_cmd, sizeof(git_cmd),
-             "cd %s && git add . && git commit -m 'log updated' && git push origin main", g_base_path);
+    snprintf(git_cmd, sizeof(git_cmd), "cd %s && git add . && git commit -m 'log updated' && git push origin main", g_base_path);
     system(git_cmd);
 }
