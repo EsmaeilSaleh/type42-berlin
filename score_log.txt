@@ -53,3 +53,4 @@
 [2025-06-18 13:29:43] Mode: Copy | Function: ft_calloc | Score: 100%
 [2025-06-18 13:35:26] Mode: Copy | Function: ft_bzero | Score: 97%
 [2025-06-18 14:16:07] Mode: Copy | Function: ft_bzero | Score: 100%
+[2025-06-18 19:10:59] Mode: Copy | Function: ft_lstnew | Score: 0%
