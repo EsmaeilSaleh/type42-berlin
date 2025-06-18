@@ -36,11 +36,6 @@ int compute_similarity_score(const char *input, const char *expected)
         p2++;
     }
 
-    // if (strlen(input) < strlen(expected) / 2)
-    // {
-    //     fprintf(stderr, "\033[0;33mWarning:\033[0m Input too short to score accurately.\n");
-    // }
-
     // Allow a small mismatch margin
     int expected_len = 0;
     const char *p = expected;
