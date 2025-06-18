@@ -31,9 +31,9 @@ int compute_similarity_score(const char *input, const char *expected)
             fprintf(stderr, "\033[0;31mMismatch at position %d:\033[0m expected '%c', got '%c'\n", total, *p2, *p1);
         }
 
+        total++;
         p1++;
         p2++;
-        total++;
     }
 
     // Allow a small mismatch margin
