@@ -41,5 +41,13 @@ int compute_similarity_score(const char *input, const char *expected)
     }
 
     // Allow a small mismatch margin
-    return total ? (matches * 100 / total) : 0;
+    int expected_len = 0;
+    const char *p = expected;
+    while (*p)
+    {
+        if (!isspace(*p))
+            expected_len++;
+        p++;
+    }
+    return expected_len ? (matches * 100 / expected_len) : 0;
 }
