@@ -35,7 +35,7 @@ void run_mode(Mode mode, LibFunc *func)
     system("clear");
 
     printf("Function: %s\n", func->name);
-    printf("Description: %s\n", func->description);
+    printf("Description: \033[32m%s\033[0m\n", func->description);
     printf("Return: %s\n\n", func->return_value);
 
     const char *code_to_practice = NULL;
