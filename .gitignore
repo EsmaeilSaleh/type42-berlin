@@ -25,3 +25,5 @@ src/app/tags
 # Backup files
 *.bak
 *.tmp
+
+IDEAS.md
