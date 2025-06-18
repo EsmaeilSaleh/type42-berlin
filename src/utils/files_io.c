@@ -1,12 +1,16 @@
 #include "core.h"
 
-char g_base_path[PATH_MAX];
+#include <libgen.h> // برای dirname
+#include <string.h>
 
+char g_base_path[PATH_MAX];
 void set_base_path(const char *argv0)
 {
-    char temp[PATH_MAX];
-    realpath(argv0, temp);              // تبدیل به مسیر absolute
-    strcpy(g_base_path, dirname(temp)); // استخراج مسیر پوشه اجرایی
+    char path_copy[PATH_MAX];
+    strncpy(path_copy, argv0, PATH_MAX);
+    path_copy[PATH_MAX - 1] = '\0';
+    char *dir = dirname(path_copy);
+    strncpy(g_base_path, dir, PATH_MAX);
 }
 
 void save_score_log(const char *func_name, int score, const char *mode)
