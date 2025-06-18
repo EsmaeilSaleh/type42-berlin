@@ -5,6 +5,7 @@
 jmp_buf mode_menu_jump;
 int select_mode(void)
 {
+
     int mode;
     print_mode_menu();
     if (scanf("%d", &mode) != 1 || (mode != 1 && mode != 2))

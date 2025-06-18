@@ -7,6 +7,7 @@
 jmp_buf mode_menu_jump;
 int main(void)
 {
+
 	system("clear");
 	print_banner();
 	printf("\n\n");
