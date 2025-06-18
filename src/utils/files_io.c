@@ -16,6 +16,7 @@ void set_base_path(const char *argv0)
 void save_score_log(const char *func_name, int score, const char *mode)
 {
     char full_path[PATH_MAX];
+    printf("DEBUG base path: %s\n", g_base_path);
     snprintf(full_path, sizeof(full_path), "%s/score_log.txt", g_base_path);
     printf("Saving log to: %s\n", full_path);
     FILE *log = fopen(full_path, "a");
