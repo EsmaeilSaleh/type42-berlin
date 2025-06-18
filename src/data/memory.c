@@ -6,7 +6,7 @@ static const Variant memcpy_variants[] = {
 	{"index-based",
 	 "void\t*ft_memcpy(void *dest, const void *src, size_t n)\n"
 	 "{\n"
-	 "\tsize_t\t\ti;\n"
+	 "\tsize_t\t\t\ti;\n"
 	 "\tunsigned char\t\t*d;\n"
 	 "\tconst unsigned char\t*s;\n"
 	 "\n"
@@ -66,7 +66,9 @@ static const Variant bzero_variants[] = {
 	{"manual-loop",
 	 "void\tft_bzero(void *s, size_t n)\n"
 	 "{\n"
-	 "\tunsigned char *p = (unsigned char *)s;\n"
+	 "\tunsigned char\t*p;\n"
+	 "\n"
+	 "\tp = (unsigned char *)s;\n"
 	 "\twhile (n--)\n"
 	 "\t\t*p++ = 0;\n"
 	 "}"},
