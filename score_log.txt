@@ -27,3 +27,4 @@
 [2025-06-17 20:27:31] Mode: Copy | Function: ft_strdup | Score: 100%
 [2025-06-17 20:30:37] Mode: Copy | Function: ft_strdup | Score: 15%
 [2025-06-18 07:25:16] Mode: Copy | Function: ft_memset | Score: 0%
+[2025-06-18 08:22:04] Mode: Copy | Function: ft_tolower | Score: 0%

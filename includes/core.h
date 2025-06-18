@@ -48,7 +48,6 @@ typedef struct s_libfunc
 } LibFunc;
 
 extern char g_base_path[PATH_MAX];
-void set_base_path(const char *argv0);
 
 extern const int BONUS_FUNC_COUNT;
 // Declare all external category arrays and counts

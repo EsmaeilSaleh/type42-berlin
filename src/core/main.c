@@ -5,10 +5,8 @@
 #include "ui.h"
 
 jmp_buf mode_menu_jump;
-int main(int argc, char **argv)
+int main()
 {
-	set_base_path(argv[0]);
-	(void)argc;
 	system("clear");
 	print_banner();
 	printf("\n\n");

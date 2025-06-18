@@ -1,34 +1,15 @@
 #include "core.h"
 
-#include <libgen.h> // برای dirname
-#include <string.h>
+#ifndef __BASE_PATH__
+#define __BASE_PATH__ "."
+#endif
 
-#include <unistd.h>
-#include <stdlib.h>
-
-char g_base_path[PATH_MAX];
-
-void set_base_path(const char *argv0)
-{
-    char real_path[PATH_MAX];
-    if (realpath(argv0, real_path) != NULL)
-    {
-        char *dir = dirname(real_path);
-        strncpy(g_base_path, dir, PATH_MAX);
-    }
-    else
-    {
-        // fallback if realpath fails
-        strcpy(g_base_path, ".");
-    }
-}
+char g_base_path[PATH_MAX] = __BASE_PATH__;
 
 void save_score_log(const char *func_name, int score, const char *mode)
 {
     char full_path[PATH_MAX];
-    printf("DEBUG base path: %s\n", g_base_path);
     snprintf(full_path, sizeof(full_path), "%s/score_log.txt", g_base_path);
-    printf("Saving log to: %s\n", full_path);
     FILE *log = fopen(full_path, "a");
     if (!log)
     {
