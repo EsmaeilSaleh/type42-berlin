@@ -38,3 +38,4 @@
 [2025-06-18 09:40:35] Mode: Copy | Function: ft_memset | Score: 100%
 [2025-06-18 09:41:49] Mode: Copy | Function: ft_memset | Score: 100%
 [2025-06-18 09:43:43] Mode: Copy | Function: ft_bzero | Score: 5%
+[2025-06-18 09:45:43] Mode: Copy | Function: ft_memset | Score: 3%

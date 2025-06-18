@@ -26,10 +26,6 @@ int compute_similarity_score(const char *input, const char *expected)
 
         if (*p1 == *p2)
             matches++;
-        if (strlen(input) < strlen(expected) / 2)
-        {
-            fprintf(stderr, "\033[0;33mWarning:\033[0m Input too short to score accurately.\n");
-        }
         else
         {
             fprintf(stderr, "\033[0;31mMismatch at position %d:\033[0m expected '%c', got '%c'\n", total, *p2, *p1);
@@ -38,6 +34,10 @@ int compute_similarity_score(const char *input, const char *expected)
         total++;
         p1++;
         p2++;
+    }
+    if (strlen(input) < strlen(expected) / 2)
+    {
+        fprintf(stderr, "\033[0;33mWarning:\033[0m Input too short to score accurately.\n");
     }
 
     // Allow a small mismatch margin
