@@ -3,14 +3,24 @@
 #include <libgen.h> // برای dirname
 #include <string.h>
 
+#include <unistd.h>
+#include <stdlib.h>
+
 char g_base_path[PATH_MAX];
+
 void set_base_path(const char *argv0)
 {
-    char path_copy[PATH_MAX];
-    strncpy(path_copy, argv0, PATH_MAX);
-    path_copy[PATH_MAX - 1] = '\0';
-    char *dir = dirname(path_copy);
-    strncpy(g_base_path, dir, PATH_MAX);
+    char real_path[PATH_MAX];
+    if (realpath(argv0, real_path) != NULL)
+    {
+        char *dir = dirname(real_path);
+        strncpy(g_base_path, dir, PATH_MAX);
+    }
+    else
+    {
+        // fallback if realpath fails
+        strcpy(g_base_path, ".");
+    }
 }
 
 void save_score_log(const char *func_name, int score, const char *mode)
