@@ -1,4 +1,5 @@
 #include "core.h"
+#include <stdio.h>
 
 int compute_similarity_score(const char *input, const char *expected)
 {
@@ -25,6 +26,10 @@ int compute_similarity_score(const char *input, const char *expected)
 
         if (*p1 == *p2)
             matches++;
+        else
+        {
+            fprintf(stderr, "\033[0;31mMismatch at position %d:\033[0m expected '%c', got '%c'\n", total, *p2, *p1);
+        }
 
         p1++;
         p2++;
