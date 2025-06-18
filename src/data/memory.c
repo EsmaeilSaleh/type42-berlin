@@ -39,7 +39,7 @@ static const Variant memset_variants[] = {
 	{"index-based",
 	 "void\t*ft_memset(void *s, int c, size_t n)\n"
 	 "{\n"
-	 "\tsize_t\t\ti;\n"
+	 "\tsize_t\ti;\n"
 	 "\tunsigned char\t*p;\n"
 	 "\n"
 	 "\ti = 0;\n"
@@ -54,7 +54,9 @@ static const Variant memset_variants[] = {
 	{"pointer-based",
 	 "void\t*ft_memset(void *s, int c, size_t n)\n"
 	 "{\n"
-	 "\tunsigned char *p = (unsigned char *)s;\n"
+	 "\tunsigned char\t*p;\n"
+	 "\n"
+	 "\tp = (unsigned char *)s;\n"
 	 "\twhile (n--)\n"
 	 "\t\t*p++ = (unsigned char)c;\n"
 	 "\treturn (s);\n"
