@@ -111,7 +111,7 @@ static const Variant memmove_variants[] = {
 	 "{\n"
 	 "\tunsigned char\t\t*d;\n"
 	 "\tconst unsigned char\t*s;\n"
-	 "\tsize_t\t\t\t\ti;\n"
+	 "\tsize_t\t\t\ti;\n"
 	 "\n"
 	 "\td = (unsigned char *)dest;\n"
 	 "\ts = (const unsigned char *)src;\n"
