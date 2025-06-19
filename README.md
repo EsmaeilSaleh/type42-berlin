@@ -1,5 +1,7 @@
 # Type42 Berlin
 
+🇩🇪 [Deutsche Version](README.de.md)
+
 **Type42 Berlin** is a terminal-based application designed to help students and C language enthusiasts practice writing `libft` functions. It's especially useful for 42 school students who want to improve their muscle memory and clean C coding skills.
 
 ---
@@ -34,10 +36,6 @@ make
 ```
 
 > The app runs in the terminal and uses a simple keylogger to compare your typed code with the expected version.
-
----
-
-🇩🇪 [Deutsche Version](README.de.md)
 
 ---
 
