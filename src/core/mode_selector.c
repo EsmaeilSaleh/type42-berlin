@@ -100,6 +100,7 @@ int run_category_loop(int mode, int category)
         {
             system("clear");
             print_banner();
+            continue;
         }
         else if (choice == 2)
             break;
