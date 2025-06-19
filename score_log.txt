@@ -73,3 +73,4 @@
 [2025-06-19 10:32:01] Mode: Copy | Function: ft_putchar_fd | Score: 0%
 [2025-06-19 12:24:31] Mode: Copy | Function: print_arg | Score: 0%
 [2025-06-19 12:29:59] Mode: Copy | Function: print_arg | Score: 0%
+[2025-06-19 12:31:22] Mode: Copy | Function: handle_pointer | Score: 0%
