@@ -80,3 +80,4 @@
 [2025-06-19 17:16:43] Mode: Copy | Function: ft_lstmap | Score: 99%
 [2025-06-19 17:48:44] Mode: Copy | Function: ft_lstmap | Score: 99%
 [2025-06-19 17:56:54] Mode: Copy | Function: ft_lstadd_back | Score: 98%
+[2025-06-19 18:16:55] Mode: Copy | Function: ft_lstmap | Score: 100%
