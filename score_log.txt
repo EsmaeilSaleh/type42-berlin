@@ -84,3 +84,4 @@
 [2025-06-19 18:25:27] Mode: Copy | Function: ft_lstadd_back | Score: 100%
 [2025-06-19 19:22:34] Mode: Copy | Function: ft_lstiter | Score: 99%
 [2025-06-19 19:26:28] Mode: Copy | Function: ft_lstdelone | Score: 100%
+[2025-06-19 19:40:44] Mode: Copy | Function: ft_putchar_fd | Score: 100%
