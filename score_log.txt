@@ -75,3 +75,4 @@
 [2025-06-19 12:29:59] Mode: Copy | Function: print_arg | Score: 0%
 [2025-06-19 12:31:22] Mode: Copy | Function: handle_pointer | Score: 0%
 [2025-06-19 12:31:43] Mode: Copy | Function: handle_hex_upper | Score: 0%
+[2025-06-19 12:55:48] Mode: Copy | Function: ft_lstclear | Score: 84%

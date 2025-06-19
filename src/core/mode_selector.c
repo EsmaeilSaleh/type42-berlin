@@ -53,12 +53,12 @@ int run_category_loop(int mode, int category)
         get_func_count = get_conv_function_count;
         break;
     case 5:
-        get_func_by_index = get_bonus_function_by_index;
-        get_func_count = get_bonus_function_count;
-        break;
-    case 6:
         get_func_by_index = get_io_function_by_index;
         get_func_count = get_io_function_count;
+        break;
+    case 6:
+        get_func_by_index = get_bonus_function_by_index;
+        get_func_count = get_bonus_function_count;
         break;
     case 7:
         get_func_by_index = get_get_next_line_function_by_index;
