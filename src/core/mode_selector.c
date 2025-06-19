@@ -37,16 +37,16 @@ int run_category_loop(int mode, int category)
     switch (category)
     {
     case 1:
+        get_func_by_index = get_char_function_by_index;
+        get_func_count = get_char_function_count;
+        break;
+    case 2:
         get_func_by_index = get_string_function_by_index;
         get_func_count = get_string_function_count;
         break;
-    case 2:
+    case 3:
         get_func_by_index = get_memory_function_by_index;
         get_func_count = get_memory_function_count;
-        break;
-    case 3:
-        get_func_by_index = get_char_function_by_index;
-        get_func_count = get_char_function_count;
         break;
     case 4:
         get_func_by_index = get_conv_function_by_index;
