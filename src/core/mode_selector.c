@@ -84,7 +84,7 @@ int run_category_loop(int mode, int category)
     while (1)
     {
         run_typing_session(mode, get_func_by_index, get_func_count);
-        printf("-------------------------------------------\n");
+        printf("\n-------------------------------------------\n");
         printf("\nWhat would you like to do next?\n");
         printf("1. Try another function in this category\n");
         printf("2. Return to category menu\n");
