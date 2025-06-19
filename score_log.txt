@@ -62,3 +62,4 @@
 [2025-06-18 20:43:44] Mode: Copy | Function: ft_lstdelone | Score: 0%
 [2025-06-18 20:44:36] Mode: Copy | Function: ft_lstclear | Score: 0%
 [2025-06-18 20:45:49] Mode: Copy | Function: ft_lstiter | Score: 0%
+[2025-06-19 06:12:19] Mode: Copy | Function: ft_lstnew | Score: 100%
