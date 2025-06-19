@@ -94,3 +94,4 @@
 [2025-06-19 21:00:49] Mode: Copy | Function: ft_isdigit | Score: 100%
 [2025-06-19 21:03:19] Mode: Copy | Function: ft_isalnum | Score: 100%
 [2025-06-19 21:04:29] Mode: Copy | Function: ft_isascii | Score: 100%
+[2025-06-19 21:05:16] Mode: Copy | Function: ft_isprint | Score: 100%
