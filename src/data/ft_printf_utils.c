@@ -42,6 +42,104 @@ LibFunc ft_printf_utils_functions[] = {
      "\t\ti++;\n"
      "\treturn (i);\n"
      "}"},
+    {"ft_strchr",
+     "Locates the first occurrence of c in the string s.",
+     "Returns a pointer to the matched character or NULL.",
+     NULL,
+     0,
+     "char\t*ft_strchr(const char *s, int c)\n"
+     "{\n"
+     "\twhile (*s)\n"
+     "\t{\n"
+     "\t\tif (*s == (char)c)\n"
+     "\t\t\treturn ((char *)s);\n"
+     "\t\ts++;\n"
+     "\t}\n"
+     "\tif (c == '\\0')\n"
+     "\t\treturn ((char *)s);\n"
+     "\treturn (NULL);\n"
+     "}"},
+    {"ft_strjoin",
+     "Allocates and returns a new string, result of the concatenation of s1 and s2.",
+     "Returns the new string. NULL if the allocation fails.",
+     NULL,
+     0,
+     "char\t*ft_strjoin(char const *s1, char const *s2)\n"
+     "{\n"
+     "\tchar\t*res;\n"
+     "\tint\ti;\n"
+     "\tint\tj;\n"
+     "\n"
+     "\tif (!s1 || !s2)\n"
+     "\t\treturn (NULL);\n"
+     "\tres = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);\n"
+     "\tif (!res)\n"
+     "\t\treturn (NULL);\n"
+     "\ti = -1;\n"
+     "\twhile (s1[++i])\n"
+     "\t\tres[i] = s1[i];\n"
+     "\tj = 0;\n"
+     "\twhile (s2[j])\n"
+     "\t\tres[i++] = s2[j++];\n"
+     "\tres[i] = '\\0';\n"
+     "\treturn (res);\n"
+     "}"},
+    {"ft_uitoa",
+     "Converts an unsigned int to a null-terminated string.",
+     "Returns a newly allocated string representing the unsigned integer.",
+     NULL,
+     0,
+     "char\t*ft_uitoa(unsigned int n)\n"
+     "{\n"
+     "\tint\t\tlen = 1;\n"
+     "\tunsigned int\ttemp = n;\n"
+     "\tchar\t*res;\n"
+     "\n"
+     "\twhile (temp /= 10)\n"
+     "\t\tlen++;\n"
+     "\tres = malloc(len + 1);\n"
+     "\tif (!res)\n"
+     "\t\treturn (NULL);\n"
+     "\tres[len] = '\\0';\n"
+     "\twhile (len--)\n"
+     "\t{\n"
+     "\t\tres[len] = (n % 10) + '0';\n"
+     "\t\tn /= 10;\n"
+     "\t}\n"
+     "\treturn (res);\n"
+     "}"},
+    {"ft_itoa",
+     "Converts an integer to a null-terminated string.",
+     "Returns a newly allocated string representing the integer.",
+     NULL,
+     0,
+     "char\t*ft_itoa(int n)\n"
+     "{\n"
+     "\tint\t\tlen = (n <= 0);\n"
+     "\tlong\tnbr = n;\n"
+     "\tchar\t*res;\n"
+     "\n"
+     "\twhile (n)\n"
+     "\t{\n"
+     "\t\tn /= 10;\n"
+     "\t\tlen++;\n"
+     "\t}\n"
+     "\tres = malloc(len + 1);\n"
+     "\tif (!res)\n"
+     "\t\treturn (NULL);\n"
+     "\tres[len] = '\\0';\n"
+     "\tif (nbr < 0)\n"
+     "\t{\n"
+     "\t\tnbr = -nbr;\n"
+     "\t\tres[0] = '-';\n"
+     "\t}\n"
+     "\twhile (len-- && res[len] != '-')\n"
+     "\t{\n"
+     "\t\tres[len] = (nbr % 10) + '0';\n"
+     "\t\tnbr /= 10;\n"
+     "\t}\n"
+     "\treturn (res);\n"
+     "}"},
     {"ft_putnbr_fd",
      "Outputs an integer n to the given file descriptor.",
      "None.",
@@ -62,6 +160,18 @@ LibFunc ft_printf_utils_functions[] = {
      "\tc = n % 10 + '0';\n"
      "\twrite(fd, &c, 1);\n"
      "}"},
+    {"ft_putnbr_base",
+     "Outputs an unsigned integer in a given base to the given file descriptor.",
+     "None.",
+     NULL,
+     0,
+     "void\tft_putnbr_base(unsigned int nbr, char *base, int fd)\n"
+     "{\n"
+     "\tunsigned int len = ft_strlen(base);\n"
+     "\tif (nbr >= len)\n"
+     "\t\tft_putnbr_base(nbr / len, base, fd);\n"
+     "\twrite(fd, &base[nbr % len], 1);\n"
+     "}"},
 };
 
 int get_ft_printf_utils_functions_count(void)
@@ -71,9 +181,9 @@ int get_ft_printf_utils_functions_count(void)
 
 LibFunc get_ft_printf_utils_functions_by_index(int index)
 {
-    if (index < 0 || index >= get_bonus_function_count())
+    if (index < 0 || index >= get_ft_printf_utils_functions_count())
     {
-        fprintf(stderr, "Invalid get_next_line function index.\\n");
+        fprintf(stderr, "Invalid printf utils function index.\\n");
         exit(1);
     }
     return ft_printf_utils_functions[index];

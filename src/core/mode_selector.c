@@ -2,7 +2,6 @@
 #include "terminal_display.h"
 #include "scoring.h"
 
-jmp_buf mode_menu_jump;
 int select_mode(void)
 {
 
@@ -21,7 +20,7 @@ int select_category(void)
 {
     int category;
     print_category_menu();
-    if (scanf("%d", &category) != 1 || category < 1 || category > 8)
+    if (scanf("%d", &category) != 1 || category < 1 || category > 10)
         return 0;
     getchar();
     return category;
@@ -65,6 +64,14 @@ int run_category_loop(int mode, int category)
     case 8:
         get_func_by_index = get_ft_printf_utils_functions_by_index;
         get_func_count = get_ft_printf_utils_functions_count;
+        break;
+    case 9:
+        get_func_by_index = get_ft_printf_handlers_functions_by_index;
+        get_func_count = get_ft_printf_handlers_functions_count;
+        break;
+    case 10:
+        get_func_by_index = get_ft_printf_main_functions_by_index;
+        get_func_count = get_ft_printf_main_functions_count;
         break;
     default:
         fprintf(stderr, "Invalid category.\n");

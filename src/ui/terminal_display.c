@@ -45,15 +45,18 @@ void print_mode_menu(void)
 void print_category_menu(void)
 {
     printf("Select category:\n");
-    printf("1. String functions\n");
-    printf("2. Memory functions\n");
-    printf("3. Char functions\n");
-    printf("4. Conv functions\n");
-    printf("5. Bonus functions\n");
-    printf("6. IO functions\n");
-    printf("------------------\n");
-    printf("7. Get Next Line functions\n");
-    printf("8. 📦 ft_printf - Part 1 (Basics)\n");
+    printf(" 1. Char functions              (%d)\n", get_char_function_count());
+    printf(" 2. String functions            (%d)\n", get_string_function_count());
+    printf(" 3. Memory functions            (%d)\n", get_memory_function_count());
+    printf(" 4. Conversion functions        (%d)\n", get_conv_function_count());
+    printf(" 5. Input/Output functions      (%d)\n", get_io_function_count());
+    printf(" 6. Linked List functions       (%d)\n", get_bonus_function_count());
+    printf(" -------------------------------\n");
+    printf(" 7. Get Next Line functions     (%d)\n", get_get_next_line_function_count());
+    printf(" -------------------------------\n");
+    printf(" 8. ft_printf – Part 1 (Basics)\n");
+    printf(" 9. ft_printf – Part 2 (Handlers)\n");
+    printf("10. ft_printf – Part 3 (Dispatcher & Core)\n");
     printf("\033[1;31m╔══════════════════════════════╗\n");
     printf("║  0. Return to mode menu     ║\n");
     printf("╚══════════════════════════════╝\033[0m\n");

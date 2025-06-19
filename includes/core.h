@@ -93,4 +93,12 @@ LibFunc get_io_function_by_index(int index);
 LibFunc get_ft_printf_utils_functions_by_index(int index);
 int get_ft_printf_utils_functions_count(void);
 
+int get_ft_printf_handlers_functions_count(void);
+LibFunc get_ft_printf_handlers_functions_by_index(int index);
+
+int get_ft_printf_main_functions_count(void);
+LibFunc get_ft_printf_main_functions_by_index(int index);
+
+jmp_buf mode_menu_jump;
+
 #endif

@@ -4,7 +4,6 @@
 #include "terminal_display.h"
 #include "ui.h"
 
-jmp_buf mode_menu_jump;
 int main()
 {
 	system("clear");
