@@ -100,7 +100,61 @@ LibFunc get_next_line_functions[] = {
 	 "\t\tsub[i++] = s[start++];\n"
 	 "\tsub[i] = '\\0';\n"
 	 "\treturn (sub);\n"
-	 "}"}};
+	 "}"},
+	{"extract_line",
+	 "Extracts the next line including newline from the stash.",
+	 "Returns the line to be returned by get_next_line.",
+	 NULL,
+	 0,
+	 "char\t*extract_line(char *stash)\n"
+	 "{\n"
+	 "\tint i = 0;\n"
+	 "\tchar *line;\n"
+	 "\tif (!stash || !stash[0])\n"
+	 "\t\treturn (NULL);\n"
+	 "\twhile (stash[i] && stash[i] != '\\n')\n"
+	 "\t\ti++;\n"
+	 "\tline = malloc(sizeof(char) * (stash[i] == '\\n' ? i + 2 : i + 1));\n"
+	 "\tif (!line)\n"
+	 "\t\treturn (NULL);\n"
+	 "\ti = 0;\n"
+	 "\twhile (stash[i] && stash[i] != '\\n')\n"
+	 "\t{\n"
+	 "\t\tline[i] = stash[i];\n"
+	 "\t\ti++;\n"
+	 "\t}\n"
+	 "\tif (stash[i] == '\\n')\n"
+	 "\t\tline[i++] = '\\n';\n"
+	 "\tline[i] = '\\0';\n"
+	 "\treturn (line);\n"
+	 "}"},
+	{"update_stash",
+	 "Updates the stash by removing the line that was just extracted.",
+	 "Returns a new stash with the remaining content after the newline.",
+	 NULL,
+	 0,
+	 "char\t*update_stash(char *stash)\n"
+	 "{\n"
+	 "\tint i = 0, j = 0;\n"
+	 "\tchar *new_stash;\n"
+	 "\twhile (stash[i] && stash[i] != '\\n')\n"
+	 "\t\ti++;\n"
+	 "\tif (!stash[i])\n"
+	 "\t{\n"
+	 "\t\tfree(stash);\n"
+	 "\t\treturn (NULL);\n"
+	 "\t}\n"
+	 "\tnew_stash = malloc(sizeof(char) * (ft_strlen(stash) - i + 1));\n"
+	 "\tif (!new_stash)\n"
+	 "\t\treturn (NULL);\n"
+	 "\ti++;\n"
+	 "\twhile (stash[i])\n"
+	 "\t\tnew_stash[j++] = stash[i++];\n"
+	 "\tnew_stash[j] = '\\0';\n"
+	 "\tfree(stash);\n"
+	 "\treturn (new_stash);\n"
+	 "}"},
+};
 
 int get_get_next_line_function_count(void)
 {
