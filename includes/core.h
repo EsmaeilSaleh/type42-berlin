@@ -90,4 +90,7 @@ int get_get_next_line_function_count(void);
 int get_io_function_count(void);
 LibFunc get_io_function_by_index(int index);
 
+LibFunc get_ft_printf_utils_functions_by_index(int index);
+int get_ft_printf_utils_functions_count(void);
+
 #endif

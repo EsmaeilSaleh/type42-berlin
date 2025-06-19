@@ -53,6 +53,7 @@ void print_category_menu(void)
     printf("6. IO functions\n");
     printf("------------------\n");
     printf("7. Get Next Line functions\n");
+    printf("8. 📦 ft_printf - Part 1 (Basics)\n");
     printf("\033[1;31m╔══════════════════════════════╗\n");
     printf("║  0. Return to mode menu     ║\n");
     printf("╚══════════════════════════════╝\033[0m\n");

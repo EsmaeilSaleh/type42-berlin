@@ -70,3 +70,4 @@
 [2025-06-19 08:07:53] Mode: Copy | Function: ft_lstdelone | Score: 100%
 [2025-06-19 09:12:10] Mode: Copy | Function: get_next_line | Score: 0%
 [2025-06-19 09:22:07] Mode: Copy | Function: ft_lstclear | Score: 100%
+[2025-06-19 10:32:01] Mode: Copy | Function: ft_putchar_fd | Score: 0%

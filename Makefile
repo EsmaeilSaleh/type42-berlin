@@ -23,6 +23,7 @@ SRCS = \
 	$(DATA_DIR)/conv.c \
 	$(DATA_DIR)/io.c \
 	$(DATA_DIR)/bonus.c \
+	$(DATA_DIR)/ft_printf_utils.c \
 	$(DATA_DIR)/gnl.c
 
 OBJS = $(SRCS:.c=.o)
