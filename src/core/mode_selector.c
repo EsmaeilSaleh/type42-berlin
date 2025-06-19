@@ -97,7 +97,10 @@ int run_category_loop(int mode, int category)
         getchar();
 
         if (choice == 1)
-            continue;
+        {
+            system("clear");
+            print_banner();
+        }
         else if (choice == 2)
             break;
         else if (choice == 3)

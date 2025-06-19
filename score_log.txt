@@ -91,3 +91,4 @@
 [2025-06-19 20:06:12] Mode: Copy | Function: ft_atoi | Score: 28%
 [2025-06-19 20:19:26] Mode: Copy | Function: ft_itoa | Score: 100%
 [2025-06-19 20:57:33] Mode: Copy | Function: ft_isalpha | Score: 100%
+[2025-06-19 21:00:49] Mode: Copy | Function: ft_isdigit | Score: 100%
