@@ -100,5 +100,6 @@ int get_ft_printf_main_functions_count(void);
 LibFunc get_ft_printf_main_functions_by_index(int index);
 
 jmp_buf mode_menu_jump;
+jmp_buf category_menu_jump;
 
 #endif

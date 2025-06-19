@@ -22,7 +22,7 @@ void run_typing_session(Mode mode,
 	{
 		system("clear");
 		print_banner();
-		return;
+		longjmp(category_menu_jump, 1);
 	}
 	LibFunc func = get_func_by_index(func_choice - 1);
 	run_mode(mode, &func);

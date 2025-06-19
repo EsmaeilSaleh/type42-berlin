@@ -28,6 +28,9 @@ int select_category(void)
 
 int run_category_loop(int mode, int category)
 {
+
+    system("clear");
+    print_banner();
     LibFunc (*get_func_by_index)(int) = NULL;
     int (*get_func_count)(void) = NULL;
 

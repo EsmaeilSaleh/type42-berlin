@@ -24,6 +24,8 @@ int main()
 
 		while (1)
 		{
+			if (setjmp(category_menu_jump) != 0)
+				printf("\nReturning to mode selection...\n");
 			system("clear");
 			print_banner();
 			int category = select_category();
