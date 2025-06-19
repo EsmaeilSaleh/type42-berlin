@@ -77,3 +77,4 @@
 [2025-06-19 12:31:43] Mode: Copy | Function: handle_hex_upper | Score: 0%
 [2025-06-19 12:55:48] Mode: Copy | Function: ft_lstclear | Score: 84%
 [2025-06-19 17:02:43] Mode: Copy | Function: ft_lstiter | Score: 100%
+[2025-06-19 17:16:43] Mode: Copy | Function: ft_lstmap | Score: 99%
