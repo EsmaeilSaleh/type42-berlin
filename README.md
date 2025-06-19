@@ -37,6 +37,10 @@ make
 
 ---
 
+🇩🇪 [Deutsche Version](README.de.md)
+
+---
+
 ## 🔍 Project Structure
 
 - `src/` — Main logic and function definitions
@@ -55,69 +59,3 @@ Got suggestions, bugs, or want to add new functions? Open an issue or submit a P
 ## 🧾 License
 
 MIT License © 2025 [Esmaeil Saleh](https://www.linkedin.com/in/esmaeil-saleh/)
-
----
-
-## 🌍 Deutsch (German)
-
-_The following section is a German translation of the content above._
-
----
-
-# Type42 Berlin
-
-**Type42 Berlin** ist eine terminalbasierte Anwendung, die Schülern und C-Enthusiasten hilft, `libft`-Funktionen zu üben. Das Tool richtet sich besonders an Teilnehmer der 42 School, die ihr Muskelgedächtnis und saubere C-Programmierung verbessern möchten.
-
----
-
-## 🎯 Funktionen
-
-- Zwei Übungsmodi:
-  - **Copy Mode**: Der Code wird angezeigt, und du musst ihn exakt abtippen
-  - **Recall Mode**: Nur Funktionsname und Beschreibung werden angezeigt — du musst den Code aus dem Gedächtnis schreiben
-- Vollständig kompatibel mit **Norminette**-Regeln
-- Anzeige von **Punktzahl und Tippgenauigkeit** nach jeder Sitzung
-- Funktionen nach Typ kategorisiert (string, memory, list, I/O usw.)
-- Ideal zum Üben von **Libft**, Vorbereitung auf **get_next_line**, **ft_printf** und technische Interviews
-
----
-
-## 🧠 Ziele
-
-- Muskelgedächtnis für Standardfunktionen in C aufbauen
-- Sicherheit im Schreiben von sauberem und normgerechtem Code gewinnen
-- Vorbereitung auf technische Interviews und größere C-Projekte
-
----
-
-## 🛠 Nutzung
-
-```bash
-git clone git@github.com:EsmaeilSaleh/type42-berlin.git
-cd type42-berlin
-make
-./type42
-```
-
-> Die App läuft im Terminal und verwendet einen einfachen Keylogger, um den eingegebenen Code mit der erwarteten Version zu vergleichen.
-
----
-
-## 🔍 Projektstruktur
-
-- `src/` — Hauptlogik und Funktionsdefinitionen
-- `includes/` — Header-Dateien und `LibFunc`-Struktur
-- `score_log.txt` — Trainingsprotokolle und Ergebnisse
-- `Makefile` — Zum einfachen Kompilieren und Starten
-
----
-
-## ✨ Beitrag
-
-Hast du Vorschläge, Bugs oder neue Funktionen zum Üben? Eröffne ein Issue oder sende einen PR!
-
----
-
-## 🧾 Lizenz
-
-MIT-Lizenz © 2025 [Esmaeil Saleh](https://www.linkedin.com/in/esmaeil-saleh/)
