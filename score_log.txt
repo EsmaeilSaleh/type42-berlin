@@ -105,3 +105,4 @@
 [2025-06-20 06:51:16] Mode: Copy | Function: print_arg | Score: 0%
 [2025-06-20 06:52:40] Mode: Copy | Function: parse_format | Score: 0%
 [2025-06-20 06:55:21] Mode: Copy | Function: ft_printf | Score: 0%
+[2025-06-20 06:56:18] Mode: Copy | Function: handle_int | Score: 0%
