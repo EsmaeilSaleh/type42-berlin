@@ -29,6 +29,29 @@ static const Variant strcpy_variants[] = {
 	 "\treturn (ret);\n"
 	 "}"}};
 
+static const Variant strdup_variants[] = {
+	{"with intermediate len var",
+	 "char\t*ft_strdup(const char *s1)\n"
+	 "{\n"
+	 "\tsize_t len;\n"
+	 "\tchar *copy;\n"
+	 "\n"
+	 "\tlen = ft_strlen(s1);\n"
+	 "\tcopy = (char *)malloc(len + 1);\n"
+	 "\tif (!copy)\n"
+	 "\t\treturn (NULL);\n"
+	 "\treturn (ft_strcpy(copy, s1));\n"
+	 "}"},
+	{"inline copy without len",
+	 "char\t*ft_strdup(const char *s1)\n"
+	 "{\n"
+	 "\tchar *copy;\n"
+	 "\n"
+	 "\tcopy = (char *)malloc(ft_strlen(s1) + 1);\n"
+	 "\tif (!copy)\n"
+	 "\t\treturn (NULL);\n"
+	 "\treturn (ft_strcpy(copy, s1));\n"
+	 "}"}};
 static const Variant strlen_variants[] = {
 	{"index-based",
 	 "size_t\tft_strlen(const char *s)\n"
@@ -67,16 +90,9 @@ LibFunc string_functions[] = {
 	{"ft_strdup",
 	 "Returns a pointer to a new string which is a duplicate of the string s1.",
 	 "Returns a newly allocated duplicate of the string s. Returns NULL if allocation fails.",
-	 NULL,
-	 0,
-	 "char\t*ft_strdup(const char *s1)\n"
-	 "{\n"
-	 "\tsize_t len = ft_strlen(s1);\n"
-	 "\tchar *copy = (char *)malloc(len + 1);\n"
-	 "\tif (!copy)\n"
-	 "\t\treturn (NULL);\n"
-	 "\treturn (ft_strcpy(copy, s1));\n"
-	 "}"},
+	 strdup_variants,
+	 2,
+	 NULL},
 	{"ft_strchr",
 	 "Locates the first occurrence of c in the string s.",
 	 "Returns a pointer to the first occurrence of character c in string s, or NULL if not found.",
@@ -101,7 +117,9 @@ LibFunc string_functions[] = {
 	 0,
 	 "char\t*ft_strrchr(const char *s, int c)\n"
 	 "{\n"
-	 "\tconst char *last = NULL;\n"
+	 "\tconst char *last;\n"
+	 "\n"
+	 "\tlast = NULL;\n"
 	 "\twhile (*s)\n"
 	 "\t{\n"
 	 "\t\tif (*s == (char)c)\n"
@@ -119,7 +137,9 @@ LibFunc string_functions[] = {
 	 0,
 	 "int\tft_strncmp(const char *s1, const char *s2, size_t n)\n"
 	 "{\n"
-	 "\tsize_t i = 0;\n"
+	 "\tsize_t i;\n"
+	 "\n"
+	 "\ti = 0;\n"
 	 "\twhile (i < n && (s1[i] || s2[i]))\n"
 	 "\t{\n"
 	 "\t\tif ((unsigned char)s1[i] != (unsigned char)s2[i])\n"
@@ -136,7 +156,9 @@ LibFunc string_functions[] = {
 	 "char\t*ft_strnstr(const char *haystack, const char *needle, size_t len)\n"
 	 "{\n"
 	 "\tsize_t i;\n"
-	 "\tsize_t needle_len = ft_strlen(needle);\n"
+	 "\tsize_t needle_len;\n"
+	 "\n"
+	 "\tneedle_len = ft_strlen(needle);\n"
 	 "\tif (needle_len == 0)\n"
 	 "\t\treturn ((char *)haystack);\n"
 	 "\ti = 0;\n"
@@ -229,103 +251,30 @@ LibFunc string_functions[] = {
 	 "\ttrimmed[i] = '\\0';\n"
 	 "\treturn (trimmed);\n"
 	 "}"},
-	/*
-	   {
-	   "ft_split",
-	   "Splits string s by delimiter c into a NULL-terminated array of strings.",
-	   "static size_t\tcount_words(char const *s, char c)\n"
-	   "{\n"
-	   "\tsize_t count = 0;\n"
-	   "\tint in_word = 0;\n"
-	   "\n"
-	   "\twhile (*s)\n"
-	   "\t{\n"
-	   "\t\tif (*s != c && !in_word)\n"
-	   "\t\t{\n"
-	   "\t\t\tin_word = 1;\n"
-	   "\t\t\tcount++;\n"
-	   "\t\t}\n"
-	   "\t\telse if (*s == c)\n"
-	   "\t\t\tin_word = 0;\n"
-	   "\t\ts++;\n"
-	   "\t}\n"
-	   "\treturn (count);\n"
-	   "}\n"
-	   "\n"
-	   "static char\t*word_dup(char const *start, size_t len)\n"
-	   "{\n"
-	   "\tchar *word = malloc(len + 1);\n"
-	   "\tsize_t i;\n"
-	   "\n"
-	   "\tif (!word)\n"
-	   "\t\treturn (NULL);\n"
-	   "\ti = 0;\n"
-	   "\twhile (i < len)\n"
-	   "\t{\n"
-	   "\t\tword[i] = start[i];\n"
-	   "\t\ti++;\n"
-	   "\t}\n"
-	   "\tword[i] = '\\0';\n"
-	   "\treturn (word);\n"
-	   "}\n"
-	   "\n"
-	   "char\t*ft_split(char const *s, char c)\n"
-	   "{\n"
-	   "\tsize_t i = 0;\n"
-	   "\tsize_t j = 0;\n"
-	   "\tsize_t start = 0;\n"
-	   "\tsize_t word_count;\n"
-	   "\tchar **split;\n"
-	   "\n"
-	   "\tif (!s)\n"
-	   "\t\treturn (NULL);\n"
-	   "\tword_count = count_words(s, c);\n"
-	   "\tsplit = malloc(sizeof(char *) * (word_count + 1));\n"
-	   "\tif (!split)\n"
-	   "\t\treturn (NULL);\n"
-	   "\ti = 0;\n"
-	   "\tj = 0;\n"
-	   "\twhile (s[i])\n"
-	   "\t{\n"
-	   "\t\tif (s[i] != c && (i == 0 || s[i - 1] == c))\n"
-	   "\t\t\tstart = i;\n"
-	   "\t\tif (s[i] != c && (s[i + 1] == c || s[i + 1] == '\\0'))\n"
-	   "\t\t{\n"
-	   "\t\t\tsplit[j] = word_dup(s + start, i - start + 1);\n"
-	   "\t\t\tj++;\n"
-	   "\t\t}\n"
-	   "\t\ti++;\n"
-	   "\t}\n"
-	   "\tsplit[j] = NULL;\n"
-	   "\treturn (split);\n"
-	   "}"
-	   },
-	*/
-	{
-		"ft_strmapi",
-		"Applies function f to each char of s, passing index, returning new string.",
-		"Returns a newly allocated string or NULL.",
-		NULL,
-		0,
-		"char\t*ft_strmapi(char const *s, char (*f)(unsigned int, char))\n"
-		"{\n"
-		"\tchar *result;\n"
-		"\tsize_t i;\n"
-		"\n"
-		"\tif (!s || !f)\n"
-		"\t\treturn (NULL);\n"
-		"\tresult = malloc(ft_strlen(s) + 1);\n"
-		"\tif (!result)\n"
-		"\t\treturn (NULL);\n"
-		"\ti = 0;\n"
-		"\twhile (s[i])\n"
-		"\t{\n"
-		"\t\tresult[i] = f(i, s[i]);\n"
-		"\t\ti++;\n"
-		"\t}\n"
-		"\tresult[i] = '\\0';\n"
-		"\treturn (result);\n"
-		"}"},
+	{"ft_strmapi",
+	 "Applies function f to each char of s, passing index, returning new string.",
+	 "Returns a newly allocated string or NULL.",
+	 NULL,
+	 0,
+	 "char\t*ft_strmapi(char const *s, char (*f)(unsigned int, char))\n"
+	 "{\n"
+	 "\tchar *result;\n"
+	 "\tsize_t i;\n"
+	 "\n"
+	 "\tif (!s || !f)\n"
+	 "\t\treturn (NULL);\n"
+	 "\tresult = malloc(ft_strlen(s) + 1);\n"
+	 "\tif (!result)\n"
+	 "\t\treturn (NULL);\n"
+	 "\ti = 0;\n"
+	 "\twhile (s[i])\n"
+	 "\t{\n"
+	 "\t\tresult[i] = f(i, s[i]);\n"
+	 "\t\ti++;\n"
+	 "\t}\n"
+	 "\tresult[i] = '\\0';\n"
+	 "\treturn (result);\n"
+	 "}"},
 	{"ft_striteri",
 	 "Applies function f to each char of s, passing index, modifying in-place.",
 	 "Returns nothing (void).",
@@ -333,8 +282,9 @@ LibFunc string_functions[] = {
 	 0,
 	 "void\tft_striteri(char *s, void (*f)(unsigned int, char *))\n"
 	 "{\n"
-	 "\tsize_t i = 0;\n"
+	 "\tsize_t i;\n"
 	 "\n"
+	 "\ti = 0;\n"
 	 "\tif (!s || !f)\n"
 	 "\t\treturn;\n"
 	 "\twhile (s[i])\n"
@@ -373,8 +323,11 @@ LibFunc string_functions[] = {
 	 0,
 	 "char\t*word_dup(const char *start, size_t len)\n"
 	 "{\n"
-	 "\tchar *word = malloc(len + 1);\n"
-	 "\tsize_t i = 0;\n"
+	 "\tchar *word;\n"
+	 "\tsize_t i;\n"
+	 "\n"
+	 "\tword = malloc(len + 1);\n"
+	 "\ti = 0;\n"
 	 "\n"
 	 "\tif (!word)\n"
 	 "\t\treturn (NULL);\n"
