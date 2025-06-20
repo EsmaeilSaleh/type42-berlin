@@ -6,9 +6,9 @@ void print_function_list(LibFunc (*get_func_by_index)(int), int count)
     for (int i = 0; i < count; i++)
     {
         LibFunc f = get_func_by_index(i);
-        printf("%d. %s\n", i + 1, f.name);
+        printf("%2d. %s\n", i + 1, f.name);
     }
-    printf("0. Return to category menu\n");
+    printf(" 0. category menu\n");
 }
 void get_user_input(char *buffer, size_t size)
 {
