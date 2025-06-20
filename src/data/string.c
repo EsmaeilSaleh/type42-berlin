@@ -30,7 +30,7 @@ static const Variant strcpy_variants[] = {
 	 "}"}};
 
 static const Variant strdup_variants[] = {
-	{"with intermediate len var",
+	{"precomputed length",
 	 "char\t*ft_strdup(const char *s1)\n"
 	 "{\n"
 	 "\tsize_t len;\n"
