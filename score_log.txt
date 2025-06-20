@@ -103,3 +103,4 @@
 [2025-06-19 21:49:43] Mode: Copy | Function: ft_memcpy | Score: 99%
 [2025-06-19 21:59:47] Mode: Copy | Function: ft_memmove | Score: 100%
 [2025-06-20 06:51:16] Mode: Copy | Function: print_arg | Score: 0%
+[2025-06-20 06:52:40] Mode: Copy | Function: parse_format | Score: 0%
