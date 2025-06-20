@@ -43,8 +43,9 @@ static const Variant strlen_variants[] = {
 	{"pointer-based",
 	 "size_t\tft_strlen(const char *s)\n"
 	 "{\n"
-	 "\tconst char\t*start = s;\n"
+	 "\tconst char\t*start;\n"
 	 "\n"
+	 "\tstart = s;\n"
 	 "\twhile (*s)\n"
 	 "\t\ts++;\n"
 	 "\treturn (s - start);\n"
