@@ -119,3 +119,4 @@
 [2025-06-20 20:03:14] Mode: Copy | Function: ft_strdup | Score: 100%
 [2025-06-20 20:09:45] Mode: Copy | Function: ft_strdup | Score: 100%
 [2025-06-20 20:12:50] Mode: Copy | Function: ft_strchr | Score: 100%
+[2025-06-20 20:17:58] Mode: Copy | Function: ft_strrchr | Score: 99%
