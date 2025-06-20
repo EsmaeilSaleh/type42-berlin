@@ -29,29 +29,6 @@ static const Variant strcpy_variants[] = {
 	 "\treturn (ret);\n"
 	 "}"}};
 
-static const Variant strdup_variants[] = {
-	{"precomputed length",
-	 "char\t*ft_strdup(const char *s1)\n"
-	 "{\n"
-	 "\tsize_t len;\n"
-	 "\tchar *copy;\n"
-	 "\n"
-	 "\tlen = ft_strlen(s1);\n"
-	 "\tcopy = (char *)malloc(len + 1);\n"
-	 "\tif (!copy)\n"
-	 "\t\treturn (NULL);\n"
-	 "\treturn (ft_strcpy(copy, s1));\n"
-	 "}"},
-	{"inline copy without len",
-	 "char\t*ft_strdup(const char *s1)\n"
-	 "{\n"
-	 "\tchar *copy;\n"
-	 "\n"
-	 "\tcopy = (char *)malloc(ft_strlen(s1) + 1);\n"
-	 "\tif (!copy)\n"
-	 "\t\treturn (NULL);\n"
-	 "\treturn (ft_strcpy(copy, s1));\n"
-	 "}"}};
 static const Variant strlen_variants[] = {
 	{"index-based",
 	 "size_t\tft_strlen(const char *s)\n"
@@ -90,9 +67,17 @@ LibFunc string_functions[] = {
 	{"ft_strdup",
 	 "Returns a pointer to a new string which is a duplicate of the string s1.",
 	 "Returns a newly allocated duplicate of the string s. Returns NULL if allocation fails.",
-	 strdup_variants,
-	 2,
-	 NULL},
+	 NULL,
+	 0,
+	 "char\t*ft_strdup(const char *s1)\n"
+	 "{\n"
+	 "\tchar\t*copy;\n"
+	 "\n"
+	 "\tcopy = (char *)malloc(ft_strlen(s1) + 1);\n"
+	 "\tif (!copy)\n"
+	 "\t\treturn (NULL);\n"
+	 "\treturn (ft_strcpy(copy, s1));\n"
+	 "}"},
 	{"ft_strchr",
 	 "Locates the first occurrence of c in the string s.",
 	 "Returns a pointer to the first occurrence of character c in string s, or NULL if not found.",
