@@ -21,7 +21,7 @@ static const Variant memcpy_variants[] = {
 	 "\t\ti++;\n"
 	 "\t}\n"
 	 "\treturn (dest);\n"
-	 "}"},
+	 "}\n"},
 	{"pointer-based",
 	 "void\t*ft_memcpy(void *dest, const void *src, size_t n)\n"
 	 "{\n"
@@ -33,7 +33,7 @@ static const Variant memcpy_variants[] = {
 	 "\twhile (n--)\n"
 	 "\t\t*d++ = *s++;\n"
 	 "\treturn (dest);\n"
-	 "}"},
+	 "}\n"},
 };
 static const Variant memset_variants[] = {
 	{"index-based",
@@ -60,7 +60,7 @@ static const Variant memset_variants[] = {
 	 "\twhile (n--)\n"
 	 "\t\t*p++ = (unsigned char)c;\n"
 	 "\treturn (s);\n"
-	 "}"}};
+	 "}\n"}};
 
 static const Variant bzero_variants[] = {
 	{"manual-loop",
@@ -71,12 +71,12 @@ static const Variant bzero_variants[] = {
 	 "\tp = (unsigned char *)s;\n"
 	 "\twhile (n--)\n"
 	 "\t\t*p++ = 0;\n"
-	 "}"},
+	 "}\n"},
 	{"using-memset",
 	 "void\tft_bzero(void *s, size_t n)\n"
 	 "{\n"
 	 "\tft_memset(s, 0, n);\n"
-	 "}"}};
+	 "}\n"}};
 
 static const Variant memchr_variants[] = {
 	{"index-based",
@@ -94,7 +94,7 @@ static const Variant memchr_variants[] = {
 	 "\t\ti++;\n"
 	 "\t}\n"
 	 "\treturn (NULL);\n"
-	 "}"},
+	 "}\n"},
 	{"pointer-based",
 	 "void\t*ft_memchr(const void *s, int c, size_t n)\n"
 	 "{\n"
@@ -108,7 +108,7 @@ static const Variant memchr_variants[] = {
 	 "\t\tp++;\n"
 	 "\t}\n"
 	 "\treturn (NULL);\n"
-	 "}"}};
+	 "}\n"}};
 
 static const Variant memmove_variants[] = {
 	{"index-based",
@@ -141,7 +141,7 @@ static const Variant memmove_variants[] = {
 	 "\t\t}\n"
 	 "\t}\n"
 	 "\treturn (dest);\n"
-	 "}"},
+	 "}\n"},
 	{"pointer-based",
 	 "void\t*ft_memmove(void *dest, const void *src, size_t n)\n"
 	 "{\n"
@@ -163,7 +163,7 @@ static const Variant memmove_variants[] = {
 	 "\t\t\t*--d = *--s;\n"
 	 "\t}\n"
 	 "\treturn (dest);\n"
-	 "}"}};
+	 "}\n"}};
 
 static const Variant memcmp_variants[] = {
 	{"index-based",
@@ -183,7 +183,7 @@ static const Variant memcmp_variants[] = {
 	 "\t\ti++;\n"
 	 "\t}\n"
 	 "\treturn (0);\n"
-	 "}"},
+	 "}\n"},
 	{"pointer-based",
 	 "int\tft_memcmp(const void *s1, const void *s2, size_t n)\n"
 	 "{\n"
@@ -200,7 +200,7 @@ static const Variant memcmp_variants[] = {
 	 "\t\tp2++;\n"
 	 "\t}\n"
 	 "\treturn (0);\n"
-	 "}"}};
+	 "}\n"}};
 static const Variant calloc_variants[] = {
 	{"manual-bzero",
 	 "void\t*ft_calloc(size_t nmemb, size_t size)\n"
@@ -210,7 +210,7 @@ static const Variant calloc_variants[] = {
 	 "\t\treturn (NULL);\n"
 	 "\tft_bzero(ptr, nmemb * size);\n"
 	 "\treturn (ptr);\n"
-	 "}"},
+	 "}\n"},
 	{"manual-loop",
 	 "void\t*ft_calloc(size_t nmemb, size_t size)\n"
 	 "{\n"
@@ -223,7 +223,7 @@ static const Variant calloc_variants[] = {
 	 "\twhile (i < total)\n"
 	 "\t\tp[i++] = 0;\n"
 	 "\treturn ((void *)p);\n"
-	 "}"}};
+	 "}\n"}};
 static const Variant strdup_variants[] = {
 	{"index-based",
 	 "char\t*ft_strdup(const char *s)\n"
@@ -244,7 +244,7 @@ static const Variant strdup_variants[] = {
 	 "\t}\n"
 	 "\tdup[i] = '\\0';\n"
 	 "\treturn (dup);\n"
-	 "}"},
+	 "}\n"},
 	{"pointer-based",
 	 "char\t*ft_strdup(const char *s)\n"
 	 "{\n"
@@ -265,7 +265,7 @@ static const Variant strdup_variants[] = {
 	 "\t}\n"
 	 "\t*dup = '\\0';\n"
 	 "\treturn (ret);\n"
-	 "}"}};
+	 "}\n"}};
 LibFunc memory_functions[] = {
 	{"ft_memset",
 	 "Fills the first n bytes of the memory area pointed to by s with the constant byte c.",
