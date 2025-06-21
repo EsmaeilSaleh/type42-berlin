@@ -162,10 +162,12 @@ void run_mode(Mode mode, LibFunc *func)
         printf("\n--- Correct Implementation ---\n%s\n", code_to_practice);
     int score = compute_similarity_score(user_input, code_to_practice);
     printf("\nScore: %d%%\n", score);
+
     char norm_file_path[128];
     snprintf(norm_file_path, sizeof(norm_file_path), "libft/ft_%s.c", func->name);
     int norm_score = check_norminette(norm_file_path);
     printf("Norminette: %s\n", norm_score == 100 ? "✅ Pass" : "❌ Fail");
+
     if (score == 100)
         printf("✅ Perfect!\n");
     else if (score >= 80)
