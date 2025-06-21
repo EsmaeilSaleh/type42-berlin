@@ -10,6 +10,7 @@ Ein Terminal-basiertes Lernwerkzeug für 42-Studenten, um libft, get_next_line u
 - **Konfigurierbare Varianten**: Wähle z.B. zwischen index- und pointer-basierten Varianten von Funktionen.
 - **GNL- und ft_printf-Unterstützung**: Funktionen aus diesen Projekten sind zur Übung integriert.
 - **Mehrsprachige Benutzeroberfläche**: Standardmäßig auf Englisch, aber übersetzbar (z.B. ins Deutsche).
+- **Norminette-Prüfung**: Überprüft deinen Code automatisch mit dem offiziellen 42-Linter und zeigt formatierte Fehlermeldungen im Terminal.
 
 ## Installation
 
@@ -17,6 +18,15 @@ Ein Terminal-basiertes Lernwerkzeug für 42-Studenten, um libft, get_next_line u
 make install
 ./type42
 ```
+
+> 📦 **Hinweis:** Um die Norminette-Überprüfung zu aktivieren, musst du das offizielle `norminette`-Tool installiert haben.
+> Installation mit pip:
+>
+> ```bash
+> pip install norminette
+> ```
+>
+> Oder besuche das [42 Norminette GitHub Repository](https://github.com/42School/norminette) für weitere Anleitungen.
 
 ## Struktur
 
