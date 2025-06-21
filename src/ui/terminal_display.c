@@ -57,9 +57,9 @@ void print_category_menu(void)
     printf(" 8. ft_printf – Part 1 (Basics)\n");
     printf(" 9. ft_printf – Part 2 (Handlers)\n");
     printf("10. ft_printf – Part 3 (Dispatcher & Core)\n");
-    printf("\033[1;31m╔══════════════════════════════╗\n");
-    printf("║  0. Return to mode menu     ║\n");
-    printf("╚══════════════════════════════╝\033[0m\n");
+    printf("\033[1;31m╔════════════════════════════╗\n");
+    printf("║       0. Change Mode       ║\n");
+    printf("╚════════════════════════════╝\033[0m\n");
     printf("Enter choice: ");
 }
 
