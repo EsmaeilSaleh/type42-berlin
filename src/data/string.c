@@ -269,7 +269,7 @@ LibFunc string_functions[] = {
 	 "Returns newly allocated trimmed string, or NULL if allocation fails.",
 	 NULL,
 	 0,
-	 "char\t*ft_strtrim(char const *s1, char const *set)\n"
+	 "char\t*ft_strtrim(const char *s1, const char *set)\n"
 	 "{\n"
 	 "\tsize_t\ti;\n"
 	 "\tsize_t\tend;\n"
@@ -279,10 +279,10 @@ LibFunc string_functions[] = {
 	 "\tif (!s1 || !set)\n"
 	 "\t\treturn (NULL);\n"
 	 "\tstart = 0;\n"
-	 "\twhile (s1[start] && strchr(set, s1[start]))\n"
+	 "\twhile (s1[start] && ft_strchr(set, s1[start]))\n"
 	 "\t\tstart++;\n"
 	 "\tend = ft_strlen(s1);\n"
-	 "\twhile (end > start && strchr(set, s1[end - 1]))\n"
+	 "\twhile (end > start && ft_strchr(set, s1[end - 1]))\n"
 	 "\t\tend--;\n"
 	 "\ttrimmed = malloc(end - start + 1);\n"
 	 "\tif (!trimmed)\n"
