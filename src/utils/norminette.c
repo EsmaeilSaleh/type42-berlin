@@ -22,7 +22,25 @@ int check_norminette(const char *filename)
         }
         else if (strstr(buffer, "Error") || strstr(buffer, "Warning"))
         {
-            printf("\033[0;31m%s\033[0m", buffer); // red
+            char *line_ptr = strstr(buffer, "(line:");
+            if (line_ptr)
+            {
+                int line_num = 0;
+                sscanf(line_ptr, "(line: %d", &line_num);
+                int adjusted_line = line_num - 12;
+                if (adjusted_line < 1)
+                    adjusted_line = 1;
+                char *col_ptr = strstr(buffer, ", col:");
+                if (col_ptr)
+                    *col_ptr = '\0'; // temporarily truncate
+                printf("\033[0;31mAdjusted Line %d: %s\033[0m\n", adjusted_line, buffer);
+                if (col_ptr)
+                    *col_ptr = ','; // restore
+            }
+            else
+            {
+                printf("\033[0;31m%s\033[0m", buffer);
+            }
         }
         else
         {

@@ -150,7 +150,7 @@ void run_mode(Mode mode, LibFunc *func)
         printf("--- Copy Mode ---\n\n");
 
         const char *line = code_to_practice;
-        int line_num = 12;
+        int line_num = 1;
 
         while (*line)
         {
