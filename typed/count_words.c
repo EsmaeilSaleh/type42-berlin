@@ -17,7 +17,7 @@
 
 size_t	count_words(const char *s, char c)
 {
-	int	in_word;
+	int		in_word;
 	size_t	count;
 
 	in_word = 0;
