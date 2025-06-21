@@ -300,8 +300,8 @@ LibFunc string_functions[] = {
 	 0,
 	 "char\t*ft_strmapi(char const *s, char (*f)(unsigned int, char))\n"
 	 "{\n"
-	 "\tchar *result;\n"
-	 "\tsize_t i;\n"
+	 "\tsize_t\ti;\n"
+	 "\tchar\t*result;\n"
 	 "\n"
 	 "\tif (!s || !f)\n"
 	 "\t\treturn (NULL);\n"
