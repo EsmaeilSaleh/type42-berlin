@@ -11,8 +11,8 @@
 - Two practice modes:
   - **Copy Mode**: Code is displayed and you must retype it exactly
   - **Recall Mode**: Only the function name and description are shown — you must type the function from memory
-- Fully compliant with **Norminette** rules
-- Displays **score and typing accuracy** after each session
+- Checks your code with **Norminette** and shows formatted error output
+- Displays **typing accuracy** and **Norminette compliance** after each session
 - Functions categorized by type (string, memory, list, I/O, etc.)
 - Ideal for practicing **Libft**, preparing for **get_next_line**, **ft_printf**, and technical interviews
 
@@ -23,6 +23,7 @@
 - Strengthen muscle memory for C standard functions
 - Gain confidence in clean coding and syntax
 - Prepare for coding challenges and C-based projects
+- Become familiar with Norminette-style formatting and error fixing
 
 ---
 
@@ -34,6 +35,15 @@ cd type42-berlin
 make
 ./type42
 ```
+
+> 📦 **Note:** To enable Norminette checks, you must have the official `norminette` tool installed.
+> Install it via:
+>
+> ```bash
+> pip install norminette
+> ```
+>
+> Or refer to the [42 Norminette GitHub page](https://github.com/42School/norminette) for alternative setup instructions.
 
 > The app runs in the terminal and uses a simple keylogger to compare your typed code with the expected version.
 
