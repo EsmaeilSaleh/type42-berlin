@@ -236,3 +236,4 @@
 [2025-06-21 11:01:16] Mode: Copy | Function: ft_strrchr | Score: 100%
 [2025-06-21 11:19:08] Mode: Copy | Function: word_dup | Score: 0%
 [2025-06-21 11:21:25] Mode: Copy | Function: word_dup | Score: 0%
+[2025-06-21 11:21:39] Mode: Copy | Function: ft_split | Score: 0%

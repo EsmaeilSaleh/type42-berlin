@@ -3,20 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: type42 <type42@student.42.de>              +#+  +:+       +#+        */
+/*   By: esaleh <esaleh@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/20 20:00:00 by type42            #+#    #+#             */
-/*   Updated: 2025/06/20 20:00:00 by type42           ###   ########.fr       */
+/*   Created: 2025/06/21 09:00:00 by esaleh            #+#    #+#             */
+/*   Updated: ✨ type42.berlin by ft trainer ✨        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+**  type42-berlin — Typing Trainer for 42 Network
+**  Function: ft_split — Practice Mode: Copy / Recall
+*/
+
 char	**ft_split(const char *s, char c)
 {
-	size_t i = 0;
-	size_t j = 0;
-	size_t start = 0;
-	size_t word_count;
-	char **split;
+	size_t	i;
+	size_t	j;
+	size_t	start;
+	size_t	word_count;
+	char	**split;
+
+	i = 0;
+	j = 0;
+	start = 0;
 
 	if (!s)
 		return (NULL);
