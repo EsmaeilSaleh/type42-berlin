@@ -58,26 +58,6 @@ LibFunc string_functions[] = {
 	 strlen_variants,
 	 2,
 	 NULL},
-	{"ft_strcpy",
-	 "Copies the string src to dst including the null terminator.",
-	 "Returns dst.",
-	 strcpy_variants,
-	 2,
-	 NULL},
-	{"ft_strdup",
-	 "Returns a pointer to a new string which is a duplicate of the string s1.",
-	 "Returns a newly allocated duplicate of the string s. Returns NULL if allocation fails.",
-	 NULL,
-	 0,
-	 "char\t*ft_strdup(const char *s1)\n"
-	 "{\n"
-	 "\tchar\t*copy;\n"
-	 "\n"
-	 "\tcopy = (char *)malloc(ft_strlen(s1) + 1);\n"
-	 "\tif (!copy)\n"
-	 "\t\treturn (NULL);\n"
-	 "\treturn (ft_strcpy(copy, s1));\n"
-	 "}"},
 	{"ft_strchr",
 	 "Locates the first occurrence of c in the string s.",
 	 "Returns a pointer to the first occurrence of character c in string s, or NULL if not found.",
@@ -133,27 +113,25 @@ LibFunc string_functions[] = {
 	 "\t}\n"
 	 "\treturn (0);\n"
 	 "}"},
-	{"ft_strnstr",
-	 "Locates the first occurrence of the null-terminated string needle in haystack, searching not more than len characters.",
-	 "Returns a pointer to the first match or NULL if not found.",
+	{"ft_strcpy",
+	 "Copies the string src to dst including the null terminator.",
+	 "Returns dst.",
+	 strcpy_variants,
+	 2,
+	 NULL},
+	{"ft_strdup",
+	 "Returns a pointer to a new string which is a duplicate of the string s1.",
+	 "Returns a newly allocated duplicate of the string s. Returns NULL if allocation fails.",
 	 NULL,
 	 0,
-	 "char\t*ft_strnstr(const char *haystack, const char *needle, size_t len)\n"
+	 "char\t*ft_strdup(const char *s1)\n"
 	 "{\n"
-	 "\tsize_t i;\n"
-	 "\tsize_t needle_len;\n"
+	 "\tchar\t*copy;\n"
 	 "\n"
-	 "\tneedle_len = ft_strlen(needle);\n"
-	 "\tif (needle_len == 0)\n"
-	 "\t\treturn ((char *)haystack);\n"
-	 "\ti = 0;\n"
-	 "\twhile (haystack[i] && (i + needle_len) <= len)\n"
-	 "\t{\n"
-	 "\t\tif (ft_strncmp(&haystack[i], needle, needle_len) == 0)\n"
-	 "\t\t\treturn ((char *)&haystack[i]);\n"
-	 "\t\ti++;\n"
-	 "\t}\n"
-	 "\treturn (NULL);\n"
+	 "\tcopy = (char *)malloc(ft_strlen(s1) + 1);\n"
+	 "\tif (!copy)\n"
+	 "\t\treturn (NULL);\n"
+	 "\treturn (ft_strcpy(copy, s1));\n"
 	 "}"},
 	{"ft_strlcpy",
 	 "Copies up to dstsize - 1 characters from src to dst, NUL-terminating the result.",
@@ -206,6 +184,85 @@ LibFunc string_functions[] = {
 	 "\t}\n"
 	 "\tdst[dst_len + i] = '\\0';\n"
 	 "\treturn (dst_len + src_len);\n"
+	 "}"},
+	{"ft_substr",
+	 "Allocates and returns a substring from the string s.",
+	 "Returns a newly allocated string starting at index start and of maximum length len. Returns an empty string if start is beyond s length.",
+	 NULL,
+	 0,
+	 "char\t*ft_substr(char const *s, unsigned int start, size_t len)\n"
+	 "{\n"
+	 "\tchar\t*sub;\n"
+	 "\tsize_t	i;\n"
+	 "\tsize_t	s_len;\n"
+	 "\n"
+	 "\tif (!s)\n"
+	 "\t\treturn (NULL);\n"
+	 "\ts_len = ft_strlen(s);\n"
+	 "\tif (start >= s_len)\n"
+	 "\t\treturn (ft_strdup(\"\"));\n"
+	 "\tif (len > s_len - start)\n"
+	 "\t\tlen = s_len - start;\n"
+	 "\tsub = malloc(len + 1);\n"
+	 "\tif (!sub)\n"
+	 "\t\treturn (NULL);\n"
+	 "\ti = 0;\n"
+	 "\twhile (i < len && s[start + i])\n"
+	 "\t{\n"
+	 "\t\tsub[i] = s[start + i];\n"
+	 "\t\ti++;\n"
+	 "\t}\n"
+	 "\tsub[i] = '\\0';\n"
+	 "\treturn (sub);\n"
+	 "}"},
+	{"ft_strjoin",
+	 "Allocates and returns a new string, result of the concatenation of s1 and s2.",
+	 "Returns a newly allocated string containing the concatenation of s1 and s2, or NULL if allocation fails.",
+	 NULL,
+	 0,
+	 "char\t*ft_strjoin(char const *s1, char const *s2)\n"
+	 "{\n"
+	 "\tchar\t*joined;\n"
+	 "\tsize_t\tlen1;\n"
+	 "\tsize_t\tlen2;\n"
+	 "\tsize_t\ti;\n"
+	 "\n"
+	 "\tif (!s1 || !s2)\n"
+	 "\t\treturn (NULL);\n"
+	 "\tlen1 = ft_strlen(s1);\n"
+	 "\tlen2 = ft_strlen(s2);\n"
+	 "\tjoined = malloc(len1 + len2 + 1);\n"
+	 "\tif (!joined)\n"
+	 "\t\treturn (NULL);\n"
+	 "\ti = 0;\n"
+	 "\twhile (*s1)\n"
+	 "\t\tjoined[i++] = *s1++;\n"
+	 "\twhile (*s2)\n"
+	 "\t\tjoined[i++] = *s2++;\n"
+	 "\tjoined[i] = '\\0';\n"
+	 "\treturn (joined);\n"
+	 "}"},
+	{"ft_strnstr",
+	 "Locates the first occurrence of the null-terminated string needle in haystack, searching not more than len characters.",
+	 "Returns a pointer to the first match or NULL if not found.",
+	 NULL,
+	 0,
+	 "char\t*ft_strnstr(const char *haystack, const char *needle, size_t len)\n"
+	 "{\n"
+	 "\tsize_t i;\n"
+	 "\tsize_t needle_len;\n"
+	 "\n"
+	 "\tneedle_len = ft_strlen(needle);\n"
+	 "\tif (needle_len == 0)\n"
+	 "\t\treturn ((char *)haystack);\n"
+	 "\ti = 0;\n"
+	 "\twhile (haystack[i] && (i + needle_len) <= len)\n"
+	 "\t{\n"
+	 "\t\tif (ft_strncmp(&haystack[i], needle, needle_len) == 0)\n"
+	 "\t\t\treturn ((char *)&haystack[i]);\n"
+	 "\t\ti++;\n"
+	 "\t}\n"
+	 "\treturn (NULL);\n"
 	 "}"},
 	{"ft_strtrim",
 	 "Returns a copy of s1 with characters in set trimmed from the start and end.",
