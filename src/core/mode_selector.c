@@ -165,7 +165,7 @@ void run_mode(Mode mode, LibFunc *func)
     printf("\nScore: %d%%\n", score);
 
     char norm_file_path[128];
-    snprintf(norm_file_path, sizeof(norm_file_path), "libft/ft_%s.c", func->name);
+    snprintf(norm_file_path, sizeof(norm_file_path), "libft/%s.c", func->name);
 
     FILE *fp = fopen(norm_file_path, "w");
     if (fp)
