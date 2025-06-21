@@ -6,7 +6,7 @@
 /*   By: esaleh <esaleh@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/21 09:00:00 by esaleh            #+#    #+#             */
-/*   Updated: 2025/06/21 09:00:00 by esaleh           ###   ########.fr       */
+/*   Updated: ✨ type42.berlin by ft trainer ✨        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t	i;
+	size_e	i;
 	size_t	src_len;
 
 	src_len = 0;
