@@ -81,7 +81,7 @@ void write_norminette_file(const char *filename, const char *func_name, const ch
             "/*                                                        :::      ::::::::   */\n"
             "/*   %-42s   :+:      :+:    :+:   */\n"
             "/*                                                    +:+ +:+         +:+     */\n"
-            "/*   By: type42 <type42@student.42.de>              +#+  +:+       +#+        */\n"
+            "/*   By: type42 <esaleh@student.42.de>              +#+  +:+       +#+        */\n"
             "/*                                                +#+#+#+#+#+   +#+           */\n"
             "/*   Created: 2025/06/20 20:00:00 by type42            #+#    #+#             */\n"
             "/*   Updated: 2025/06/20 20:00:00 by type42           ###   ########.fr       */\n"
