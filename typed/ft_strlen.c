@@ -2,10 +2,11 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_strlen                                    :+:      :+:    :+:   */
-/*   By: type42 <esaleh@student.42berlin.de>        +#+  +:+       +#+        */
+/*                                                    +:+ +:+         +:+     */
+/*   By: type42 <type42@student.42.de>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created for type42-berlin typing trainer        #+#    #+#             */
-/*   Integrated with Norminette checker              ###   ########.fr       */
+/*   Created: 2025/06/20 20:00:00 by type42            #+#    #+#             */
+/*   Updated: 2025/06/20 20:00:00 by type42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
