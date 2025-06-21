@@ -3,27 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: type42 <esaleh@student.42.de>              +#+  +:+       +#+        */
+/*   By: esaleh <esaleh@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/20 20:00:00 by type42            #+#    #+#             */
-/*   Updated: 2025/06/20 20:00:00 by type42           ###   ########.fr       */
+/*   Created: 2025/06/21 09:00:00 by esaleh            #+#    #+#             */
+/*   Updated: ✨ type42.berlin by ft trainer ✨        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
-{
-	size_t i;
-	size_t needle_len;
+/*
+**  type42-berlin — Typing Trainer for 42 Network
+**  Function: ft_strnstr — Practice Mode: Copy / Recall
+*/
 
-	needle_len = ft_strlen(needle);
-	if (needle_len == 0)
-		return ((char *)haystack);
-	i = 0;
-	while (haystack[i] && (i + needle_len) <= len)
-	{
-		if (ft_strncmp(&haystack[i], needle, needle_len) == 0)
-			return ((char *)&haystack[i]);
-		i++;
-	}
-	return (NULL);
-}
