@@ -87,8 +87,8 @@ int run_category_loop(int mode, int category)
         printf("\n-------------------------------------------\n");
         printf("\nWhat would you like to do next?\n");
         printf("1. Try another function in this category\n");
-        printf("2. Return to category menu\n");
-        printf("3. Return to mode selection\n");
+        printf("2. Category Menu\n");
+        printf("3. Chane Mode\n");
         printf("Enter your choice: ");
 
         int choice;
