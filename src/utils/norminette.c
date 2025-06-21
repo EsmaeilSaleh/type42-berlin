@@ -43,10 +43,6 @@ int check_norminette(const char *filename)
                     printf("\033[0;31mNorm: line %d → Typed: line %d — %s\033[0m\n", line_num, adjusted_line, buffer);
                 }
             }
-            else if (strstr(buffer, "Error") || strstr(buffer, "Warning"))
-            {
-                printf("\033[0;31m%s\033[0m", buffer);
-            }
         }
         else
         {
