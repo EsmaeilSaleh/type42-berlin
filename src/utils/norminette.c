@@ -84,7 +84,7 @@ void write_norminette_file(const char *filename, const char *func_name, const ch
             "/*   By: esaleh <esaleh@student.42berlin.de>        +#+  +:+       +#+        */\n"
             "/*                                                +#+#+#+#+#+   +#+           */\n"
             "/*   Created: 2025/06/21 09:00:00 by esaleh            #+#    #+#             */\n"
-            "/*   Updated: ✨ type42.berlin | ft trainer ✨      ###   ########.fr       */\n"
+            "/*   Updated: ✨ type42.berlin | ft trainer ✨           ###   ########.fr       */\n"
             "/*                                                                            */\n"
             "/* ************************************************************************** */\n"
             "\n"
