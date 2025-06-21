@@ -3,19 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: type42 <esaleh@student.42.de>              +#+  +:+       +#+        */
+/*   By: esaleh <esaleh@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/20 20:00:00 by type42            #+#    #+#             */
-/*   Updated: 2025/06/20 20:00:00 by type42           ###   ########.fr       */
+/*   Created: 2025/06/21 09:00:00 by esaleh            #+#    #+#             */
+/*   Updated: ✨ type42.berlin by ft trainer ✨        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+**  type42-berlin — Typing Trainer for 42 Network
+**  Function: ft_strncmp — Practice Mode: Copy / Recall
+*/
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < n && (s1[i] || s2[i]))
+	while (i < n && (s1[i] && s2[i]))
 	{
 		if ((unsigned char)s1[i] != (unsigned char)s2[i])
 			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
