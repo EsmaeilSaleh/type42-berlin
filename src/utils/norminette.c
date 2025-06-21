@@ -33,10 +33,15 @@ int check_norminette(const char *filename)
                 char *col_ptr = strstr(buffer, ", col:");
                 if (col_ptr)
                 {
-                    char temp = *col_ptr;
-                    *col_ptr = '\0';
-                    printf("\033[0;31mNorm: line %d → Typed: line %d — %s\033[0m\n", line_num, adjusted_line, buffer);
-                    *col_ptr = temp;
+                    int col_num = 0;
+                    sscanf(col_ptr, ", col: %d", &col_num);
+
+                    // Extract error name
+                    char *desc_start = strchr(buffer, ')');
+                    const char *error_name = desc_start ? desc_start + 2 : "Unknown error";
+
+                    printf("\033[0;31mNorm: line %d (col %d) → Typed: line %d — %s\033[0m\n",
+                           line_num, col_num, adjusted_line, error_name);
                 }
                 else
                 {
