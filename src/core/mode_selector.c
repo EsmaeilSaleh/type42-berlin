@@ -166,27 +166,7 @@ void run_mode(Mode mode, LibFunc *func)
 
     char norm_file_path[128];
     snprintf(norm_file_path, sizeof(norm_file_path), "libft/%s.c", func->name);
-
-    FILE *fp = fopen(norm_file_path, "w");
-    if (fp)
-    {
-        fprintf(fp,
-                "/* ************************************************************************** */\n"
-                "/*                                                                            */\n"
-                "/*                                                        :::      ::::::::   */\n"
-                "/*   %s.c                                        :+:      :+:    :+:   */\n"
-                "/*                                                    +:+ +:+         +:+     */\n"
-                "/*   By: type42 <type42@student.42.fr>              +#+  +:+       +#+        */\n"
-                "/*                                                +#+#+#+#+#+   +#+           */\n"
-                "/*   Created: 2025/06/20 20:00:00 by type42            #+#    #+#             */\n"
-                "/*   Updated: 2025/06/20 20:00:00 by type42           ###   ########.fr       */\n"
-                "/*                                                                            */\n"
-                "/* ************************************************************************** */\n\n",
-                func->name);
-
-        fprintf(fp, "%s\n", code_to_practice);
-        fclose(fp);
-    }
+    write_norminette_file(norm_file_path, func->name, code_to_practice);
 
     int norm_score = check_norminette(norm_file_path);
     printf("Norminette: %s\n", norm_score == 100 ? "✅ Pass" : "❌ Fail");

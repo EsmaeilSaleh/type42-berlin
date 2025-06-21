@@ -49,35 +49,3 @@ int compute_similarity_score(const char *input, const char *expected)
     }
     return expected_len ? (matches * 100 / expected_len) : 0;
 }
-
-int check_norminette(const char *filename)
-{
-    FILE *fp;
-    char command[256];
-    char buffer[512];
-    int passed = 0;
-
-    snprintf(command, sizeof(command), "norminette %s 2>&1", filename);
-    fp = popen(command, "r");
-    if (!fp)
-        return 0;
-
-    while (fgets(buffer, sizeof(buffer), fp))
-    {
-        if (strstr(buffer, ": OK!"))
-        {
-            printf("\033[0;32m%s\033[0m", buffer); // green
-            passed = 1;
-        }
-        else if (strstr(buffer, "Error") || strstr(buffer, "Warning"))
-        {
-            printf("\033[0;31m%s\033[0m", buffer); // red
-        }
-        else
-        {
-            printf("%s", buffer);
-        }
-    }
-    pclose(fp);
-    return passed ? 100 : 0;
-}

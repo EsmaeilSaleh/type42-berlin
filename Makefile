@@ -16,6 +16,7 @@ SRCS = \
 	$(APP_DIR)/core/run_typing_session.c \
 	$(APP_DIR)/utils/scoring.c\
 	$(APP_DIR)/utils/files_io.c\
+	$(APP_DIR)/utils/norminette.c\
 	$(APP_DIR)/ui/terminal_display.c\
 	$(DATA_DIR)/string.c \
 	$(DATA_DIR)/memory.c \
