@@ -19,6 +19,7 @@ char	*ft_strchr(const char *s, int c)
 		s++;
 	}
 	if (c == '\0'
-	   )		return ((char *)s);
+	   )
+		return ((char *)s);
 	return (NULL);
 }
