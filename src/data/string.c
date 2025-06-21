@@ -201,7 +201,7 @@ LibFunc string_functions[] = {
 	 "\ts_len = ft_strlen(s);\n"
 	 "\tif (start >= s_len)\n"
 	 "\t\treturn (ft_strdup(\"\"));\n"
-	 "\tif (len > s_len - start)\n"
+	 "\tif (len > (s_len - start))\n"
 	 "\t\tlen = s_len - start;\n"
 	 "\tsub = malloc(len + 1);\n"
 	 "\tif (!sub)\n"
