@@ -249,8 +249,8 @@ LibFunc string_functions[] = {
 	 0,
 	 "char\t*ft_strnstr(const char *haystack, const char *needle, size_t len)\n"
 	 "{\n"
-	 "\tsize_t i;\n"
-	 "\tsize_t needle_len;\n"
+	 "\tsize_t\ti;\n"
+	 "\tsize_t\tneedle_len;\n"
 	 "\n"
 	 "\tneedle_len = ft_strlen(needle);\n"
 	 "\tif (needle_len == 0)\n"

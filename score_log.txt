@@ -185,3 +185,4 @@
 [2025-06-21 09:44:40] Mode: Copy | Function: ft_strlen | Score: 0%
 [2025-06-21 09:49:57] Mode: Copy | Function: ft_strlen | Score: 0%
 [2025-06-21 09:50:25] Mode: Copy | Function: ft_strnstr | Score: 0%
+[2025-06-21 09:51:07] Mode: Copy | Function: ft_strjoin | Score: 0%
