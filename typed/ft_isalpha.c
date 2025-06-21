@@ -2,11 +2,11 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha                                   :+:      :+:    :+:   */
-/*                       hello                        +:+ +:+         +:+     */
+/*                                                    +:+ +:+         +:+     */
 /*   By: esaleh <esaleh@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created dddddddddd llllllll by esaleh            #+#    #+#             */
-/*   Updated: 2025/06/21 09:00:00 by esaleh           ###   ########.fr       */
+/*   Created: 2025/06/21 09:00:00 by esaleh            #+#    #+#             */
+/*   Updated: ✨ type42.berlin | ft trainer ✨         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
