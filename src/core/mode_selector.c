@@ -166,7 +166,6 @@ void run_mode(Mode mode, LibFunc *func)
                 putchar(*line++);
             }
         }
-        printf("\n");
     }
     else if (mode == RECALL_MODE)
     {
