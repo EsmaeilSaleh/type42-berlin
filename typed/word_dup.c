@@ -21,14 +21,14 @@ char	*word_dup(const char *start, size_t len)
 	char	*word;
 
 	word = malloc(len + 1);
-	i = 0;
 	if (!word)
 		return (NULL);
 	while (i < len)
 	{
 		word[i] = start[i];
 		i++;
-	}
-	word[i] = '\0';
-	return (word);
+	+
+	word[i] = '\0
+;
+return (word);
 }
