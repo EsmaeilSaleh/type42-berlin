@@ -1,5 +1,7 @@
 #include "core.h"
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 int compute_similarity_score(const char *input, const char *expected)
 {
@@ -46,4 +48,28 @@ int compute_similarity_score(const char *input, const char *expected)
         p++;
     }
     return expected_len ? (matches * 100 / expected_len) : 0;
+}
+
+int check_norminette(const char *filename)
+{
+    FILE *fp;
+    char command[256];
+    char buffer[512];
+    int passed = 1;
+
+    snprintf(command, sizeof(command), "norminette %s 2>&1", filename);
+    fp = popen(command, "r");
+    if (!fp)
+        return 0;
+
+    while (fgets(buffer, sizeof(buffer), fp))
+    {
+        if (strstr(buffer, "Error") || strstr(buffer, "Warning"))
+        {
+            passed = 0;
+            break;
+        }
+    }
+    pclose(fp);
+    return passed ? 100 : 0;
 }
