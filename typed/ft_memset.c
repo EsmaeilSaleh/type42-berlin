@@ -11,13 +11,13 @@
 /* ************************************************************************** */
 
 /*
-**  type42-berlin — Typing Trainer for 42 Network
-**  Function: ft_memset — Practice Mode: Copy / Recall
-*/
+ **  type42-berlin — Typing Trainer for 42 Network
+ **  Function: ft_memset — Practice Mode: Copy / Recall
+ */
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t					i;
+	size_t				i;
 	unsigned char	*p;
 
 	i = 0;
