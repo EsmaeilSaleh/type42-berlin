@@ -82,7 +82,7 @@ LibFunc string_functions[] = {
 	 0,
 	 "char\t*ft_strrchr(const char *s, int c)\n"
 	 "{\n"
-	 "\tconst char *last;\n"
+	 "\tconst char\t*last;\n"
 	 "\n"
 	 "\tlast = NULL;\n"
 	 "\twhile (*s)\n"
@@ -94,7 +94,7 @@ LibFunc string_functions[] = {
 	 "\tif (c == '\\0')\n"
 	 "\t\treturn ((char *)s);\n"
 	 "\treturn ((char *)last);\n"
-	 "}"},
+	 "}\n"},
 	{"ft_strncmp",
 	 "Compares up to n characters of the strings s1 and s2.",
 	 "Returns 0 if equal, or the difference between the first differing characters.",

@@ -12,7 +12,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char *last;
+	const char	*last;
 
 	last = NULL;
 	while (*s)
