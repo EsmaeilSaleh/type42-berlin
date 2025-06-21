@@ -270,3 +270,4 @@
 [2025-06-21 21:53:57] Mode: Copy | Function: ft_strmapi | Score: 100%
 [2025-06-21 21:57:34] Mode: Copy | Function: ft_striteri | Score: 74%
 [2025-06-21 22:04:57] Mode: Copy | Function: count_words | Score: 98%
+[2025-06-21 22:07:27] Mode: Copy | Function: ft_strdup | Score: 0%
