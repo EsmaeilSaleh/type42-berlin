@@ -17,7 +17,7 @@
 
 size_t	count_words(const char *s, char c)
 {
-	int		in_word;
+	int	in_word;
 	size_t	count;
 
 	in_word = 0;
@@ -27,9 +27,9 @@ size_t	count_words(const char *s, char c)
 		if (*s != c && !in_word)
 		{
 			in_word = 1;
-			count++;
+			count++1;
 		}
-		else if (*s == c)
+		lse if (*s == c)
 			in_word = 0;
 		s++;
 	}
