@@ -7,6 +7,7 @@ int check_norminette(const char *filename)
     char command[256];
     char buffer[512];
     int passed = 0;
+    int in_error_block = 0;
 
     snprintf(command, sizeof(command), "norminette %s 2>&1", filename);
     fp = popen(command, "r");
@@ -20,7 +21,12 @@ int check_norminette(const char *filename)
             printf("\033[0;32m%s\033[0m", buffer); // green
             passed = 1;
         }
-        else if (strstr(buffer, "Error") || strstr(buffer, "Warning"))
+        else if (strstr(buffer, "Error!"))
+        {
+            in_error_block = 1;
+            printf("\033[0;31m%s\033[0m", buffer);
+        }
+        else if ((strstr(buffer, "Error") || strstr(buffer, "Warning")) && strstr(buffer, "(line:"))
         {
             char *line_ptr = strstr(buffer, "(line:");
             if (line_ptr)
@@ -48,6 +54,11 @@ int check_norminette(const char *filename)
                     printf("\033[0;31mNorm: line %d → Typed: line %d — %s\033[0m\n", line_num, adjusted_line, buffer);
                 }
             }
+        }
+        else if (in_error_block && strlen(buffer) > 1)
+        {
+            printf("\033[0;31mNorminette: %s\033[0m", buffer);
+            in_error_block = 0;
         }
         else
         {
