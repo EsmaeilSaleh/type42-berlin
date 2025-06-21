@@ -83,7 +83,7 @@ void write_norminette_file(const char *filename, const char *func_name, const ch
             "/*                       hello                        +:+ +:+         +:+     */\n"
             "/*   By: esaleh <esaleh@student.42berlin.de>        +#+  +:+       +#+        */\n"
             "/*                                                +#+#+#+#+#+   +#+           */\n"
-            "/*   Created: dddddddddd llllllll by esaleh            #+#    #+#             */\n"
+            "/*   1234567: dddddddddd llllllll by esaleh            #+#    #+#             */\n"
             "/*   Updated: 2025/06/21 09:00:00 by esaleh           ###   ########.fr       */\n"
             "/*                                                                            */\n"
             "/* ************************************************************************** */\n"
