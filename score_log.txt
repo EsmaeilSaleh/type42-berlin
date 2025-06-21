@@ -177,3 +177,4 @@
 [2025-06-21 09:11:22] Mode: Copy | Function: ft_strlcpy | Score: 0%
 [2025-06-21 09:31:18] Mode: Copy | Function: ft_split | Score: 0%
 [2025-06-21 09:32:04] Mode: Copy | Function: ft_striteri | Score: 0%
+[2025-06-21 09:33:17] Mode: Copy | Function: ft_strmapi | Score: 0%

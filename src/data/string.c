@@ -324,11 +324,11 @@ LibFunc string_functions[] = {
 	 0,
 	 "void\tft_striteri(char *s, void (*f)(unsigned int, char *))\n"
 	 "{\n"
-	 "\tsize_t i;\n"
+	 "\tsize_t\ti;\n"
 	 "\n"
 	 "\ti = 0;\n"
 	 "\tif (!s || !f)\n"
-	 "\t\treturn;\n"
+	 "\t\treturn ;\n"
 	 "\twhile (s[i])\n"
 	 "\t{\n"
 	 "\t\tf(i, &s[i]);\n"
