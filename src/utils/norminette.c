@@ -32,12 +32,18 @@ int check_norminette(const char *filename)
                     adjusted_line = 1;
                 char *col_ptr = strstr(buffer, ", col:");
                 if (col_ptr)
-                    *col_ptr = '\0'; // temporarily truncate
-                printf("\033[0;31mAdjusted Line %d: %s\033[0m\n", adjusted_line, buffer);
-                if (col_ptr)
-                    *col_ptr = ','; // restore
+                {
+                    char temp = *col_ptr;
+                    *col_ptr = '\0';
+                    printf("\033[0;31mNorm: line %d → Typed: line %d — %s\033[0m\n", line_num, adjusted_line, buffer);
+                    *col_ptr = temp;
+                }
+                else
+                {
+                    printf("\033[0;31mNorm: line %d → Typed: line %d — %s\033[0m\n", line_num, adjusted_line, buffer);
+                }
             }
-            else
+            else if (strstr(buffer, "Error") || strstr(buffer, "Warning"))
             {
                 printf("\033[0;31m%s\033[0m", buffer);
             }
