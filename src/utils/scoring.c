@@ -28,9 +28,13 @@ int compute_similarity_score(const char *input, const char *expected)
 
         if (*p1 == *p2)
             matches++;
-        else
+        else if (matches < 5)
         {
             fprintf(stderr, "\033[0;31mMismatch at position %d:\033[0m expected '%c', got '%c'\n", total, *p2, *p1);
+        }
+        else if (matches >= 5)
+        {
+            fprintf(stderr, "\033[0;33m... (too many mismatch...)\033[0m\n");
         }
 
         total++;

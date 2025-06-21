@@ -10,12 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *)
-{
-	size_t i;
-
-	i = 0
-;	while (s[i])
-		i++;
-	return (i);
-}
+size_ ft_strlen(constsdfasdfasd)
+as;dfaj
+a;sdlfkja;
