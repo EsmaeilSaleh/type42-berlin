@@ -6,9 +6,9 @@ static const Variant memcpy_variants[] = {
 	{"index-based",
 	 "void\t*ft_memcpy(void *dest, const void *src, size_t n)\n"
 	 "{\n"
-	 "\tsize_t\t\t\ti;\n"
-	 "\tunsigned char\t\t*d;\n"
-	 "\tconst unsigned char\t*s;\n"
+	 "\tsize_t\t\t\t\t\ti;\n"
+	 "\tunsigned char\t\t\t*d;\n"
+	 "\tconst unsigned char\t\t*s;\n"
 	 "\n"
 	 "\tif (!dest && !src)\n"
 	 "\t\treturn (NULL);\n"
