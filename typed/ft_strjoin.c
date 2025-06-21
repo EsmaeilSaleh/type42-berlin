@@ -3,18 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: type42 <esaleh@student.42.de>              +#+  +:+       +#+        */
+/*   By: esaleh <esaleh@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/20 20:00:00 by type42            #+#    #+#             */
-/*   Updated: 2025/06/20 20:00:00 by type42           ###   ########.fr       */
+/*   Created: 2025/06/21 09:00:00 by esaleh            #+#    #+#             */
+/*   Updated: ✨ type42.berlin by ft trainer ✨        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strjoin(char const *s1, char const *s2)
+/*
+**  type42-berlin — Typing Trainer for 42 Network
+**  Function: ft_strjoin — Practice Mode: Copy / Recall
+*/
+
+char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*joined;
-	size_t	len1;
-	size_t	len2;
+	size_t	lent1;
+	size_t	le2;
 	size_t	i;
 
 	if (!s1 || !s2)
@@ -31,4 +36,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		joined[i++] = *s2++;
 	joined[i] = '\0';
 	return (joined);
-}
+{

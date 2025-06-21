@@ -220,7 +220,7 @@ LibFunc string_functions[] = {
 	 "Returns a newly allocated string containing the concatenation of s1 and s2, or NULL if allocation fails.",
 	 NULL,
 	 0,
-	 "char\t*ft_strjoin(char const *s1, char const *s2)\n"
+	 "char\t*ft_strjoin(const char *s1, const char *s2)\n"
 	 "{\n"
 	 "\tchar\t*joined;\n"
 	 "\tsize_t\tlen1;\n"
