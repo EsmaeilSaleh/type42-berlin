@@ -16,7 +16,7 @@ static const Variant strcpy_variants[] = {
 	 "\t}\n"
 	 "\tdst[i] = '\\0';\n"
 	 "\treturn (dst);\n"
-	 "}"},
+	 "}\n"},
 	{"pointer-based",
 	 "char\t*ft_strcpy(char *dst, const char *src)\n"
 	 "{\n"
@@ -27,7 +27,7 @@ static const Variant strcpy_variants[] = {
 	 "\t\t*dst++ = *src++;\n"
 	 "\t*dst = '\\0';\n"
 	 "\treturn (ret);\n"
-	 "}"}};
+	 "}\n"}};
 
 static const Variant strlen_variants[] = {
 	{"index-based",
@@ -39,7 +39,7 @@ static const Variant strlen_variants[] = {
 	 "\twhile (s[i])\n"
 	 "\t\ti++;\n"
 	 "\treturn (i);\n"
-	 "}"},
+	 "}\n"},
 	{"pointer-based",
 	 "size_t\tft_strlen(const char *s)\n"
 	 "{\n"
@@ -49,7 +49,7 @@ static const Variant strlen_variants[] = {
 	 "\twhile (*s)\n"
 	 "\t\ts++;\n"
 	 "\treturn (s - start);\n"
-	 "}"}};
+	 "}\n"}};
 
 LibFunc string_functions[] = {
 	{"ft_strlen",
@@ -132,7 +132,7 @@ LibFunc string_functions[] = {
 	 "\tif (!copy)\n"
 	 "\t\treturn (NULL);\n"
 	 "\treturn (ft_strcpy(copy, s1));\n"
-	 "}"},
+	 "}\n"},
 	{"ft_strlcpy",
 	 "Copies up to dstsize - 1 characters from src to dst, NUL-terminating the result.",
 	 "Returns the total length of src.",
@@ -184,7 +184,7 @@ LibFunc string_functions[] = {
 	 "\t}\n"
 	 "\tdst[dst_len + i] = '\\0';\n"
 	 "\treturn (dst_len + src_len);\n"
-	 "}"},
+	 "}\n"},
 	{"ft_substr",
 	 "Allocates and returns a substring from the string s.",
 	 "Returns a newly allocated string starting at index start and of maximum length len. Returns an empty string if start is beyond s length.",
@@ -214,7 +214,7 @@ LibFunc string_functions[] = {
 	 "\t}\n"
 	 "\tsub[i] = '\\0';\n"
 	 "\treturn (sub);\n"
-	 "}"},
+	 "}\n"},
 	{"ft_strjoin",
 	 "Allocates and returns a new string, result of the concatenation of s1 and s2.",
 	 "Returns a newly allocated string containing the concatenation of s1 and s2, or NULL if allocation fails.",
@@ -241,7 +241,7 @@ LibFunc string_functions[] = {
 	 "\t\tjoined[i++] = *s2++;\n"
 	 "\tjoined[i] = '\\0';\n"
 	 "\treturn (joined);\n"
-	 "}"},
+	 "}\n"},
 	{"ft_strnstr",
 	 "Locates the first occurrence of the null-terminated string needle in haystack, searching not more than len characters.",
 	 "Returns a pointer to the first match or NULL if not found.",
@@ -263,7 +263,7 @@ LibFunc string_functions[] = {
 	 "\t\ti++;\n"
 	 "\t}\n"
 	 "\treturn (NULL);\n"
-	 "}"},
+	 "}\n"},
 	{"ft_strtrim",
 	 "Returns a copy of s1 with characters in set trimmed from the start and end.",
 	 "Returns newly allocated trimmed string, or NULL if allocation fails.",
@@ -292,7 +292,7 @@ LibFunc string_functions[] = {
 	 "\t\ttrimmed[i++] = s1[start++];\n"
 	 "\ttrimmed[i] = '\\0';\n"
 	 "\treturn (trimmed);\n"
-	 "}"},
+	 "}\n"},
 	{"ft_strmapi",
 	 "Applies function f to each char of s, passing index, returning new string.",
 	 "Returns a newly allocated string or NULL.",
@@ -316,7 +316,7 @@ LibFunc string_functions[] = {
 	 "\t}\n"
 	 "\tresult[i] = '\\0';\n"
 	 "\treturn (result);\n"
-	 "}"},
+	 "}\n"},
 	{"ft_striteri",
 	 "Applies function f to each char of s, passing index, modifying in-place.",
 	 "Returns nothing (void).",
@@ -334,7 +334,7 @@ LibFunc string_functions[] = {
 	 "\t\tf(i, &s[i]);\n"
 	 "\t\ti++;\n"
 	 "\t}\n"
-	 "}"},
+	 "}\n"},
 	{"count_words",
 	 "Counts the number of words in s separated by delimiter c.",
 	 "Returns the number of words as size_t.",
@@ -357,7 +357,7 @@ LibFunc string_functions[] = {
 	 "\t\ts++;\n"
 	 "\t}\n"
 	 "\treturn (count);\n"
-	 "}"},
+	 "}\n"},
 	{"word_dup",
 	 "Duplicates a substring of length len starting at start.",
 	 "Returns a new string or NULL if allocation fails.",
@@ -380,7 +380,7 @@ LibFunc string_functions[] = {
 	 "\t}\n"
 	 "\tword[i] = '\\0';\n"
 	 "\treturn (word);\n"
-	 "}"},
+	 "}\n"},
 	{"ft_split",
 	 "Splits string s by delimiter c into a NULL-terminated array of strings.",
 	 "Returns a NULL-terminated array or NULL on failure.",
@@ -414,7 +414,7 @@ LibFunc string_functions[] = {
 	 "\t}\n"
 	 "\tsplit[j] = NULL;\n"
 	 "\treturn (split);\n"
-	 "}"},
+	 "}\n"},
 };
 
 int get_string_function_count(void)
