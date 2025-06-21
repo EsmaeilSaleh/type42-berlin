@@ -20,8 +20,8 @@ size_t	count_words(const char *s, char c)
 	int	in_word;
 	size_t	count;
 
-in_word = 0;
-count = 0;
+	in_word = 0;
+	count = 0;
 	while (*s)
 	{
 		if (*s != c && !in_word)
