@@ -148,3 +148,4 @@
 [2025-06-21 07:27:54] Mode: Copy | Function: ft_strlen | Score: 79%
 [2025-06-21 07:30:00] Mode: Copy | Function: ft_strlen | Score: 100%
 [2025-06-21 07:30:45] Mode: Copy | Function: ft_strlen | Score: 100%
+[2025-06-21 07:33:57] Mode: Copy | Function: ft_strcpy | Score: 100%
