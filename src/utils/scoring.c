@@ -55,7 +55,7 @@ int check_norminette(const char *filename)
     FILE *fp;
     char command[256];
     char buffer[512];
-    int passed = 1;
+    int passed = 0;
 
     snprintf(command, sizeof(command), "norminette %s 2>&1", filename);
     fp = popen(command, "r");
@@ -64,10 +64,18 @@ int check_norminette(const char *filename)
 
     while (fgets(buffer, sizeof(buffer), fp))
     {
-        if (strstr(buffer, "Error") || strstr(buffer, "Warning"))
+        if (strstr(buffer, ": OK!"))
         {
-            passed = 0;
-            break;
+            printf("\033[0;32m%s\033[0m", buffer); // green
+            passed = 1;
+        }
+        else if (strstr(buffer, "Error") || strstr(buffer, "Warning"))
+        {
+            printf("\033[0;31m%s\033[0m", buffer); // red
+        }
+        else
+        {
+            printf("%s", buffer);
         }
     }
     pclose(fp);
