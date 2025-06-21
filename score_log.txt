@@ -196,3 +196,4 @@
 [2025-06-21 09:52:37] Mode: Copy | Function: ft_strchr | Score: 0%
 [2025-06-21 09:52:53] Mode: Copy | Function: ft_strcpy | Score: 0%
 [2025-06-21 09:56:11] Mode: Copy | Function: ft_strlcpy | Score: 0%
+[2025-06-21 10:03:27] Mode: Copy | Function: ft_isalpha | Score: 0%

@@ -80,7 +80,7 @@ void write_norminette_file(const char *filename, const char *func_name, const ch
             "/*                                                                            */\n"
             "/*                                                        :::      ::::::::   */\n"
             "/*   %-42s   :+:      :+:    :+:   */\n"
-            "/*                                                    +:+ +:+         +:+     */\n"
+            "/*                            hello                        +:+ +:+         +:+     */\n"
             "/*   By: esaleh <esaleh@student.42berlin.de>        +#+  +:+       +#+        */\n"
             "/*                                                +#+#+#+#+#+   +#+           */\n"
             "/*   Created: 2025/06/21 09:00:00 by esaleh            #+#    #+#             */\n"
