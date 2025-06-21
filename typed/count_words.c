@@ -17,9 +17,11 @@
 
 size_t	count_words(const char *s, char c)
 {
-	size_t count = 0;
-	int in_word = 0;
+	int	in_word;
+	size_t	count;
 
+in_word = 0;
+count = 0;
 	while (*s)
 	{
 		if (*s != c && !in_word)

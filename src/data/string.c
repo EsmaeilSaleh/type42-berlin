@@ -342,9 +342,11 @@ LibFunc string_functions[] = {
 	 0,
 	 "size_t\tcount_words(const char *s, char c)\n"
 	 "{\n"
-	 "\tsize_t count = 0;\n"
-	 "\tint in_word = 0;\n"
+	 "\tint\tin_word;\n"
+	 "\tsize_t\tcount;\n"
 	 "\n"
+	 "\tin_word = 0;\n"
+	 "\tcount = 0;\n"
 	 "\twhile (*s)\n"
 	 "\t{\n"
 	 "\t\tif (*s != c && !in_word)\n"
