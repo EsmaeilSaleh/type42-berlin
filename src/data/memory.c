@@ -25,8 +25,10 @@ static const Variant memcpy_variants[] = {
 	{"pointer-based",
 	 "void\t*ft_memcpy(void *dest, const void *src, size_t n)\n"
 	 "{\n"
-	 "\tunsigned char\t\t*d = (unsigned char *)dest;\n"
-	 "\tconst unsigned char\t*s = (const unsigned char *)src;\n"
+	 "\tunsigned char\t\t*d;\n"
+	 "\td = (unsigned char *)dest;\n"
+	 "\tconst unsigned char\t*s;\n"
+	 "\ts = (const unsigned char *)src;\n"
 	 "\n"
 	 "\tif (!d && !s)\n"
 	 "\t\treturn (NULL);\n"
