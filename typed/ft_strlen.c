@@ -2,13 +2,19 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_strlen                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: type42 <type42@student.42.de>              +#+  +:+       +#+        */
+/*   By: type42 <esaleh@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/20 20:00:00 by type42            #+#    #+#             */
-/*   Updated: 2025/06/20 20:00:00 by type42           ###   ########.fr       */
+/*   Created for type42-berlin typing trainer        #+#    #+#             */
+/*   Integrated with Norminette checker              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-a;sdfkja;sldkfj;as
-a;skldfj;a
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
