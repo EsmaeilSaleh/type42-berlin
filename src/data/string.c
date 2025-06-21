@@ -102,7 +102,7 @@ LibFunc string_functions[] = {
 	 0,
 	 "int\tft_strncmp(const char *s1, const char *s2, size_t n)\n"
 	 "{\n"
-	 "\tsize_t i;\n"
+	 "\tsize_t\ti;\n"
 	 "\n"
 	 "\ti = 0;\n"
 	 "\twhile (i < n && (s1[i] || s2[i]))\n"
@@ -112,7 +112,8 @@ LibFunc string_functions[] = {
 	 "\t\ti++;\n"
 	 "\t}\n"
 	 "\treturn (0);\n"
-	 "}"},
+	 "}\n"
+	 "\n"},
 	{"ft_strcpy",
 	 "Copies the string src to dst including the null terminator.",
 	 "Returns dst.",
