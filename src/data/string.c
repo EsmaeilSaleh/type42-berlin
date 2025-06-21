@@ -298,7 +298,7 @@ LibFunc string_functions[] = {
 	 "Returns a newly allocated string or NULL.",
 	 NULL,
 	 0,
-	 "char\t*ft_strmapi(char const *s, char (*f)(unsigned int, char))\n"
+	 "char\t*ft_strmapi(const char *s, char (*f)(unsigned int, char))\n"
 	 "{\n"
 	 "\tsize_t\ti;\n"
 	 "\tchar\t*result;\n"

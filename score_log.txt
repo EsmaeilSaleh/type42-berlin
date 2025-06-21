@@ -267,3 +267,4 @@
 [2025-06-21 21:27:27] Mode: Copy | Function: ft_strnstr | Score: 100%
 [2025-06-21 21:42:42] Mode: Copy | Function: ft_strtrim | Score: 100%
 [2025-06-21 21:49:17] Mode: Copy | Function: ft_strchr | Score: 0%
+[2025-06-21 21:53:57] Mode: Copy | Function: ft_strmapi | Score: 100%
