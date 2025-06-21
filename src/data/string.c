@@ -164,9 +164,9 @@ LibFunc string_functions[] = {
 	 0,
 	 "size_t\tft_strlcat(char *dst, const char *src, size_t dstsize)\n"
 	 "{\n"
-	 "\tsize_t dst_len;\n"
-	 "\tsize_t src_len;\n"
-	 "\tsize_t i;\n"
+	 "\tsize_t\ti;\n"
+	 "\tsize_t\tdst_len;\n"
+	 "\tsize_t\tsrc_len;\n"
 	 "\n"
 	 "\tdst_len = 0;\n"
 	 "\twhile (dst[dst_len] && dst_len < dstsize)\n"
