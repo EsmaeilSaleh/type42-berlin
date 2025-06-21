@@ -53,6 +53,6 @@ void write_norminette_file(const char *filename, const char *func_name, const ch
             "/* ************************************************************************** */\n\n",
             func_name);
 
-    fprintf(fp, "%s\n", code);
+    fprintf(fp, "%s", code);
     fclose(fp);
 }
