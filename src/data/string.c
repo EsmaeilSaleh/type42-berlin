@@ -74,7 +74,7 @@ LibFunc string_functions[] = {
 	 "\tif (c == '\\0')\n"
 	 "\t\treturn ((char *)s);\n"
 	 "\treturn (NULL);\n"
-	 "}"},
+	 "}\n"},
 	{"ft_strrchr",
 	 "Locates the last occurrence of c in the string s.",
 	 "Returns a pointer to the last occurrence of character c in string s, or NULL if not found.",
