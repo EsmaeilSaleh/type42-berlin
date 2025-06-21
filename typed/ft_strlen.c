@@ -10,6 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-size_ ft_strlen(constsdfasdfasd)
-as;dfaj
-a;sdlfkja;
+sasdfawieo;aljksf;daij
+asefa;skfdj
+asef
