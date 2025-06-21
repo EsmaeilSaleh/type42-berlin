@@ -81,13 +81,18 @@ void write_norminette_file(const char *filename, const char *func_name, const ch
             "/*                                                        :::      ::::::::   */\n"
             "/*   %-42s   :+:      :+:    :+:   */\n"
             "/*                                                    +:+ +:+         +:+     */\n"
-            "/*   By: type42 <esaleh@student.42.de>              +#+  +:+       +#+        */\n"
+            "/*   By: esaleh <esaleh@student.42berlin.de>        +#+  +:+       +#+        */\n"
             "/*                                                +#+#+#+#+#+   +#+           */\n"
-            "/*   Created: 2025/06/20 20:00:00 by type42            #+#    #+#             */\n"
-            "/*   Updated: 2025/06/20 20:00:00 by type42           ###   ########.fr       */\n"
+            "/*   Created: 2025/06/21 09:00:00 by esaleh            #+#    #+#             */\n"
+            "/*   Updated: 2025/06/21 09:00:00 by esaleh           ###   ########.fr       */\n"
             "/*                                                                            */\n"
-            "/* ************************************************************************** */\n\n",
-            func_name);
+            "/* ************************************************************************** */\n"
+            "\n"
+            "/*\n"
+            "**  type42-berlin — Typing Trainer for 42 Network\n"
+            "**  Function: %s — Practice Mode: Copy / Recall\n"
+            "*/\n\n",
+            func_name, func_name);
 
     fprintf(fp, "%s", code);
     fclose(fp);

@@ -3,12 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: type42 <esaleh@student.42.de>              +#+  +:+       +#+        */
+/*   By: esaleh <esaleh@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/20 20:00:00 by type42            #+#    #+#             */
-/*   Updated: 2025/06/20 20:00:00 by type42           ###   ########.fr       */
+/*   Created: 2025/06/21 09:00:00 by esaleh            #+#    #+#             */
+/*   Updated: 2025/06/21 09:00:00 by esaleh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+**  type42-berlin — Typing Trainer for 42 Network
+**  Function: ft_strlcpy — Practice Mode: Copy / Recall
+*/
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
