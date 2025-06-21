@@ -147,7 +147,25 @@ void run_mode(Mode mode, LibFunc *func)
     // Show code in COPY mode
     if (mode == COPY_MODE && code_to_practice)
     {
-        printf("--- Copy Mode ---\n\n%s\n", code_to_practice);
+        printf("--- Copy Mode ---\n\n");
+
+        const char *line = code_to_practice;
+        int line_num = 18;
+
+        while (*line)
+        {
+            printf("%2d  ", line_num++);
+
+            while (*line && *line != '\n')
+            {
+                putchar(*line++);
+            }
+
+            if (*line == '\n')
+            {
+                putchar(*line++);
+            }
+        }
     }
     else if (mode == RECALL_MODE)
     {
@@ -165,7 +183,7 @@ void run_mode(Mode mode, LibFunc *func)
     printf("\nScore: %d%%\n", score);
 
     char norm_file_path[128];
-    snprintf(norm_file_path, sizeof(norm_file_path), "libft/%s.c", func->name);
+    snprintf(norm_file_path, sizeof(norm_file_path), "typed/%s.c", func->name);
     write_norminette_file(norm_file_path, func->name, user_input);
 
     int norm_score = check_norminette(norm_file_path);
