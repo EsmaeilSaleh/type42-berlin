@@ -3,12 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: type42 <esaleh@student.42.de>              +#+  +:+       +#+        */
+/*   By: esaleh <esaleh@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/20 20:00:00 by type42            #+#    #+#             */
-/*   Updated: 2025/06/20 20:00:00 by type42           ###   ########.fr       */
+/*   Created: 2025/06/21 09:00:00 by esaleh            #+#    #+#             */
+/*   Updated: ✨ type42.berlin by ft trainer ✨        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+**  type42-berlin — Typing Trainer for 42 Network
+**  Function: ft_strrchr — Practice Mode: Copy / Recall
+*/
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -19,6 +24,7 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		if (*s == (char)c)
 			last = s;
+
 		s++;
 	}
 	if (c == '\0')
