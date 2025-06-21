@@ -396,7 +396,6 @@ LibFunc string_functions[] = {
 	 "\ti = 0;\n"
 	 "\tj = 0;\n"
 	 "\tstart = 0;\n"
-	 "\n"
 	 "\tif (!s)\n"
 	 "\t\treturn (NULL);\n"
 	 "\tword_count = count_words(s, c);\n"
