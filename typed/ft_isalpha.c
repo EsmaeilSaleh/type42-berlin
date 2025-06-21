@@ -2,7 +2,7 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha                                   :+:      :+:    :+:   */
-/*                            hello                        +:+ +:+         +:+     */
+/*                       hello                        +:+ +:+         +:+     */
 /*   By: esaleh <esaleh@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/21 09:00:00 by esaleh            #+#    #+#             */
