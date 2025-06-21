@@ -140,8 +140,8 @@ LibFunc string_functions[] = {
 	 0,
 	 "size_t\tft_strlcpy(char *dst, const char *src, size_t dstsize)\n"
 	 "{\n"
-	 "\tsize_t i;\n"
-	 "\tsize_t src_len;\n"
+	 "\tsize_t\ti;\n"
+	 "\tsize_t\tsrc_len;\n"
 	 "\n"
 	 "\tsrc_len = 0;\n"
 	 "\twhile (src[src_len])\n"
@@ -156,7 +156,7 @@ LibFunc string_functions[] = {
 	 "\t}\n"
 	 "\tdst[i] = '\\0';\n"
 	 "\treturn (src_len);\n"
-	 "}"},
+	 "}\n"},
 	{"ft_strlcat",
 	 "Appends src to string dst of size dstsize, NUL-terminating the result.",
 	 "Returns the length it tried to create (dst_len + src_len).",
