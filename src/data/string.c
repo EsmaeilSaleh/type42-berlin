@@ -112,8 +112,7 @@ LibFunc string_functions[] = {
 	 "\t\ti++;\n"
 	 "\t}\n"
 	 "\treturn (0);\n"
-	 "}\n"
-	 "\n"},
+	 "}\n"},
 	{"ft_strcpy",
 	 "Copies the string src to dst including the null terminator.",
 	 "Returns dst.",
