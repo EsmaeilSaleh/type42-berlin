@@ -9,7 +9,11 @@ char g_base_path[PATH_MAX] = __BASE_PATH__;
 void save_score_log(const char *func_name, int score, const char *mode)
 {
     char full_path[PATH_MAX];
-    snprintf(full_path, sizeof(full_path), "%s/score_log.txt", g_base_path);
+    int written = snprintf(full_path, sizeof(full_path), "%s/score_log.txt", g_base_path);
+if (written < 0 || written >= (int)sizeof(full_path)) {
+    fprintf(stderr, "Path too long or snprintf failed\n");
+    return;
+}
     FILE *log = fopen(full_path, "a");
     if (!log)
     {

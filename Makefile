@@ -1,7 +1,7 @@
 NAME = type42
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Iincludes
+CFLAGS = -Wall -Wextra -Werror -Iincludes
 CFLAGS += -D__BASE_PATH__="\"$(shell pwd)\""
 
 # Directories
