@@ -20,8 +20,7 @@ char	*word_dup(const char *start, size_t len)
 	size_t	i;
 	char *word;
 
-	word = malloc(len + 1
-)
+	word = malloc(len + 1);
 	if (!word)
 		return (NULL);
 	while (i < len)
