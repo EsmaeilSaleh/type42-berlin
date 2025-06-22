@@ -24,11 +24,11 @@ char	*word_dup(const char *start, size_t len)
 	word = malloc(len + 1);
 	if (!word)
 		return (NULL);
-	while (*s)
+	while (i < len)
 	{
 		word[i] = start[i];
 		i++;
-	}
-	word[i] = '\0';
+	+
+	word[i] = ´\0´;
 	return (word);
 }
