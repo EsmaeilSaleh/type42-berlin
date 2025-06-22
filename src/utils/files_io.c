@@ -1,5 +1,5 @@
 #include "core.h"
-
+ #include <limits.h>
 #ifndef __BASE_PATH__
 #define __BASE_PATH__ "."
 #endif

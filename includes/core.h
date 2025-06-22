@@ -12,6 +12,7 @@
 #include <libgen.h>
 #include "core.h"
 #define MAX_INPUT 1024
+#define PATH_MAX        4096
 #define MAX_INPUT_SIZE 8192
 #define FUNC_COUNT (get_string_function_count() + get_memory_function_count())
 
@@ -99,7 +100,7 @@ LibFunc get_ft_printf_handlers_functions_by_index(int index);
 int get_ft_printf_main_functions_count(void);
 LibFunc get_ft_printf_main_functions_by_index(int index);
 
-jmp_buf mode_menu_jump;
-jmp_buf category_menu_jump;
+extern jmp_buf mode_menu_jump;
+extern jmp_buf category_menu_jump;
 
 #endif

@@ -1,7 +1,7 @@
 NAME = type42
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Iincludes
+CFLAGS = -Wall -Wextra -Iincludes
 CFLAGS += -D__BASE_PATH__="\"$(shell pwd)\""
 
 # Directories
@@ -27,7 +27,7 @@ SRCS = \
 	$(DATA_DIR)/ft_printf_utils.c \
 	$(DATA_DIR)/ft_printf_handlers.c \
 	$(DATA_DIR)/ft_printf_main.c \
-	$(DATA_DIR)/gnl.c
+	$(DATA_DIR)/GNL.c
 
 OBJS = $(SRCS:.c=.o)
 

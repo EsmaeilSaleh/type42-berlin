@@ -3,6 +3,11 @@
 #include "scoring.h"
 #include "terminal_display.h"
 #include "ui.h"
+#include <setjmp.h>
+
+jmp_buf mode_menu_jump;
+jmp_buf category_menu_jump;
+
 
 int main()
 {
