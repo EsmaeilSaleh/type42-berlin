@@ -272,3 +272,4 @@
 [2025-06-21 22:04:57] Mode: Copy | Function: count_words | Score: 98%
 [2025-06-21 22:07:27] Mode: Copy | Function: ft_strdup | Score: 0%
 [2025-06-21 22:09:05] Mode: Copy | Function: word_dup | Score: 50%
+[2025-06-22 07:17:43] Mode: Copy | Function: ft_split | Score: 51%
