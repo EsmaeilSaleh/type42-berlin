@@ -26,14 +26,7 @@ size_t	count_words(const char *s, char c)
 	{
 		if (*s != c && !in_word)
 		{
-			in_word = 1;
-			count++;
-
-
-		}
-		else if (*s == c)
 			in_word = 0;
-		s++;
+			count++;
+		}
 	}
-	return (count);
-}
