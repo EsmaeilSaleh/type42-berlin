@@ -148,14 +148,14 @@ LibFunc string_functions[] = {
 	 "Returns a newly allocated duplicate of the string s. Returns NULL if allocation fails.",
 	 NULL,
 	 0,
-	 "char\t*ft_strdup(const char *s1)\n"
+	 "char\t*ft_strdup(const char *src)\n"
 	 "{\n"
 	 "\tchar\t*copy;\n"
 	 "\n"
-	 "\tcopy = (char *)malloc(ft_strlen(s1) + 1);\n"
+	 "\tcopy = (char *)malloc(ft_strlen(src) + 1);\n"
 	 "\tif (!copy)\n"
 	 "\t\treturn (NULL);\n"
-	 "\treturn (ft_strcpy(copy, s1));\n"
+	 "\treturn (ft_strcpy(copy, src));\n"
 	 "}\n"},
 	{"ft_strlcat",
 	 "Appends src to string dst of size dstsize, NUL-terminating the result.",

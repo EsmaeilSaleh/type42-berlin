@@ -15,12 +15,13 @@
 **  Function: ft_strdup — Practice Mode: Copy / Recall
 */
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdup(const char *src)
 {
 	char	*copy;
 
-	copy = (char *)malloc(ft_strlen(s1) + 1);
-	if (!copy)
+	copy = (char *)malloc(ft_strlen(src) + 1);
+	if (
+!copy)
 		return (NULL);
-	return (ft_strcpy(copy, s1));
+	return (ft_strcpy(copy, src);
 }
