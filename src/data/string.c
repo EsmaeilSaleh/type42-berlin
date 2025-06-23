@@ -367,7 +367,7 @@ LibFunc string_functions[] = {
 	 0,
 	 "char\t*word_dup(const char *start, size_t len)\n"
 	 "{\n"
-	 "\tchar\t\t*word;\n"
+	 "\tchar\t*word;\n"
 	 "\tsize_t\ti;\n"
 	 "\n"
 	 "\ti = 0;\n"
