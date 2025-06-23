@@ -307,3 +307,4 @@
 [2025-06-23 08:18:31] Mode: Copy | Function: ft_strlen | Score: 82%
 [2025-06-23 08:21:24] Mode: Copy | Function: ft_strlen | Score: 82%
 [2025-06-23 08:26:41] Mode: Copy | Function: ft_strcpy | Score: 0%
+[2025-06-23 08:31:08] Mode: Copy | Function: ft_strncmp | Score: 99%
