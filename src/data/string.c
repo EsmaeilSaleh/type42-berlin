@@ -263,31 +263,31 @@ LibFunc string_functions[] = {
 	 "\treturn (NULL);\n"
 	 "}\n"},
 	{"ft_strtrim",
-	 "Returns a copy of s1 with characters in set trimmed from the start and end.",
+	 "Returns a copy of str with characters in set trimmed from the start and end.",
 	 "Returns newly allocated trimmed string, or NULL if allocation fails.",
 	 NULL,
 	 0,
-	 "char\t*ft_strtrim(const char *s1, const char *set)\n"
+	 "char\t*ft_strtrim(const char *str, const char *set)\n"
 	 "{\n"
 	 "\tsize_t\ti;\n"
 	 "\tsize_t\tend;\n"
 	 "\tsize_t\tstart;\n"
 	 "\tchar\t*trimmed;\n"
 	 "\n"
-	 "\tif (!s1 || !set)\n"
+	 "\tif (!str || !set)\n"
 	 "\t\treturn (NULL);\n"
 	 "\tstart = 0;\n"
-	 "\twhile (s1[start] && ft_strchr(set, s1[start]))\n"
+	 "\twhile (str[start] && ft_strchr(set, str[start]))\n"
 	 "\t\tstart++;\n"
-	 "\tend = ft_strlen(s1);\n"
-	 "\twhile (end > start && ft_strchr(set, s1[end - 1]))\n"
+	 "\tend = ft_strlen(str);\n"
+	 "\twhile (end > start && ft_strchr(set, str[end - 1]))\n"
 	 "\t\tend--;\n"
 	 "\ttrimmed = malloc(end - start + 1);\n"
 	 "\tif (!trimmed)\n"
 	 "\t\treturn (NULL);\n"
 	 "\ti = 0;\n"
 	 "\twhile (start < end)\n"
-	 "\t\ttrimmed[i++] = s1[start++];\n"
+	 "\t\ttrimmed[i++] = str[start++];\n"
 	 "\ttrimmed[i] = '\\0';\n"
 	 "\treturn (trimmed);\n"
 	 "}\n"},
