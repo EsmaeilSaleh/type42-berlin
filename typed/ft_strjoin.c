@@ -18,8 +18,8 @@
 char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*joined;
-	size_t	lent1;
-	size_t	le2;
+	size_t	len1;
+	size_t	len2;
 	size_t	i;
 
 	if (!s1 || !s2)
@@ -36,4 +36,4 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		joined[i++] = *s2++;
 	joined[i] = '\0';
 	return (joined);
-{
+}
