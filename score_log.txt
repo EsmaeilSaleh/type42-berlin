@@ -317,3 +317,4 @@
 [2025-06-23 09:34:01] Mode: Copy | Function: ft_strcpy | Score: 66%
 [2025-06-23 09:36:11] Mode: Copy | Function: ft_strdup | Score: 100%
 [2025-06-23 09:51:27] Mode: Copy | Function: ft_strlcat | Score: 0%
+[2025-06-23 09:55:38] Mode: Copy | Function: word_dup | Score: 100%
