@@ -152,7 +152,7 @@ LibFunc string_functions[] = {
 	 "{\n"
 	 "\tchar\t*copy;\n"
 	 "\n"
-	 "\tcopy = (char *)malloc(ft_strlen(src) + 1);\n"
+	 "\tcopy = malloc(ft_strlen(src) + 1);\n"
 	 "\tif (!copy)\n"
 	 "\t\treturn (NULL);\n"
 	 "\treturn (ft_strcpy(copy, src));\n"
