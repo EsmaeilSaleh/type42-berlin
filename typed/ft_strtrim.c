@@ -20,7 +20,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	size_t	i;
 	size_t	end;
 	size_t	start;
-	char	*trimmed;
+	size_t	*trimmed;
 
 	if (!s1 || !set)
 		return (NULL);
