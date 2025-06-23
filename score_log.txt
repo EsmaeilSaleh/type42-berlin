@@ -332,3 +332,4 @@
 [2025-06-23 11:24:09] Mode: Copy | Function: ft_strdup | Score: 100%
 [2025-06-23 11:31:36] Mode: Copy | Function: ft_substr | Score: 100%
 [2025-06-23 11:41:39] Mode: Copy | Function: ft_strjoin | Score: 100%
+[2025-06-23 11:52:59] Mode: Copy | Function: ft_strjoin | Score: 0%
