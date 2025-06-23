@@ -33,7 +33,7 @@ int check_norminette(const char *filename)
             {
                 int line_num = 0;
                 sscanf(line_ptr, "(line: %d", &line_num);
-                int adjusted_line = line_num - 12;
+                int adjusted_line = line_num - 15;
                 if (adjusted_line < 1)
                     adjusted_line = 1;
                 char *col_ptr = strstr(buffer, ", col:");
