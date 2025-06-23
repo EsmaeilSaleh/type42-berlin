@@ -151,7 +151,7 @@ void run_mode(Mode mode, LibFunc *func)
 
         const char *line = code_to_practice;
         int line_num = 1;
-
+        printf("%s\n", func->description);
         while (*line)
         {
             printf("%2d  ", line_num++);
@@ -178,8 +178,9 @@ void run_mode(Mode mode, LibFunc *func)
     // printf("\n--- Your Input ---\n%s", user_input);
     if (mode == RECALL_MODE)
         printf("\n--- Correct Implementation ---\n%s\n", code_to_practice);
-
-    int score = compute_similarity_score(user_input, code_to_practice);
+    char source[MAX_INPUT];
+    snprintf(source, MAX_INPUT, "%s\n%s", func->description, func->code);
+    int score = compute_similarity_score(user_input, source);
     printf("\nScore: %d%%\n", score);
 
     char norm_file_path[128];
