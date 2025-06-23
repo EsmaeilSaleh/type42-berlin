@@ -24,7 +24,6 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		if (*s == (char)c)
 			last = s;
-
 		s++;
 	}
 	if (c == '\0')
