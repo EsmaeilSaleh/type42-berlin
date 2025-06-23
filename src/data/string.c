@@ -119,20 +119,6 @@ LibFunc string_functions[] = {
 	 strcpy_variants,
 	 2,
 	 NULL},
-	{"ft_strdup",
-	 "Returns a pointer to a new string which is a duplicate of the string s1.",
-	 "Returns a newly allocated duplicate of the string s. Returns NULL if allocation fails.",
-	 NULL,
-	 0,
-	 "char\t*ft_strdup(const char *s1)\n"
-	 "{\n"
-	 "\tchar\t*copy;\n"
-	 "\n"
-	 "\tcopy = (char *)malloc(ft_strlen(s1) + 1);\n"
-	 "\tif (!copy)\n"
-	 "\t\treturn (NULL);\n"
-	 "\treturn (ft_strcpy(copy, s1));\n"
-	 "}\n"},
 	{"ft_strlcpy",
 	 "Copies up to dstsize - 1 characters from src to dst, NUL-terminating the result.",
 	 "Returns the total length of src.",
@@ -156,6 +142,20 @@ LibFunc string_functions[] = {
 	 "\t}\n"
 	 "\tdst[i] = '\\0';\n"
 	 "\treturn (src_len);\n"
+	 "}\n"},
+	{"ft_strdup",
+	 "Returns a pointer to a new string which is a duplicate of the string s1.",
+	 "Returns a newly allocated duplicate of the string s. Returns NULL if allocation fails.",
+	 NULL,
+	 0,
+	 "char\t*ft_strdup(const char *s1)\n"
+	 "{\n"
+	 "\tchar\t*copy;\n"
+	 "\n"
+	 "\tcopy = (char *)malloc(ft_strlen(s1) + 1);\n"
+	 "\tif (!copy)\n"
+	 "\t\treturn (NULL);\n"
+	 "\treturn (ft_strcpy(copy, s1));\n"
 	 "}\n"},
 	{"ft_strlcat",
 	 "Appends src to string dst of size dstsize, NUL-terminating the result.",
