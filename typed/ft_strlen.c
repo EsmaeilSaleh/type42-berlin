@@ -15,13 +15,13 @@
 **  Function: ft_strlen — Practice Mode: Copy / Recall
 */
 
-Calculate the length of a string.
+Calculates the length of a string.
 size_t	ft_strlen(const char *s)
 {
-	const char	*start;
+	size_t	i;
 
-	start = s;
-	while (*s)
-		s++;
-	return (s - start);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
