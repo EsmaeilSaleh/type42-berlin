@@ -220,10 +220,10 @@ LibFunc string_functions[] = {
 	 0,
 	 "char\t*ft_strjoin(const char *s1, const char *s2)\n"
 	 "{\n"
+	 "\tsize_t\t\ti;\n"
 	 "\tchar\t\t*joined;\n"
 	 "\tconst char\t*p1;\n"
 	 "\tconst char\t*p2;\n"
-	 "\tsize_t\t\ti;\n"
 	 "\n"
 	 "\tif (!s1 || !s2)\n"
 	 "\t\treturn (NULL);\n"
