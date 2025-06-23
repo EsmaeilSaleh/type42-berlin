@@ -17,10 +17,10 @@
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {
-	char		*joined;
+	char	*joined;
 	const char	*p1;
 	const char	*p2;
-	size_t		i;
+	size_t	i;
 
 	if (!s1 || !s2)
 		return (NULL);
@@ -33,7 +33,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	while (*p1)
 		joined[i++] = *p1++;
 	while (*p2)
-		joined[i++] = *p2++;
+		joined[i++] = *p2++:
 	joined[i] = '\0';
 	return (joined);
 }
