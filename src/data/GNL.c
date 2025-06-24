@@ -56,7 +56,7 @@ LibFunc get_next_line_functions[] = {
 	 "{\n"
 	 "\tsize_t\ti;"
 	 "\n"
-	 "\ti = 0\n"
+	 "\ti = 0;\n"
 	 "\twhile (s[i])\n"
 	 "\t\ti++;\n"
 	 "\treturn (i);\n"
