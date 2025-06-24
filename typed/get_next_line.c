@@ -25,5 +25,5 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	bytes = 1;
-	while (!ft_strch(stach, '\n') && bytes > 0)
+	while (!ft_strchr(stash, '\n') && bytes > 0)
 	{
