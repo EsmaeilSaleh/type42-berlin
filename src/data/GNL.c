@@ -54,7 +54,7 @@ LibFunc get_next_line_functions[] = {
 	 0,
 	 "size_t\tft_strlen(const char *s)\n"
 	 "{\n"
-	 "\tsize_t\ti;"
+	 "\tsize_t\ti;\n"
 	 "\n"
 	 "\ti = 0;\n"
 	 "\twhile (s[i])\n"
