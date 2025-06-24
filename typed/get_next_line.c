@@ -17,9 +17,9 @@
 
 char	*get_next_line(int fd)
 {
-	int		bytes;
-	char		buffer[BUFFER_SIZE + 1];
-	char		*line;
+	int			bytes;
+	char			buffer[BUFFER_SIZE + 1];
+	char			*line;
 	static char	*stash;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
