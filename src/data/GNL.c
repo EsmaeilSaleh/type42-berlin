@@ -100,22 +100,31 @@ LibFunc get_next_line_functions[] = {
 	 "Returns a substring from s, or an empty string if start is beyond the end.",
 	 NULL,
 	 0,
-	 "char\t*ft_substr(char const *s, unsigned int start, size_t len)\n"
-	 "{\n"
-	 "\tchar *sub;\n"
-	 "\tsize_t i = 0;\n"
-	 "\tif (!s || start >= ft_strlen(s))\n"
-	 "\t\treturn (ft_strdup(\"\"));\n"
-	 "\tif (len > ft_strlen(s + start))\n"
-	 "\t\tlen = ft_strlen(s + start);\n"
-	 "\tsub = malloc(len + 1);\n"
-	 "\tif (!sub)\n"
-	 "\t\treturn (NULL);\n"
-	 "\twhile (i < len)\n"
-	 "\t\tsub[i++] = s[start++];\n"
-	 "\tsub[i] = '\\0';\n"
-	 "\treturn (sub);\n"
-	 "}"},
+	 "char\t*ft_substr(const char *s, unsigned int start, size_t len)\n"
+"{\n"
+"\tchar\t*sub;\n"
+"\tsize_t\ti;\n"
+"\tsize_t\ts_len;\n"
+"\n"
+"\tif (!s)\n"
+"\t\treturn (NULL);\n"
+"\ts_len = ft_strlen(s);\n"
+"\tif (start >= s_len)\n"
+"\t\treturn (ft_strdup(\"\"));\n"
+"\tif (len > s_len - start)\n"
+"\t\tlen = s_len - start;\n"
+"\tsub = malloc(len + 1);\n"
+"\tif (!sub)\n"
+"\t\treturn (NULL);\n"
+"\ti = 0;\n"
+"\twhile (i < len)\n"
+"\t{\n"
+"\t\tsub[i] = s[start + i];\n"
+"\t\ti++;\n"
+"\t}\n"
+"\tsub[i] = '\\0';\n"
+"\treturn (sub);\n"
+"}"},
 	{"extract_line",
 	 "Extracts the next line including newline from the stash.",
 	 "Returns the line to be returned by get_next_line.",
