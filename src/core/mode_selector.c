@@ -171,8 +171,8 @@ void run_mode(Mode mode, LibFunc *func)
         printf("--- Recall Mode ---\nType the function from memory.\n");
     }
 
-    char user_input[MAX_INPUT] = {0};
-    get_user_input(user_input, MAX_INPUT);
+    char user_input[INPUT_BUFFER_SIZE] = {0};
+    get_user_input(user_input, INPUT_BUFFER_SIZE);
 
     // printf("\n--- Your Input ---\n%s", user_input);
     if (mode == RECALL_MODE)

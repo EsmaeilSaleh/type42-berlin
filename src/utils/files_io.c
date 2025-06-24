@@ -4,11 +4,11 @@
 #define __BASE_PATH__ "."
 #endif
 
-char g_base_path[PATH_MAX] = __BASE_PATH__;
+char g_base_path[BASE_PATH_SIZE] = __BASE_PATH__;
 
 void save_score_log(const char *func_name, int score, const char *mode)
 {
-    char full_path[PATH_MAX];
+    char full_path[BASE_PATH_SIZE];
     int written = snprintf(full_path, sizeof(full_path), "%s/score_log.txt", g_base_path);
 if (written < 0 || written >= (int)sizeof(full_path)) {
     fprintf(stderr, "Path too long or snprintf failed\n");
@@ -31,7 +31,7 @@ if (written < 0 || written >= (int)sizeof(full_path)) {
 
     fclose(log);
     printf("\033[32mFunction\033[0m: %s", func_name);
-    char git_cmd[PATH_MAX + 128];
+    char git_cmd[BASE_PATH_SIZE + 128];
     snprintf(git_cmd, sizeof(git_cmd), "cd %s && git add . && git commit -m 'log updated' && git push origin main", g_base_path);
     system(git_cmd);
 }

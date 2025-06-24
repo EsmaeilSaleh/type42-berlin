@@ -13,6 +13,8 @@
 #include <libgen.h>
 #include "core.h"
 //#define MAX_INPUT 1024
+#define INPUT_BUFFER_SIZE 1024
+#define BASE_PATH_SIZE 1024
 #define MAX_INPUT_SIZE 8192
 #define FUNC_COUNT (get_string_function_count() + get_memory_function_count())
 
@@ -48,7 +50,7 @@ typedef struct s_libfunc
 	const char *code;
 } LibFunc;
 
-extern char g_base_path[PATH_MAX];
+extern char g_base_path[BASE_PATH_SIZE];
 
 extern const int BONUS_FUNC_COUNT;
 // Declare all external category arrays and counts
