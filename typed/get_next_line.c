@@ -15,3 +15,15 @@
 **  Function: get_next_line — Practice Mode: Copy / Recall
 */
 
+char	*get_next_line(int fd)
+{
+	static char	*stash;
+	char		buffer[BUFFER_SIZE + 1];
+	char		*line;
+	int			bytes;
+
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	bytes = 1;
+	while (!ft_strch(stach, '\n') && bytes > 0)
+	{
