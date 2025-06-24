@@ -12,7 +12,7 @@
 #include <stdlib.h>
 #include <libgen.h>
 #include "core.h"
-#define MAX_INPUT 1024
+//#define MAX_INPUT 1024
 #define MAX_INPUT_SIZE 8192
 #define FUNC_COUNT (get_string_function_count() + get_memory_function_count())
 
