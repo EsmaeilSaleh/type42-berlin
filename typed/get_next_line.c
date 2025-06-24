@@ -28,13 +28,12 @@ char	*get_next_line(int fd)
 	while (!ft_strchr(stash, '\n') && bytes > 0)
 	{
 		bytes = read(fd, buffer, BUFFER_SIZE);
-		IF (bytes < 0)
-			return (NULL);
-		buffer[bytes] = '\0';
+		if (bytes < 0)
+			return (NULL)
+;		buffer[bytes] = '\0';
 		stash = ft_strjoin(stash, buffer);
 	}
 	line = extract_line(stash);
 	stash = update_stash(stash);
 	return (line);
 }
-ENd
