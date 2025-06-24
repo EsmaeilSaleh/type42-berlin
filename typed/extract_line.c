@@ -15,3 +15,25 @@
 **  Function: extract_line — Practice Mode: Copy / Recall
 */
 
+char	*extract_line(char *stash)
+{
+	int i = 0;
+	char *line;
+	if (!stash || !stash[0])
+		return (NULL);
+	while (stash[i] && stash[i] != '\n')
+		i++;
+	line = malloc(sizeof(char) * (stash[i] == '\n' ? i + 2 : i + 1));
+	if (!line)
+		return (NULL);
+	i = 0;
+	while (stash[i] && stash[i] != '\n')
+	{
+		line[i] = stash[i];
+		i++;
+	}
+	if (stash[i] == '\n')
+		line[i++] = '\n';
+	line[i] = '\0';
+	return (line);
+}
