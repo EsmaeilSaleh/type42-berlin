@@ -7,6 +7,7 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <time.h>
+#include <limits.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <libgen.h>
