@@ -10,10 +10,10 @@ LibFunc get_next_line_functions[] = {
 	 0,
 	 "char\t*get_next_line(int fd)\n"
 	 "{\n"
+	 "\tint\t\tbytes;\n"
+	 "\tchar\t\tbuffer[BUFFER_SIZE + 1];\n"
+	 "\tchar\t\t*line;\n"
 	 "\tstatic char\t*stash;\n"
-	 "\tchar\t\t\tbuffer[BUFFER_SIZE + 1];\n"
-	 "\tchar\t\t\t*line;\n"
-	 "\tint\t\t\t\tbytes;\n"
 	 "\n"
 	 "\tif (fd < 0 || BUFFER_SIZE <= 0)\n"
 	 "\t\treturn (NULL);\n"
