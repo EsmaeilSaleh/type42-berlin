@@ -29,7 +29,7 @@ LibFunc get_next_line_functions[] = {
 	 "\tline = extract_line(stash);\n"
 	 "\tstash = update_stash(stash);\n"
 	 "\treturn (line);\n"
-	 "}"},
+	 "}\n"},
 	{"ft_strchr",
 	 "Locates the first occurrence of c in the string s.",
 	 "Returns a pointer to the matched character or NULL if not found.",
