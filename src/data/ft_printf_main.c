@@ -27,7 +27,6 @@ LibFunc ft_printf_main_functions[] =
          "\tint\tcount;\n"
          "\n"
          "\tcount = 0;\n"
-         "\n"
          "\twhile (*format)\n"
          "\t{\n"
          "\t\tif (*format == '%')\n"
