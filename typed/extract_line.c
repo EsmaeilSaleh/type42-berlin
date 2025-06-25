@@ -20,30 +20,22 @@ char	*extract_line(char *stash)
 	int		i;
 	int		len;
 	char	*line;
-
 	if (!stash || !stash[0])
 		return (NULL);
 	i = 0;
 	while (stash[i] && stash[i] != '\n')
 		i++;
+	len = i + 1;
 	if (stash[i] == '\n')
-		len = i + 2;
-	else
-		len = i + 1;
+		len++;
 	line = malloc(sizeof(char) * len);
 	if (!line)
 		return (NULL);
 	i = 0;
 	while (stash[i] && stash[i] != '\n')
-	{
-		line[i] = stash[i];
-		i++;
-	}
+		line[i] = stash[i++];
 	if (stash[i] == '\n')
-	{
-		line[i] = '\n';
-		i++;
-	}
+		line[i++] = '\n';
 	line[i] = '\0';
 	return (line);
 }
