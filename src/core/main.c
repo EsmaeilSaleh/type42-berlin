@@ -8,7 +8,6 @@
 jmp_buf mode_menu_jump;
 jmp_buf category_menu_jump;
 
-
 int main()
 {
 	system("clear");
@@ -25,6 +24,22 @@ int main()
 			system("clear");
 			print_banner();
 			break;
+		}
+		if (mode == 3)
+		{
+			system("clear");
+			print_banner();
+
+			if (setjmp(category_menu_jump) != 0)
+				printf("\nReturning to mode selection...\n");
+
+			int category = select_category();
+			if (category == 0)
+			{
+				system("clear");
+				print_banner();
+				continue;
+			}
 		}
 
 		while (1)

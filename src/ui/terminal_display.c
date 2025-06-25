@@ -36,6 +36,7 @@ void print_mode_menu(void)
     printf("Choose a mode:\n");
     printf("1. Copy Mode   (see function code and type it)\n");
     printf("2. Recall Mode (type function from memory)\n");
+    printf("3. Free Mode   (type and test your own version)\n");
     printf("\033[1;31m╔════════════════╗\n");
     printf("║    0. Quit     ║\n");
     printf("╚════════════════╝\033[0m\n");

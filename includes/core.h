@@ -12,7 +12,7 @@
 #include <stdlib.h>
 #include <libgen.h>
 #include "core.h"
-//#define MAX_INPUT 1024
+// #define MAX_INPUT 1024
 #define INPUT_BUFFER_SIZE 1024
 #define BASE_PATH_SIZE 1024
 #define MAX_INPUT_SIZE 8192
@@ -27,7 +27,8 @@ typedef struct s_list
 typedef enum e_mode
 {
 	COPY_MODE = 1,
-	RECALL_MODE = 2
+	RECALL_MODE = 2,
+	FREE_MODE = 3
 } Mode;
 
 typedef struct s_variant
@@ -101,6 +102,10 @@ LibFunc get_ft_printf_handlers_functions_by_index(int index);
 
 int get_ft_printf_main_functions_count(void);
 LibFunc get_ft_printf_main_functions_by_index(int index);
+
+size_t ft_strlen(const char *s);
+
+void run_free_mode(LibFunc *func);
 
 extern jmp_buf mode_menu_jump;
 extern jmp_buf category_menu_jump;

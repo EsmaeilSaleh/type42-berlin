@@ -7,7 +7,7 @@ int select_mode(void)
 
     int mode;
     print_mode_menu();
-    if (scanf("%d", &mode) != 1 || (mode != 1 && mode != 2))
+    if (scanf("%d", &mode) != 1 || (mode != 1 && mode != 3))
     {
         fprintf(stderr, "Exiting.\n");
         return 0;
@@ -112,9 +112,15 @@ int run_category_loop(int mode, int category)
 
 void run_mode(Mode mode, LibFunc *func)
 {
-
     if (!func)
         return;
+
+    if (mode == FREE_MODE)
+    {
+        run_free_mode(func);
+        return;
+    }
+
     system("clear");
 
     printf("Function: %s\n", func->name);

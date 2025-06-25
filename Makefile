@@ -18,6 +18,7 @@ SRCS = \
 	$(APP_DIR)/utils/files_io.c\
 	$(APP_DIR)/utils/norminette.c\
 	$(APP_DIR)/ui/terminal_display.c\
+	$(APP_DIR)/free_mode/run_free_mode.c\
 	$(DATA_DIR)/string.c \
 	$(DATA_DIR)/memory.c \
 	$(DATA_DIR)/char.c \
@@ -27,7 +28,8 @@ SRCS = \
 	$(DATA_DIR)/ft_printf_utils.c \
 	$(DATA_DIR)/ft_printf_handlers.c \
 	$(DATA_DIR)/ft_printf_main.c \
-	$(DATA_DIR)/GNL.c
+	$(DATA_DIR)/GNL.c \
+
 
 OBJS = $(SRCS:.c=.o)
 
