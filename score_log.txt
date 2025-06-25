@@ -432,3 +432,4 @@
 [2025-06-25 20:36:25] Mode: Copy | Function: ft_putchar_fd | Score: 0%
 [2025-06-25 20:37:24] Mode: Copy | Function: ft_putstr_fd | Score: 0%
 [2025-06-25 20:38:07] Mode: Copy | Function: ft_strlen | Score: 0%
+[2025-06-25 20:38:17] Mode: Copy | Function: ft_strchr | Score: 0%
