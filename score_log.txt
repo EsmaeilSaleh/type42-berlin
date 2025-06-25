@@ -423,3 +423,4 @@
 [2025-06-25 19:38:40] Mode: Copy | Function: handle_plus_flag | Score: 98%
 [2025-06-25 20:33:50] Mode: Copy | Function: ft_printf | Score: 0%
 [2025-06-25 20:34:08] Mode: Copy | Function: parse_format | Score: 0%
+[2025-06-25 20:34:49] Mode: Copy | Function: print_arg | Score: 0%

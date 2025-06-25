@@ -24,7 +24,10 @@ LibFunc ft_printf_main_functions[] =
          0,
          "int\tparse_format(const char *format, va_list args)\n"
          "{\n"
-         "\tint\tcount = 0;\n"
+         "\tint\tcount;\n"
+         "\n"
+         "\tcount = 0;\n"
+         "\n"
          "\twhile (*format)\n"
          "\t{\n"
          "\t\tif (*format == '%')\n"
