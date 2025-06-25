@@ -409,3 +409,4 @@
 [2025-06-25 18:38:23] Mode: Copy | Function: ft_substr | Score: 24%
 [2025-06-25 18:39:42] Mode: Copy | Function: ft_substr | Score: 34%
 [2025-06-25 18:43:51] Mode: Copy | Function: ft_substr | Score: 26%
+[2025-06-25 18:49:56] Mode: Copy | Function: handle_char | Score: 0%
