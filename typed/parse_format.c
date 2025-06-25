@@ -20,7 +20,6 @@ int	parse_format(const char *format, va_list args)
 	int	count;
 
 	count = 0;
-
 	while (*format)
 	{
 		if (*format == '%')
