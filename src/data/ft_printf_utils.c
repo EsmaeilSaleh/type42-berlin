@@ -20,7 +20,7 @@ LibFunc ft_printf_utils_functions[] = {
      "\tint\ti;\n"
      "\n"
      "\tif (!s)\n"
-     "\t\treturn;\n"
+     "\t\treturn ;\n"
      "\ti = 0;\n"
      "\twhile (s[i])\n"
      "\t{\n"
