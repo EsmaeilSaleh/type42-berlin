@@ -28,5 +28,17 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		return (NULL);
 	i = 0;
 	while (s1[i])
+	{
 		joined[i] = s1[i];
-		i++
+		i++;
+	}
+	j = 0;
+	while (s2[j])
+	{
+		joined[i] = s2[j];
+		i++;
+		j++;
+	}
+	joined[i] = '\0';
+	return (joined);
+}
