@@ -29,6 +29,9 @@ SRCS = \
 	$(DATA_DIR)/ft_printf_handlers.c \
 	$(DATA_DIR)/ft_printf_main.c \
 	$(DATA_DIR)/GNL.c \
+	$(DATA_DIR)/ft_printf_bonus.c \
+	$(DATA_DIR)/ft_printf_bonus_handlers.c \
+	$(DATA_DIR)/ft_printf_bonus_utils.c \
 
 
 OBJS = $(SRCS:.c=.o)
