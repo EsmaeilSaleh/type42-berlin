@@ -17,7 +17,10 @@
 
 void	ft_putnbr_base(unsigned int nbr, char *base, int fd)
 {
-	unsigned int len = ft_strlen(base);
+	unsigned int	len;
+
+	len = ft_strlen(base);
+
 	if (nbr >= len)
 		ft_putnbr_base(nbr / len, base, fd);
 	write(fd, &base[nbr % len], 1);
