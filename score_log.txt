@@ -443,3 +443,4 @@
 [2025-06-25 20:40:57] Mode: Copy | Function: ft_putnbr_base | Score: 0%
 [2025-06-25 20:41:37] Mode: Copy | Function: ft_putnbr_base | Score: 0%
 [2025-06-25 20:42:01] Mode: Copy | Function: ft_putnbr_fd | Score: 0%
+[2025-06-25 20:42:07] Mode: Copy | Function: ft_itoa | Score: 0%
