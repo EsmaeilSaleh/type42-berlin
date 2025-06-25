@@ -406,3 +406,4 @@
 [2025-06-25 18:04:08] Mode: Copy | Function: ft_strjoin | Score: 34%
 [2025-06-25 18:06:21] Mode: Copy | Function: ft_strjoin | Score: 65%
 [2025-06-25 18:09:09] Mode: Copy | Function: ft_strjoin | Score: 100%
+[2025-06-25 18:38:23] Mode: Copy | Function: ft_substr | Score: 24%
