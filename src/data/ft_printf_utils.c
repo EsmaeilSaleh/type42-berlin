@@ -66,9 +66,9 @@ LibFunc ft_printf_utils_functions[] = {
      0,
      "char\t*ft_strjoin(char const *s1, char const *s2)\n"
      "{\n"
+     "\tint\ti\t;\n"
+     "\tint\t\tj;\n"
      "\tchar\t*res;\n"
-     "\tint\ti;\n"
-     "\tint\tj;\n"
      "\n"
      "\tif (!s1 || !s2)\n"
      "\t\treturn (NULL);\n"
