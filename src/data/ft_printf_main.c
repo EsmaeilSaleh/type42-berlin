@@ -16,7 +16,7 @@ LibFunc ft_printf_main_functions[] =
          "\tcount = parse_format(format, args);\n"
          "\tva_end(args);\n"
          "\treturn (count);\n"
-         "}"},
+         "}\n"},
         {"parse_format",
          "Parses the format string and dispatches format specifiers.",
          "Returns the total number of characters printed.",

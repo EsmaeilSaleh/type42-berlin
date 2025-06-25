@@ -15,3 +15,22 @@
 **  Function: parse_format — Practice Mode: Copy / Recall
 */
 
+int	parse_format(const char *format, va_list args)
+{
+	int	count = 0;
+	while (*format)
+	{
+		if (*format == '%')
+		{
+			format++;
+			count += print_arg(*format, args);
+		}
+		else
+		{
+			write(1, format, 1);
+			count++;
+		}
+		format++;
+	}
+	return (count);
+}
