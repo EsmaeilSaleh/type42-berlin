@@ -411,3 +411,4 @@
 [2025-06-25 18:43:51] Mode: Copy | Function: ft_substr | Score: 26%
 [2025-06-25 18:49:56] Mode: Copy | Function: handle_char | Score: 0%
 [2025-06-25 18:51:52] Mode: Copy | Function: handle_int | Score: 96%
+[2025-06-25 18:52:56] Mode: Copy | Function: ft_printf | Score: 0%
