@@ -173,7 +173,6 @@ LibFunc ft_printf_utils_functions[] = {
      "\tunsigned int\tlen;\n"
      "\n"
      "\tlen = ft_strlen(base);\n"
-     "\n"
      "\tif (nbr >= len)\n"
      "\t\tft_putnbr_base(nbr / len, base, fd);\n"
      "\twrite(fd, &base[nbr % len], 1);\n"
