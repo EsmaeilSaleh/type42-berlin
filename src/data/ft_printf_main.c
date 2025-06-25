@@ -43,7 +43,7 @@ LibFunc ft_printf_main_functions[] =
          "\t\tformat++;\n"
          "\t}\n"
          "\treturn (count);\n"
-         "}"},
+         "}\n"},
         {"print_arg",
          "Dispatches the format specifier to the correct handler function.",
          "Returns the number of characters printed by the handler.",
@@ -68,7 +68,7 @@ LibFunc ft_printf_main_functions[] =
          "\telse if (specifier == '%')\n"
          "\t\treturn (handle_percent());\n"
          "\treturn (0);\n"
-         "}"}};
+         "}\n"}};
 
 int get_ft_printf_main_functions_count(void)
 {
