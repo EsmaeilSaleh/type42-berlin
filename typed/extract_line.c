@@ -17,7 +17,7 @@
 
 char	*extract_line(char *stash)
 {
-	int	i;
+	int		i;
 	int	len;
 	char	*line;
 
