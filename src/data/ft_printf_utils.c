@@ -9,7 +9,7 @@ LibFunc ft_printf_utils_functions[] = {
      "void\tft_putchar_fd(char c, int fd)\n"
      "{\n"
      "\twrite(fd, &c, 1);\n"
-     "}"},
+     "}\n"},
     {"ft_putstr_fd",
      "Outputs the string s to the given file descriptor.",
      "None.",
@@ -27,7 +27,7 @@ LibFunc ft_printf_utils_functions[] = {
      "\t\twrite(fd, &s[i], 1);\n"
      "\t\ti++;\n"
      "\t}\n"
-     "}"},
+     "}\n"},
     {"ft_strlen",
      "Returns the length of the string s.",
      "Returns the number of characters before the null terminator.",
@@ -41,7 +41,7 @@ LibFunc ft_printf_utils_functions[] = {
      "\twhile (s[i])\n"
      "\t\ti++;\n"
      "\treturn (i);\n"
-     "}"},
+     "}\n"},
     {"ft_strchr",
      "Locates the first occurrence of c in the string s.",
      "Returns a pointer to the matched character or NULL.",
@@ -58,7 +58,7 @@ LibFunc ft_printf_utils_functions[] = {
      "\tif (c == '\\0')\n"
      "\t\treturn ((char *)s);\n"
      "\treturn (NULL);\n"
-     "}"},
+     "}\n"},
     {"ft_strjoin",
      "Allocates and returns a new string, result of the concatenation of s1 and s2.",
      "Returns the new string. NULL if the allocation fails.",
@@ -83,7 +83,7 @@ LibFunc ft_printf_utils_functions[] = {
      "\t\tres[i++] = s2[j++];\n"
      "\tres[i] = '\\0';\n"
      "\treturn (res);\n"
-     "}"},
+     "}\n"},
     {"ft_uitoa",
      "Converts an unsigned int to a null-terminated string.",
      "Returns a newly allocated string representing the unsigned integer.",
@@ -107,7 +107,7 @@ LibFunc ft_printf_utils_functions[] = {
      "\t\tn /= 10;\n"
      "\t}\n"
      "\treturn (res);\n"
-     "}"},
+     "}\n"},
     {"ft_itoa",
      "Converts an integer to a null-terminated string.",
      "Returns a newly allocated string representing the integer.",
@@ -139,7 +139,7 @@ LibFunc ft_printf_utils_functions[] = {
      "\t\tnbr /= 10;\n"
      "\t}\n"
      "\treturn (res);\n"
-     "}"},
+     "}\n"},
     {"ft_putnbr_fd",
      "Outputs an integer n to the given file descriptor.",
      "None.",
@@ -159,7 +159,7 @@ LibFunc ft_printf_utils_functions[] = {
      "\t\tft_putnbr_fd(n / 10, fd);\n"
      "\tc = n % 10 + '0';\n"
      "\twrite(fd, &c, 1);\n"
-     "}"},
+     "}\n"},
     {"ft_putnbr_base",
      "Outputs an unsigned integer in a given base to the given file descriptor.",
      "None.",
@@ -171,7 +171,7 @@ LibFunc ft_printf_utils_functions[] = {
      "\tif (nbr >= len)\n"
      "\t\tft_putnbr_base(nbr / len, base, fd);\n"
      "\twrite(fd, &base[nbr % len], 1);\n"
-     "}"},
+     "}\n"},
 };
 
 int get_ft_printf_utils_functions_count(void)
