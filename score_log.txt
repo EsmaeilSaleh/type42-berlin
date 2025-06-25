@@ -427,3 +427,4 @@
 [2025-06-25 20:35:18] Mode: Copy | Function: ft_printf | Score: 0%
 [2025-06-25 20:35:25] Mode: Copy | Function: parse_format | Score: 0%
 [2025-06-25 20:35:50] Mode: Copy | Function: print_arg | Score: 0%
+[2025-06-25 20:36:08] Mode: Copy | Function: ft_printf | Score: 0%
