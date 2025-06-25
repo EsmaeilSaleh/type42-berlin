@@ -29,7 +29,7 @@ char	*update_stash(char *stash)
 	if (!stash[i])
 	{
 		free(stash);
-		return(NULL);
+		return (NULL);
 	}
 	len = ft_strlen(stash) - i;
 	new_stash = malloc(sizeof(char) * (len + 1));
