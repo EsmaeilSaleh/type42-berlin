@@ -135,6 +135,7 @@ LibFunc get_next_line_functions[] = {
 	 "\tint\t\ti;\n"
 	 "\tint\t\tlen;\n"
 	 "\tchar\t*line;\n"
+	 "\n"
 	 "\tif (!stash || !stash[0])\n"
 	 "\t\treturn (NULL);\n"
 	 "\ti = 0;\n"

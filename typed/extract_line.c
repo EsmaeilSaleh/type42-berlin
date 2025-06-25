@@ -20,6 +20,7 @@ char	*extract_line(char *stash)
 	int		i;
 	int		len;
 	char	*line;
+
 	if (!stash || !stash[0])
 		return (NULL);
 	i = 0;
