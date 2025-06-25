@@ -32,7 +32,7 @@ char	*update_stash(char *stash)
 		return (NULL);
 	}
 	len = ft_strlen(stash) - i;
-	new_stash = malloc(sizeof(char) * (len + 1));
+	new_stash = malloc(sizeof(char) * (len + 1);
 	if (!new_stash)
 		return (NULL);
 	i++;

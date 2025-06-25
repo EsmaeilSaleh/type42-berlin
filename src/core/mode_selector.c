@@ -188,7 +188,7 @@ void run_mode(Mode mode, LibFunc *func)
 
     char norm_file_path[128];
     snprintf(norm_file_path, sizeof(norm_file_path), "typed/%s.c", func->name);
-    write_norminette_file(norm_file_path, func->name, code_to_practice);
+    write_norminette_file(norm_file_path, func->name, user_input);
 
     int norm_score = check_norminette(norm_file_path);
     printf("Norminette: %s\n", norm_score == 100 ? "✅ Pass" : "❌ Fail");
