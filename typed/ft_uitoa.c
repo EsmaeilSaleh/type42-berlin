@@ -23,8 +23,11 @@ char	*ft_uitoa(unsigned int n)
 
 	len = 1;
 	temp = n;
-	while (temp /= 10)
+	while (temp / 10)
+	{
+		temp /= 10;
 		len++;
+	}
 	res = malloc(len + 1);
 	if (!res)
 		return (NULL);
