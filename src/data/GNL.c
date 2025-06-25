@@ -132,8 +132,8 @@ LibFunc get_next_line_functions[] = {
 	 0,
 	 "char\t*extract_line(char *stash)\n"
 	 "{\n"
-	 "\tint\t\ti;\n"
-	 "\tint\t\tlen;\n"
+	 "\tint\ti;\n"
+	 "\tint\tlen;\n"
 	 "\tchar\t*line;\n"
 	 "\n"
 	 "\tif (!stash || !stash[0])\n"
