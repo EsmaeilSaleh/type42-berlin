@@ -18,18 +18,18 @@
 char	*extract_line(char *stash)
 {
 	int		i;
-	int	len;
+	int		len;
 	char	*line;
 
 	if (!stash || !stash[0])
 		return (NULL);
 	i = 0;
 	while (stash[i] && stash[i] != '\n')
-			i++;
+		i++;
 	if (stash[i] == '\n')
-			len = i + 2;
+		len = i + 2;
 	else
-			len = i + 1;
+		len = i + 1;
 	line = malloc(sizeof(char) * len);
 	if (!line)
 		return (NULL);
