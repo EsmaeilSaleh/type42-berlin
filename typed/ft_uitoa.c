@@ -17,10 +17,12 @@
 
 char	*ft_uitoa(unsigned int n)
 {
-	int		len = 1;
-	unsigned int	temp = n;
-	char	*res;
+	int			len;
+	unsigned int	temp;
+	char		*res;
 
+	len = 1;
+	temp = n;
 	while (temp /= 10)
 		len++;
 	res = malloc(len + 1);
