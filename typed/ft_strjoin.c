@@ -15,12 +15,16 @@
 **  Function: ft_strjoin — Practice Mode: Copy / Recall
 */
 
+char	*ft_strjoin(const char *s1, const char *s2)
+{
+	char	*joined;
+	size_t	i;
+	size_t	j;
 
-
-
-
-
-
-
-
-
+	if (!s1 || !s2)
+		return (NULL);
+	joined = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!joined)
+		return (NULL);
+	i = 0
+;
