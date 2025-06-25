@@ -17,7 +17,7 @@
 
 char	*ft_uitoa(unsigned int n)
 {
-	int			len;
+	int				len;
 	char			*res;
 	unsigned int	temp;
 

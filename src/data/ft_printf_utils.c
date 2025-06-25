@@ -91,7 +91,7 @@ LibFunc ft_printf_utils_functions[] = {
      0,
      "char\t*ft_uitoa(unsigned int n)\n"
      "{\n"
-     "\tint\t\t\tlen;\n"
+     "\tint\t\t\t\tlen;\n"
      "\tchar\t\t\t*res;\n"
      "\tunsigned int\ttemp;\n"
      "\n"
