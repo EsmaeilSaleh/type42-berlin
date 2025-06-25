@@ -15,17 +15,27 @@
 **  Function: ft_itoa — Practice Mode: Copy / Recall
 */
 
-char	*ft_itoa(int n)
+static int	get_int_len(int n)
 {
-	int		len = (n <= 0);
-	long	nbr = n;
-	char	*res;
+	int	len;
 
+	len = (n <= 0);
 	while (n)
 	{
 		n /= 10;
 		len++;
 	}
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	int	len;
+	long	nbr;
+	char	*res;
+
+	len = get_int_len(n);
+	nbr = n;
 	res = malloc(len + 1);
 	if (!res)
 		return (NULL);
@@ -35,7 +45,7 @@ char	*ft_itoa(int n)
 		nbr = -nbr;
 		res[0] = '-';
 	}
-	while (len-- && res[len] != '-')
+	while (--len >= 0 && res[len] != '-')
 	{
 		res[len] = (nbr % 10) + '0';
 		nbr /= 10;
