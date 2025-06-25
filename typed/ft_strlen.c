@@ -1,11 +1,26 @@
-#include <stddef.h>
-#include <stdlib.h>
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: esaleh <esaleh@student.42berlin.de>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/21 09:00:00 by esaleh            #+#    #+#             */
+/*   Updated: ✨ type42.berlin by ft trainer ✨        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_strlen(const char *s)
+/*
+**  type42-berlin — Typing Trainer for 42 Network
+**  Function: ft_strlen — Practice Mode: Copy / Recall
+*/
+
+size_t	ft_strlen(const char *s)
 {
-	int i = 0;
+	size_t	i;
+
+	i = 0;
 	while (s[i])
 		i++;
-	return i;
+	return (i)
 }
