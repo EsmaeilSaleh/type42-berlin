@@ -440,3 +440,4 @@
 [2025-06-25 20:38:52] Mode: Copy | Function: ft_strjoin | Score: 0%
 [2025-06-25 20:39:29] Mode: Copy | Function: ft_uitoa | Score: 0%
 [2025-06-25 20:40:27] Mode: Copy | Function: ft_putnbr_fd | Score: 0%
+[2025-06-25 20:40:57] Mode: Copy | Function: ft_putnbr_base | Score: 0%

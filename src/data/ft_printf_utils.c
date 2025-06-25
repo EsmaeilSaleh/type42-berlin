@@ -150,6 +150,7 @@ LibFunc ft_printf_utils_functions[] = {
      "void\tft_putnbr_fd(int n, int fd)\n"
      "{\n"
      "\tchar\tc;\n"
+     "\n"
      "\tif (n == -2147483648)\n"
      "\t\treturn (write(fd, \"-2147483648\", 11));\n"
      "\tif (n < 0)\n"
