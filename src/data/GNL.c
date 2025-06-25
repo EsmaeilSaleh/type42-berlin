@@ -186,7 +186,7 @@ LibFunc get_next_line_functions[] = {
 	 "\tnew_stash[j] = '\\0';\n"
 	 "\tfree(stash);\n"
 	 "\treturn (new_stash);\n"
-	 "}"},
+	 "}\n"},
 };
 
 int get_get_next_line_function_count(void)
