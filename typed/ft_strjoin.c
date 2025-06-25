@@ -15,11 +15,13 @@
 **  Function: ft_strjoin — Practice Mode: Copy / Recall
 */
 
-char	*ft_strjoin(const char *s1, const char *2)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*joined;
 	size_t	i;
 	size_t	j;
-	
-ENd
+
+	if (!s1 || !s2)
+		return (NULL);l
+	END
 ENd
