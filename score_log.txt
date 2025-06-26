@@ -455,3 +455,4 @@
 [2025-06-25 20:51:29] Mode: Copy | Function: ft_uitoa | Score: 0%
 [2025-06-25 20:51:37] Mode: Copy | Function: ft_itoa | Score: 0%
 [2025-06-26 07:55:55] Mode: Copy | Function: ft_memset | Score: 10%
+[2025-06-26 07:57:21] Mode: Copy | Function: ft_bzero | Score: 97%
