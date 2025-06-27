@@ -56,7 +56,7 @@ LibFunc get_next_line_functions[] = {
 	 "\tline = extract_line(stash[fd]);\n"
 	 "\tstash[fd] = update_stash(stash[fd]);\n"
 	 "\treturn (line);\n"
-	 "}"},
+	 "}\n"},
 	{"ft_strchr",
 	 "Locates the first occurrence of c in the string s.",
 	 "Returns a pointer to the matched character or NULL if not found.",
