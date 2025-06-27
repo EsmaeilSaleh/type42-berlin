@@ -30,6 +30,33 @@ LibFunc get_next_line_functions[] = {
 	 "\tstash = update_stash(stash);\n"
 	 "\treturn (line);\n"
 	 "}\n"},
+	{"get_next_line_bonus",
+	 "Reads a line from a file descriptor with multi-fd support.",
+	 "Returns a line read from the given fd, maintaining state for each fd.",
+	 NULL,
+	 0,
+	 "char\t*get_next_line_bonus(int fd)\n"
+	 "{\n"
+	 "\tint\t\t\tbytes;\n"
+	 "\tchar\t\t*line;\n"
+	 "\tchar\t\tbuffer[BUFFER_SIZE + 1];\n"
+	 "\tstatic char\t*stash[10240];\n"
+	 "\n"
+	 "\tif (fd < 0 || fd >= 10240 || BUFFER_SIZE <= 0)\n"
+	 "\t\treturn (NULL);\n"
+	 "\tbytes = 1;\n"
+	 "\twhile (!ft_strchr(stash[fd], '\\n') && bytes > 0)\n"
+	 "\t{\n"
+	 "\t\tbytes = read(fd, buffer, BUFFER_SIZE);\n"
+	 "\t\tif (bytes < 0)\n"
+	 "\t\t\treturn (NULL);\n"
+	 "\t\tbuffer[bytes] = '\\0';\n"
+	 "\t\tstash[fd] = ft_strjoin(stash[fd], buffer);\n"
+	 "\t}\n"
+	 "\tline = extract_line(stash[fd]);\n"
+	 "\tstash[fd] = update_stash(stash[fd]);\n"
+	 "\treturn (line);\n"
+	 "}"},
 	{"ft_strchr",
 	 "Locates the first occurrence of c in the string s.",
 	 "Returns a pointer to the matched character or NULL if not found.",
