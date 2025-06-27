@@ -15,23 +15,30 @@
 **  Function: ft_strjoin — Practice Mode: Copy / Recall
 */
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	int		i;
-	int		j;
-	char	*res;
+	char	*joined;
+	size_t	i;
+	size_t	j;
 
 	if (!s1 || !s2)
 		return (NULL);
-	res = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!res)
+	joined = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!joined)
 		return (NULL);
-	i = -1;
-	while (s1[++i])
-		res[i] = s1[i];
+	i = 0;
+	while (s1[i])
+	{
+		joined[i] = s1[i];
+		i++;
+	}
 	j = 0;
 	while (s2[j])
-		res[i++] = s2[j++];
-	res[i] = '\0';
-	return (res);
+	{
+		joined[i] = s2[j];
+		i++;
+		j++;
+	}
+	joined[i] = '\0';
+	return (joined);
 }
