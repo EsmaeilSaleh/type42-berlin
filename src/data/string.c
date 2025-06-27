@@ -29,6 +29,53 @@ static const Variant strcpy_variants[] = {
 	 "\treturn (ret);\n"
 	 "}\n"}};
 
+static const Variant strjoin_variants[] = {
+	{"index-based",
+	 "char\t*ft_strjoin(const char *s1, const char *s2)\n"
+	 "{\n"
+	 "\tchar\t*joined;\n"
+	 "\tsize_t\ti;\n"
+	 "\tsize_t\tj;\n"
+	 "\n"
+	 "\tif (!s1 || !s2)\n"
+	 "\t\treturn (NULL);\n"
+	 "\tjoined = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);\n"
+	 "\tif (!joined)\n"
+	 "\t\treturn (NULL);\n"
+	 "\ti = 0;\n"
+	 "\twhile (s1[i])\n"
+	 "\t{\n"
+	 "\t\tjoined[i] = s1[i];\n"
+	 "\t\ti++;\n"
+	 "\t}\n"
+	 "\tj = 0;\n"
+	 "\twhile (s2[j])\n"
+	 "\t{\n"
+	 "\t\tjoined[i + j] = s2[j];\n"
+	 "\t\tj++;\n"
+	 "\t}\n"
+	 "\tjoined[i + j] = '\\0';\n"
+	 "\treturn (joined);\n"
+	 "}\n"},
+	{"pointer-based",
+	 "char\t*ft_strjoin(const char *s1, const char *s2)\n"
+	 "{\n"
+	 "\tchar\t*joined;\n"
+	 "\tchar\t*p;\n"
+	 "\n"
+	 "\tif (!s1 || !s2)\n"
+	 "\t\treturn (NULL);\n"
+	 "\tjoined = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);\n"
+	 "\tif (!joined)\n"
+	 "\t\treturn (NULL);\n"
+	 "\tp = joined;\n"
+	 "\twhile (*s1)\n"
+	 "\t\t*p++ = *s1++;\n"
+	 "\twhile (*s2)\n"
+	 "\t\t*p++ = *s2++;\n"
+	 "\t*p = '\\0';\n"
+	 "\treturn (joined);\n"
+	 "}\n"}};
 static const Variant strlen_variants[] = {
 	{"index-based",
 	 "size_t\tft_strlen(const char *s)\n"
@@ -216,30 +263,9 @@ LibFunc string_functions[] = {
 	{"ft_strjoin",
 	 "Allocates and returns a new string, result of the concatenation of s1 and s2.",
 	 "Returns a newly allocated string containing the concatenation of s1 and s2, or NULL if allocation fails.",
-	 NULL,
-	 0,
-	 "char\t*ft_strjoin(const char *s1, const char *s2)\n"
-	 "{\n"
-	 "\tsize_t\t\ti;\n"
-	 "\tchar\t\t*joined;\n"
-	 "\tconst char\t*p1;\n"
-	 "\tconst char\t*p2;\n"
-	 "\n"
-	 "\tif (!s1 || !s2)\n"
-	 "\t\treturn (NULL);\n"
-	 "\tjoined = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);\n"
-	 "\tif (!joined)\n"
-	 "\t\treturn (NULL);\n"
-	 "\ti = 0;\n"
-	 "\tp1 = s1;\n"
-	 "\tp2 = s2;\n"
-	 "\twhile (*p1)\n"
-	 "\t\tjoined[i++] = *p1++;\n"
-	 "\twhile (*p2)\n"
-	 "\t\tjoined[i++] = *p2++;\n"
-	 "\tjoined[i] = '\\0';\n"
-	 "\treturn (joined);\n"
-	 "}\n"},
+	 strjoin_variants,
+	 2,
+	 NULL},
 	{"ft_strnstr",
 	 "Locates the first occurrence of the null-terminated string needle in haystack, searching not more than len characters.",
 	 "Returns a pointer to the first match or NULL if not found.",
