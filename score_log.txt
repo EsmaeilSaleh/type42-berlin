@@ -462,3 +462,4 @@
 [2025-06-27 12:05:35] Mode: Copy | Function: ft_strjoin | Score: 0%
 [2025-06-27 12:14:28] Mode: Copy | Function: ft_substr | Score: 0%
 [2025-06-27 12:24:45] Mode: Copy | Function: get_next_line | Score: 0%
+[2025-06-27 12:30:11] Mode: Copy | Function: get_next_line_bonus | Score: 100%
