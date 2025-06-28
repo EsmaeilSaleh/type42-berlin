@@ -34,11 +34,11 @@ char	*update_stash(char *stash)
 	len = ft_strlen(stash) - i;
 	new_stash = malloc(sizeof(char) * (len + 1));
 	if (!new_stash)
-		rerturn (NULL);
+		return (NULL);
 	i++;
 	while (stash[i])
 		new_stash[j++] = stash[i++];
 	new_stash[j] = '\0';
 	free(stash);
-	return (new_stash);
+	return (NULL);
 }
