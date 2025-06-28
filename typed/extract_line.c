@@ -38,4 +38,5 @@ char	*extract_line(char *stash)
 	if (stash[i] == '\n')
 		line[i++] = '\n';
 	line[i] = '\0';
+	return (line);
 }
