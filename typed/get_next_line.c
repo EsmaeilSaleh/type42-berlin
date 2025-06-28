@@ -19,13 +19,13 @@ char	*get_next_line(int fd)
 {
 	int			bytes;
 	char		*line;
-	char 		buffer[BUFFER_SIZE + 1];
-	static char	*stash;
+	char		buffer[BUFFER_SIZE + 1];
+	static char 	*stash;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	bytes = 1;
-	while (!ft_strchr(stash, '\0') && bytes > 0)
+	while (!ft_strchr(stash, '\n') && bytes > 0)
 	{
 		bytes = read(fd, buffer, BUFFER_SIZE);
 		if (bytes < 0)
