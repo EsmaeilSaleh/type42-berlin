@@ -24,12 +24,12 @@ char	*get_next_line_bonus(int fd)
 
 	if (fd < 0 || fd >= 10240 || BUFFER_SIZE <= 0)
 		return (NULL);
-	bytes = 1;
+	bytes = 1
 	while (!ft_strchr(stash[fd], '\n') && bytes > 0)
 	{
 		bytes = read(fd, buffer, BUFFER_SIZE);
 		if (bytes < 0)
-			return (NULL);
+			return (null);
 		buffer[bytes] = '\0';
 		stash[fd] = ft_strjoin(stash[fd], buffer);
 	}
