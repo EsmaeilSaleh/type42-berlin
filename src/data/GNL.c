@@ -89,39 +89,38 @@ LibFunc get_next_line_functions[] = {
 	 "\treturn (i);\n"
 	 "}"},
 	{"ft_strjoin",
-	 "Concatenates s1 and s2 into a new string.",
-	 "Returns a new string consisting of s1 followed by s2, or NULL on failure.",
+	 "Concatenates stash and buffer into a new string.",
+	 "Returns a new string consisting of stash followed by buffer, or NULL on failure.",
 	 NULL,
 	 0,
-	 "char\t*ft_strjoin(const char *s1, const char *s2)\n"
+	 "char\t*ft_strjoin(char *stash, const char *buffer)\n"
 	 "{\n"
 	 "\tchar\t*joined;\n"
 	 "\tsize_t\ti;\n"
 	 "\tsize_t\tj;\n"
 	 "\n"
-	 "\tif (!s1 || !s2)\n"
+	 "\tif (!stash && !buffer)\n"
 	 "\t\treturn (NULL);\n"
-	 "\tjoined = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);\n"
+	 "\tjoined = malloc(ft_strlen(stash) + ft_strlen(buffer) + 1);\n"
 	 "\tif (!joined)\n"
 	 "\t\treturn (NULL);\n"
 	 "\ti = 0;\n"
-	 "\twhile (s1[i])\n"
+	 "\twhile (stash && stash[i])\n"
 	 "\t{\n"
-	 "\t\tjoined[i] = s1[i];\n"
+	 "\t\tjoined[i] = stash[i];\n"
 	 "\t\ti++;\n"
 	 "\t}\n"
 	 "\tj = 0;\n"
-	 "\twhile (s2[j])\n"
+	 "\twhile (buffer && buffer[j])\n"
 	 "\t{\n"
-	 "\t\tjoined[i] = s2[j];\n"
+	 "\t\tjoined[i] = buffer[j];\n"
 	 "\t\ti++;\n"
 	 "\t\tj++;\n"
 	 "\t}\n"
 	 "\tjoined[i] = '\\0';\n"
+	 "\tfree(stash);\n"
 	 "\treturn (joined);\n"
-	 "}"
-
-	},
+	 "}"},
 	{"extract_line",
 	 "Extracts the next line including newline from the stash.",
 	 "Returns the line to be returned by get_next_line.",
