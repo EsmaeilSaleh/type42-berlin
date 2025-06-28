@@ -184,7 +184,30 @@ LibFunc get_next_line_functions[] = {
 	 "\tfree(stash);\n"
 	 "\treturn (new_stash);\n"
 	 "}\n"},
-};
+	{"main",
+	 "Demonstrates the use of get_next_line by reading from a file.",
+	 "Reads lines from a file descriptor using get_next_line and prints them.",
+	 NULL,
+	 0,
+	 "int\tmain(void)\n"
+	 "{\n"
+	 "\tint\t\tfd;\n"
+	 "\tchar\t*line;\n"
+	 "\n"
+	 "\tfd = open(\"test.txt\", O_RDONLY);\n"
+	 "\tif (fd < 0)\n"
+	 "\t{\n"
+	 "\t\tperror(\"Error opening file\");\n"
+	 "\t\treturn (1);\n"
+	 "\t}\n"
+	 "\twhile ((line = get_next_line(fd)))\n"
+	 "\t{\n"
+	 "\t\tprintf(\"%s\", line);\n"
+	 "\t\tfree(line);\n"
+	 "\t}\n"
+	 "\tclose(fd);\n"
+	 "\treturn (0);\n"
+	 "}\n"}};
 
 int get_get_next_line_function_count(void)
 {

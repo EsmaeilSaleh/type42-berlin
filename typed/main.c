@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp                                   :+:      :+:    :+:   */
+/*   main                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esaleh <esaleh@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,19 +12,25 @@
 
 /*
 **  type42-berlin — Typing Trainer for 42 Network
-**  Function: ft_strncmp — Practice Mode: Copy / Recall
+**  Function: main — Practice Mode: Copy / Recall
 */
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	main(void)
 {
-	size_t	i;
+	int		fd;
+	char	*line;
 
-	i = 0;
-	while(i < n && (s1[i] || s2[i]))
+	fd = open("test.txt", O_RDONLY);
+	if (fd < 0)
 	{
-		if ((unsigned char)s1[i] != (unsigned char)s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
-	+
+		perror("Error opening file");
+		return (1);
+	}
+	while ((line = get_next_line(fd)))
+	{
+		printf("%s", line);
+		free(line);
+	}
+	close(fd);
 	return (0);
 }
