@@ -484,3 +484,4 @@
 [2025-06-28 08:36:23] Mode: Copy | Function: get_next_line_bonus | Score: 40%
 [2025-06-28 08:38:24] Mode: Copy | Function: ft_strchr | Score: 100%
 [2025-06-28 08:39:06] Mode: Copy | Function: ft_strlen | Score: 100%
+[2025-06-28 09:45:07] Mode: Copy | Function: ft_strjoin | Score: 47%
