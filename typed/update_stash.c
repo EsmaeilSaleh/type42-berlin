@@ -40,5 +40,5 @@ char	*update_stash(char *stash)
 		new_stash[j++] = stash[i++];
 	new_stash[j] = '\0';
 	free(stash);
-	return (NULL);
+	return (new_stash);
 }
