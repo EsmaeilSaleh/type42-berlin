@@ -15,7 +15,7 @@
 **  Function: main — Practice Mode: Copy / Recall
 */
 
-int	main(void)
+int main(void)
 {
 	int		fd;
 	char	*line;
@@ -23,7 +23,7 @@ int	main(void)
 	fd = open("test.txt", O_RDONLY);
 	if (fd < 0)
 	{
-		perror("Error opening file");
+		perror("Error opeing file");
 		return (1);
 	}
 	line = get_next_line(fd);
