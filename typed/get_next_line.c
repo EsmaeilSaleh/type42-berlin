@@ -24,7 +24,6 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	bytes = 1;
 	while (!ft_strchr(stash, '\n') && bytes > 0)
 	{
 		bytes = read(fd, buffer, BUFFER_SIZE);
@@ -34,7 +33,7 @@ char	*get_next_line(int fd)
 			stash = NULL;
 			return (NULL);
 		}
-		buffer[bytes] = '\0';
+		buffer[bytes] ='\0';
 		stash = ft_strjoin(stash, buffer);
 	}
 	line = extract_line(stash);
