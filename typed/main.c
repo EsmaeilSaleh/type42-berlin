@@ -18,7 +18,7 @@
 int	main(void)
 {
 	int		fd;
-	char	*char;
+	char	*line;
 
 	fd = open("test.txt", O_RDONLY);
 	if (fd < 0)
@@ -31,7 +31,7 @@ int	main(void)
 	{
 		printf("%s", line);
 		free(line);
-		line = get_next_line(fd)l
+		line = get_next_line(fd);
 	}
 	close(fd);
 	return (0);
