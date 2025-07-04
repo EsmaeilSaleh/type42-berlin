@@ -24,12 +24,12 @@ int	main(void)
 	if (fd < 0)
 	{
 		perror("Error opening file");
-		return (1)
-;	}
+		return (1);
+	}
 	line = get_next_line(fd);
 	while (line)
 	{
-		printf("%s", line);
+		printf("%s", line)l
 		free(line);
 		line = get_next_line(fd);
 	}
