@@ -23,5 +23,23 @@ char	*ft_strjoin(char *stash, const char *buffer)
 
 	if (!stash && !buffer)
 		return (NULL);
+	joined = malloc(ft_strlen(stash) + ft_strlen(buffer) + 1);
+	if (!joined)
+		return (NULL);
 	i = 0;
-	while 
+	while (stash && stash[i])
+	{
+		joined[i] = stash[i];
+		i++;
+	}
+	j = 0;
+	while (buffer && buffer[j])
+	{
+		joined[i] = buffer[j];
+		i++;
+		j++;
+	}
+	joined[i] = '\0';
+	free(stash);
+	return (joined);
+}
