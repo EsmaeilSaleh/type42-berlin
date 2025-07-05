@@ -33,10 +33,13 @@ char	*extract_line(char *stash)
 	if (!line)
 		return (NULL);
 	i = 0;
-	while (stash[i] stash[i] != '\n')
+	while (stash[i] && stash[i] != '\n')
 		line[i] = stash[i++];
 	if (stash[i] == '\n')
-		line[i++] = '\n';
+		line[i] = 
+'\n
+';
 	line[i] = '\0';
 	return (line);
 }
+EMD
