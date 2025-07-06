@@ -15,9 +15,3 @@
 **  Function: update_stash — Practice Mode: Copy / Recall
 */
 
-char	*update_stash(char *stash)
-{
-	int		i;
-	int		j
-;
-ENC
