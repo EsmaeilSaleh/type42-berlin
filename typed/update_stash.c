@@ -18,10 +18,6 @@
 char	*update_stash(char *stash)
 {
 	int		i;
-	int		j;
-	char	*new_stash;
-	size_t	len;
-
-	i = 0;
-	j = 0;
-	
+	int		j
+;
+ENC
