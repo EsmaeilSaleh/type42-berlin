@@ -532,3 +532,4 @@
 [2025-07-24 07:10:55] Mode: Copy | Function: ft_strlen | Score: 8%
 [2025-07-25 05:46:22] Mode: Copy | Function: ft_strchr | Score: 0%
 [2025-07-25 15:21:44] Mode: Copy | Function: ft_isalpha | Score: 0%
+[2025-07-26 21:59:26] Mode: Copy | Function: ft_isalpha | Score: 0%
