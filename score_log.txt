@@ -538,3 +538,4 @@
 [2025-07-28 08:36:59] Mode: Copy | Function: ft_strchr | Score: 0%
 [2025-07-28 21:15:54] Mode: Copy | Function: ft_strchr | Score: 0%
 [2025-07-29 07:35:52] Mode: Copy | Function: ft_memset | Score: 0%
+[2025-07-31 13:07:06] Mode: Copy | Function: ft_bzero | Score: 0%
