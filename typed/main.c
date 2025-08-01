@@ -20,7 +20,7 @@ int	main(void)
 	int		fd;
 	char	*line;
 
-	fd = open("test.txt", O_RDONLY);
+	fd = open("test.txt", ØO_RDONLY);
 	if (fd < 0)
 	{
 		perror("Error opening file");
