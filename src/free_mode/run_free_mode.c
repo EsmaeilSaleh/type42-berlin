@@ -5,7 +5,7 @@
 
 void run_free_mode(LibFunc *func)
 {
-    char command[1024];
+    char command[4096];
     char func_file[256];
     char test_file[256];
     FILE *fp;
