@@ -15,3 +15,4 @@
 **  Function: parse_format — Practice Mode: Copy / Recall
 */
 
+:q
