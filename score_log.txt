@@ -546,4 +546,9 @@
 [2025-08-01 10:51:13] Mode: Copy | Function: main | Score: 24%
 =======
 [2025-08-01 15:51:59] Mode: Copy | Function: ft_strncmp | Score: 0%
+<<<<<<< HEAD
 >>>>>>> e67351f (log updated)
+=======
+[2025-08-03 06:07:27] Mode: Copy | Function: ft_printf | Score: 100%
+>>>>>>> ef5a9fc (log updated)
+[2025-08-03 06:18:21] Mode: Copy | Function: ft_printf | Score: 0%
