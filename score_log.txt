@@ -560,3 +560,4 @@
 [2025-08-03 09:26:09] Mode: Copy | Function: handle_char | Score: 0%
 [2025-08-05 21:31:13] Mode: Copy | Function: print_arg | Score: 0%
 [2025-08-07 09:22:28] Mode: Copy | Function: ft_bzero | Score: 0%
+[2025-08-07 22:13:48] Mode: Copy | Function: ft_bzero | Score: 0%
