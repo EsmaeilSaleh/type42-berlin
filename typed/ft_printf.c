@@ -15,11 +15,9 @@
 **  Function: ft_printf — Practice Mode: Copy / Recall
 */
 
-<<<<<<< HEAD
-=======
 int	ft_printf(const char *format, ...)
 {
-	va_list args;
+	va_list	args;
 	int		count;
 
 	va_start(args, format);
@@ -27,4 +25,3 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
->>>>>>> c1332c8 (log updated)
