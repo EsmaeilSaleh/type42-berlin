@@ -585,3 +585,4 @@
 [2025-08-16 20:40:57] Mode: Copy | Function: ft_putnbr_base | Score: 100%
 [2025-08-16 20:43:09] Mode: Copy | Function: ft_printf | Score: 100%
 [2025-08-16 20:49:07] Mode: Copy | Function: parse_format | Score: 48%
+[2025-08-16 20:52:20] Mode: Copy | Function: parse_format | Score: 100%
