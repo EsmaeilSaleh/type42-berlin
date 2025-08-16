@@ -594,3 +594,4 @@
 [2025-08-16 22:02:35] Mode: Copy | Function: handle_hex_lower | Score: 0%
 [2025-08-16 22:05:06] Mode: Copy | Function: ft_putnbr_base | Score: 0%
 [2025-08-16 22:09:07] Mode: Copy | Function: ft_printf | Score: 0%
+[2025-08-16 22:19:37] Mode: Copy | Function: parse_format | Score: 0%
