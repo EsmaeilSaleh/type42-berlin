@@ -599,3 +599,4 @@
 [2025-08-17 19:07:42] Mode: Copy | Function: ft_printf | Score: 41%
 [2025-08-17 19:09:46] Mode: Copy | Function: ft_printf | Score: 100%
 [2025-08-17 19:14:45] Mode: Copy | Function: ft_printf | Score: 100%
+[2025-08-17 19:18:48] Mode: Copy | Function: parse_format | Score: 0%
