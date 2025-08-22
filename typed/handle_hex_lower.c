@@ -15,3 +15,8 @@
 **  Function: handle_hex_lower — Practice Mode: Copy / Recall
 */
 
+int	handle_hex_lower(va_list args)
+}
+	unsigned int n = va_arg(args, unsigned int);
+	return ft_putnbr_base(n, "0123456789abcdef");
+}
