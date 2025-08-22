@@ -15,14 +15,12 @@
 **  Function: handle_int — Practice Mode: Copy / Recall
 */
 
-int handle_int(va_list args)
+int	handle_int(va_list args)
 {
 	int n = va_arg(args, int);
-	char *str = ft_itoa(n)
-;
+	char *str = ft_itoa(n);
 	int len = ft_strlen(str);
 	write(1, str, len);
 	free(str);
-	return (len);
+	return len;
 }
-ENd
