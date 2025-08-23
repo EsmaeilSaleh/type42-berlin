@@ -15,14 +15,3 @@
 **  Function: handle_string — Practice Mode: Copy / Recall
 */
 
-int	handle_string(va_list args)
-{
-	char *str = va_arg(args, char *);
-	if (!str)
-		str = "(null)";
-	int len = 0;
-	while (str[len])
-		len++;
-	write(1, str, len);
-	return len;
-}
