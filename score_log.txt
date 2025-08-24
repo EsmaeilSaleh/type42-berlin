@@ -623,3 +623,4 @@
 [2025-08-23 09:23:18] Mode: Copy | Function: handle_string | Score: 0%
 [2025-08-24 21:01:21] Mode: Copy | Function: ft_memcpy | Score: 0%
 [2025-08-24 21:01:29] Mode: Copy | Function: ft_strdup | Score: 0%
+[2025-08-24 21:01:37] Mode: Copy | Function: ft_memmove | Score: 0%
