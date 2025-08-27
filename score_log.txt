@@ -627,3 +627,4 @@
 [2025-08-25 05:32:59] Mode: Copy | Function: ft_putnbr_fd | Score: 0%
 [2025-08-26 07:12:34] Mode: Copy | Function: ft_itoa | Score: 14%
 [2025-08-27 08:15:43] Mode: Copy | Function: ft_bzero | Score: 0%
+[2025-08-27 08:15:49] Mode: Copy | Function: ft_memcpy | Score: 0%
