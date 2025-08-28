@@ -15,8 +15,6 @@
 **  Function: ft_itoa — Practice Mode: Copy / Recall
 */
 
-static int get_int_len(int n)
-{
-	int	len;
-
-	len = (n <= 0);
+static
+int
+get_int_len(int n)
