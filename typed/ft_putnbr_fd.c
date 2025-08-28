@@ -15,3 +15,6 @@
 **  Function: ft_putnbr_fd — Practice Mode: Copy / Recall
 */
 
+ENDD
+vo9id
+void	ft_putnbr_fd(int n, int fd)
