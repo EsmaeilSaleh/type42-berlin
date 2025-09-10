@@ -15,4 +15,5 @@
 **  Function: ft_strrchr — Practice Mode: Copy / Recall
 */
 
-char
+end
+end
