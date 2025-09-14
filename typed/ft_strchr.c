@@ -15,7 +15,3 @@
 **  Function: ft_strchr — Practice Mode: Copy / Recall
 */
 
-end
-EN 
-D
-EN D
