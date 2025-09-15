@@ -655,3 +655,4 @@
 [2025-09-14 16:58:55] Mode: Copy | Function: ft_strchr | Score: 0%
 [2025-09-14 16:59:05] Mode: Copy | Function: ft_strjoin | Score: 0%
 [2025-09-15 07:49:12] Mode: Copy | Function: ft_isdigit | Score: 2%
+[2025-09-15 07:51:10] Mode: Copy | Function: ft_isalnum | Score: 8%
