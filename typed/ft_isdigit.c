@@ -15,4 +15,4 @@
 **  Function: ft_isdigit — Practice Mode: Copy / Recall
 */
 
-end
+3
