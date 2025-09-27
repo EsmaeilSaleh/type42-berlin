@@ -15,4 +15,3 @@
 **  Function: ft_isalnum — Practice Mode: Copy / Recall
 */
 
-int ft
