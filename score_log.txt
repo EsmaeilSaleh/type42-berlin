@@ -669,3 +669,4 @@
 [2025-09-28 08:26:18] Mode: Copy | Function: ft_strrchr | Score: 0%
 [2025-09-28 08:59:23] Mode: Copy | Function: ft_strrchr | Score: 0%
 [2025-09-28 14:28:24] Mode: Copy | Function: ft_bzero | Score: 0%
+[2025-09-29 07:02:05] Mode: Copy | Function: ft_memcpy | Score: 0%
