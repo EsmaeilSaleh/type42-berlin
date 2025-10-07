@@ -15,8 +15,3 @@
 **  Function: ft_putchar_fd — Practice Mode: Copy / Recall
 */
 
-#ND
-E
-N
-D
-EN D
