@@ -23,10 +23,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	res = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!res)
+	res = malloc(ft_strlen(s1) + ft_strlen(s2) + 1)
+;	if (!res)
 		return (NULL);
-	i = -1;
+	i = -1;\
 	while (s1[++i])
 		res[i] = s1[i];
 	j = 0;
