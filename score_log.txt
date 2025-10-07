@@ -681,3 +681,4 @@
 [2025-10-07 10:18:20] Mode: Copy | Function: ft_strlen | Score: 0%
 [2025-10-07 10:22:28] Mode: Copy | Function: ft_isalpha | Score: 29%
 [2025-10-07 10:53:20] Mode: Copy | Function: ft_putchar_fd | Score: 78%
+[2025-10-07 10:54:57] Mode: Copy | Function: ft_putstr_fd | Score: 97%
