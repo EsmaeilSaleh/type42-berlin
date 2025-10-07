@@ -15,3 +15,5 @@
 **  Function: ft_isalpha — Practice Mode: Copy / Recall
 */
 
+int	ft_isalpha(int c)
+}{
