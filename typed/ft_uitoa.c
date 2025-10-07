@@ -17,11 +17,11 @@
 
 char	*ft_uitoa(unsigned int n)
 {
-	int				len;
-	char			*res;
+	int			len;
+	char		*res;
 	unsigned int	temp;
 
-	len = 1;
+	 len = 1;
 	temp = n;
 	while (temp / 10)
 	{
