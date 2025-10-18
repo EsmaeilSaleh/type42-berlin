@@ -15,4 +15,3 @@
 **  Function: ft_memmove — Practice Mode: Copy / Recall
 */
 
-end
