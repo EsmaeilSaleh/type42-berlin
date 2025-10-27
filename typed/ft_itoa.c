@@ -15,3 +15,4 @@
 **  Function: ft_itoa — Practice Mode: Copy / Recall
 */
 
+static
