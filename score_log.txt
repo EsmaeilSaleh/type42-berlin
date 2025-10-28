@@ -711,3 +711,4 @@
 [2025-10-26 10:37:39] Mode: Copy | Function: ft_putchar_fd | Score: 100%
 [2025-10-27 07:33:15] Mode: Copy | Function: ft_itoa | Score: 1%
 [2025-10-27 07:34:26] Mode: Copy | Function: ft_strjoin | Score: 17%
+[2025-10-28 09:28:52] Mode: Copy | Function: handle_string | Score: 0%
