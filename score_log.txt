@@ -715,3 +715,4 @@
 [2025-10-28 19:00:45] Mode: Copy | Function: handle_string | Score: 2%
 [2025-10-29 07:29:38] Mode: Copy | Function: print_arg | Score: 0%
 [2025-10-29 07:33:06] Mode: Copy | Function: ft_printf | Score: 100%
+[2025-10-29 07:45:10] Mode: Copy | Function: parse_format | Score: 47%

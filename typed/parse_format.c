@@ -22,17 +22,15 @@ int	parse_format(const char *format, va_list args)
 	count = 0;
 	while (*format)
 	{
-		if (*formst == '%')
-		{
-			format++;
-			count += print_arg(*format, args)
-		}
-		else
-		{
-			write(1, format, 1);
-			count++;
-		}
+		if (*format = '%')
+	{
 		format++;
+		count += print_arg(*format, args);
+		}
+	else
+	{
+		write(1, format, 1);
+		count++;
 	}
-	retrun (count);
+	return (count);
 }
