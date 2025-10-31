@@ -15,7 +15,7 @@
 **  Function: handle_plus_flag — Practice Mode: Copy / Recall
 */
 
-int handle_plug_flag(int n)
+int	handle_plus_flag(int n)
 {
 	if (n >= 0)
 		return (printf("+%d", n));
