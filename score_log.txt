@@ -719,3 +719,4 @@
 [2025-10-30 09:43:49] Mode: Copy | Function: ft_printf | Score: 15%
 [2025-10-30 10:14:37] Mode: Copy | Function: print_arg | Score: 56%
 [2025-10-31 09:14:18] Mode: Copy | Function: handle_plus_flag | Score: 100%
+[2025-11-02 15:55:24] Mode: Copy | Function: ft_memcpy | Score: 1%
