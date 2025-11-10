@@ -15,5 +15,4 @@
 **  Function: handle_string — Practice Mode: Copy / Recall
 */
 
-int	
-
+int
