@@ -15,4 +15,11 @@
 **  Function: handle_precision — Practice Mode: Copy / Recall
 */
 
-int	
+int handle_precision(int n, int precision)
+{
+	int len = sprintf(NULL, 0, "%d", n);
+	int paddint = precision - len;
+	while (padding-- > 0)
+		write(1, "0", 1);
+	return printf("%d", n);
+}
