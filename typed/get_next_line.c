@@ -15,6 +15,6 @@
 **  Function: get_next_line — Practice Mode: Copy / Recall
 */
 
-char	*get_next_line(int fd)
-{
-	
+char	#get_next_line(int fd)
+	int			bytes;
+	char 	
