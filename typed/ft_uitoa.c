@@ -15,27 +15,3 @@
 **  Function: ft_uitoa — Practice Mode: Copy / Recall
 */
 
-char	*ft_uitoa(unsigned int n)
-{
-	int			len;
-	char		*res;
-	unsigned int	temp;
-
-	 len = 1;
-	temp = n;
-	while (temp / 10)
-	{
-		temp /= 10;
-		len++;
-	}
-	res = malloc(len + 1);
-	if (!res)
-		return (NULL);
-	res[len] = '\0';
-	while (len--)
-	{
-		res[len] = (n % 10) + '0';
-		n /= 10;
-	}
-	return (res);
-}
