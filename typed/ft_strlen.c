@@ -15,4 +15,3 @@
 **  Function: ft_strlen — Practice Mode: Copy / Recall
 */
 
-size_t
