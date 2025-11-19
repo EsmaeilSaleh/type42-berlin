@@ -15,4 +15,3 @@
 **  Function: ft_putstr_fd — Practice Mode: Copy / Recall
 */
 
-3
