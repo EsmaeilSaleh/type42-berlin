@@ -15,4 +15,3 @@
 **  Function: ft_bzero — Practice Mode: Copy / Recall
 */
 
-end

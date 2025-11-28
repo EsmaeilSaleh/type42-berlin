@@ -740,3 +740,4 @@
 [2025-11-22 19:42:08] Mode: Copy | Function: ft_putstr_fd | Score: 100%
 [2025-11-25 19:58:01] Mode: Copy | Function: ft_memset | Score: 22%
 [2025-11-26 17:36:06] Mode: Copy | Function: ft_memset | Score: 0%
+[2025-11-28 15:37:39] Mode: Copy | Function: ft_bzero | Score: 0%
