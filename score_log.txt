@@ -748,3 +748,4 @@
 [2025-12-08 17:42:22] Mode: Copy | Function: ft_memcpy | Score: 6%
 [2025-12-09 18:32:56] Mode: Copy | Function: handle_hash_flag | Score: 6%
 [2026-02-04 20:07:07] Mode: Copy | Function: ft_isascii | Score: 100%
+[2026-02-04 20:07:46] Mode: Copy | Function: ft_isalpha | Score: 0%
