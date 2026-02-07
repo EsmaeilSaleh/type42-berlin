@@ -17,7 +17,7 @@
 
 char	*word_dup(const char *start, size_t len)
 {
-	char	*word;
+	char *word;
 	size_t	i;
 
 	i = 0;
