@@ -786,6 +786,577 @@ static const Exam02Question g_exam02_level2_questions[] = {
 	 "Expected file: wdmatch.c",
 	 "level2, string parsing"}};
 
+static const Exam02Question g_exam02_level3_questions[] = {
+	{"add_prime_sum",
+	 "add_prime_sum",
+	 "Write a program that adds all prime numbers less than or equal to a given number.",
+	 "#include <unistd.h>\n"
+	 "#include <stdlib.h>\n"
+	 "\n"
+	 "static int\tis_prime(int n)\n"
+	 "{\n"
+	 "\tint i;\n"
+	 "\n"
+	 "\tif (n < 2)\n"
+	 "\t\treturn (0);\n"
+	 "\ti = 2;\n"
+	 "\twhile (i * i <= n)\n"
+	 "\t{\n"
+	 "\t\tif (n % i == 0)\n"
+	 "\t\t\treturn (0);\n"
+	 "\t\ti++;\n"
+	 "\t}\n"
+	 "\treturn (1);\n"
+	 "}\n"
+	 "\n"
+	 "static void\tputnbr(int n)\n"
+	 "{\n"
+	 "\tchar c;\n"
+	 "\n"
+	 "\tif (n > 9)\n"
+	 "\t\tputnbr(n / 10);\n"
+	 "\tc = (n % 10) + '0';\n"
+	 "\twrite(1, &c, 1);\n"
+	 "}\n"
+	 "\n"
+	 "int\tmain(int argc, char **argv)\n"
+	 "{\n"
+	 "\tint n;\n"
+	 "\tint sum;\n"
+	 "\n"
+	 "\tsum = 0;\n"
+	 "\tif (argc == 2)\n"
+	 "\t{\n"
+	 "\t\tn = atoi(argv[1]);\n"
+	 "\t\twhile (n > 1)\n"
+	 "\t\t{\n"
+	 "\t\t\tif (is_prime(n))\n"
+	 "\t\t\t\tsum += n;\n"
+	 "\t\t\tn--;\n"
+	 "\t\t}\n"
+	 "\t}\n"
+	 "\tputnbr(sum);\n"
+	 "\twrite(1, \"\\n\", 1);\n"
+	 "\treturn (0);\n"
+	 "}\n",
+	 "Expected file: add_prime_sum.c",
+	 "level3, math"},
+	{"epur_str",
+	 "epur_str",
+	 "Write a program that removes extra spaces and tabs from a string.",
+	 "#include <unistd.h>\n"
+	 "\n"
+	 "int\tmain(int argc, char **argv)\n"
+	 "{\n"
+	 "\tint i;\n"
+	 "\tint in_word;\n"
+	 "\n"
+	 "\tif (argc == 2)\n"
+	 "\t{\n"
+	 "\t\ti = 0;\n"
+	 "\t\tin_word = 0;\n"
+	 "\t\twhile (argv[1][i])\n"
+	 "\t\t{\n"
+	 "\t\t\tif (argv[1][i] != ' ' && argv[1][i] != '\\t')\n"
+	 "\t\t\t{\n"
+	 "\t\t\t\tif (in_word)\n"
+	 "\t\t\t\t\twrite(1, \" \", 1);\n"
+	 "\t\t\t\twhile (argv[1][i] && argv[1][i] != ' ' && argv[1][i] != '\\t')\n"
+	 "\t\t\t\t\twrite(1, &argv[1][i++], 1);\n"
+	 "\t\t\t\tin_word = 1;\n"
+	 "\t\t\t}\n"
+	 "\t\t\telse\n"
+	 "\t\t\t\ti++;\n"
+	 "\t\t}\n"
+	 "\t}\n"
+	 "\twrite(1, \"\\n\", 1);\n"
+	 "\treturn (0);\n"
+	 "}\n",
+	 "Expected file: epur_str.c",
+	 "level3, string parsing"},
+	{"expand_str",
+	 "expand_str",
+	 "Write a program that replaces spaces/tabs between words by exactly three spaces.",
+	 "#include <unistd.h>\n"
+	 "\n"
+	 "int\tmain(int argc, char **argv)\n"
+	 "{\n"
+	 "\tint i;\n"
+	 "\tint first;\n"
+	 "\n"
+	 "\tif (argc == 2)\n"
+	 "\t{\n"
+	 "\t\ti = 0;\n"
+	 "\t\tfirst = 1;\n"
+	 "\t\twhile (argv[1][i])\n"
+	 "\t\t{\n"
+	 "\t\t\twhile (argv[1][i] == ' ' || argv[1][i] == '\\t')\n"
+	 "\t\t\t\ti++;\n"
+	 "\t\t\tif (argv[1][i])\n"
+	 "\t\t\t{\n"
+	 "\t\t\t\tif (!first)\n"
+	 "\t\t\t\t\twrite(1, \"   \", 3);\n"
+	 "\t\t\t\twhile (argv[1][i] && argv[1][i] != ' ' && argv[1][i] != '\\t')\n"
+	 "\t\t\t\t\twrite(1, &argv[1][i++], 1);\n"
+	 "\t\t\t\tfirst = 0;\n"
+	 "\t\t\t}\n"
+	 "\t\t}\n"
+	 "\t}\n"
+	 "\twrite(1, \"\\n\", 1);\n"
+	 "\treturn (0);\n"
+	 "}\n",
+	 "Expected file: expand_str.c",
+	 "level3, string parsing"},
+	{"ft_atoi_base",
+	 "ft_atoi_base",
+	 "Write a function that converts a number string in an arbitrary base to int.",
+	 "int\tft_atoi_base(const char *str, int str_base)\n"
+	 "{\n"
+	 "\tint res;\n"
+	 "\tint sign;\n"
+	 "\tint val;\n"
+	 "\n"
+	 "\tres = 0;\n"
+	 "\tsign = 1;\n"
+	 "\tif (!str || str_base < 2 || str_base > 16)\n"
+	 "\t\treturn (0);\n"
+	 "\twhile (*str == ' ' || (*str >= '\\t' && *str <= '\\r'))\n"
+	 "\t\tstr++;\n"
+	 "\tif (*str == '-' || *str == '+')\n"
+	 "\t\tsign = (*str++ == '-') ? -1 : 1;\n"
+	 "\twhile (*str)\n"
+	 "\t{\n"
+	 "\t\tif (*str >= '0' && *str <= '9')\n"
+	 "\t\t\tval = *str - '0';\n"
+	 "\t\telse if (*str >= 'a' && *str <= 'f')\n"
+	 "\t\t\tval = *str - 'a' + 10;\n"
+	 "\t\telse if (*str >= 'A' && *str <= 'F')\n"
+	 "\t\t\tval = *str - 'A' + 10;\n"
+	 "\t\telse\n"
+	 "\t\t\tbreak ;\n"
+	 "\t\tif (val >= str_base)\n"
+	 "\t\t\tbreak ;\n"
+	 "\t\tres = res * str_base + val;\n"
+	 "\t\tstr++;\n"
+	 "\t}\n"
+	 "\treturn (res * sign);\n"
+	 "}\n",
+	 "Expected file: ft_atoi_base.c",
+	 "level3, function"},
+	{"ft_list_foreach",
+	 "ft_list_foreach",
+	 "Write a function that applies a function to each list element.",
+	 "void\tft_list_foreach(t_list *begin_list, void (*f)(void *))\n"
+	 "{\n"
+	 "\twhile (begin_list)\n"
+	 "\t{\n"
+	 "\t\tf(begin_list->content);\n"
+	 "\t\tbegin_list = begin_list->next;\n"
+	 "\t}\n"
+	 "}\n",
+	 "Expected file: ft_list_foreach.c",
+	 "level3, list"},
+	{"ft_list_size",
+	 "ft_list_size",
+	 "Write a function that returns the number of elements in a linked list.",
+	 "int\tft_list_size(t_list *begin_list)\n"
+	 "{\n"
+	 "\tint size;\n"
+	 "\n"
+	 "\tsize = 0;\n"
+	 "\twhile (begin_list)\n"
+	 "\t{\n"
+	 "\t\tsize++;\n"
+	 "\t\tbegin_list = begin_list->next;\n"
+	 "\t}\n"
+	 "\treturn (size);\n"
+	 "}\n",
+	 "Expected file: ft_list_size.c",
+	 "level3, list"},
+	{"ft_range",
+	 "ft_range",
+	 "Write a function that returns an array with values from start to end.",
+	 "#include <stdlib.h>\n"
+	 "\n"
+	 "int\t*ft_range(int start, int end)\n"
+	 "{\n"
+	 "\tint *arr;\n"
+	 "\tint len;\n"
+	 "\tint i;\n"
+	 "\n"
+	 "\tlen = (start <= end) ? (end - start + 1) : (start - end + 1);\n"
+	 "\tarr = (int *)malloc(sizeof(int) * len);\n"
+	 "\tif (!arr)\n"
+	 "\t\treturn (NULL);\n"
+	 "\ti = 0;\n"
+	 "\twhile (i < len)\n"
+	 "\t{\n"
+	 "\t\tarr[i] = start;\n"
+	 "\t\tstart += (start <= end) ? 1 : -1;\n"
+	 "\t\ti++;\n"
+	 "\t}\n"
+	 "\treturn (arr);\n"
+	 "}\n",
+	 "Expected file: ft_range.c",
+	 "level3, function"},
+	{"ft_rrange",
+	 "ft_rrange",
+	 "Write a function that returns an array with values from end to start.",
+	 "#include <stdlib.h>\n"
+	 "\n"
+	 "int\t*ft_rrange(int start, int end)\n"
+	 "{\n"
+	 "\tint *arr;\n"
+	 "\tint len;\n"
+	 "\tint i;\n"
+	 "\n"
+	 "\tlen = (start <= end) ? (end - start + 1) : (start - end + 1);\n"
+	 "\tarr = (int *)malloc(sizeof(int) * len);\n"
+	 "\tif (!arr)\n"
+	 "\t\treturn (NULL);\n"
+	 "\ti = 0;\n"
+	 "\twhile (i < len)\n"
+	 "\t{\n"
+	 "\t\tarr[i] = end;\n"
+	 "\t\tend += (start <= end) ? -1 : 1;\n"
+	 "\t\ti++;\n"
+	 "\t}\n"
+	 "\treturn (arr);\n"
+	 "}\n",
+	 "Expected file: ft_rrange.c",
+	 "level3, function"},
+	{"hidenp",
+	 "hidenp",
+	 "Write a program that checks whether s1 is hidden in s2.",
+	 "#include <unistd.h>\n"
+	 "\n"
+	 "int\tmain(int argc, char **argv)\n"
+	 "{\n"
+	 "\tint i;\n"
+	 "\tint j;\n"
+	 "\n"
+	 "\ti = 0;\n"
+	 "\tj = 0;\n"
+	 "\tif (argc == 3)\n"
+	 "\t{\n"
+	 "\t\twhile (argv[1][i] && argv[2][j])\n"
+	 "\t\t{\n"
+	 "\t\t\tif (argv[1][i] == argv[2][j])\n"
+	 "\t\t\t\ti++;\n"
+	 "\t\t\tj++;\n"
+	 "\t\t}\n"
+	 "\t\tif (!argv[1][i])\n"
+	 "\t\t\twrite(1, \"1\", 1);\n"
+	 "\t\telse\n"
+	 "\t\t\twrite(1, \"0\", 1);\n"
+	 "\t}\n"
+	 "\telse\n"
+	 "\t\twrite(1, \"0\", 1);\n"
+	 "\twrite(1, \"\\n\", 1);\n"
+	 "\treturn (0);\n"
+	 "}\n",
+	 "Expected file: hidenp.c",
+	 "level3, string parsing"},
+	{"lcm",
+	 "lcm",
+	 "Write a function that returns the least common multiple of two unsigned ints.",
+	 "unsigned int\tlcm(unsigned int a, unsigned int b)\n"
+	 "{\n"
+	 "\tunsigned int n;\n"
+	 "\n"
+	 "\tif (a == 0 || b == 0)\n"
+	 "\t\treturn (0);\n"
+	 "\tn = (a > b) ? a : b;\n"
+	 "\twhile (1)\n"
+	 "\t{\n"
+	 "\t\tif (n % a == 0 && n % b == 0)\n"
+	 "\t\t\treturn (n);\n"
+	 "\t\tn++;\n"
+	 "\t}\n"
+	 "}\n",
+	 "Expected file: lcm.c",
+	 "level3, math"},
+	{"paramsum",
+	 "paramsum",
+	 "Write a program that displays the number of command line arguments.",
+	 "#include <unistd.h>\n"
+	 "\n"
+	 "static void\tputnbr(int n)\n"
+	 "{\n"
+	 "\tchar c;\n"
+	 "\n"
+	 "\tif (n > 9)\n"
+	 "\t\tputnbr(n / 10);\n"
+	 "\tc = (n % 10) + '0';\n"
+	 "\twrite(1, &c, 1);\n"
+	 "}\n"
+	 "\n"
+	 "int\tmain(int argc, char **argv)\n"
+	 "{\n"
+	 "\t(void)argv;\n"
+	 "\tputnbr(argc - 1);\n"
+	 "\twrite(1, \"\\n\", 1);\n"
+	 "\treturn (0);\n"
+	 "}\n",
+	 "Expected file: paramsum.c",
+	 "level3, parsing"},
+	{"pgcd",
+	 "pgcd",
+	 "Write a program that prints the greatest common divisor of two positive ints.",
+	 "#include <stdlib.h>\n"
+	 "#include <stdio.h>\n"
+	 "\n"
+	 "int\tmain(int argc, char **argv)\n"
+	 "{\n"
+	 "\tint a;\n"
+	 "\tint b;\n"
+	 "\tint t;\n"
+	 "\n"
+	 "\tif (argc == 3)\n"
+	 "\t{\n"
+	 "\t\ta = atoi(argv[1]);\n"
+	 "\t\tb = atoi(argv[2]);\n"
+	 "\t\twhile (b)\n"
+	 "\t\t{\n"
+	 "\t\t\tt = b;\n"
+	 "\t\t\tb = a % b;\n"
+	 "\t\t\ta = t;\n"
+	 "\t\t}\n"
+	 "\t\tprintf(\"%d\", a);\n"
+	 "\t}\n"
+	 "\tprintf(\"\\n\");\n"
+	 "\treturn (0);\n"
+	 "}\n",
+	 "Expected file: pgcd.c",
+	 "level3, math"},
+	{"print_hex",
+	 "print_hex",
+	 "Write a program that displays an int in hexadecimal.",
+	 "#include <unistd.h>\n"
+	 "#include <stdlib.h>\n"
+	 "\n"
+	 "static void\tputhex(unsigned int n)\n"
+	 "{\n"
+	 "\tchar *base;\n"
+	 "\n"
+	 "\tbase = \"0123456789abcdef\";\n"
+	 "\tif (n >= 16)\n"
+	 "\t\tputhex(n / 16);\n"
+	 "\twrite(1, &base[n % 16], 1);\n"
+	 "}\n"
+	 "\n"
+	 "int\tmain(int argc, char **argv)\n"
+	 "{\n"
+	 "\tif (argc == 2)\n"
+	 "\t\tputhex((unsigned int)atoi(argv[1]));\n"
+	 "\twrite(1, \"\\n\", 1);\n"
+	 "\treturn (0);\n"
+	 "}\n",
+	 "Expected file: print_hex.c",
+	 "level3, parsing"},
+	{"rstr_capitalizer",
+	 "rstr_capitalizer",
+	 "Write a program that lowercases all words and uppercases only last letter of each word.",
+	 "#include <unistd.h>\n"
+	 "\n"
+	 "int\tmain(int argc, char **argv)\n"
+	 "{\n"
+	 "\tint i;\n"
+	 "\tchar c;\n"
+	 "\n"
+	 "\tif (argc > 1)\n"
+	 "\t{\n"
+	 "\t\tint a = 1;\n"
+	 "\t\twhile (a < argc)\n"
+	 "\t\t{\n"
+	 "\t\t\ti = 0;\n"
+	 "\t\t\twhile (argv[a][i])\n"
+	 "\t\t\t{\n"
+	 "\t\t\t\tc = argv[a][i];\n"
+	 "\t\t\t\tif (c >= 'A' && c <= 'Z')\n"
+	 "\t\t\t\t\tc += 32;\n"
+	 "\t\t\t\tif ((argv[a][i + 1] == ' ' || argv[a][i + 1] == '\\t' || argv[a][i + 1] == '\\0')\n"
+	 "\t\t\t\t\t&& (c >= 'a' && c <= 'z'))\n"
+	 "\t\t\t\t\tc -= 32;\n"
+	 "\t\t\t\twrite(1, &c, 1);\n"
+	 "\t\t\t\ti++;\n"
+	 "\t\t\t}\n"
+	 "\t\t\twrite(1, \"\\n\", 1);\n"
+	 "\t\t\ta++;\n"
+	 "\t\t}\n"
+	 "\t}\n"
+	 "\telse\n"
+	 "\t\twrite(1, \"\\n\", 1);\n"
+	 "\treturn (0);\n"
+	 "}\n",
+	 "Expected file: rstr_capitalizer.c",
+	 "level3, string transform"},
+	{"str_capitalizer",
+	 "str_capitalizer",
+	 "Write a program that capitalizes the first letter of each word and lowercases the rest.",
+	 "#include <unistd.h>\n"
+	 "\n"
+	 "int\tmain(int argc, char **argv)\n"
+	 "{\n"
+	 "\tint i;\n"
+	 "\tchar c;\n"
+	 "\n"
+	 "\tif (argc > 1)\n"
+	 "\t{\n"
+	 "\t\tint a = 1;\n"
+	 "\t\twhile (a < argc)\n"
+	 "\t\t{\n"
+	 "\t\t\ti = 0;\n"
+	 "\t\t\twhile (argv[a][i])\n"
+	 "\t\t\t{\n"
+	 "\t\t\t\tc = argv[a][i];\n"
+	 "\t\t\t\tif (c >= 'A' && c <= 'Z')\n"
+	 "\t\t\t\t\tc += 32;\n"
+	 "\t\t\t\tif ((i == 0 || argv[a][i - 1] == ' ' || argv[a][i - 1] == '\\t')\n"
+	 "\t\t\t\t\t&& (c >= 'a' && c <= 'z'))\n"
+	 "\t\t\t\t\tc -= 32;\n"
+	 "\t\t\t\twrite(1, &c, 1);\n"
+	 "\t\t\t\ti++;\n"
+	 "\t\t\t}\n"
+	 "\t\t\twrite(1, \"\\n\", 1);\n"
+	 "\t\t\ta++;\n"
+	 "\t\t}\n"
+	 "\t}\n"
+	 "\telse\n"
+	 "\t\twrite(1, \"\\n\", 1);\n"
+	 "\treturn (0);\n"
+	 "}\n",
+	 "Expected file: str_capitalizer.c",
+	 "level3, string transform"},
+	{"tab_mult",
+	 "tab_mult",
+	 "Write a program that displays the multiplication table of a given number.",
+	 "#include <unistd.h>\n"
+	 "#include <stdlib.h>\n"
+	 "\n"
+	 "static void\tputnbr(int n)\n"
+	 "{\n"
+	 "\tchar c;\n"
+	 "\n"
+	 "\tif (n > 9)\n"
+	 "\t\tputnbr(n / 10);\n"
+	 "\tc = (n % 10) + '0';\n"
+	 "\twrite(1, &c, 1);\n"
+	 "}\n"
+	 "\n"
+	 "int\tmain(int argc, char **argv)\n"
+	 "{\n"
+	 "\tint n;\n"
+	 "\tint i;\n"
+	 "\n"
+	 "\tif (argc == 2)\n"
+	 "\t{\n"
+	 "\t\tn = atoi(argv[1]);\n"
+	 "\t\ti = 1;\n"
+	 "\t\twhile (i <= 9)\n"
+	 "\t\t{\n"
+	 "\t\t\tputnbr(i);\n"
+	 "\t\t\twrite(1, \" x \", 3);\n"
+	 "\t\t\tputnbr(n);\n"
+	 "\t\t\twrite(1, \" = \", 3);\n"
+	 "\t\t\tputnbr(i * n);\n"
+	 "\t\t\twrite(1, \"\\n\", 1);\n"
+	 "\t\t\ti++;\n"
+	 "\t\t}\n"
+	 "\t}\n"
+	 "\telse\n"
+	 "\t\twrite(1, \"\\n\", 1);\n"
+	 "\treturn (0);\n"
+	 "}\n",
+	 "Expected file: tab_mult.c",
+	 "level3, loops"},
+	{"rev_wstr",
+	 "rev_wstr",
+	 "Write a program that prints words in reverse order.",
+	 "#include <unistd.h>\n"
+	 "\n"
+	 "int\tmain(int argc, char **argv)\n"
+	 "{\n"
+	 "\tint end;\n"
+	 "\tint start;\n"
+	 "\tint first;\n"
+	 "\n"
+	 "\tif (argc == 2)\n"
+	 "\t{\n"
+	 "\t\tfirst = 1;\n"
+	 "\t\tend = 0;\n"
+	 "\t\twhile (argv[1][end])\n"
+	 "\t\t\tend++;\n"
+	 "\t\twhile (end > 0)\n"
+	 "\t\t{\n"
+	 "\t\t\twhile (end > 0 && (argv[1][end - 1] == ' ' || argv[1][end - 1] == '\\t'))\n"
+	 "\t\t\t\tend--;\n"
+	 "\t\t\tstart = end;\n"
+	 "\t\t\twhile (start > 0 && argv[1][start - 1] != ' ' && argv[1][start - 1] != '\\t')\n"
+	 "\t\t\t\tstart--;\n"
+	 "\t\t\tif (start < end)\n"
+	 "\t\t\t{\n"
+	 "\t\t\t\tif (!first)\n"
+	 "\t\t\t\t\twrite(1, \" \", 1);\n"
+	 "\t\t\t\twrite(1, &argv[1][start], end - start);\n"
+	 "\t\t\t\tfirst = 0;\n"
+	 "\t\t\t}\n"
+	 "\t\t\tend = start;\n"
+	 "\t\t}\n"
+	 "\t}\n"
+	 "\twrite(1, \"\\n\", 1);\n"
+	 "\treturn (0);\n"
+	 "}\n",
+	 "Expected file: rev_wstr.c",
+	 "level3, string parsing"},
+	{"rostring",
+	 "rostring",
+	 "Write a program that moves the first word of a string to the end.",
+	 "#include <unistd.h>\n"
+	 "\n"
+	 "int\tmain(int argc, char **argv)\n"
+	 "{\n"
+	 "\tint i;\n"
+	 "\tint start;\n"
+	 "\tint end;\n"
+	 "\tint wrote;\n"
+	 "\n"
+	 "\tif (argc == 2)\n"
+	 "\t{\n"
+	 "\t\ti = 0;\n"
+	 "\t\twhile (argv[1][i] == ' ' || argv[1][i] == '\\t')\n"
+	 "\t\t\ti++;\n"
+	 "\t\tstart = i;\n"
+	 "\t\twhile (argv[1][i] && argv[1][i] != ' ' && argv[1][i] != '\\t')\n"
+	 "\t\t\ti++;\n"
+	 "\t\tend = i;\n"
+	 "\t\twrote = 0;\n"
+	 "\t\twhile (argv[1][i])\n"
+	 "\t\t{\n"
+	 "\t\t\twhile (argv[1][i] == ' ' || argv[1][i] == '\\t')\n"
+	 "\t\t\t\ti++;\n"
+	 "\t\t\twhile (argv[1][i] && argv[1][i] != ' ' && argv[1][i] != '\\t')\n"
+	 "\t\t\t{\n"
+	 "\t\t\t\tif (!wrote)\n"
+	 "\t\t\t\t\twrote = 1;\n"
+	 "\t\t\t\twrite(1, &argv[1][i++], 1);\n"
+	 "\t\t\t}\n"
+	 "\t\t\tif (argv[1][i] && wrote)\n"
+	 "\t\t\t\twrite(1, \" \", 1);\n"
+	 "\t\t}\n"
+	 "\t\tif (end > start)\n"
+	 "\t\t{\n"
+	 "\t\t\tif (wrote)\n"
+	 "\t\t\t\twrite(1, \" \", 1);\n"
+	 "\t\t\twrite(1, &argv[1][start], end - start);\n"
+	 "\t\t}\n"
+	 "\t}\n"
+	 "\twrite(1, \"\\n\", 1);\n"
+	 "\treturn (0);\n"
+	 "}\n",
+	 "Expected file: rostring.c",
+	 "level3, string parsing"}};
+
 static LibFunc question_to_libfunc(const Exam02Question *question)
 {
 	LibFunc func;
@@ -803,7 +1374,7 @@ static LibFunc question_to_libfunc(const Exam02Question *question)
 
 int exam02_level_count(void)
 {
-	return (2);
+	return (3);
 }
 
 int exam02_question_count(int level)
@@ -812,6 +1383,8 @@ int exam02_question_count(int level)
 		return (sizeof(g_exam02_level1_questions) / sizeof(g_exam02_level1_questions[0]));
 	if (level == 2)
 		return (sizeof(g_exam02_level2_questions) / sizeof(g_exam02_level2_questions[0]));
+	if (level == 3)
+		return (sizeof(g_exam02_level3_questions) / sizeof(g_exam02_level3_questions[0]));
 	return (0);
 }
 
@@ -826,6 +1399,8 @@ LibFunc exam02_get_question(int level, int index)
 		return (question_to_libfunc(&g_exam02_level1_questions[index]));
 	if (level == 2)
 		return (question_to_libfunc(&g_exam02_level2_questions[index]));
+	if (level == 3)
+		return (question_to_libfunc(&g_exam02_level3_questions[index]));
 	fprintf(stderr, "Invalid Exam Rank 02 level.\n");
 	exit(1);
 }
