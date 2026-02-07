@@ -764,3 +764,4 @@
 [2026-02-07 19:38:46] Mode: Copy | Function: ft_toupper | Score: 100%
 [2026-02-07 19:39:23] Mode: Copy | Function: ft_tolower | Score: 100%
 [2026-02-07 19:40:08] Mode: Copy | Function: ft_isalnum | Score: 100%
+[2026-02-07 19:40:59] Mode: Copy | Function: ft_isalpha | Score: 93%
