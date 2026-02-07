@@ -3,12 +3,72 @@
 #include "scoring.h"
 #include "ft_printf_bonus.h"
 
+static int g_exam02_selected_level = 1;
+
+static LibFunc exam02_get_selected_level_question(int index)
+{
+    return exam02_get_question(g_exam02_selected_level, index);
+}
+
+static int exam02_get_selected_level_count(void)
+{
+    return exam02_question_count(g_exam02_selected_level);
+}
+
+static int run_exam_rank_02_loop(int mode)
+{
+    int level_choice;
+
+    while (1)
+    {
+        system("clear");
+        print_banner();
+        print_exam02_level_menu();
+        if (scanf("%d", &level_choice) != 1)
+            return 0;
+        getchar();
+
+        if (level_choice == 0)
+            return 0;
+        if (level_choice < 1 || level_choice > exam02_level_count())
+            continue;
+
+        g_exam02_selected_level = level_choice;
+        while (1)
+        {
+            system("clear");
+            print_banner();
+            run_typing_session(mode, exam02_get_selected_level_question, exam02_get_selected_level_count);
+            printf("\n-------------------------------------------\n");
+            printf("\nWhat would you like to do next?\n");
+            printf("1. Try another question in this level\n");
+            printf("2. Change Level\n");
+            printf("3. Change Category\n");
+            printf("4. Change Mode\n");
+            printf("Enter your choice: ");
+
+            int choice;
+            if (scanf("%d", &choice) != 1 || choice < 1 || choice > 4)
+                break;
+            getchar();
+
+            if (choice == 1)
+                continue;
+            if (choice == 2)
+                break;
+            if (choice == 3)
+                return 0;
+            longjmp(mode_menu_jump, 1);
+        }
+    }
+}
+
 int select_mode(void)
 {
 
     int mode;
     print_mode_menu();
-    if (scanf("%d", &mode) != 1 || (mode != 1 && mode != 3))
+    if (scanf("%d", &mode) != 1 || (mode != 1 && mode != 2 && mode != 3))
     {
         fprintf(stderr, "Exiting.\n");
         return 0;
@@ -21,7 +81,7 @@ int select_category(void)
 {
     int category;
     print_category_menu();
-    if (scanf("%d", &category) != 1 || category < 1 || category > 11)
+    if (scanf("%d", &category) != 1 || category < 1 || category > 12)
         return 0;
     getchar();
     return category;
@@ -81,6 +141,8 @@ int run_category_loop(int mode, int category)
         get_func_by_index = get_ft_printf_bonus_function_by_index;
         get_func_count = get_ft_printf_bonus_functions_count;
         break;
+    case 12:
+        return run_exam_rank_02_loop(mode);
     default:
         fprintf(stderr, "Invalid category.\n");
         return 1;

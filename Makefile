@@ -32,6 +32,7 @@ SRCS = \
 	$(DATA_DIR)/ft_printf_bonus.c \
 	$(DATA_DIR)/ft_printf_bonus_handlers.c \
 	$(DATA_DIR)/ft_printf_bonus_utils.c \
+	$(DATA_DIR)/exam_rank_02.c \
 
 
 OBJS = $(SRCS:.c=.o)

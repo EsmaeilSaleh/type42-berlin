@@ -103,6 +103,10 @@ LibFunc get_ft_printf_handlers_functions_by_index(int index);
 int get_ft_printf_main_functions_count(void);
 LibFunc get_ft_printf_main_functions_by_index(int index);
 
+int exam02_level_count(void);
+int exam02_question_count(int level);
+LibFunc exam02_get_question(int level, int index);
+
 size_t ft_strlen(const char *s);
 
 void run_free_mode(LibFunc *func);

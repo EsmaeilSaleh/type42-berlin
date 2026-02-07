@@ -59,8 +59,19 @@ void print_category_menu(void)
     printf(" 9. ft_printf – Part 2 (Handlers)\n");
     printf("10. ft_printf – Part 3 (Dispatcher & Core)\n");
     printf("11. ft_printf – Part 4 (Bonus flags)\n");
+    printf("12. Exam Rank 02\n");
     printf("\033[1;31m╔════════════════════════════╗\n");
     printf("║       0. Change Mode       ║\n");
+    printf("╚════════════════════════════╝\033[0m\n");
+    printf("Enter choice: ");
+}
+
+void print_exam02_level_menu(void)
+{
+    printf("Exam Rank 02 - Select level:\n");
+    printf(" 1. Level 1\n");
+    printf("\033[1;31m╔════════════════════════════╗\n");
+    printf("║          0. Back           ║\n");
     printf("╚════════════════════════════╝\033[0m\n");
     printf("Enter choice: ");
 }
