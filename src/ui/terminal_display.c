@@ -72,6 +72,7 @@ void print_exam02_level_menu(void)
     printf(" 1. Level 1\n");
     printf(" 2. Level 2\n");
     printf(" 3. Level 3\n");
+    printf(" 4. Level 4\n");
     printf("\033[1;31m╔════════════════════════════╗\n");
     printf("║          0. Back           ║\n");
     printf("╚════════════════════════════╝\033[0m\n");

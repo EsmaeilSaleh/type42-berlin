@@ -1357,6 +1357,283 @@ static const Exam02Question g_exam02_level3_questions[] = {
 	 "Expected file: rostring.c",
 	 "level3, string parsing"}};
 
+static const Exam02Question g_exam02_level4_questions[] = {
+	{"brainfuck",
+	 "brainfuck",
+	 "Write a program that prints \"Hello World!\" using brainfuck code output.",
+	 "#include <unistd.h>\n"
+	 "\n"
+	 "int\tmain(void)\n"
+	 "{\n"
+	 "\twrite(1, \"[>++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..\"\n"
+	 "\t\t\"+++.>>.<-.<.+++.------.--------.>>+.>++.]\", 106);\n"
+	 "\treturn (0);\n"
+	 "}\n",
+	 "Expected file: brainfuck.c",
+	 "level4, parsing"},
+	{"fprime",
+	 "fprime",
+	 "Write a program that prints the prime factors of a positive integer.",
+	 "#include <stdlib.h>\n"
+	 "#include <stdio.h>\n"
+	 "\n"
+	 "int\tmain(int argc, char **argv)\n"
+	 "{\n"
+	 "\tint n;\n"
+	 "\tint p;\n"
+	 "\n"
+	 "\tif (argc == 2)\n"
+	 "\t{\n"
+	 "\t\tn = atoi(argv[1]);\n"
+	 "\t\tp = 2;\n"
+	 "\t\twhile (n > 1)\n"
+	 "\t\t{\n"
+	 "\t\t\tif (n % p == 0)\n"
+	 "\t\t\t{\n"
+	 "\t\t\t\tprintf(\"%d\", p);\n"
+	 "\t\t\t\tn /= p;\n"
+	 "\t\t\t\tif (n > 1)\n"
+	 "\t\t\t\t\tprintf(\"*\");\n"
+	 "\t\t\t}\n"
+	 "\t\t\telse\n"
+	 "\t\t\t\tp++;\n"
+	 "\t\t}\n"
+	 "\t}\n"
+	 "\tprintf(\"\\n\");\n"
+	 "\treturn (0);\n"
+	 "}\n",
+	 "Expected file: fprime.c",
+	 "level4, math"},
+	{"ft_itoa",
+	 "ft_itoa",
+	 "Write a function that converts an int to a newly allocated string.",
+	 "#include <stdlib.h>\n"
+	 "\n"
+	 "static int\tcount_len(long n)\n"
+	 "{\n"
+	 "\tint len;\n"
+	 "\n"
+	 "\tlen = (n <= 0);\n"
+	 "\twhile (n)\n"
+	 "\t{\n"
+	 "\t\tn /= 10;\n"
+	 "\t\tlen++;\n"
+	 "\t}\n"
+	 "\treturn (len);\n"
+	 "}\n"
+	 "\n"
+	 "char\t*ft_itoa(int nbr)\n"
+	 "{\n"
+	 "\tlong n;\n"
+	 "\tint len;\n"
+	 "\tchar *s;\n"
+	 "\n"
+	 "\tn = nbr;\n"
+	 "\tlen = count_len(n);\n"
+	 "\ts = (char *)malloc(len + 1);\n"
+	 "\tif (!s)\n"
+	 "\t\treturn (NULL);\n"
+	 "\ts[len] = '\\0';\n"
+	 "\tif (n < 0)\n"
+	 "\t{\n"
+	 "\t\ts[0] = '-';\n"
+	 "\t\tn = -n;\n"
+	 "\t}\n"
+	 "\tif (n == 0)\n"
+	 "\t\ts[0] = '0';\n"
+	 "\twhile (n)\n"
+	 "\t{\n"
+	 "\t\ts[--len] = (n % 10) + '0';\n"
+	 "\t\tn /= 10;\n"
+	 "\t}\n"
+	 "\treturn (s);\n"
+	 "}\n",
+	 "Expected file: ft_itoa.c",
+	 "level4, function"},
+	{"ft_split",
+	 "ft_split",
+	 "Write a function that splits a string into words separated by spaces, tabs, or newlines.",
+	 "#include <stdlib.h>\n"
+	 "\n"
+	 "static int\tis_sep(char c)\n"
+	 "{\n"
+	 "\treturn (c == ' ' || c == '\\t' || c == '\\n');\n"
+	 "}\n"
+	 "\n"
+	 "static int\tword_count(char *s)\n"
+	 "{\n"
+	 "\tint i;\n"
+	 "\tint count;\n"
+	 "\n"
+	 "\ti = 0;\n"
+	 "\tcount = 0;\n"
+	 "\twhile (s[i])\n"
+	 "\t{\n"
+	 "\t\twhile (s[i] && is_sep(s[i]))\n"
+	 "\t\t\ti++;\n"
+	 "\t\tif (s[i])\n"
+	 "\t\t{\n"
+	 "\t\t\tcount++;\n"
+	 "\t\t\twhile (s[i] && !is_sep(s[i]))\n"
+	 "\t\t\t\ti++;\n"
+	 "\t\t}\n"
+	 "\t}\n"
+	 "\treturn (count);\n"
+	 "}\n"
+	 "\n"
+	 "char\t**ft_split(char *str)\n"
+	 "{\n"
+	 "\tchar\t**tab;\n"
+	 "\tint\t\tw;\n"
+	 "\tint\t\ti;\n"
+	 "\tint\t\tstart;\n"
+	 "\n"
+	 "\ttab = (char **)malloc(sizeof(char *) * (word_count(str) + 1));\n"
+	 "\tif (!tab)\n"
+	 "\t\treturn (NULL);\n"
+	 "\ti = 0;\n"
+	 "\tw = 0;\n"
+	 "\twhile (str[i])\n"
+	 "\t{\n"
+	 "\t\twhile (str[i] && is_sep(str[i]))\n"
+	 "\t\t\ti++;\n"
+	 "\t\tstart = i;\n"
+	 "\t\twhile (str[i] && !is_sep(str[i]))\n"
+	 "\t\t\ti++;\n"
+	 "\t\tif (i > start)\n"
+	 "\t\t{\n"
+	 "\t\t\ttab[w] = (char *)malloc(i - start + 1);\n"
+	 "\t\t\tif (!tab[w])\n"
+	 "\t\t\t\treturn (NULL);\n"
+	 "\t\t\tfor (int j = 0; start + j < i; j++)\n"
+	 "\t\t\t\ttab[w][j] = str[start + j];\n"
+	 "\t\t\ttab[w][i - start] = '\\0';\n"
+	 "\t\t\tw++;\n"
+	 "\t\t}\n"
+	 "\t}\n"
+	 "\ttab[w] = NULL;\n"
+	 "\treturn (tab);\n"
+	 "}\n",
+	 "Expected file: ft_split.c",
+	 "level4, function"},
+	{"ft_list_remove_if",
+	 "ft_list_remove_if",
+	 "Write a function that removes all elements matching data_ref from a linked list.",
+	 "#include <stdlib.h>\n"
+	 "\n"
+	 "void\tft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())\n"
+	 "{\n"
+	 "\tt_list *cur;\n"
+	 "\tt_list *tmp;\n"
+	 "\n"
+	 "\twhile (*begin_list && cmp((*begin_list)->data, data_ref) == 0)\n"
+	 "\t{\n"
+	 "\t\ttmp = *begin_list;\n"
+	 "\t\t*begin_list = (*begin_list)->next;\n"
+	 "\t\tfree(tmp);\n"
+	 "\t}\n"
+	 "\tcur = *begin_list;\n"
+	 "\twhile (cur && cur->next)\n"
+	 "\t{\n"
+	 "\t\tif (cmp(cur->next->data, data_ref) == 0)\n"
+	 "\t\t{\n"
+	 "\t\t\ttmp = cur->next;\n"
+	 "\t\t\tcur->next = cur->next->next;\n"
+	 "\t\t\tfree(tmp);\n"
+	 "\t\t}\n"
+	 "\t\telse\n"
+	 "\t\t\tcur = cur->next;\n"
+	 "\t}\n"
+	 "}\n",
+	 "Expected file: ft_list_remove_if.c",
+	 "level4, list"},
+	{"sort_int_tab",
+	 "sort_int_tab",
+	 "Write a function that sorts an int array in ascending order.",
+	 "void\tsort_int_tab(int *tab, unsigned int size)\n"
+	 "{\n"
+	 "\tunsigned int i;\n"
+	 "\tunsigned int j;\n"
+	 "\tint tmp;\n"
+	 "\n"
+	 "\ti = 0;\n"
+	 "\twhile (i < size)\n"
+	 "\t{\n"
+	 "\t\tj = i + 1;\n"
+	 "\t\twhile (j < size)\n"
+	 "\t\t{\n"
+	 "\t\t\tif (tab[j] < tab[i])\n"
+	 "\t\t\t{\n"
+	 "\t\t\t\ttmp = tab[i];\n"
+	 "\t\t\t\ttab[i] = tab[j];\n"
+	 "\t\t\t\ttab[j] = tmp;\n"
+	 "\t\t\t}\n"
+	 "\t\t\tj++;\n"
+	 "\t\t}\n"
+	 "\t\ti++;\n"
+	 "\t}\n"
+	 "}\n",
+	 "Expected file: sort_int_tab.c",
+	 "level4, function"},
+	{"sort_list",
+	 "sort_list",
+	 "Write a function that sorts a linked list using the provided cmp function.",
+	 "t_list\t*sort_list(t_list *lst, int (*cmp)(int, int))\n"
+	 "{\n"
+	 "\tint swapped;\n"
+	 "\tint tmp;\n"
+	 "\tt_list *cur;\n"
+	 "\n"
+	 "\tif (!lst)\n"
+	 "\t\treturn (NULL);\n"
+	 "\tswapped = 1;\n"
+	 "\twhile (swapped)\n"
+	 "\t{\n"
+	 "\t\tswapped = 0;\n"
+	 "\t\tcur = lst;\n"
+	 "\t\twhile (cur->next)\n"
+	 "\t\t{\n"
+	 "\t\t\tif (cmp(cur->content, cur->next->content) > 0)\n"
+	 "\t\t\t{\n"
+	 "\t\t\t\ttmp = (long)cur->content;\n"
+	 "\t\t\t\tcur->content = cur->next->content;\n"
+	 "\t\t\t\tcur->next->content = (void *)(long)tmp;\n"
+	 "\t\t\t\tswapped = 1;\n"
+	 "\t\t\t}\n"
+	 "\t\t\tcur = cur->next;\n"
+	 "\t\t}\n"
+	 "\t}\n"
+	 "\treturn (lst);\n"
+	 "}\n",
+	 "Expected file: sort_list.c",
+	 "level4, list"},
+	{"flood_fill",
+	 "flood_fill",
+	 "Write a flood fill function that replaces contiguous target area from a start point.",
+	 "void\tflood_fill(char **tab, t_point size, t_point begin)\n"
+	 "{\n"
+	 "\tchar target;\n"
+	 "\n"
+	 "\ttarget = tab[begin.y][begin.x];\n"
+	 "\tif (target == 'F')\n"
+	 "\t\treturn ;\n"
+	 "\tif (begin.x >= size.x || begin.y >= size.y)\n"
+	 "\t\treturn ;\n"
+	 "\tif (tab[begin.y][begin.x] != target)\n"
+	 "\t\treturn ;\n"
+	 "\ttab[begin.y][begin.x] = 'F';\n"
+	 "\tif (begin.x > 0)\n"
+	 "\t\tflood_fill(tab, size, (t_point){begin.x - 1, begin.y});\n"
+	 "\tif (begin.x + 1 < size.x)\n"
+	 "\t\tflood_fill(tab, size, (t_point){begin.x + 1, begin.y});\n"
+	 "\tif (begin.y > 0)\n"
+	 "\t\tflood_fill(tab, size, (t_point){begin.x, begin.y - 1});\n"
+	 "\tif (begin.y + 1 < size.y)\n"
+	 "\t\tflood_fill(tab, size, (t_point){begin.x, begin.y + 1});\n"
+	 "}\n",
+	 "Expected file: flood_fill.c",
+	 "level4, recursion"}};
+
 static LibFunc question_to_libfunc(const Exam02Question *question)
 {
 	LibFunc func;
@@ -1374,7 +1651,7 @@ static LibFunc question_to_libfunc(const Exam02Question *question)
 
 int exam02_level_count(void)
 {
-	return (3);
+	return (4);
 }
 
 int exam02_question_count(int level)
@@ -1385,6 +1662,8 @@ int exam02_question_count(int level)
 		return (sizeof(g_exam02_level2_questions) / sizeof(g_exam02_level2_questions[0]));
 	if (level == 3)
 		return (sizeof(g_exam02_level3_questions) / sizeof(g_exam02_level3_questions[0]));
+	if (level == 4)
+		return (sizeof(g_exam02_level4_questions) / sizeof(g_exam02_level4_questions[0]));
 	return (0);
 }
 
@@ -1401,6 +1680,8 @@ LibFunc exam02_get_question(int level, int index)
 		return (question_to_libfunc(&g_exam02_level2_questions[index]));
 	if (level == 3)
 		return (question_to_libfunc(&g_exam02_level3_questions[index]));
+	if (level == 4)
+		return (question_to_libfunc(&g_exam02_level4_questions[index]));
 	fprintf(stderr, "Invalid Exam Rank 02 level.\n");
 	exit(1);
 }
