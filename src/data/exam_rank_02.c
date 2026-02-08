@@ -159,7 +159,7 @@ static const Exam02Question g_exam02_level1_questions[] = {
 	 "Write a program that applies ROT13 to a string and prints it.",
 	 "#include <unistd.h>\n"
 	 "\n"
-	 "char\t*rot_13(char *str)\n"
+	 "void\trot_13(char *str)\n"
 	 "{\n"
 	 "\tint\t\ti;\n"
 	 "\n"
@@ -173,8 +173,7 @@ static const Exam02Question g_exam02_level1_questions[] = {
 	 "\t\twrite(1, &str[i], 1);\n"
 	 "\t\ti++;\n"
 	 "\t}\n"
-	 "\twrite(1, \"\\n\", 1);\n"
-	 "\treturn (str);\n"
+	 "\treturn ;\n"
 	 "}\n"
 	 "\n"
 	 "int\tmain(int argc, char **argv)\n"
