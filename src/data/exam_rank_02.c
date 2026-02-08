@@ -159,25 +159,28 @@ static const Exam02Question g_exam02_level1_questions[] = {
 	 "Write a program that applies ROT13 to a string and prints it.",
 	 "#include <unistd.h>\n"
 	 "\n"
+	 "char\t*rot_13(char *str)\n"
+	 "{\n"
+	 "\tint\t\ti;\n"
+	 "\n"
+	 "\ti = 0;\n"
+	 "\twhile (str[i] != '\\0')\n"
+	 "\t{\n"
+	 "\t\tif (str[i] >= 'A' && str[i] <= 'Z')\n"
+	 "\t\t\tstr[i] = ((str[i] - 'A' + 13) % 26) + 'A';\n"
+	 "\t\telse if (str[i] >= 'a' && str[i] <= 'z')\n"
+	 "\t\t\tstr[i] = ((str[i] - 'a' + 13) % 26) + 'a';\n"
+	 "\t\twrite(1, &str[i], 1);\n"
+	 "\t\ti++;\n"
+	 "\t}\n"
+	 "\twrite(1, \"\\n\", 1);\n"
+	 "\treturn (str);\n"
+	 "}\n"
+	 "\n"
 	 "int\tmain(int argc, char **argv)\n"
 	 "{\n"
-	 "\tint\ti;\n"
-	 "\tchar\tc;\n"
-	 "\n"
 	 "\tif (argc == 2)\n"
-	 "\t{\n"
-	 "\t\ti = 0;\n"
-	 "\t\twhile (argv[1][i])\n"
-	 "\t\t{\n"
-	 "\t\t\tc = argv[1][i];\n"
-	 "\t\t\tif ((c >= 'a' && c <= 'm') || (c >= 'A' && c <= 'M'))\n"
-	 "\t\t\t\tc += 13;\n"
-	 "\t\t\telse if ((c >= 'n' && c <= 'z') || (c >= 'N' && c <= 'Z'))\n"
-	 "\t\t\t\tc -= 13;\n"
-	 "\t\t\twrite(1, &c, 1);\n"
-	 "\t\t\ti++;\n"
-	 "\t\t}\n"
-	 "\t}\n"
+	 "\t\trot_13(argv[1]);\n"
 	 "\twrite(1, \"\\n\", 1);\n"
 	 "\treturn (0);\n"
 	 "}\n",
@@ -1262,7 +1265,7 @@ static const Exam02Question g_exam02_level3_questions[] = {
 	 "}\n",
 	 "Expected file: tab_mult.c",
 	 "level3, loops"},
-	};
+};
 
 static const Exam02Question g_exam02_level4_questions[] = {
 	{"flood_fill",

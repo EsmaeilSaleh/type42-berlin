@@ -15,4 +15,3 @@
 **  Function: rot_13 — Practice Mode: Copy / Recall
 */
 
-q
