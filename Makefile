@@ -1,4 +1,4 @@
-NAME = type42
+NAME = memAcrobat
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -Iincludes
