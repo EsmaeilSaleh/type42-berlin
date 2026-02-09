@@ -805,3 +805,4 @@
 [2026-02-09 07:04:25] Mode: Copy | Function: ft_lstmap | Score: 0%
 [2026-02-09 07:05:45] Mode: Copy | Function: ft_lstnew | Score: 100%
 [2026-02-09 07:07:37] Mode: Copy | Function: ft_lstadd_front | Score: 9%
+[2026-02-09 07:08:54] Mode: Copy | Function: ft_lstsize | Score: 100%
