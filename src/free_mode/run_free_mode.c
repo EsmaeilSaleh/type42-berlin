@@ -1,7 +1,7 @@
 #include "core.h"
+#include "free_runner.h"
 #include "line_editor.h"
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 typedef struct s_free_redraw_ctx
@@ -61,57 +61,49 @@ static void redraw_free_input_line(const char *buf, size_t cursor, void *ctx)
 
 void run_free_mode(LibFunc *func)
 {
-    char command[4096];
-    char func_file[256];
-    char test_file[256];
-    FILE *fp;
-    char buffer[1024];
+    char line[1024];
+    char typed_text[MAX_INPUT_SIZE];
+    char result_output[4096];
+    size_t used_len;
     int status;
+    int result;
     FreeRedrawCtx draw_ctx;
-
-    // Build file paths
-    snprintf(func_file, sizeof(func_file), "typed/%s.c", func->name);
-    snprintf(test_file, sizeof(test_file), "tests/test_%s.c", func->name);
 
     // Print header
     printf("\n\033[1;36mFree Mode – Practice: %s\033[0m\n", func->name);
     printf("Type your function below (type END alone in a line to finish):\n");
     draw_ctx.prompt = "> ";
-
-    fp = fopen(func_file, "w");
-    if (!fp)
-    {
-        perror("Error opening file for writing");
-        return;
-    }
-
-    // Prepend standard includes
-    fprintf(fp, "#include <stddef.h>\n#include <stdlib.h>\n#include <unistd.h>\n\n");
+    typed_text[0] = '\0';
+    used_len = 0;
 
     while (1)
     {
-        status = read_line_edit(buffer, sizeof(buffer), redraw_free_input_line, &draw_ctx);
+        status = read_line_edit(line, sizeof(line), redraw_free_input_line, &draw_ctx);
         printf("\n");
         if (status <= 0)
             break;
-        if (strcmp(buffer, "END") == 0)
+        if (strcmp(line, "END") == 0)
             break;
-        fprintf(fp, "%s\n", buffer);
+        if (used_len + strlen(line) + 2 >= sizeof(typed_text))
+        {
+            printf("\n\033[1;31mInput buffer full. Stopping capture.\033[0m\n");
+            break;
+        }
+        strcat(typed_text, line);
+        strcat(typed_text, "\n");
+        used_len = strlen(typed_text);
     }
-    fclose(fp);
-
-    // Confirm and compile
-    printf("\n🛠️  Compiling and running tests...\n\n");
-
-    snprintf(command, sizeof(command),
-             "echo '\\n🛠️  Compiling %s and %s...' && gcc -I includes %s %s -o tmp_test 2>&1 | tee .compile_log && echo '\\n🧪 Running tests for %s:' && ./tmp_test && rm .tmp_test",
-             func_file, test_file, func_file, test_file, func->name);
-
-    int result = system(command);
-    if (result != 0)
-        printf("\n\033[1;31mTest failed or compilation error.\033[0m\n");
+    printf("\nCompiling and running tests...\n\n");
+    result = free_mode_compile_and_test(func->name, typed_text,
+                                        result_output, sizeof(result_output));
+    if (result == FREE_RUNNER_OK)
+        printf("\033[1;32m✅ OK\033[0m\n%s\n", result_output);
+    else if (result == FREE_RUNNER_COMPILE_ERROR)
+        printf("\033[1;31m❌ COMPILE ERROR\033[0m\n%s\n", result_output);
+    else if (result == FREE_RUNNER_FAIL)
+        printf("\033[1;31m❌ FAIL\033[0m\n%s\n", result_output);
     else
-        printf("\n\033[1;32mTest completed successfully.\033[0m\n");
+        printf("\033[1;31m❌ ERROR\033[0m\n%s\n", result_output);
 
     printf("\nPress Enter to return to menu...");
     getchar();

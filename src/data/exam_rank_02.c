@@ -273,7 +273,34 @@ static const Exam02Question g_exam02_level1_questions[] = {
 	 "\treturn (0);\n"
 	 "}\n",
 	 "Expected file: ulstr.c",
-	 "level1, string transform"}};
+	 "level1, string transform"},
+	{"token_loop_skeleton",
+	 "token_loop_skeleton",
+	 "Concept: reusable skeleton for token/word parsing with separator skipping.",
+	 "#include <unistd.h>\n"
+	 "\n"
+	 "void\ttoken_loop_skeleton(char *s)\n"
+	 "{\n"
+	 "\tint i;\n"
+	 "\tint seen_word;\n"
+	 "\n"
+	 "\ti = 0;\n"
+	 "\tseen_word = 0;\n"
+	 "\twhile (s[i])\n"
+	 "\t{\n"
+	 "\t\twhile (s[i] == ' ' || s[i] == '\\t')\n"
+	 "\t\t\ti++;\n"
+	 "\t\tif (!s[i])\n"
+	 "\t\t\tbreak ;\n"
+	 "\t\tif (seen_word)\n"
+	 "\t\t\twrite(1, \" \", 1);\n"
+	 "\t\twhile (s[i] && s[i] != ' ' && s[i] != '\\t')\n"
+	 "\t\t\twrite(1, &s[i++], 1);\n"
+	 "\t\tseen_word = 1;\n"
+	 "\t}\n"
+	 "}\n",
+	 "Expected file: token_loop_skeleton.c",
+	 "level1, concept, string parsing"}};
 
 static const Exam02Question g_exam02_level2_questions[] = {
 	{"alpha_mirror",

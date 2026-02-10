@@ -20,6 +20,7 @@ SRCS = \
 	$(APP_DIR)/ui/terminal_display.c\
 	$(APP_DIR)/terminal/line_editor.c\
 	$(APP_DIR)/free_mode/run_free_mode.c\
+	$(APP_DIR)/free_mode/free_runner.c\
 	$(DATA_DIR)/string.c \
 	$(DATA_DIR)/memory.c \
 	$(DATA_DIR)/char.c \
