@@ -104,6 +104,8 @@ static KeyEvent parse_escape_sequence(void)
     ev.ch = '\0';
     if (!read_byte_timeout(&c2, 30))
         return (ev);
+    if (c2 == '\r')
+        c2 = '\n';
     if (c2 == '[' || c2 == 'O')
     {
         if (!read_byte_timeout(&c3, 30))
@@ -154,6 +156,8 @@ static KeyEvent read_key_event(void)
         return (ev);
     }
     if (c == '\r')
+        c = '\n';
+    if (c == '\r' || c == '\n')
         ev.key = KEY_ENTER;
     else if (c == 127)
         ev.key = KEY_BACKSPACE;
@@ -176,7 +180,7 @@ static KeyEvent read_key_event(void)
     else if (c == 9)
         ev.key = KEY_TAB;
     else if (c == 10)
-        ev.key = KEY_CTRL_J;
+        ev.key = KEY_ENTER;
     else if (c == 11)
         ev.key = KEY_CTRL_K;
     else if (c == 12)
@@ -409,9 +413,18 @@ int read_line_edit(char *buf, size_t cap,
                 ret = -1;
                 break;
             }
+            if (literal == '\r')
+                literal = '\n';
             st.quoted_insert = 0;
+            if (literal == '\n')
+            {
+                buf[st.len] = '\0';
+                ret = 1;
+                break;
+            }
             save_undo(&st, buf);
-            if (insert_bytes(buf, cap, &st, &literal, 1))
+            if (literal != '\n' && literal != '\r'
+                && insert_bytes(buf, cap, &st, &literal, 1))
                 redraw_if_needed(redraw, buf, st.cursor, ctx);
             continue;
         }
@@ -433,6 +446,7 @@ int read_line_edit(char *buf, size_t cap,
 
         if (ev.key == KEY_ENTER)
         {
+            buf[st.len] = '\0';
             ret = 1;
             break;
         }
@@ -543,8 +557,11 @@ int read_line_edit(char *buf, size_t cap,
         }
         else if (ev.key == KEY_PRINTABLE)
         {
-            save_undo(&st, buf);
-            insert_bytes(buf, cap, &st, &ev.ch, 1);
+            if (ev.ch != '\n' && ev.ch != '\r')
+            {
+                save_undo(&st, buf);
+                insert_bytes(buf, cap, &st, &ev.ch, 1);
+            }
         }
         redraw_if_needed(redraw, buf, st.cursor, ctx);
     }

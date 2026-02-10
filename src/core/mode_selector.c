@@ -2,8 +2,64 @@
 #include "terminal_display.h"
 #include "scoring.h"
 #include "ft_printf_bonus.h"
+#include "line_editor.h"
 
 static int g_exam02_selected_level = 1;
+
+typedef struct s_menu_redraw_ctx
+{
+    const char *prompt;
+} MenuRedrawCtx;
+
+static void redraw_menu_input_line(const char *buf, size_t cursor, void *ctx)
+{
+    MenuRedrawCtx *draw_ctx;
+    size_t prompt_len;
+
+    draw_ctx = (MenuRedrawCtx *)ctx;
+    prompt_len = strlen(draw_ctx->prompt);
+    printf("\r\033[2K%s%s", draw_ctx->prompt, buf);
+    printf("\r");
+    if (prompt_len + cursor > 0)
+        printf("\033[%zuC", prompt_len + cursor);
+    fflush(stdout);
+}
+
+static int parse_positive_int(const char *s, int *out)
+{
+    long val;
+    int i;
+
+    if (!s || !s[0])
+        return (0);
+    i = 0;
+    val = 0;
+    while (s[i])
+    {
+        if (s[i] < '0' || s[i] > '9')
+            return (0);
+        val = (val * 10) + (s[i] - '0');
+        if (val > 2147483647)
+            return (0);
+        i++;
+    }
+    *out = (int)val;
+    return (1);
+}
+
+static int read_menu_choice(const char *prompt, int *out)
+{
+    char line[64];
+    int status;
+    MenuRedrawCtx draw_ctx;
+
+    draw_ctx.prompt = prompt;
+    status = read_line_edit(line, sizeof(line), redraw_menu_input_line, &draw_ctx);
+    printf("\n");
+    if (status != 1)
+        return (0);
+    return (parse_positive_int(line, out));
+}
 
 static LibFunc exam02_get_selected_level_question(int index)
 {
@@ -24,9 +80,8 @@ static int run_exam_rank_02_loop(int mode)
         system("clear");
         print_banner();
         print_exam02_level_menu();
-        if (scanf("%d", &level_choice) != 1)
+        if (!read_menu_choice("Enter choice: ", &level_choice))
             return 0;
-        getchar();
 
         if (level_choice == 0)
             return 0;
@@ -45,12 +100,10 @@ static int run_exam_rank_02_loop(int mode)
             printf("2. Change Level\n");
             printf("3. Change Category\n");
             printf("4. Change Mode\n");
-            printf("Enter your choice: ");
 
             int choice;
-            if (scanf("%d", &choice) != 1 || choice < 1 || choice > 4)
+            if (!read_menu_choice("Enter your choice: ", &choice) || choice < 1 || choice > 4)
                 break;
-            getchar();
 
             if (choice == 1)
                 continue;
@@ -68,12 +121,11 @@ int select_mode(void)
 
     int mode;
     print_mode_menu();
-    if (scanf("%d", &mode) != 1 || (mode != 1 && mode != 2 && mode != 3))
+    if (!read_menu_choice("Your choice: ", &mode) || (mode != 1 && mode != 2 && mode != 3))
     {
         fprintf(stderr, "Exiting.\n");
         return 0;
     }
-    getchar();
     return mode;
 }
 
@@ -81,9 +133,8 @@ int select_category(void)
 {
     int category;
     print_category_menu();
-    if (scanf("%d", &category) != 1 || category < 1 || category > 12)
+    if (!read_menu_choice("Enter choice: ", &category) || category < 1 || category > 12)
         return 0;
-    getchar();
     return category;
 }
 
@@ -156,12 +207,10 @@ int run_category_loop(int mode, int category)
         printf("1. Try another function in this category\n");
         printf("2. Change Category\n");
         printf("3. Change Mode\n");
-        printf("Enter your choice: ");
 
         int choice;
-        if (scanf("%d", &choice) != 1 || choice < 1 || choice > 3)
+        if (!read_menu_choice("Enter your choice: ", &choice) || choice < 1 || choice > 3)
             break;
-        getchar();
 
         if (choice == 1)
         {
@@ -202,14 +251,12 @@ void run_mode(Mode mode, LibFunc *func)
         for (int i = 0; i < func->variant_count; i++)
             printf("%d. %s\n", i + 1, func->variants[i].style);
 
-        printf("Select variant: ");
         int v = 0;
-        if (scanf("%d", &v) != 1 || v < 1 || v > func->variant_count)
+        if (!read_menu_choice("Select variant: ", &v) || v < 1 || v > func->variant_count)
         {
             fprintf(stderr, "Invalid selection.\n");
             return;
         }
-        getchar(); // Consume leftover newline
         code_to_practice = func->variants[v - 1].code;
     }
     else
