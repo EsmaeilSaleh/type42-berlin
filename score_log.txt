@@ -840,3 +840,4 @@
 [2026-02-10 07:01:10] Mode: Copy | Function: add_prime_sum | Score: 0%
 [2026-02-10 07:04:23] Mode: Copy | Function: add_prime_sum | Score: 0%
 [2026-02-10 07:07:18] Mode: Copy | Function: ft_isdigit | Score: 0%
+[2026-02-10 07:13:02] Mode: Recall | Function: ft_isalpha | Score: 17%

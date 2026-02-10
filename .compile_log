@@ -1,11 +1,1 @@
-typed/get_next_line.c:5:1: error: unknown type name 'hi'
-    5 | hi
-      | ^
-typed/get_next_line.c:5:3: error: expected identifier or '('
-    5 | hi
-      |   ^
-2 errors generated.
-tests/test_get_next_line.c:4:10: fatal error: 'get_next_line.h' file not found
-    4 | #include "get_next_line.h"
-      |          ^~~~~~~~~~~~~~~~~
-1 error generated.
+clang: error: no such file or directory: 'tests/test_ft_isalpha.c'

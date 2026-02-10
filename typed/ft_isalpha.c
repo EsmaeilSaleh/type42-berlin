@@ -15,7 +15,4 @@
 **  Function: ft_isalpha — Practice Mode: Copy / Recall
 */
 
-int	ft_isalpha(int c)
-{
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
-}
+int	ft_isalp
