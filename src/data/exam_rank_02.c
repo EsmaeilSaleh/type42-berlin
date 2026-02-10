@@ -510,6 +510,28 @@ static const Exam02Question g_exam02_level2_questions[] = {
 	 "}\n",
 	 "Expected file: ft_strrev.c",
 	 "level2, function"},
+	{"ft_strspn",
+	 "ft_strspn",
+	 "Reproduce exactly the behavior of the strspn function.",
+	 "size_t\tft_strspn(const char *s, const char *accept)\n"
+	 "{\n"
+	 "\tsize_t i;\n"
+	 "\tsize_t j;\n"
+	 "\n"
+	 "\ti = 0;\n"
+	 "\twhile (s[i])\n"
+	 "\t{\n"
+	 "\t\tj = 0;\n"
+	 "\t\twhile (accept[j] && accept[j] != s[i])\n"
+	 "\t\t\tj++;\n"
+	 "\t\tif (!accept[j])\n"
+	 "\t\t\tbreak ;\n"
+	 "\t\ti++;\n"
+	 "\t}\n"
+	 "\treturn (i);\n"
+	 "}\n",
+	 "Expected file: ft_strspn.c",
+	 "level2, function"},
 	{"inter",
 	 "inter",
 	 "Write a program that prints the intersection of two strings without duplicates.",
