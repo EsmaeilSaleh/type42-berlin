@@ -8,8 +8,18 @@
 jmp_buf mode_menu_jump;
 jmp_buf category_menu_jump;
 
+static void leave_alt_screen(void)
+{
+	printf("\033[?1049l");
+	fflush(stdout);
+}
+
 int main()
 {
+	printf("\033[?1049h");
+	fflush(stdout);
+	atexit(leave_alt_screen);
+
 	system("clear");
 	print_banner();
 	printf("\n\n");

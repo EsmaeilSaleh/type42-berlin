@@ -60,10 +60,6 @@ int check_norminette(const char *filename)
             printf("\033[0;31mNorminette: %s\033[0m", buffer);
             in_error_block = 0;
         }
-        else
-        {
-            printf("%s", buffer);
-        }
     }
     pclose(fp);
     return passed ? 100 : 0;

@@ -847,3 +847,6 @@
 [2026-02-10 07:52:02] Mode: Copy | Function: expand_str | Score: 0%
 [2026-02-10 08:12:18] Mode: Copy | Function: ft_atoi_base | Score: 0%
 [2026-02-10 08:28:25] Mode: Copy | Function: ft_isalpha | Score: 0%
+[2026-02-10 08:32:26] Mode: Copy | Function: ft_strchr | Score: 0%
+[2026-02-10 08:49:13] Mode: Copy | Function: ft_range | Score: 0%
+[2026-02-10 08:57:08] Mode: Copy | Function: ft_isalpha | Score: 0%

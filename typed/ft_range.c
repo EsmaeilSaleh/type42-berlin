@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr                                    :+:      :+:    :+:   */
+/*   ft_range                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esaleh <esaleh@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,6 +12,6 @@
 
 /*
 **  type42-berlin — Typing Trainer for 42 Network
-**  Function: ft_strchr — Practice Mode: Copy / Recall
+**  Function: ft_range — Practice Mode: Copy / Recall
 */
 
