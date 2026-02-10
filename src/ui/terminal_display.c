@@ -6,17 +6,53 @@ typedef struct s_input_redraw_ctx
     const char *prompt;
 } InputRedrawCtx;
 
+static size_t visual_width_until(const char *buf, size_t limit)
+{
+    size_t i;
+    size_t width;
+
+    i = 0;
+    width = 0;
+    while (buf[i] && i < limit)
+    {
+        if (buf[i] == '\t')
+            width += 4;
+        else
+            width++;
+        i++;
+    }
+    return (width);
+}
+
+static void print_with_tabs_expanded(const char *buf)
+{
+    size_t i;
+
+    i = 0;
+    while (buf[i])
+    {
+        if (buf[i] == '\t')
+            printf("    ");
+        else
+            putchar(buf[i]);
+        i++;
+    }
+}
+
 static void redraw_input_line(const char *buf, size_t cursor, void *ctx)
 {
     InputRedrawCtx *draw_ctx;
     size_t prompt_len;
+    size_t visual_cursor;
 
     draw_ctx = (InputRedrawCtx *)ctx;
     prompt_len = strlen(draw_ctx->prompt);
-    printf("\r\033[2K%s%s", draw_ctx->prompt, buf);
+    visual_cursor = prompt_len + visual_width_until(buf, cursor);
+    printf("\r\033[2K%s", draw_ctx->prompt);
+    print_with_tabs_expanded(buf);
     printf("\r");
-    if (prompt_len + cursor > 0)
-        printf("\033[%zuC", prompt_len + cursor);
+    if (visual_cursor > 0)
+        printf("\033[%zuC", visual_cursor);
     fflush(stdout);
 }
 
