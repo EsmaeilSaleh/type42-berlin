@@ -15,5 +15,3 @@
 **  Function: ft_atoi — Practice Mode: Copy / Recall
 */
 
-q
-end
