@@ -822,3 +822,4 @@
 [2026-02-10 05:39:18] Mode: Copy | Function: ft_strrev | Score: 0%
 [2026-02-10 05:42:01] Mode: Copy | Function: inter | Score: 0%
 [2026-02-10 05:54:02] Mode: Copy | Function: ft_strspn | Score: 0%
+[2026-02-10 06:00:04] Mode: Copy | Function: is_power_of_2 | Score: 0%
