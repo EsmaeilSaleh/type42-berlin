@@ -1,4 +1,24 @@
 #include "core.h"
+#include "line_editor.h"
+
+typedef struct s_input_redraw_ctx
+{
+    const char *prompt;
+} InputRedrawCtx;
+
+static void redraw_input_line(const char *buf, size_t cursor, void *ctx)
+{
+    InputRedrawCtx *draw_ctx;
+    size_t prompt_len;
+
+    draw_ctx = (InputRedrawCtx *)ctx;
+    prompt_len = strlen(draw_ctx->prompt);
+    printf("\r\033[2K%s%s", draw_ctx->prompt, buf);
+    printf("\r");
+    if (prompt_len + cursor > 0)
+        printf("\033[%zuC", prompt_len + cursor);
+    fflush(stdout);
+}
 
 void print_function_list(LibFunc (*get_func_by_index)(int), int count)
 {
@@ -13,21 +33,30 @@ void print_function_list(LibFunc (*get_func_by_index)(int), int count)
 void get_user_input(char *buffer, size_t size)
 {
     char line[1024];
+    int status;
+    InputRedrawCtx draw_ctx;
+
     buffer[0] = '\0';
+    draw_ctx.prompt = "> ";
 
     printf("\nStart typing below. Type 'END' on a line to finish.\n\n");
-    while (fgets(line, sizeof(line), stdin))
+    while (1)
     {
-        if (strcmp(line, "END\n") == 0 || strcmp(line, "END\r\n") == 0)
+        status = read_line_edit(line, sizeof(line), redraw_input_line, &draw_ctx);
+        printf("\n");
+        if (status <= 0)
+            break;
+        if (strcmp(line, "END") == 0)
             break;
 
-        if (strlen(buffer) + strlen(line) + 1 >= size)
+        if (strlen(buffer) + strlen(line) + 2 >= size)
         {
             fprintf(stderr, "Input buffer full. Truncating input.\n");
             break;
         }
 
         strncat(buffer, line, size - strlen(buffer) - 1);
+        strncat(buffer, "\n", size - strlen(buffer) - 1);
     }
 }
 

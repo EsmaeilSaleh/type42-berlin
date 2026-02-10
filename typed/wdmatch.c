@@ -15,7 +15,5 @@
 **  Function: wdmatch — Practice Mode: Copy / Recall
 */
 
-int	main(int argc, char **argv)
+int main(int argc, char **arg)
 {
-	int 	;
-ENd

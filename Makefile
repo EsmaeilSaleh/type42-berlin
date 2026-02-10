@@ -18,6 +18,7 @@ SRCS = \
 	$(APP_DIR)/utils/files_io.c\
 	$(APP_DIR)/utils/norminette.c\
 	$(APP_DIR)/ui/terminal_display.c\
+	$(APP_DIR)/terminal/line_editor.c\
 	$(APP_DIR)/free_mode/run_free_mode.c\
 	$(DATA_DIR)/string.c \
 	$(DATA_DIR)/memory.c \
