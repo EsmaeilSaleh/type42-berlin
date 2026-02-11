@@ -15,3 +15,23 @@
 **  Function: token_loop_skeleton — Practice Mode: Copy / Recall
 */
 
+void	token_loop_skeleton(char *s)
+{
+	int	i;
+	int	seen_word;
+
+	i = 0;
+	seen_word = 0;
+	while (s[i])
+	{
+		while (s[i] == ' ' || s[i] == '\t')
+			i++;
+		if (!s[i])
+			break;
+		if (seen_word)
+			write(1, " ", 1);
+		while (s[i] && s[i] != ' ' && s[i] != '\t')
+			write(1, &s[i], 1);
+		seen_word = 1;
+	}
+}
