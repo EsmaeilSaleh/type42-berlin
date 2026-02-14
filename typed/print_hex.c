@@ -15,3 +15,4 @@
 **  Function: print_hex — Practice Mode: Copy / Recall
 */
 
+ exit
