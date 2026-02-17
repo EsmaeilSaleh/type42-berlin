@@ -144,6 +144,38 @@ void print_exam02_level_menu(void)
     printf("Enter choice: ");
 }
 
+void print_exam02_browse_mode_menu(void)
+{
+    printf("Exam Rank 02 - Browse mode:\n");
+    printf(" 1. By Level\n");
+    printf(" 2. By Topic\n");
+    printf("\033[1;31m╔════════════════════════════╗\n");
+    printf("║          0. Back           ║\n");
+    printf("╚════════════════════════════╝\033[0m\n");
+    printf("Enter choice: ");
+}
+
+void print_exam02_topic_menu(void)
+{
+    printf("Exam Rank 02 - Select topic:\n");
+    printf(" 1. Output & small CLI exercises\n");
+    printf(" 2. Word/whitespace handling\n");
+    printf(" 3. Character transform / per-char mapping\n");
+    printf(" 4. Libft-style string functions\n");
+    printf(" 5. Matching / subsequence / case rules\n");
+    printf(" 6. Conversions & base/parsing\n");
+    printf(" 7. Math & number theory\n");
+    printf(" 8. Bitwise\n");
+    printf(" 9. Arrays / ranges / sorting\n");
+    printf("10. Sets / uniqueness\n");
+    printf("11. Linked lists\n");
+    printf("12. Grids / recursion\n");
+    printf("\033[1;31m╔════════════════════════════╗\n");
+    printf("║          0. Back           ║\n");
+    printf("╚════════════════════════════╝\033[0m\n");
+    printf("Enter choice: ");
+}
+
 void print_styled(const char *text, const char *style)
 {
     printf("\033[%sm%s\033[0m", style, text);
