@@ -185,7 +185,7 @@ static const Exam02Question g_exam02_level1_questions[] = {
 	 "}\n",
 	 "Expected file: rot_13.c",
 	 "level1, string transform"},
-	 {"rotone",
+	{"rotone",
 	 "rotone",
 	 "Write a program that shifts each letter by one in the alphabet.",
 	 "#include <unistd.h>\n"
@@ -695,18 +695,23 @@ static const Exam02Question g_exam02_level2_questions[] = {
 	{"reverse_bits",
 	 "reverse_bits",
 	 "Write a function that reverses the bit order of a byte.",
-	 "unsigned char\treverse_bits(unsigned char octet)\n"
+	 "unsigned char reverse_bits(unsigned char octet)\n"
 	 "{\n"
-	 "\tint\t\t\ti;\n"
-	 "\tunsigned char\tres;\n"
+	 "\tunsigned char res = 0;\n"
+	 "\tunsigned char bit = 0;\n"
+	 "\tint\ti;\n"
 	 "\n"
-	 "\ti = 8;\n"
-	 "\tres = 0;\n"
-	 "\twhile (i--)\n"
+	 "\ti = 7;\n"
+	 "\n"
+	 "\twhile (i >= 0)\n"
 	 "\t{\n"
-	 "\t\tres = (res << 1) | (octet & 1);\n"
-	 "\t\toctet >>= 1;\n"
+	 "\t\tbit = octet & 1;\n"
+	 "\t\tres = res << 1;\n"
+	 "\t\tres = res | bit;\n"
+	 "\t\toctet = octet >> 1;\n"
+	 "\t\ti--;\n"
 	 "\t}\n"
+	 "\n"
 	 "\treturn (res);\n"
 	 "}\n",
 	 "Expected file: reverse_bits.c",

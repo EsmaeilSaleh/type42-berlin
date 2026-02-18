@@ -15,17 +15,21 @@
 **  Function: reverse_bits — Practice Mode: Copy / Recall
 */
 
-unsigned char	reverse_bits(unsigned char octet)
+unsigned char reverse_bits(unsigned char octet)
 {
-	int		i;
-	unsigned char	result;
+	unsigned char res = 0;
+	unsigned char bit = 0;
+	int i;
 
-	i = 8;
-	result = 0;
-	while (i--)
+	i = 7;
+
+	while (i >= 0)
 	{
-		result = (result << 1) | (octet & 1);
-		octet >>=1;
+		bit = octet & 1;
+		res = res << 1;
+		res = res | bit;
+		octet = octet >> 1;
+		i--;
 	}
-	return (resutl);
+	return (res);
 }
