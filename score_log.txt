@@ -894,3 +894,4 @@
 [2026-02-20 08:28:57] Mode: Copy | Function: max | Score: 100%
 [2026-02-20 08:30:29] Mode: Copy | Function: is_power_of_2 | Score: 100%
 [2026-02-20 08:36:07] Mode: Copy | Function: lcm | Score: 0%
+[2026-02-20 10:41:08] Mode: Copy | Function: pgcd | Score: 0%
