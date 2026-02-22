@@ -900,3 +900,4 @@
 [2026-02-22 08:13:29] Mode: Copy | Function: add_prime_sum | Score: 0%
 [2026-02-22 08:23:53] Mode: Copy | Function: ft_lstnew | Score: 0%
 [2026-02-22 08:28:21] Mode: Copy | Function: ft_lstnew | Score: 0%
+[2026-02-22 10:19:36] Mode: Copy | Function: ft_lstnew | Score: 23%
