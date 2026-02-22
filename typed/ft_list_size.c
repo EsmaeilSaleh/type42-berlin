@@ -15,4 +15,15 @@
 **  Function: ft_list_size — Practice Mode: Copy / Recall
 */
 
-ENd
+int	ft_list_size(t_list *begin_list)
+{
+	int	size;
+
+	size = 0;
+	while (begin_list != NULL)
+{
+	size++;
+	begin_list = begin_list->next;
+}
+return (size);
+}
