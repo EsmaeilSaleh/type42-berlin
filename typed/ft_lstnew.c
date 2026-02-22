@@ -15,3 +15,4 @@
 **  Function: ft_lstnew — Practice Mode: Copy / Recall
 */
 
+ENd
