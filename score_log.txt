@@ -903,3 +903,4 @@
 [2026-02-22 10:19:36] Mode: Copy | Function: ft_lstnew | Score: 23%
 [2026-02-22 10:44:13] Mode: Copy | Function: ft_list_size | Score: 57%
 [2026-02-22 15:57:33] Mode: Copy | Function: sort_list | Score: 0%
+[2026-02-23 18:12:34] Mode: Copy | Function: ft_lstadd_front | Score: 0%
