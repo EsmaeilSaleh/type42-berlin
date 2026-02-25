@@ -99,6 +99,10 @@ static const Exam02TopicEntry g_exam02_topic_2[] = {
     {"last_word", "last_word", 2},
     {"epur_str", "epur_str", 3},
     {"expand_str", "expand_str", 3},
+    {"ft_split_is_sep", "ft_split_is_sep", 4},
+    {"ft_split_word_count", "ft_split_word_count", 4},
+    {"ft_split_word_len", "ft_split_word_len", 4},
+    {"ft_split_dup_word", "ft_split_dup_word", 4},
     {"ft_split", "ft_split", 4},
     {"rev_wstr", "rev_wstr", 4},
     {"rostring", "rostring", 4}};

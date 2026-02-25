@@ -1562,15 +1562,19 @@ static const Exam02Question g_exam02_level4_questions[] = {
 	 "}\n",
 	 "Expected file: ft_list_remove_if.c",
 	 "level4, list"},
-	{"ft_split",
-	 "ft_split",
-	 "Write a function that splits a string into words separated by spaces, tabs, or newlines.",
-	 "#include <stdlib.h>\n"
-	 "\n"
+	{"ft_split_is_sep",
+	 "ft_split_is_sep",
+	 "Write the separator checker used by ft_split (space, tab, newline).",
 	 "static int\tis_sep(char c)\n"
 	 "{\n"
 	 "\treturn (c == ' ' || c == '\\t' || c == '\\n');\n"
-	 "}\n"
+	 "}\n",
+	 "Expected file: ft_split_is_sep.c",
+	 "level4, function"},
+	{"ft_split_word_count",
+	 "ft_split_word_count",
+	 "Write a function that counts words separated by spaces, tabs, or newlines.",
+	 "static int\tis_sep(char c);\n"
 	 "\n"
 	 "static int\tword_count(char *s)\n"
 	 "{\n"
@@ -1591,7 +1595,13 @@ static const Exam02Question g_exam02_level4_questions[] = {
 	 "\t\t}\n"
 	 "\t}\n"
 	 "\treturn (count);\n"
-	 "}\n"
+	 "}\n",
+	 "Expected file: ft_split_word_count.c",
+	 "level4, function"},
+	{"ft_split_word_len",
+	 "ft_split_word_len",
+	 "Write a function that returns the length of the next non-separator word.",
+	 "static int\tis_sep(char c);\n"
 	 "\n"
 	 "static int\tword_len(char *s)\n"
 	 "{\n"
@@ -1601,7 +1611,15 @@ static const Exam02Question g_exam02_level4_questions[] = {
 	 "\twhile (s[len] && !is_sep(s[len]))\n"
 	 "\t\tlen++;\n"
 	 "\treturn (len);\n"
-	 "}\n"
+	 "}\n",
+	 "Expected file: ft_split_word_len.c",
+	 "level4, function"},
+	{"ft_split_dup_word",
+	 "ft_split_dup_word",
+	 "Write a function that duplicates one word into newly allocated memory.",
+	 "#include <stdlib.h>\n"
+	 "\n"
+	 "static int\tword_len(char *s);\n"
 	 "\n"
 	 "static char\t*dup_word(char *s)\n"
 	 "{\n"
@@ -1621,7 +1639,17 @@ static const Exam02Question g_exam02_level4_questions[] = {
 	 "\t}\n"
 	 "\tword[i] = '\\0';\n"
 	 "\treturn (word);\n"
-	 "}\n"
+	 "}\n",
+	 "Expected file: ft_split_dup_word.c",
+	 "level4, function"},
+	{"ft_split",
+	 "ft_split",
+	 "Write the main ft_split function using is_sep, word_count, and dup_word helpers.",
+	 "#include <stdlib.h>\n"
+	 "\n"
+	 "static int\tis_sep(char c);\n"
+	 "static int\tword_count(char *s);\n"
+	 "static char\t*dup_word(char *s);\n"
 	 "\n"
 	 "char\t**ft_split(char *str)\n"
 	 "{\n"
