@@ -911,3 +911,4 @@
 [2026-02-25 12:04:58] Mode: Copy | Function: ft_strtrim | Score: 0%
 [2026-02-25 12:05:21] Mode: Copy | Function: count_words | Score: 0%
 [2026-02-25 12:20:01] Mode: Copy | Function: ft_split_is_sep | Score: 100%
+[2026-02-25 12:29:02] Mode: Copy | Function: ft_split_word_count | Score: 63%
