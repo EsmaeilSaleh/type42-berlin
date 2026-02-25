@@ -15,23 +15,3 @@
 **  Function: count_words — Practice Mode: Copy / Recall
 */
 
-size_t	count_words(const char *s, char c)
-{
-	int		in_word;
-	size_t	count;
-
-	in_word = 0;
-	count = 0;
-	while (*s)
-	{
-		if (*s != c && !in_word)
-		{
-			in_word = 1;
-			count++;
-		+
-		else if (*s == c)
-			in_word = 0;
-		s++;
-	}
-	return (count);
-}
