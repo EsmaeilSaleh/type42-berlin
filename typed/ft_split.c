@@ -15,15 +15,15 @@
 **  Function: ft_split — Practice Mode: Copy / Recall
 */
 
-#include	<stdlib.h>
+#include <stdlib.h>
 
 static int	is_sep(char c);
 static int	word_count(char *s);
 static char	*dup_word(char *s);
 
-char **ft_split(char *str)
+char	**ft_split(char *str)
 {
-	char	**tab;
+	char **tab;
 	int	w;
 	int	i;
 
@@ -31,21 +31,21 @@ char **ft_split(char *str)
 	if (!tab)
 		return (NULL);
 	i = 0;
-	w ] 0;
-	while (sr[i])
+	w = 0;
+	while (s[i])
 	{
 		while (str[i] && is_sep(str[i]))
 			i++;
 		if (str[i])
 		{
 			tab[w] = dup_word(&str[i]);
+
 			if (!tab[w])
 				return (NULL);
 			while (str[i] && !is_sep(str[i]))
 				i++;
 			w++;
 		}
-		tab[w] = NULL;
 	}
 	tab[w] = NULL;
 	return (tab);
