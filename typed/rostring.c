@@ -15,4 +15,3 @@
 **  Function: rostring — Practice Mode: Copy / Recall
 */
 
-END\
