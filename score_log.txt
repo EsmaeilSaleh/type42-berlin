@@ -930,3 +930,4 @@
 [2026-02-27 10:37:32] Mode: Copy | Function: ft_split_word_count | Score: 100%
 [2026-02-27 10:41:31] Mode: Copy | Function: ft_split_word_len | Score: 100%
 [2026-02-27 10:43:44] Mode: Copy | Function: ft_split_dup_word | Score: 15%
+[2026-02-27 10:50:17] Mode: Copy | Function: ft_split | Score: 59%
