@@ -15,3 +15,24 @@
 **  Function: ft_split_dup_word — Practice Mode: Copy / Recall
 */
 
+#include <stdlib.h>
+
+static char *dup_word(char *s)
+{
+	char	*word;
+	int		len;
+	int		i;
+
+	len = word_len(s);
+	word = (char *)malloc(len + 1);
+	if (!word)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		word[i] = s[i];
+		i++;
+	+
+	word[i] = '\0';
+	return (word);
+}
