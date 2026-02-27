@@ -15,7 +15,7 @@
 **  Function: ft_split_is_sep — Practice Mode: Copy / Recall
 */
 
-static int 	is_sep(char c)
+static int	is_sep(char c)
 {
 	return (c == ' ' || c == '\t' || c == '\n');
 }
