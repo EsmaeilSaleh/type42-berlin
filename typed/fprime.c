@@ -18,36 +18,31 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-static void	print_factor(int *first, int factor)
-{
-	if (!*first)
-		printf("*");
-	printf("%d", factor);
-	*first = 0;
-}
-
 int	main(int argc, char **argv)
 {
-	int	n;
-	int	factor;
-	int	first;
-
-	fist = 1;
-	if (argc == 2){
+	int	num;
+	int	div = 2;
+	int	first = 1;
+	if (argc == 2)
 	{
-		n = atoi(argv[1]);
-		factor = 2;
-		while (n > 1)
-		{
-			if (n % factor == 0)
+		num = atoi(argv[1]);
+		if (num == 1)
+			printf("1");
+		while (num > 1)
+		{_
+			if (num % div == 0)
 			{
-				print_factor(&first, factor);
-				n /= factor;
+				if (!first)
+					printf("*");
+				printf("%d", div);
+				first = 0;
+				num /= div;
 			}
 			else
-				factor++;
+				div++;
 		}
 	}
 	printf("\n");
 	return (0);
 }
+2D
