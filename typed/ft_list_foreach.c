@@ -15,3 +15,11 @@
 **  Function: ft_list_foreach — Practice Mode: Copy / Recall
 */
 
+void	ft_list_foreach(t_liast *begin_list, void (*f)(void *))
+{
+		while (begin_list)
+		{
+			f(begin_list->content);
+			begin_list = begin_list->next;
+		}
+}
