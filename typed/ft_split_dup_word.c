@@ -17,6 +17,8 @@
 
 #include <stdlib.h>
 
+static int word_len(char *s);
+
 static char *dup_word(char *s)
 {
 	char	*word;
