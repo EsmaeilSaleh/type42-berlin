@@ -946,3 +946,4 @@
 [2026-03-05 19:03:32] Mode: Copy | Function: ft_split_word_count | Score: 63%
 [2026-03-05 19:04:35] Mode: Copy | Function: ft_split_word_len | Score: 22%
 [2026-03-05 19:07:15] Mode: Copy | Function: ft_split_dup_word | Score: 99%
+[2026-03-05 19:18:53] Mode: Copy | Function: ft_split | Score: 50%
