@@ -943,3 +943,4 @@
 [2026-03-01 11:26:10] Mode: Copy | Function: ft_atoi_base | Score: 0%
 [2026-03-02 19:59:04] Mode: Copy | Function: print_hex | Score: 0%
 [2026-03-05 19:01:16] Mode: Copy | Function: ft_split_is_sep | Score: 100%
+[2026-03-05 19:03:32] Mode: Copy | Function: ft_split_word_count | Score: 63%
