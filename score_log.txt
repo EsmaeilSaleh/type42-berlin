@@ -951,3 +951,4 @@
 [2026-03-05 19:46:26] Mode: Copy | Function: fprime | Score: 49%
 [2026-03-05 19:48:49] Mode: Copy | Function: ft_list_foreach | Score: 20%
 [2026-03-05 20:01:24] Mode: Copy | Function: ft_list_remove_if | Score: 0%
+[2026-03-05 20:35:55] Mode: Copy | Function: ft_strcspn | Score: 18%

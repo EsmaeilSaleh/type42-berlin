@@ -15,3 +15,6 @@
 **  Function: ft_strcspn — Practice Mode: Copy / Recall
 */
 
+#include <stddef.h>
+
+size_t	ft_strcpn
