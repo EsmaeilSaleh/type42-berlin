@@ -15,3 +15,22 @@
 **  Function: paramsum — Practice Mode: Copy / Recall
 */
 
+#include <unistd.h>
+
+statid void	putnbr(int n)
+{
+	char c:
+
+	if (n > 9)
+		putnbr(n /10);
+	c = (n % 10) + '0';
+	write(1, &c, 1);
+}
+
+int	main(int arc, char **argv)
+{
+	(void)argv;
+	putnbr(argc -1);
+	write(1, "\n");
+	return (0);
+}
