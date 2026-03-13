@@ -15,17 +15,3 @@
 **  Function: print_arg — Practice Mode: Copy / Recall
 */
 
-int	print_arg(char specifier, va_list args)
-{
-	if (specifier == 'c')
-		return (handle_char(va_arg(args, int)));
-	else if (specifier == 's')
-		return (handle_string(va_arg(args, char *)));
-	else if (specifier == 'd' || specifier == 'i')
-		return (handle_int(va_arg(args, int)));
-	else if (specifier == 'u')
-		return (handle_unsigned(va_arg(args, unsigned int)));
-	else if (specifier == 'x'
-ENBD
-ENd
-\
