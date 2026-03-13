@@ -15,4 +15,8 @@
 **  Function: ft_putstr_fd — Practice Mode: Copy / Recall
 */
 
-3
+void	ft_putstr_fd(char *s, int fd)
+{
+	if (s)
+			write(fd, s, ft_strlen(s));
+}
