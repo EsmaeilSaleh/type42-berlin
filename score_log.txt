@@ -967,3 +967,4 @@
 [2026-03-13 10:43:59] Mode: Copy | Function: print_arg | Score: 0%
 [2026-03-13 10:44:58] Mode: Copy | Function: ft_printf | Score: 0%
 [2026-03-13 11:39:06] Mode: Copy | Function: parse_format | Score: 0%
+[2026-03-13 11:39:48] Mode: Copy | Function: ft_putchar_fd | Score: 100%

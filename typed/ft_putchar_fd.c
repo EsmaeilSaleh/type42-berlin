@@ -15,4 +15,7 @@
 **  Function: ft_putchar_fd — Practice Mode: Copy / Recall
 */
 
-void	ft_putchart
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
