@@ -15,4 +15,3 @@
 **  Function: ft_putnbr_fd — Practice Mode: Copy / Recall
 */
 
-end
