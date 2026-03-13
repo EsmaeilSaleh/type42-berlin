@@ -15,13 +15,3 @@
 **  Function: ft_printf — Practice Mode: Copy / Recall
 */
 
-int	ft_printf(const chr *format, ...)
-{
-	va_list args;
-	int		count;
-
-	va_start(args, format);
-	count = parse_format(format, args);
-	va_end(args);
-	return (count);
-}
