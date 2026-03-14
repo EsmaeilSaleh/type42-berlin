@@ -15,4 +15,3 @@
 **  Function: extract_line — Practice Mode: Copy / Recall
 */
 
-char	*extract_line(char *stash)
