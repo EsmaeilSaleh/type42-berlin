@@ -16,31 +16,4 @@
 */
 
 #include <stdlib.h>
-#iinclude <stdio.h>
-
-int	main(int argc, char **argv)
-{
-	int	num;
-	int	div = 2;
-	int	first = 1;
-	if (argc = 2)
-	{
-		num = atoi(argv[1]);
-		if (num == 1)
-			printf("1");
-		while (num > 1)
-		{
-			if (num % div == 0)
-			{
-				if (!first)
-					printf("*");
-				printf("%d", div);
-				num = num / div;
-			}
-			else
-				div++;
-		}
-	}
-	printf("\n");
-	return (0);
-}
+#include <stdio.h>
