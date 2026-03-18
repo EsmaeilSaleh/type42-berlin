@@ -21,7 +21,7 @@ static int word_len(char *s);
 
 static char *dup_word(char *s)
 {
-	char	*word;
+	char *word;
 	int		len;
 	int		i;
 
@@ -34,7 +34,7 @@ static char *dup_word(char *s)
 	{
 		word[i] = s[i];
 		i++;
-	+
+	}
 	word[i] = '\0';
 	return (word);
 }
