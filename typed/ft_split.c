@@ -15,4 +15,4 @@
 **  Function: ft_split — Practice Mode: Copy / Recall
 */
 
-:q
+#include <stdlib.h>
