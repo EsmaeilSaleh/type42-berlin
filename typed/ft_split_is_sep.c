@@ -15,7 +15,3 @@
 **  Function: ft_split_is_sep — Practice Mode: Copy / Recall
 */
 
-static int 	is_sep(char c)
-{
-	return (c == 32 || c == 9 || c == 10);
-}
