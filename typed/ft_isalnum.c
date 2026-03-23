@@ -15,7 +15,7 @@
 **  Function: ft_isalnum — Practice Mode: Copy / Recall
 */
 
-int	ft_isalnum(int c)
+int	if_isalnum(int c)
 {
 	return (ft_isalpha(c) || ft_isdigit(c));
 }
