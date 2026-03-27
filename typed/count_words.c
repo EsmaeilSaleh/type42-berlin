@@ -15,3 +15,6 @@
 **  Function: count_words — Practice Mode: Copy / Recall
 */
 
+size_t	count_words(const char *s, char c)
+{
+	
