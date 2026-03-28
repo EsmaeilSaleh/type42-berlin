@@ -999,3 +999,4 @@
 [2026-03-25 10:16:01] Mode: Copy | Function: ft_strrchr | Score: 23%
 [2026-03-27 11:45:21] Mode: Copy | Function: ft_strchr | Score: 3%
 [2026-03-27 12:18:27] Mode: Copy | Function: count_words | Score: 21%
+[2026-03-28 22:05:38] Mode: Copy | Function: ft_strcpy | Score: 100%
