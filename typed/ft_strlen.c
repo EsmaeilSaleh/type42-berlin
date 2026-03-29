@@ -15,12 +15,12 @@
 **  Function: ft_strlen — Practice Mode: Copy / Recall
 */
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *s)
 {
-	int	len;
+	const char	*start;
 
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
+	start = s;
+	while (*s0
+		s++;
+	return (s - start);
 }
