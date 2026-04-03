@@ -15,3 +15,12 @@
 **  Function: ft_memset — Practice Mode: Copy / Recall
 */
 
+void	*ft_memset(void *s, int c, size_t n)
+{
+	unsigned chart	*p
+;
+	p = (unsigned char *)s;
+	while (n--)
+		*p++ = *(unsigned char)c;
+	return (s);
+}
