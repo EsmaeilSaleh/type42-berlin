@@ -1009,3 +1009,4 @@
 [2026-04-03 17:04:38] Mode: Copy | Function: ft_substr | Score: 0%
 [2026-04-03 17:05:18] Mode: Copy | Function: ft_isdigit | Score: 2%
 [2026-04-03 17:07:01] Mode: Copy | Function: ft_memset | Score: 44%
+[2026-04-03 17:08:54] Mode: Copy | Function: ft_putchar_fd | Score: 100%
