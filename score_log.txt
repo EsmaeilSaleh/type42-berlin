@@ -1006,3 +1006,4 @@
 [2026-03-31 14:53:02] Mode: Copy | Function: ft_strchr | Score: 0%
 [2026-04-01 18:44:19] Mode: Copy | Function: ft_strchr | Score: 0%
 [2026-04-01 18:46:27] Mode: Copy | Function: ft_strcpy | Score: 11%
+[2026-04-03 17:04:38] Mode: Copy | Function: ft_substr | Score: 0%
