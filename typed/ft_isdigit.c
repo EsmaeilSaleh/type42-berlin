@@ -15,7 +15,9 @@
 **  Function: ft_isdigit — Practice Mode: Copy / Recall
 */
 
-int	ft-isdigit(int c)
+3
+int	ft_isdigit(int c)
 {
-	return (c >= '0' && c <= '9');
+	return (c >= '0' && c <= '9')
+;
 }
