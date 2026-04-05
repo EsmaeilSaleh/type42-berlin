@@ -1012,3 +1012,4 @@
 [2026-04-03 17:08:54] Mode: Copy | Function: ft_putchar_fd | Score: 100%
 [2026-04-03 17:09:46] Mode: Copy | Function: ft_putstr_fd | Score: 100%
 [2026-04-04 18:11:59] Mode: Copy | Function: ft_strmapi | Score: 6%
+[2026-04-05 16:54:52] Mode: Copy | Function: ft_substr | Score: 82%
