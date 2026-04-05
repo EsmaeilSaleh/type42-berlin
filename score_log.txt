@@ -1014,3 +1014,4 @@
 [2026-04-04 18:11:59] Mode: Copy | Function: ft_strmapi | Score: 6%
 [2026-04-05 16:54:52] Mode: Copy | Function: ft_substr | Score: 82%
 [2026-04-05 17:55:52] Mode: Copy | Function: ft_substr | Score: 0%
+[2026-04-05 18:44:47] Mode: Copy | Function: ft_lstnew | Score: 100%

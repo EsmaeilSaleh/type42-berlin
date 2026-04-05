@@ -15,11 +15,11 @@
 **  Function: ft_lstnew — Practice Mode: Copy / Recall
 */
 
-t_list	*ft_lstnew(void *content)
-{P
+t_list	*ft_lstnew(void	*content)
+{
 	t_list	*new;
 
-	new = (t_list *)malloc (sizeof(t_list));
+	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);
 	new->content = content;
