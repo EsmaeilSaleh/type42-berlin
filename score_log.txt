@@ -1028,3 +1028,4 @@
 [2026-04-06 08:12:52] Mode: Copy | Function: ft_lstlast | Score: 100%
 [2026-04-06 19:48:31] Mode: Copy | Function: ft_lstclear | Score: 11%
 [2026-04-06 20:09:04] Mode: Copy | Function: ft_substr | Score: 100%
+[2026-04-06 20:23:43] Mode: Copy | Function: ft_substr | Score: 0%
