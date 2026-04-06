@@ -15,17 +15,4 @@
 **  Function: ft_lstclear — Practice Mode: Copy / Recall
 */
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
-{
-	t_list	*tmp;
-
-	if (!lst || !del)
-		return ;
-
-	while (*lst)
-	{
-		tmp = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = tmp;
-	}
-}
+void	ft_lstclear(ft_list
