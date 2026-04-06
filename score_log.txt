@@ -1022,3 +1022,4 @@
 [2026-04-05 19:53:29] Mode: Copy | Function: ft_lstiter | Score: 99%
 [2026-04-05 19:55:09] Mode: Copy | Function: ft_lstadd_front | Score: 100%
 [2026-04-05 20:05:25] Mode: Copy | Function: sort_list | Score: 5%
+[2026-04-06 08:01:18] Mode: Copy | Function: ft_list_remove_if | Score: 0%
