@@ -15,4 +15,4 @@
 **  Function: ft_strcpy — Practice Mode: Copy / Recall
 */
 
-char	*ft_strcopybn
+char
