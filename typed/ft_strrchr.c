@@ -15,5 +15,3 @@
 **  Function: ft_strrchr — Practice Mode: Copy / Recall
 */
 
-char *ft_strrchr (const char *s, int c)
-{
