@@ -15,9 +15,10 @@
 **  Function: ft_split_word_len — Practice Mode: Copy / Recall
 */
 
-static int	is_sep(char c)
+static int is_sep(char c);
 
 static int	word_len(char *s)
+
 {
 	int	len;
 
@@ -25,4 +26,4 @@ static int	word_len(char *s)
 	while (s[len] && !is_sep(s[len]))
 		len++;
 	return (len);
-{
+}
