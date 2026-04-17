@@ -1043,3 +1043,4 @@
 [2026-04-16 10:11:30] Mode: Copy | Function: ft_strlen | Score: 0%
 [2026-04-17 03:31:09] Mode: Copy | Function: ft_lstnew | Score: 100%
 [2026-04-17 03:32:18] Mode: Copy | Function: ft_lstlast | Score: 98%
+[2026-04-17 03:38:30] Mode: Copy | Function: ft_lstadd_back | Score: 100%
