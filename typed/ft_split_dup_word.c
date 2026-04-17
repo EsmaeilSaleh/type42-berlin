@@ -19,9 +19,9 @@
 
 static int word_len(char *s);
 
-static char *dup_word(char *s)
+static char	*dup_word(char *s)
 {
-	char *word;
+	char	*word;
 	int		len;
 	int		i;
 
