@@ -15,7 +15,7 @@
 **  Function: ft_split_word_count — Practice Mode: Copy / Recall
 */
 
-static int ins_sep(char c);
+static int	is_sep(char c);
 
 static int word_count(char *s)
 {
@@ -25,8 +25,8 @@ static int word_count(char *s)
 	i = 0;
 	count = 0;
 	while (s[i])
-	{
-		while (s[i] && is_sep(s[i]))
+	P
+		while (s[i] && is_sep(s[i])
 			i++;
 		if (s[i])
 		{
