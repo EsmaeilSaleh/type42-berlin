@@ -1048,3 +1048,4 @@
 [2026-04-17 10:39:10] Mode: Copy | Function: ft_lstadd_back | Score: 0%
 [2026-04-17 10:39:33] Mode: Copy | Function: ft_strrchr | Score: 0%
 [2026-04-17 10:39:59] Mode: Copy | Function: ft_strchr | Score: 0%
+[2026-04-17 10:42:45] Mode: Copy | Function: ft_strjoin | Score: 1%
