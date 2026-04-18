@@ -15,6 +15,3 @@
 **  Function: ft_split — Practice Mode: Copy / Recall
 */
 
-#include <stdlib.h>
-
-static int	is_sep(char c);
