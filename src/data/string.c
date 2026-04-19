@@ -364,32 +364,30 @@ LibFunc string_functions[] = {
 	 "Returns the number of words as size_t.",
 	 NULL,
 	 0,
-	 "size_t\tcount_words(const char *s, char c)\n"
+	 "static size_t\tcount_words(const char *s, char c)\n"
 	 "{\n"
-	 "\tint\t\tin_word;\n"
 	 "\tsize_t\tcount;\n"
 	 "\n"
-	 "\tin_word = 0;\n"
 	 "\tcount = 0;\n"
 	 "\twhile (*s)\n"
 	 "\t{\n"
-	 "\t\tif (*s != c && !in_word)\n"
+	 "\t\twhile (*s == c)\n"
+	 "\t\t\ts++;\n"
+	 "\t\tif (*s)\n"
 	 "\t\t{\n"
-	 "\t\t\tin_word = 1;\n"
 	 "\t\t\tcount++;\n"
+	 "\t\t\twhile (*s && *s != c)\n"
+	 "\t\t\t\ts++;\n"
 	 "\t\t}\n"
-	 "\t\telse if (*s == c)\n"
-	 "\t\t\tin_word = 0;\n"
-	 "\t\ts++;\n"
 	 "\t}\n"
 	 "\treturn (count);\n"
 	 "}\n"},
-	{"word_dup",
+	{"extract_word",
 	 "Duplicates a substring of length len starting at start.",
 	 "Returns a new string or NULL if allocation fails.",
 	 NULL,
 	 0,
-	 "char\t*word_dup(const char *start, size_t len)\n"
+	 "char\t*extract_word(const char *start, size_t len)\n"
 	 "{\n"
 	 "\tchar\t*word;\n"
 	 "\tsize_t\ti;\n"
