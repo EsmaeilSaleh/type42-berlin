@@ -387,7 +387,7 @@ LibFunc string_functions[] = {
 		"Returns a new string or NULL if allocation fails.",
 		NULL,
 		0,
-		"static char\t*extract_word(const char *s, size_t start, size_t len)\n"
+		"static char\t*word_dup(const char *s, size_t start, size_t len)\n"
 			"{\n"
 			"\tchar\t*word;\n"
 			"\tsize_t\ti;\n"
