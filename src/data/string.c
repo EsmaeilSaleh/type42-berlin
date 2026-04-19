@@ -404,40 +404,53 @@ LibFunc string_functions[] = {
 			"\tword[i] = '\\0';\n"
 			"\treturn (word);\n"
 			"}\n"},
+	{"free_all",
+		"Frees a partially allocated split result and the array itself.",
+		"Returns nothing (void).",
+		NULL,
+		0,
+		"static void\tfree_all(char **res, size_t j)\n"
+			"{\n"
+			"\twhile (j > 0)\n"
+			"\t\tfree(res[--j]);\n"
+			"\tfree(res);\n"
+			"}\n"},
 	{"ft_split",
 		"Splits string s by delimiter c into a NULL-terminated array of strings.",
 		"Returns a NULL-terminated array or NULL on failure.",
 		NULL,
 		0,
-		"char\t**ft_split(const char *s, char c)\n"
+		"char\t**ft_split(char const *s, char c)\n"
 			"{\n"
+			"\tchar\t**res;\n"
 			"\tsize_t\ti;\n"
 			"\tsize_t\tj;\n"
 			"\tsize_t\tstart;\n"
-			"\tsize_t\tword_count;\n"
-			"\tchar\t**split;\n"
 			"\n"
-			"\ti = 0;\n"
-			"\tj = 0;\n"
-			"\tstart = 0;\n"
 			"\tif (!s)\n"
 			"\t\treturn (NULL);\n"
-			"\tword_count = count_words(s, c);\n"
-			"\tsplit = malloc(sizeof(char *) * (word_count + 1));\n"
-			"\tif (!split)\n"
+			"\tres = malloc(sizeof(char *) * (count_words(s, c) + 1));\n"
+			"\tif (!res)\n"
 			"\t\treturn (NULL);\n"
+			"\ti = 0;\n"
+			"\tj = 0;\n"
 			"\twhile (s[i])\n"
 			"\t{\n"
-			"\t\tif (s[i] != c && (i == 0 || s[i - 1] == c))\n"
-			"\t\t\tstart = i;\n"
-			"\t\tif (s[i] != c && (s[i + 1] == c || s[i + 1] == '\\0'))\n"
+			"\t\twhile (s[i] == c)\n"
+			"\t\t\ti++;\n"
+			"\t\tif (s[i])\n"
 			"\t\t{\n"
-			"\t\t\tsplit[j++] = word_dup(s + start, i - start + 1);\n"
+			"\t\t\tstart = i;\n"
+			"\t\t\twhile (s[i] && s[i] != c)\n"
+			"\t\t\t\ti++;\n"
+			"\t\t\tres[j] = word_dup(s, start, i - start);\n"
+			"\t\t\tif (!res[j])\n"
+			"\t\t\t\treturn (free_all(res, j), NULL);\n"
+			"\t\t\tj++;\n"
 			"\t\t}\n"
-			"\t\ti++;\n"
 			"\t}\n"
-			"\tsplit[j] = NULL;\n"
-			"\treturn (split);\n"
+			"\tres[j] = NULL;\n"
+			"\treturn (res);\n"
 			"}\n"},
 };
 
