@@ -15,20 +15,3 @@
 **  Function: word_dup — Practice Mode: Copy / Recall
 */
 
-char	*word_dup(const char *start, size_t len)
-{
-	char	*word;
-	size_t	i;
-
-	i = 0;
-	word = malloc(len + 1)
-	if (!word)
-		return (NULL);
-	while (i < len)
-	{
-		word[i] = start[i];
-		i++;
-	}
-	word[i] = '\0';
-	return (word);
-}
