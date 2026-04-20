@@ -15,9 +15,3 @@
 **  Function: free_all — Practice Mode: Copy / Recall
 */
 
-static void free_all(char **res, size_t j)
-{
-	while (j > 0)
-		free(res[--j]);
-	free(res);
-}
