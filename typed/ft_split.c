@@ -15,3 +15,6 @@
 **  Function: ft_split — Practice Mode: Copy / Recall
 */
 
+char	**ft_split(char const *s, char c)
+{
+		END
