@@ -15,3 +15,4 @@
 **  Function: ft_strncmp — Practice Mode: Copy / Recall
 */
 
+1
