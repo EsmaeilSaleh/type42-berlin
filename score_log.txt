@@ -1089,3 +1089,4 @@
 [2026-05-02 07:31:46] Mode: Copy | Function: ft_strrchr | Score: 0%
 [2026-05-04 22:39:55] Mode: Copy | Function: ft_strrchr | Score: 0%
 [2026-05-04 22:40:03] Mode: Copy | Function: ft_strchr | Score: 0%
+[2026-05-06 10:22:52] Mode: Copy | Function: ft_strdup | Score: 3%
